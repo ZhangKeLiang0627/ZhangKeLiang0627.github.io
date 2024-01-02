@@ -20,11 +20,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="在单片机环境下移植Lua">
 <meta property="og:url" content="http://example.com/2023/11/14/%E5%9C%A8%E5%8D%95%E7%89%87%E6%9C%BA%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%A7%BB%E6%A4%8DLua/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Hugo@kkl">
 <meta property="og:description" content="在单片机环境下移植Lua软件：keil所需环境：Malloc、Fatfs 声明这里使用的是正点原子家的源码，感谢！ 上述环境是为了实现Lua能够从外置存储介质读取文件所准备的，如果没有需求可以不用  主控：STM32F401RET6 运行频率：84MHz ROM:512KB RAM:96KB  移植版本：Lua-v5.3(lua&#x2F;lua at v5.3 (github.com)) 具体版">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-14T11:21:00.000Z">
-<meta property="article:modified_time" content="2024-01-02T08:03:24.910Z">
+<meta property="article:modified_time" content="2024-01-02T08:09:22.909Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Lua">
 <meta property="article:tag" content="单片机">
@@ -32,7 +32,7 @@
   
   
   
-  <title>在单片机环境下移植Lua - Hexo</title>
+  <title>在单片机环境下移植Lua - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -317,7 +317,7 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*</span><br><span class="hljs-comment">** these libs are loaded by lua.c and are readily available to any Lua</span><br><span class="hljs-comment">** program</span><br><span class="hljs-comment">*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> luaL_Reg loadedlibs[] = &#123;<br>  &#123;<span class="hljs-string">&quot;_G&quot;</span>, luaopen_base&#125;,<br>  &#123;LUA_LOADLIBNAME, luaopen_package&#125;,<br>  &#123;LUA_COLIBNAME, luaopen_coroutine&#125;,<br>  &#123;LUA_TABLIBNAME, luaopen_table&#125;,<br><span class="hljs-comment">//  &#123;LUA_IOLIBNAME, luaopen_io&#125;,</span><br><span class="hljs-comment">//  &#123;LUA_OSLIBNAME, luaopen_os&#125;,</span><br>  &#123;LUA_STRLIBNAME, luaopen_string&#125;,<br>  &#123;LUA_MATHLIBNAME, luaopen_math&#125;,<br>  &#123;LUA_UTF8LIBNAME, luaopen_utf8&#125;,<br><span class="hljs-comment">//  &#123;LUA_DBLIBNAME, luaopen_debug&#125;,</span><br><span class="hljs-meta">#<span class="hljs-keyword">if</span> defined(LUA_COMPAT_BITLIB)</span><br>  &#123;LUA_BITLIBNAME, luaopen_bit32&#125;,<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br>  &#123;<span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<h4 id="添加stdio-c"><a href="#添加stdio-c" class="headerlink" title="添加stdio.c"></a>添加stdio.c</h4><blockquote>
+<h4 id="添加retarget-c"><a href="#添加retarget-c" class="headerlink" title="添加retarget.c"></a>添加retarget.c</h4><blockquote>
 <ul>
 <li>放哪随意，我基于正点原子的工程放在了system的文件夹中</li>
 <li>引进这个库的目的是为了实现Lua从外置的存储介质中获取文件内容，我们需要用Fatfs的API去实现Lua所需的fopen、fclose、fread等函数（如果没有这个需求，可以跳过此步骤）</li>
