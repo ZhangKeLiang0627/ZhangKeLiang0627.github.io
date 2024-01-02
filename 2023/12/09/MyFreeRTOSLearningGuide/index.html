@@ -1,0 +1,806 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Zhang-keliang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="我的FreeRTOS使用指南MyFreeRTOS-LearningGuideBy @kkl 序言 本指南着重于FreeRTOS的API从入门到入土的所有用法（Maybe不会太深究底层的内核实现，可能有一些相关性强的会Q一下会讲一些我学习RTOS的时候卡关的地方，或者是觉得莫名其妙的、理解困难的点主张一个，看着就能用，或者是看着看着就会用，而且用的还一溜一溜的FreeRTOS指南   环境 MCU:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的FreeRTOS使用指南">
+<meta property="og:url" content="http://example.com/2023/12/09/MyFreeRTOSLearningGuide/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我的FreeRTOS使用指南MyFreeRTOS-LearningGuideBy @kkl 序言 本指南着重于FreeRTOS的API从入门到入土的所有用法（Maybe不会太深究底层的内核实现，可能有一些相关性强的会Q一下会讲一些我学习RTOS的时候卡关的地方，或者是觉得莫名其妙的、理解困难的点主张一个，看着就能用，或者是看着看着就会用，而且用的还一溜一溜的FreeRTOS指南   环境 MCU:">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-08T17:10:00.000Z">
+<meta property="article:modified_time" content="2024-01-02T07:59:53.609Z">
+<meta property="article:author" content="Zhang-keliang">
+<meta property="article:tag" content="FreeRTOS">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>我的FreeRTOS使用指南 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hugo@kkl&#39;s</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="我的FreeRTOS使用指南"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-09 01:10" pubdate>
+          2023年12月9日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">我的FreeRTOS使用指南</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="我的FreeRTOS使用指南"><a href="#我的FreeRTOS使用指南" class="headerlink" title="我的FreeRTOS使用指南"></a>我的FreeRTOS使用指南</h1><h1 id="MyFreeRTOS-LearningGuide"><a href="#MyFreeRTOS-LearningGuide" class="headerlink" title="MyFreeRTOS-LearningGuide"></a>MyFreeRTOS-LearningGuide</h1><h2 id="By-kkl"><a href="#By-kkl" class="headerlink" title="By @kkl"></a>By @kkl</h2><hr>
+<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><blockquote>
+<p>本指南着重于FreeRTOS的API从入门到入土的所有用法（Maybe<br>不会太深究底层的内核实现，可能有一些相关性强的会Q一下<br>会讲一些我学习RTOS的时候卡关的地方，或者是觉得莫名其妙的、理解困难的点<br>主张一个，看着就能用，或者是看着看着就会用，而且用的还一溜一溜的FreeRTOS指南</p>
+</blockquote>
+<hr>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>MCU: STM32F405（现在是二三年十二月，最近才十元钱每片，以前单价十多元我还傻乎乎地买了好多…悲</li>
+<li>工程: 标准库 + VScode + Keil（标准开局</li>
+<li>版本: FreeRTOSv9.0.0</li>
+</ul>
+<hr>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
+<li>讲讲我们提前必须要知道的一些知识点和概念，不然后面看到代码会直接懵圈。<blockquote>
+<p><strong>1.堆栈</strong></p>
+<ul>
+<li>简单来说就是内存动态分配的问题，比方说你代码跑起来之后，会在某函数里面创建<code>临时变量</code>（也叫<code>局部变量</code>）的时候，就会用上堆栈。</li>
+<li>**栈(Stack)**：就是在某个函数创建的<code>临时变量</code>的内存是编译器自动给你分配的。当这个函数执行完毕，编译器自动帮你释放了这个<code>临时变量</code>的内存。</li>
+<li>栈也用在触发中断的时候，用于保护现场（当前函数地址啊寄存器值啊，方便从中断回来的时候还原现场哈。</li>
+<li>当然栈的使用还包括你函数参数<code>eg: void Func(int Temp[256])</code>这里的变量<code>Temp[256]</code>也是编译器自动帮你申请内存。所以为啥有时候移植一些大型库的时候你什么都配置好了函数也没有出错编译器却报错，原因可能是库当中的某些函数申请的<code>局部变量</code>太大，而你的栈分配的太小导致的。</li>
+<li>**堆(Heap)**：就是malloc或者new，简单说就是malloc，你自己分配内存，当然也要你自己去释放free，生命周期结束不释放内存，会造成内存泄漏。</li>
+<li>**静态区(Static)**：就是你放<code>全局变量</code>或者<code>static修饰的变量</code>的地方啦。<blockquote>
+<ul>
+<li>那么在FreeRTOS中各个任务都有自己的堆栈，一般呢我们只管写这个任务需要多大的堆栈，FreeRTOS会自动帮我们从RAM中申请内存。包括信号量、队列这些都是。</li>
+<li><code>configSUPPORT_STATIC_ALLOCATION</code>为0的时候，FreeRTOS会使用<code>heap_x.c(x为 1~5)</code>中的动态内存管理函数来自动申请RAM；当此宏定义为1的时候，用户可以给FreeRTOS指定一块静态RAM内存，你就可以执行类似<code>xTaskCreateStatic</code>的函数啦。一般咱们写0就行（默认也是写0的</li>
+<li><code>configTOTAL_HEAP_SIZE</code></li>
+<li><code>#define XXX_STK_SIZE 256</code>意思是设置XXX任务的堆栈大小为256*4(字&#x2F;byte</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><strong>2.字和字节</strong></p>
+<ul>
+<li><strong>字节(bit)</strong></li>
+<li>**字(Byte)**：1 byte &#x3D; 4 bits</li>
+<li>在单片机中可以简单的把<code>byte</code>理解成<code>char</code>类型或者<code>unsigned char</code>类型</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>3.钩子</strong></p>
+<ul>
+<li>ChatGPT说，FreeRTOS的钩子函数(Hooks)是一组可由用户自定义的回调函数</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>4.优先级</strong></p>
+<ul>
+<li>使用FreeRTOS最好把优先级分组选择为<code>NVIC_PriorityGroup_4</code>，寄存器的4位字节都设置为抢占优先级，这样就有 0~15 共16个抢占优先级可供选择。因为FreeRTOS的中断配置里不能处理亚优先级（排队优先级）的这种情况。</li>
+<li>任务优先级</li>
+<li>FreeRTOS的任务优先级是0最不优先，越大越优先，和中断优先级相反的哈！</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-1-中断屏蔽"><a href="#1-1-中断屏蔽" class="headerlink" title="1.1 中断屏蔽"></a>1.1 中断屏蔽</h3><ul>
+<li><code>configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</code>此宏用来设置FreeRTOS系统可以管理的最大优先级。可以自由设置，正点原子设置为5，我也设置为5。也就是说抢占优先级小于5的中断不归FreeRTOS管理。</li>
+<li><code>configMAX_SYSCALL_INTERRUPT_PRIORITY</code>此宏用来设置FreeRTOS系统可以管理的最小优先级。可以自由设置，正点原子和我都设置成15。也就是说抢占优先级大于15的中断不归FreeRTOS管理，当然STM32的优先级只有 0~15 哈。</li>
+<li>所以上述两个宏加起来的意思就是，<strong>抢占优先级为 0-4 的中断不归FreeRTOS调度，抢占优先级 5-15 的中断服从FreeRTOS的调度。</strong></li>
+<li><em>Plus: 不归FreeRTOS调度的中断，不可以调用FreeRTOS的API哦，不可以哦！打咩！</em></li>
+</ul>
+<h3 id="1-2-开关中断"><a href="#1-2-开关中断" class="headerlink" title="1.2 开关中断"></a>1.2 开关中断</h3><h3 id="1-3-临界段代码（临界区）"><a href="#1-3-临界段代码（临界区）" class="headerlink" title="1.3 临界段代码（临界区）"></a>1.3 临界段代码（临界区）</h3><h4 id="1-3-1-任务级临界段代码保护"><a href="#1-3-1-任务级临界段代码保护" class="headerlink" title="1.3.1 任务级临界段代码保护"></a>1.3.1 任务级临界段代码保护</h4><ul>
+<li>函数<code>taskENTER_CRITICAL()</code>进入临界区和<code>taskEXIT_CRITICAL()</code>退出临界区，是任务级的临界段代码保护。保护这两个函数包夹的区域不会受到中断的打扰。</li>
+<li><strong>Important1: 这两个函数是成对使用的哦！不可以只用其中一个，它们必须成双成对的出现！就是说，你调用了多少次进入临界段，你就要调用多少次退出临界段来抵消！否则中断会一直被屏蔽！</strong></li>
+<li><strong>Important2: 临界区的代码一定要精简！因为进入了临界区意味着关闭了FreeRTOS可以调度的所有中断，你不精简一点，噼里啪啦一大长串，执行好几秒，可能会导致这些中断得不到及时的响应！</strong></li>
+<li>使用场景：任务创建、硬件层初始化、重要的实时性高的代码段…</li>
+<li>任务级临界段代码保护的使用方法如下:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">testFunction</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;<br>        taskENTER_CRITICAL(); <span class="hljs-comment">// 进入临界区</span><br><br>        <span class="hljs-comment">// 你的代码段...</span><br>        <span class="hljs-comment">// 这里是临界区，代码不会受到中断的打断...</span><br><br>        taskEXIT_CRITICAL(); <span class="hljs-comment">// 退出临界区</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="1-3-2-中断级临界段代码保护"><a href="#1-3-2-中断级临界段代码保护" class="headerlink" title="1.3.2 中断级临界段代码保护"></a>1.3.2 中断级临界段代码保护</h4><ul>
+<li>函数<code>taskENTER_CRITICAL_FROM_ISR()</code>进入中断临界区和<code>taskEXIT_CRITICAL_FROM_ISR(x)</code>退出中断临界区，是中断级临界段代码保护。</li>
+<li>和任务级临界段代码保护差不多，只不过这里呢，<strong>进入中断临界区函数</strong>会返回一个Value，执行<strong>退出中断临界区函数</strong>的时候要把得到的Value传给它。Value记录的就是你屏蔽的其他的中断的优先级。<strong>反正你要记住进入中断临界段时接收这个Value，并在退出中断临界段的时候把这个Value放回去！</strong></li>
+<li><strong>Important: 也是讲究成双成对出现的！一定要注意！</strong></li>
+<li>运用场景：实时性要求最高的代码段（你看，你在中断里打开临界区，屏蔽了自己以外的所有FreeRTOS管理的中断，防止了中断嵌套的情况发生，保护在中断临界区的代码不被打扰</li>
+<li>中断级临界段代码保护的使用方法如下：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 定时器3中断服务函数 </span><br><span class="hljs-comment">// 假设定时器3的抢占优先级在FreeRTOS的调度范围内</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">TIM3_IRQHandler</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-keyword">if</span>(TIM_GetITStatus(TIM3, TIM_IT_Update) == SET)<br>    &#123;<br>        <span class="hljs-type">uint32_t</span> Status_Value = taskENTER_CRITICAL_FROM_ISR();<br><br>        <span class="hljs-comment">// 你的代码段...</span><br>        <span class="hljs-comment">// 这里是中断临界区，屏蔽所有可被FreeRTOS调度的中断...</span><br><br>        taskEXIT_CRITICAL_FROM_ISR(Status_Value);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="2-1-任务状态"><a href="#2-1-任务状态" class="headerlink" title="2.1 任务状态"></a>2.1 任务状态</h3><ul>
+<li>运行态</li>
+<li>就绪态</li>
+<li>阻塞态</li>
+<li>挂起态</li>
+</ul>
+<hr>
+<h3 id="2-2-任务的创建"><a href="#2-2-任务的创建" class="headerlink" title="2.2 任务的创建"></a>2.2 任务的创建</h3><h4 id="2-2-1-任务创建的API函数"><a href="#2-2-1-任务创建的API函数" class="headerlink" title="2.2.1 任务创建的API函数"></a>2.2.1 任务创建的API函数</h4><blockquote>
+<p>函数 **<code>xTaskCreate()</code>**，又名你会用的最多的函数。</p>
+<ul>
+<li>用于动态创建一个任务，RAM会自行从FreeRTOS的堆中分配出来。</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>xTaskCreate()</code>一览：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 返回值 pdPASS-&gt;任务创建成功 / errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY-&gt;堆内存不足，创建任务失败</span><br>BaseType_t <span class="hljs-title function_">xTaskCreate</span><span class="hljs-params">( TaskFunction_t          pxTaskCode, <span class="hljs-comment">// 任务函数</span></span><br><span class="hljs-params">                        <span class="hljs-type">const</span> <span class="hljs-type">char</span> * <span class="hljs-type">const</span>      pcName, <span class="hljs-comment">// 任务名字</span></span><br><span class="hljs-params">                        <span class="hljs-type">const</span> <span class="hljs-type">uint16_t</span>          usStackDepth, <span class="hljs-comment">// 任务堆栈大小，实际申请到的堆栈是usStackDepth的4倍</span></span><br><span class="hljs-params">                        <span class="hljs-type">void</span> * <span class="hljs-type">const</span>            pvParameters, <span class="hljs-comment">// 传递给任务函数的参数</span></span><br><span class="hljs-params">                        UBaseType_t             uxPriority, <span class="hljs-comment">// 任务优先级</span></span><br><span class="hljs-params">                        TaskHandle_t * <span class="hljs-type">const</span>    pxCreatedTask <span class="hljs-comment">// 任务句柄</span></span><br><span class="hljs-params">                        )</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2-2-2-任务删除的API函数"><a href="#2-2-2-任务删除的API函数" class="headerlink" title="2.2.2 任务删除的API函数"></a>2.2.2 任务删除的API函数</h4><blockquote>
+<p>函数 <strong><code>xTaskDelete()</code></strong></p>
+<ul>
+<li>删除一个用<code>xTaskCreate()</code>或者<code>xTaskCreateStatic()</code>创建的任务。</li>
+<li>任务被删除之后，任务不复存在，关于被删除的任务的句柄不能再被使用，除非这个任务重新创建起来。</li>
+<li>如果任务是由<code>xTaskCreate()</code>创建的（由动态方法创建），那么任务被删除以后，任务的堆栈将在<strong>空闲任务</strong>中得到<strong>释放</strong>，所以删除动态方法创建的任务以后要给空闲任务一些时间来释放空间哦！</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>xTaskDelete()</code>一览：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 无返回值</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">vTaskDelete</span><span class="hljs-params">( TaskHandle_t xTaskToDelete )</span> <span class="hljs-comment">// xTaskToDelete是要被删除的任务的任务句柄</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2-2-3-任务创建与删除的程序示例（动态方法）"><a href="#2-2-3-任务创建与删除的程序示例（动态方法）" class="headerlink" title="2.2.3 任务创建与删除的程序示例（动态方法）"></a>2.2.3 任务创建与删除的程序示例（动态方法）</h4><ul>
+<li>简单的总结分析一下此例程的流程，因为这是我们使用 FreeRTOS 写的第一个程序，很多习惯是我们后面要用到的。比如使用任务宏定义任务优先级，堆栈大小等，一般有关一个任务的东西我们的放到一起，比如任务堆栈、任务句柄、任务函数声明等，这样方便修改。这些东西可以放到一个.h 头文件里面去，只是例程里面任务数比较少，所以就直接放到 main.c 文件里面了，要是工程比较大的话最好做一个专用的头文件来管理。</li>
+</ul>
+<h4 id="2-2-4-任务创建与删除的程序示例（静态方法）"><a href="#2-2-4-任务创建与删除的程序示例（静态方法）" class="headerlink" title="2.2.4 任务创建与删除的程序示例（静态方法）"></a>2.2.4 任务创建与删除的程序示例（静态方法）</h4><ul>
+<li>和动态方法比较不同的是，想要使用静态方法，你必须自己实现两个接口函数<code>vApplicationGetIdleTaskMemory()</code>和<code>vApplicationGetTimerTaskMemory()</code></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 空闲任务任务堆栈 // 分配了静态的RAM啦</span><br><span class="hljs-type">static</span> StackType_t IdleTaskStack[configMINIMAL_STACK_SIZE];<br><span class="hljs-comment">// 空闲任务控制块</span><br><span class="hljs-type">static</span> StaticTask_t IdleTaskTCB;<br><br><span class="hljs-comment">// 定时器服务任务堆栈 // 分配了静态的RAM啦</span><br><span class="hljs-type">static</span> StackType_t TimerTaskStack[configTIMER_TASK_STACK_DEPTH];<br><span class="hljs-comment">// 定时器服务任务控制块</span><br><span class="hljs-type">static</span> StaticTask_t TimerTaskTCB;<br><br><span class="hljs-comment">// 获取空闲任务地任务堆栈和任务控制块内存，因为本例程使用的</span><br><span class="hljs-comment">// 静态内存，因此空闲任务的任务堆栈和任务控制块的内存就应该</span><br><span class="hljs-comment">// 有用户来提供，FreeRTOS提供了接口函数vApplicationGetIdleTaskMemory()</span><br><span class="hljs-comment">// 实现此函数即可。</span><br><span class="hljs-comment">// ppxIdleTaskTCBBuffer:任务控制块内存</span><br><span class="hljs-comment">// ppxIdleTaskStackBuffer:任务堆栈内存</span><br><span class="hljs-comment">// pulIdleTaskStackSize:任务堆栈大小</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">vApplicationGetIdleTaskMemory</span><span class="hljs-params">( StaticTask_t **ppxIdleTaskTCBBuffer,</span><br><span class="hljs-params">				    StackType_t **ppxIdleTaskStackBuffer,</span><br><span class="hljs-params">				    <span class="hljs-type">uint32_t</span> *pulIdleTaskStackSize)</span><br>&#123;<br>	*ppxIdleTaskTCBBuffer = &amp;IdleTaskTCB;<br>	*ppxIdleTaskStackBuffer = IdleTaskStack;<br>	*pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;<br>&#125;<br><br><span class="hljs-comment">// 获取定时器服务任务的任务堆栈和任务控制块内存</span><br><span class="hljs-comment">// ppxTimerTaskTCBBuffer:任务控制块内存</span><br><span class="hljs-comment">// ppxTimerTaskStackBuffer:任务堆栈内存</span><br><span class="hljs-comment">// pulTimerTaskStackSize:任务堆栈大小</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">vApplicationGetTimerTaskMemory</span><span class="hljs-params">(StaticTask_t **ppxTimerTaskTCBBuffer,</span><br><span class="hljs-params">				    StackType_t **ppxTimerTaskStackBuffer,</span><br><span class="hljs-params">				    <span class="hljs-type">uint32_t</span> *pulTimerTaskStackSize)</span><br>&#123;<br>	*ppxTimerTaskTCBBuffer = &amp;TimerTaskTCB;<br>	*ppxTimerTaskStackBuffer = TimerTaskStack;<br>	*pulTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-x-x-任务控制块"><a href="#2-x-x-任务控制块" class="headerlink" title="2.x.x 任务控制块"></a>2.x.x 任务控制块</h4><h4 id="2-x-x-任务堆栈"><a href="#2-x-x-任务堆栈" class="headerlink" title="2.x.x 任务堆栈"></a>2.x.x 任务堆栈</h4><hr>
+<h3 id="2-3-任务挂起和恢复"><a href="#2-3-任务挂起和恢复" class="headerlink" title="2.3 任务挂起和恢复"></a>2.3 任务挂起和恢复</h3><h4 id="2-3-1-任务挂起的API函数"><a href="#2-3-1-任务挂起的API函数" class="headerlink" title="2.3.1 任务挂起的API函数"></a>2.3.1 任务挂起的API函数</h4><blockquote>
+<p>函数 <strong><code>vTaskSuspend()</code></strong></p>
+<ul>
+<li>该函数用于将某个任务设置为挂起态，任务挂起以后就不会被运行，直到使用<code>vTaskResume()</code>或者<code>xTaskResumeFromISR()</code>结束任务的挂起态。</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>vTaskSuspend()</code>一览：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 无返回值</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">vTaskSuspend</span><span class="hljs-params">( TaskHandle_t xTaskToSuspend )</span> <span class="hljs-comment">// xTaskToSuspend将要被挂起任务的任务句柄 </span><br>                                                 <span class="hljs-comment">// 注意！如果参数为NULL，表示挂起任务自己。</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2-3-2-任务恢复的API函数"><a href="#2-3-2-任务恢复的API函数" class="headerlink" title="2.3.2 任务恢复的API函数"></a>2.3.2 任务恢复的API函数</h4><blockquote>
+<p>函数 **<code>vTaskResume()</code>**，在主程序中调用</p>
+<ul>
+<li>该函数可以也只可以将先前使用<code>vTaskSuspend()</code>函数挂起的任务恢复到就绪态。</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>vTaskResume()</code>一览：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 无返回值</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">vTaskResume</span><span class="hljs-params">( TaskHandle_t xTaskToResume )</span> <span class="hljs-comment">// 将要被恢复任务的任务句柄</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>函数 **<code>xTaskResumeFromISR()</code>**，在中断函数中调用</p>
+<ul>
+<li>该函数是<code>vTaskResume()</code>函数的中断版本，需要在中断里调用哈。</li>
+<li>该函数可以也只可以将先前使用<code>vTaskSuspend()</code>函数挂起的任务恢复到就绪态。</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>xTaskResumeFromISR()</code>一览：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 返回值：pdTRUE-&gt;恢复的任务优先级 &gt;= 当前任务的优先级，所以在退出中断函数后要进行一次上下文切换</span><br><span class="hljs-comment">// 返回值：pdFALSE-&gt;恢复的任务优先级 &lt; 当前任务的优先级，所以在退出中断函数后不需要进行一次上下文切换</span><br>BaseType_t <span class="hljs-title function_">xTaskResumeFromISR</span><span class="hljs-params">( TaskHandle_t xTaskToResume )</span> <span class="hljs-comment">// 将要被恢复任务的任务句柄</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2-3-3-任务挂起和恢复程序示例"><a href="#2-3-3-任务挂起和恢复程序示例" class="headerlink" title="2.3.3 任务挂起和恢复程序示例"></a>2.3.3 任务挂起和恢复程序示例</h4><hr>
+<h3 id="3-1-列表和列表项"><a href="#3-1-列表和列表项" class="headerlink" title="3.1 列表和列表项"></a>3.1 列表和列表项</h3><h4 id="3-1-1-列表"><a href="#3-1-1-列表" class="headerlink" title="3.1.1 列表"></a>3.1.1 列表</h4><ul>
+<li>列表，是FreeRTOS中的一个数据结构，和链表有点像，是被用做跟踪FreeRTOS中的任务的。</li>
+<li>为啥要有列表？不是已经可以创建任务运行任务了吗？我的理解是，在做一些大型项目的时候，往往要根据不同的场景执行不同的任务，有时任务比较多了，创建任务和删除任务这些操作就变得弯弯绕绕了。这个时候把任务们归类进不同的列表中，那我切换运用场景的时候，直接切换目前正在执行的列表就行啦！就不用一个一个对任务进行操作，避免了麻烦。</li>
+</ul>
+<h4 id="3-1-2-列表项"><a href="#3-1-2-列表项" class="headerlink" title="3.1.2 列表项"></a>3.1.2 列表项</h4><ul>
+<li>列表项，就是存放在列表中的项目。</li>
+<li>FreeRTOS提供了两种列表项：列表项和迷你列表项。</li>
+<li></li>
+</ul>
+<hr>
+<h3 id="4-1-调度器"><a href="#4-1-调度器" class="headerlink" title="4.1 调度器"></a>4.1 调度器</h3><blockquote>
+<p>函数 <strong><code>vTaskStartScheduler()</code></strong></p>
+<ul>
+<li>在<code>main()</code>函数里，创建好所需的任务后，即可调用<code>vTaskStartScheduler()</code>让任务开始运行吧。</li>
+</ul>
+</blockquote>
+<h3 id="4-2-空闲任务"><a href="#4-2-空闲任务" class="headerlink" title="4.2 空闲任务"></a>4.2 空闲任务</h3><blockquote>
+<ul>
+<li>调用<code>vTaskStartScheduler()</code>时候，此函数会自动创建一个名为<code>IDLE</code>的任务，这个就是空闲任务！它是FreeRTOS系统自动创建的，不需要用户手动创建。而且任务调动器启动以后必须至少有一个任务在运行中，所以这也是空闲任务存在的意义之一。</li>
+<li>空闲任务的优先级最低，是0！任务函数为<code>prvIdleTask()</code>（是啥？</li>
+<li>空闲任务的作用如下：<blockquote>
+<ul>
+<li>如果系统有任务被删除，被删除的任务的堆栈和任务控制块的内存会在空闲任务中得到释放哦！</li>
+<li>运行用户设置的空闲任务钩子函数（？啥是钩子</li>
+<li>判断是否开启低功耗tickless模式，如果开启的话还需要做相应的处理（？</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/FreeRTOS/" class="print-no-link">#FreeRTOS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>我的FreeRTOS使用指南</div>
+      <div>http://example.com/2023/12/09/MyFreeRTOSLearningGuide/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Zhang-keliang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/12/13/MyLinuxLearningGuide/" title="我的Linux驱动学习笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">我的Linux驱动学习笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/11/14/%E5%9C%A8%E5%8D%95%E7%89%87%E6%9C%BA%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%A7%BB%E6%A4%8DLua/" title="在单片机环境下移植Lua">
+                        <span class="hidden-mobile">在单片机环境下移植Lua</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
