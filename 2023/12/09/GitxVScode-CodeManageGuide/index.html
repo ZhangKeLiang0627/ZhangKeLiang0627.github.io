@@ -16,25 +16,24 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
+    <meta name="description" content="GitxVScode-CodeManageGuide | 建议有一点Git管理基础的人使用！至少你得Github有号吧，是吧！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MyRaspberryPiLearningGuide">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/12/28/MyRaspberryPiLearningGuide/index.html">
+<meta property="og:title" content="Git与VScode联合使用的源代码管理指南">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/12/09/GitxVScode-CodeManageGuide/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
+<meta property="og:description" content="GitxVScode-CodeManageGuide | 建议有一点Git管理基础的人使用！至少你得Github有号吧，是吧！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zhangkeliang0627.github.io/img/post/7.jpg">
-<meta property="article:published_time" content="2023-12-28T13:35:00.000Z">
-<meta property="article:modified_time" content="2024-01-03T18:38:18.505Z">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/img/post/3.jpg">
+<meta property="article:published_time" content="2023-12-08T16:11:00.000Z">
+<meta property="article:modified_time" content="2024-01-04T09:01:26.491Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="RaspberryPi">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zhangkeliang0627.github.io/img/post/7.jpg">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/img/post/3.jpg">
   
   
   
-  <title>MyRaspberryPiLearningGuide - Hugo@kkl</title>
+  <title>Git与VScode联合使用的源代码管理指南 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,13 +193,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/post/8.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/post/7.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="MyRaspberryPiLearningGuide"></span>
+            <span id="subtitle" data-typed-text="Git与VScode联合使用的源代码管理指南"></span>
           
         </div>
 
@@ -211,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-28 21:35" pubdate>
-          2023年12月28日 晚上
+        <time datetime="2023-12-09 00:11" pubdate>
+          2023年12月9日 凌晨
         </time>
       </span>
     
@@ -223,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.6k 字
         
       </span>
     
@@ -234,7 +233,7 @@
         
         
         
-          10 分钟
+          13 分钟
         
       </span>
     
@@ -271,118 +270,195 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">MyRaspberryPiLearningGuide</h1>
+            <h1 id="seo-header">Git与VScode联合使用的源代码管理指南</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="My-Raspberry-Pi"><a href="#My-Raspberry-Pi" class="headerlink" title="My Raspberry Pi"></a>My Raspberry Pi</h1><h1 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h1><hr>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<ul>
-<li>硬件：raspberry Pi 4B</li>
-<li>镜像版本：2022-09-22-raspios-bullseye-arm64.img</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="镜像烧录"><a href="#镜像烧录" class="headerlink" title="镜像烧录"></a>镜像烧录</h2><ul>
-<li>这步就是平常的烧录过程，推荐使用官方的烧录工具，这样前期可以排很多坑（这些坑后面我们会逐一提到）</li>
+                <h1 id="GitxVScode-CodeManageGuide"><a href="#GitxVScode-CodeManageGuide" class="headerlink" title="GitxVScode-CodeManageGuide"></a>GitxVScode-CodeManageGuide</h1><h1 id="Git与VScode联合使用的源代码管理指南"><a href="#Git与VScode联合使用的源代码管理指南" class="headerlink" title="Git与VScode联合使用的源代码管理指南"></a>Git与VScode联合使用的源代码管理指南</h1><h2 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h2><hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>建议有一点Git管理基础的人使用！至少你得Github有号吧，是吧！</li>
+<li>这些指令其实并不常用，我们只是稍作理解，剩下的交给Vscode点点点吧！</li>
 </ul>
 <hr>
-<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ul>
-<li><strong>初次登录的时，这个地方有个大坑！</strong></li>
-</ul>
-<blockquote>
-<p>最新版的树莓派系统（2022年4月以及以后发布的），<strong>没有了初始化的用户名和密码</strong>，以前用户名是pi，密码是raspberry，但是这次需要进系统之后才能设置。</p>
-</blockquote>
-<blockquote>
-<p>意思就是，你如果初次登录，如果没有用图形化界面，无法创建你的个人用户，你也无法像以前一样直接使用默认账号密码进行登录。</p>
-</blockquote>
-<blockquote>
-<p><strong>解决方法</strong>：</p>
+<h2 id="相关插件"><a href="#相关插件" class="headerlink" title="相关插件"></a>相关插件</h2><ul>
+<li><p>Git Graph</p>
 <ul>
-<li>使用官方的烧录工具，烧录的时候会让你配置初始账号密码。</li>
-<li>外接屏幕、键鼠，使用图形化界面开机配置。</li>
+<li>可以清晰地看到存储仓库的每一次提交(Commit)，每一个分支(Branch)，和每一次合并的记录，非常nice！</li>
+<li>同时可以很方便的查询每一次的记录，进行文件代码比对。</li>
 </ul>
-</blockquote>
+</li>
+<li><p>GitLens</p>
 <ul>
-<li>我们重点来了解一下第三种方法，<strong>使用串口无屏幕的登录</strong>。</li>
+<li>可以直接在源代码里看到每一行代码的更改时间！</li>
 </ul>
-<ol>
-<li>往烧录好镜像的SD卡根目录下新建一个文件<code>userconf.txt</code></li>
-<li>文件内写入<code>pi:$6$/4.VdYgDm7RJ0qM1$FwXCeQgDKkqrOU3RIRuDSKpauAbBvP11msq9X58c8Que2l1Dwq3vdJMgiZlQSbEXGaY5esVHGBNbCxKLVNqZW1</code><blockquote>
-<p>这一段意思就是告诉系统，新建一个用户<br>用户名：pi<br>密码：raspberry</p>
-</blockquote>
 </li>
-<li>最后把SD卡插回到树莓派上，重新上电，就可以用这个用户密码登录啦！</li>
-</ol>
-<h3 id="串口登录"><a href="#串口登录" class="headerlink" title="串口登录"></a>串口登录</h3><ul>
-<li><p>串口登录我们需要准备一个USB-TTL Link！</p>
-</li>
-<li><p>排针连接图（<strong>此时TypeC口朝向我们时，即USB-A口朝向右手边时</strong>）：</p>
-<blockquote>
-<p><strong>&#x2F; * * G T R * * * * * * * * * * * * * * &#x2F;</strong><br><strong>&#x2F; * * * * * * * * * * * * * * * * * * * &#x2F;</strong><br><strong>G-&gt;GND &#x2F; T-&gt;TXD &#x2F; R-&gt;RXD</strong></p>
-</blockquote>
-</li>
-<li><p>接着检查烧录好镜像的SD卡根目录下的<code>cmdline.txt</code></p>
-<blockquote>
-<p>如果没有<code>console=serial0,115200</code>就自己在最前面加上去，用一个空格隔开和其他的指令就行</p>
-</blockquote>
-</li>
-<li><p>接着修改烧录好镜像的SD卡根目录下的<code>config.txt</code></p>
-<blockquote>
-<p>在该文件的最后一行加上<code>dtoverlay=pi3-miniuart-bt</code></p>
-</blockquote>
-</li>
-<li><p>这时连接串口就会打印login页面信息啦，记得串口连接选择<strong>波特率为115200，无流控模式</strong>噢！</p>
-</li>
-<li><p>如果没有任何东西显示出来，回去逐一检查，检查硬件是不是插错啦，要<strong>Link的Tx对Pi的Rx，Link的Rx对Pi的Tx</strong>！</p>
-</li>
-</ul>
-<h3 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h3><p>树莓派初次配置SSH登录其实也挺麻烦的，下面演示一下配置步骤。</p>
+<li><p>GitHistory</p>
 <ul>
-<li><p>在烧录好镜像的SD卡根目录下新建文件<code>ssh</code>，空文件就行，命名好以后不用去动它</p>
-</li>
-<li><p>同样的在根目录下再新建一个空文件<code>wpa_supplicant.conf</code></p>
-</li>
-<li><p>使用编译器打开，我这里使用<code>Vscode</code></p>
-</li>
-<li><p>打开以后输入以下配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs conf">country=CN<br>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev<br>update_config=1<br> <br>network=&#123;<br>    ssid=&quot;EMMA&quot;<br>    psk=&quot;12345678&quot;<br>    priority=1<br>&#125;<br> <br>network=&#123;<br>    ssid=&quot;HUGO&quot;<br>    psk=&quot;12345678&quot;<br>    priority=2<br>&#125;<br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>解释一下：<br><code>ssid</code>是将要连接的wifi的名字，不能有中文！<br><code>psk</code>是将要连接的wifi的密码<br><code>priority</code>是连接的优先级，优先级数字大的wifi优先连接<br>你可以按照格式来记录多个wifi，注意优先级不要都相同。</p>
-</blockquote>
-</li>
-<li><p>上述步骤完成以后，把SD卡插回树莓派中运行，<code>ssh</code>和<code>wpa_supplicant.conf</code>文件都会自动被写入系统，写入成功后再次用电脑打开SD卡这两个文件会消失不见。如果你要添加或者修改wifi，你需要把<code>wpa_supplicant.conf</code>文件重新写一遍，重复上述操作，新的文件会自动覆盖旧的；<code>ssh</code>不用重新创建，之前创建过了就可以了。</p>
-</li>
-<li><p>重新给树莓派上电进入系统以后，你可能会发现以下问题警告<code>Wi-Fi is currently blocked by rfkill. Use raspi-config to set the country before use.</code></p>
-</li>
-<li><p>这是我们没有设置无线局域网所在国家，于是我们输入指令<code>sudo raspi-config nonint do_wifi_country CN</code>，顺利的话再输入指令<code>ifconfig</code>会查看到wlan0已经被分配了ip地址！</p>
-</li>
-<li><p>如果平时在同一局域网下我们不知道树莓派ip地址是多少，我们可以在Windows<code>win+R</code>输入cmd打开命令行，输入指令<code>ping raspberrypi -4</code>，可以查询同一局域网当中的树莓派的ip地址。</p>
-</li>
-<li><p>拿到ip地址就可以愉快的远程访问啦！</p>
-</li>
+<li>和Git Graph功能类似，细节注重点不太一样。</li>
 </ul>
-<h3 id="VNC远程桌面登录"><a href="#VNC远程桌面登录" class="headerlink" title="VNC远程桌面登录"></a>VNC远程桌面登录</h3><ul>
-<li>问题1：VNC Viewer显示<code>Cannot currently show the desktop</code></li>
-</ul>
-<blockquote>
-<p><strong>问题分析</strong>：</p>
-</blockquote>
-<p>出现这个无法显示远程桌面的问题，其实是树莓派配置分辨率的关系，树莓派默认使用了最小分辨率，然后VNC不支持这么小的，咱改一下就行。</p>
-<blockquote>
-<p><strong>解决方法</strong>：</p>
-</blockquote>
-<ul>
-<li><code>sudo raspi-config</code>打开设置界面</li>
-<li>按方向键向下选择到<code>Display Options</code></li>
-<li>接着继续选择<code>VNC Resolution</code></li>
-<li>接着选择除了<code>640x480</code>以外的分辨率</li>
-<li>然后回车确定，方向键左右选择<code>finish</code>退出，然后确认reboot重启，选择<code>yes</code></li>
-<li>最后等待重启就行啦！</li>
+</li>
 </ul>
 <hr>
-<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>请参照<strong>登录</strong>章节当中的<strong>SSH登录</strong>！</p>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul>
+<li><strong>提交(Commit)</strong><ul>
+<li><code>git add .</code>添加所有被修改文件到暂存更改区</li>
+<li><code>git commit -m &quot;massage&quot;</code> 提交暂存更改区的内容作为一个新版本，<code>massage</code>为该版本的关键字</li>
+<li><code>-m</code>的作用就是可以不弹窗直接写关键字，如果你只输入<code>git commit</code>就会弹出一个窗口让你填写该版本的关键字。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>这个操作我们使用VScode自带的源代码管理来完成。<br>暂存我们所需的修改之后点击提交，接着会跳转到<code>COMMIT_EDITMSG</code>文件页面，顾名思义就是提交编辑信息。<br>你可以在这个文件最顶部写一些你这次提交的一些消息备注。写完保存，关掉这个文件页面，即可完成一次提交！</p>
+</blockquote>
+<ul>
+<li><strong>推送(Push)</strong></li>
+</ul>
+<blockquote>
+<p>这个操作需要我们的VScode关联自己的Github仓库后才可以使用。<br>提交之后，提交记录会暂存在我们本地的仓库内，如果想要把提交记录推送至Github，我们只需要在VScode的源代码管理里选择推送即可。<br>如果你Github没有创建相关的仓库，VScode也会弹窗让你创建的！</p>
+</blockquote>
+<ul>
+<li><strong>签出到(Checkout)</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><code>git checkout branch_name</code>切换分支。 </li>
+<li>切换分支的时候要保证当前暂存区没有需要修改的文件哦！可以用<code>git status</code>确保现在的状态是<code>clean</code>，否则就会切换分支失败了。</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>版本回退(Reset)</strong></li>
+</ul>
+<blockquote>
+<p>有3种常用的回退方式，分别是<code>soft</code>, <code>mixed</code>, <code>hard</code></p>
+</blockquote>
+<blockquote>
+<p>1.<code>git reset --soft &lt;Hash&gt;</code>（这里<code>&lt;Hash&gt;</code>是你的版本号哈！<br><code>soft</code>回退方式只会把Head指针往回指到你回退的版本，然后你仓库里的文件不会发生任何的增删，状态大概就是你已经commit了，但是没有push的状态。（？不知道理解的对不对</p>
+</blockquote>
+<blockquote>
+<p>2.<code>git reset --mixed &lt;Hash&gt;</code><br><code>mixed</code>回退方式，会把Head指针往回指到我们希望回退到的版本，然后仓库里的文件也不会发生任何的增删（暂时），为什么说是暂时呢？因为它把你这个回退版本之后所有的commit都放回了暂存更改区，你就可以在暂存更改区里决定要恢复什么文件，恢复什么代码啦！</p>
+</blockquote>
+<blockquote>
+<p>3.<code>git reset --hard &lt;Hash&gt;</code><br><code>hard</code>回退方式，会把Head指针往回指到我们希望回退到的版本，然后该版本号以后的版本统统都会不见使用<code>git log</code>时就看不见当前回退版本以后的版本号了（所以要谨慎！</p>
+<ul>
+<li>这种回退方式会简单粗暴的把你本地仓库回退版本的什么文件啊什么代码原封不动地一字不拉地归还它的原样！</li>
+<li>当然，你仍然可以通过<code>git reflog</code>找回从前的版本号，然后使用<code>git reset --hard &lt;Hash&gt;</code>跳回去，<strong>理论上，你的代码不会丢，</strong> nice！</li>
+<li><code>git reset --hard HEAD^</code>表示硬回退到<strong>上一个</strong>版本</li>
+<li>同理<code>HEAD^^</code>表示<strong>上上个</strong>版本，<code>HEAD^^^</code>表示<strong>上上上个</strong>版本，而且你也可以用<code>HEAD~3</code>表示<strong>上上上个</strong>版本噢！</li>
+</ul>
+</blockquote>
+<h2 id="辅助操作"><a href="#辅助操作" class="headerlink" title="辅助操作"></a>辅助操作</h2><h3 id="记录查看"><a href="#记录查看" class="headerlink" title="记录查看"></a>记录查看</h3><ul>
+<li><code>git log</code></li>
+</ul>
+<blockquote>
+<ul>
+<li><code>git log</code>用来查看commit提交历史记录。</li>
+<li><code>git log --graph</code>这条命令使用了就会有优雅的树状图可以看啦（也不算是树状图，反正就是图形化显示</li>
+<li>在终端按<code>Q</code>键退出日志哦！</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>git reflog</code></li>
+</ul>
+<blockquote>
+<p>用来查看Git仓库的所有git命令操作的历史记录，比如你用过的<code>reset</code>, <code>checkout</code>, <code>commit</code>, <code>push</code> 的记录都能在这里看到。</p>
+</blockquote>
+<ul>
+<li><code>git status</code></li>
+</ul>
+<blockquote>
+<p>用来查看本地仓库状态。</p>
+</blockquote>
+<h3 id="分支查找"><a href="#分支查找" class="headerlink" title="分支查找"></a>分支查找</h3><ul>
+<li><code>git branch</code></li>
+</ul>
+<blockquote>
+<ul>
+<li><code>git branch</code>用来查看当前所在的分支。</li>
+<li><code>git branch -v</code>用来查看当前所在分支最后一次提交的版本号和版本关键字。</li>
+<li><code>git branch branch_name</code>用来创建名字为<code>branch_name</code>的新分支。</li>
+</ul>
+</blockquote>
+<h3 id="远程仓库克隆"><a href="#远程仓库克隆" class="headerlink" title="远程仓库克隆"></a>远程仓库克隆</h3><ul>
+<li><code>git clone</code></li>
+</ul>
+<blockquote>
+<ul>
+<li><code>git clone &lt;address&gt;</code>老熟人了，打开一个文件夹，打开它的命令行窗口，你就敲上面的命令，<code>&lt;address&gt;</code>是被克隆的远程仓库的地址。就这个命令可以完成目前所有开源项目90%的克隆。</li>
+<li><code>git clone --recursive &lt;address&gt;</code>剩下的10%就比较专业一点，可能人家远程代码库里运用了别人的子项目，你直接克隆下来就是个空文件夹，所以你就需要用这个命令来<strong>递归</strong>克隆！把别人子项目的内容也可以克隆下来！</li>
+</ul>
+</blockquote>
+<h3 id="本地仓库初始化"><a href="#本地仓库初始化" class="headerlink" title="本地仓库初始化"></a>本地仓库初始化</h3><ul>
+<li><code>git init</code></li>
+</ul>
+<blockquote>
+<p>在该文件夹下初始化git仓库</p>
+</blockquote>
+<h3 id="本地仓库全局配置"><a href="#本地仓库全局配置" class="headerlink" title="本地仓库全局配置"></a>本地仓库全局配置</h3><ul>
+<li><code>git config</code></li>
+</ul>
+<blockquote>
+<p>在初始化完成Git本地仓库后，开始正式使用前，是需要有一些全局设置的，如用户名、邮箱等</p>
+<ul>
+<li><code>git config --global user.name &quot;your name&quot;</code>用于设置全局用户名</li>
+<li><code>git config --global uer.email &quot;your email&quot;</code>用于设置全局邮箱<br>其中，<code>--global</code>指定全局配置，不使用该参数，则为当前所在仓库配置。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>我的Github用户名和邮箱：</p>
+</blockquote>
+<script>
+    function checkPassword() {
+      var password = document.getElementById("password").value;
+      if (password === "0627") {
+        document.getElementById("user").style.display = "block";
+      } else {
+        alert("不准偷看！！！");
+        document.getElementById("user").style.display = "none";
+      }
+    }
+</script>
+
+<a title="哒咩">
+  口令是什么？
+  <input type="password" id="password">
+  <button onclick="checkPassword()" style="border-radius: 5px;">确认</button>
+  <div id="user" style="display: none;">
+    <a>俺滴Github用户名：</a>
+    <a>ZhangKeLiang0627</a>
+    <p></p>
+    <a>俺滴Github邮箱：</a>
+    <a>111654293+ZhangKeLiang0627@users.noreply.github.com</a>
+    <p></p>
+  </div>
+</a>
+
+<style>
+  input[type="password"] {
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  #user {
+    display: none;
+    background-color: #f4f4f4;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<blockquote>
+<p>注意我的不是你的哦🫸</p>
+</blockquote>
+<blockquote>
+<p>于是可以如下配置：<br><code>git config --global user.name &quot;xxx&quot;</code><br><code>git config --global uer.email &quot;xxx.example.com&quot;</code></p>
+</blockquote>
+<blockquote>
+<p>可以输入以下两条指令，检查用户名和邮箱是否输入正确。<br><code>git config user.name</code><br><code>git config user.email</code></p>
+</blockquote>
 
                 
               </div>
@@ -416,9 +492,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
-      
-        <a href="/tags/RaspberryPi/" class="print-no-link">#RaspberryPi</a>
+        <a href="/tags/Git/" class="print-no-link">#Git</a>
       
     </div>
   
@@ -430,8 +504,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>MyRaspberryPiLearningGuide</div>
-      <div>https://zhangkeliang0627.github.io/2023/12/28/MyRaspberryPiLearningGuide/</div>
+      <div>Git与VScode联合使用的源代码管理指南</div>
+      <div>https://zhangkeliang0627.github.io/2023/12/09/GitxVScode-CodeManageGuide/</div>
     </div>
     <div class="license-meta">
       
@@ -443,7 +517,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月28日</div>
+          <div>2023年12月9日</div>
         </div>
       
       
@@ -475,9 +549,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/01/hello-world/" title="Power By Hugo@kkl">
+                      <a href="/2023/12/09/MyFreeRTOSLearningGuide/" title="我的FreeRTOS使用指南">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Power By Hugo@kkl</span>
+                        <span class="hidden-mobile">我的FreeRTOS使用指南</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -485,8 +559,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/13/MyLinuxLearningGuide/" title="我的Linux驱动学习笔记">
-                        <span class="hidden-mobile">我的Linux驱动学习笔记</span>
+                      <a href="/2023/11/14/%E5%9C%A8%E5%8D%95%E7%89%87%E6%9C%BA%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%A7%BB%E6%A4%8DLua/" title="在单片机环境下移植Lua">
+                        <span class="hidden-mobile">在单片机环境下移植Lua</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
