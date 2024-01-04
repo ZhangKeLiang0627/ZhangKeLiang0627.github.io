@@ -16,24 +16,25 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="😆😆😆欢迎页面，祝生活愉快！">
+    <meta name="description" content="正点原子，俺的伙伴？！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Power By Hugo@kkl">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/01/01/hello-world/index.html">
+<meta property="og:title" content="我的Linux驱动学习笔记">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/12/13/MyLinuxLearningGuide/MyLinuxLearningGuide/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="😆😆😆欢迎页面，祝生活愉快！">
+<meta property="og:description" content="正点原子，俺的伙伴？！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zhangkeliang0627.github.io/img/welcome/index.jpg">
-<meta property="article:published_time" content="2024-01-01T02:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-04T07:40:55.366Z">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/img/post/5.jpg">
+<meta property="article:published_time" content="2023-12-13T07:38:00.000Z">
+<meta property="article:modified_time" content="2024-01-03T18:38:20.023Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="SayHi">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="驱动">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zhangkeliang0627.github.io/img/welcome/index.jpg">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/img/post/5.jpg">
   
   
   
-  <title>Power By Hugo@kkl - Hugo@kkl</title>
+  <title>我的Linux驱动学习笔记 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,13 +194,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/welcome/welcome.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/post/6.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Power By Hugo@kkl"></span>
+            <span id="subtitle" data-typed-text="我的Linux驱动学习笔记"></span>
           
         </div>
 
@@ -210,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-01 10:00" pubdate>
-          2024年1月1日 上午
+        <time datetime="2023-12-13 15:38" pubdate>
+          2023年12月13日 下午
         </time>
       </span>
     
@@ -222,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11 字
+          1.1k 字
         
       </span>
     
@@ -233,7 +234,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -270,12 +271,128 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Power By Hugo@kkl</h1>
+            <h1 id="seo-header">我的Linux驱动学习笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><h1 id="Welcome-to-MyBlog"><a href="#Welcome-to-MyBlog" class="headerlink" title="Welcome to MyBlog"></a>Welcome to MyBlog</h1><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><h3 id="Wallpaper-Source-kelvinLi"><a href="#Wallpaper-Source-kelvinLi" class="headerlink" title="Wallpaper Source: kelvinLi"></a>Wallpaper Source: kelvinLi</h3>
+                <h1 id="我的Linux驱动学习笔记"><a href="#我的Linux驱动学习笔记" class="headerlink" title="我的Linux驱动学习笔记"></a>我的Linux驱动学习笔记</h1><h1 id="MyLinuxLearningGuide"><a href="#MyLinuxLearningGuide" class="headerlink" title="MyLinuxLearningGuide"></a>MyLinuxLearningGuide</h1><h2 id="By-kkl"><a href="#By-kkl" class="headerlink" title="By @kkl"></a>By @kkl</h2><hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>话不多说，直接开整</li>
+</ul>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="配网"><a href="#配网" class="headerlink" title="配网"></a>配网</h2><ul>
+<li><p><code>cd /etc/</code>去到此文件夹当中</p>
+</li>
+<li><p>编写<code>wpa_supplicant.conf</code></p>
+<blockquote>
+<p>ctrl_interface&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant<br>update_config&#x3D;1</p>
+<p>network&#x3D;{<br> ssid&#x3D;”MagicEyes”<br> psk&#x3D;”12345678”<br>}</p>
+</blockquote>
+</li>
+<li><p><code>vi wpa_supplicant.conf</code>用vim打开这个文件配置你的网络</p>
+</li>
+<li><p><code>wpa_supplicant -D wext -c /etc/wpa_supplicant.conf -i wlan0 &amp;</code></p>
+</li>
+<li><p><code>udhcpc -i wlan0</code></p>
+</li>
+<li><p>更加详细的内容在<strong>驱动开发指南P1765</strong></p>
+</li>
+</ul>
+<h2 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h2><h3 id="内核编译"><a href="#内核编译" class="headerlink" title="内核编译"></a>内核编译</h3><ul>
+<li><p><code>Uboot</code>和内核的编译步骤：</p>
+<blockquote>
+<ol>
+<li><code>distclean</code>清理工程</li>
+<li><code>make xxx_defconfig</code>使用默认配置文件配置工程</li>
+<li><code>make menuconfig</code>打开配置界面，进行配置</li>
+<li><code>make -j12</code>编译所有文件，<code>-j12</code>表示十二核编译</li>
+</ol>
+<ul>
+<li>编译的时间会比较长</li>
+</ul>
+</blockquote>
+</li>
+<li><p>Plus:</p>
+<blockquote>
+<p><strong>内核的解压和编译绝对不可以在共享文件夹里进行！</strong><br>否则会出现无法软链接的情况，比如<code>ln: failed to create symbolic link &#39;./dt-bindings&#39;: Operation not permitted</code><br>因为共享文件夹是windows和linux的的共享目录，而windows下的文件系统，不支持linux的<code>symbolic link</code>!</p>
+</blockquote>
+</li>
+<li><p>这里的编译的内核选用<code>linux-imx-4.1.15-2.1.0-g3dc0a4b-v2.7.tar.bz2</code>即正点原子imx6ull的出厂镜像</p>
+</li>
+<li><p>解压方法：<code>tar -vxjf xxx.tar.bz2</code></p>
+</li>
+<li><p>注意！编译内核时，请先安装Poky交叉编译工具链（具体参照<strong>用户快速体验P115</strong>）</p>
+</li>
+<li><p>最后请使用<strong>04、正点原子MFG_TOOL出厂固件烧录工具</strong>进行开发板的烧录哦！</p>
+</li>
+</ul>
+<h2 id="驱动开发"><a href="#驱动开发" class="headerlink" title="驱动开发"></a>驱动开发</h2><ul>
+<li>Linux驱动有<strong>两种运行方式</strong>，<strong>第一种</strong>就是将驱动<strong>编译进Linux内核</strong>中，这样当Linux内核启动的时候就会自动运行驱动程序。<strong>第二种</strong>就是<strong>将驱动编译成模块</strong>(Linux下模块扩展名为.ko)，在Linux内核启动以后使用<code>insmod</code>或<code>modprobe</code>命令加载驱动模块，使用<code>rmmod</code>或<code>modprobe -r</code>命令卸载驱动模块。</li>
+</ul>
+<h3 id="驱动模块的加载与卸载"><a href="#驱动模块的加载与卸载" class="headerlink" title="驱动模块的加载与卸载"></a>驱动模块的加载与卸载</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
+<li>Linux的驱动程序可以编译到<code>kernel</code>里面（也就是<code>zImage</code>），也可以编译为模块<code>.ko</code>。测试的时候只需要加载<code>.ko</code>模块就可以。</li>
+<li>编写驱动时的注意事项<blockquote>
+<ul>
+<li>编译驱动的时候需要用到Linux内核源码！因此要解压缩Linux内核源码，编译Linux内核源码！编译完成会得到<code>zImage</code>和<code>.dtb</code>设备树。需要使用编译后得到的<code>zImage</code>和<code>.dtb</code>启动系统。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="驱动模块的Makefile"><a href="#驱动模块的Makefile" class="headerlink" title="驱动模块的Makefile"></a>驱动模块的Makefile</h4><ul>
+<li>Makefile的通用写法<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Makefile">KERNELDIR := /home/embedfire/kl_files/linux/IMX6ULL/linux<br>CURRENT_PATH := <span class="hljs-variable">$(<span class="hljs-built_in">shell</span> pwd)</span><br>obj-m := chrdevbase.o<br><br>build : kernel_modules<br><br><span class="hljs-section">kernel_modules:</span><br>	<span class="hljs-variable">$(MAKE)</span> -C <span class="hljs-variable">$(KERNELDIR)</span> M=<span class="hljs-variable">$(CURRENT_PATH)</span> modules<br><span class="hljs-section">clean:</span><br>	<span class="hljs-variable">$(MAKE)</span> -C <span class="hljs-variable">$(KERNELDIR)</span> M=<span class="hljs-variable">$(CURRENT_PATH)</span> clean<br></code></pre></td></tr></table></figure></li>
+<li>注意要修改<code>c_cpp_properties.json</code>当中的路径哦！（修改了你就可以写代码的时候有补全，不管它对模块的编译和应用没影响）</li>
+</ul>
+<h4 id="驱动模块的编译"><a href="#驱动模块的编译" class="headerlink" title="驱动模块的编译"></a>驱动模块的编译</h4><ul>
+<li><p><code>make</code>在Makefile存放的目录下执行该命令进行编译，编译完成后生成<code>.ko</code>模块</p>
+</li>
+<li><p><code>make clean</code>用于清理编译生成的模块等文件</p>
+</li>
+<li><p>请在使用<code>make</code>命令之前先使用此命令选择交叉工具链<code>source /opt/fsl-imx-x11/4.1.15-2.1.0/environment-setup-cortexa7hf-neon-poky-linux-gnueabi</code></p>
+</li>
+<li><p>编译应用<code>arm-linux-gnueabihf-gcc chrdevbaseApp.c -o chrdevbaseApp</code></p>
+</li>
+</ul>
+<h4 id="模块加载和卸载命令"><a href="#模块加载和卸载命令" class="headerlink" title="模块加载和卸载命令"></a>模块加载和卸载命令</h4><blockquote>
+<p>模块的加载</p>
+</blockquote>
+<ul>
+<li><code>insmod</code>具体用法：<code>insmod xxx.ko</code></li>
+<li><code>modprobe</code>具体用法：<code>modprobe xxx</code>，记得使用之前用<code>depmod</code>刷新当前的模块变量哦！</li>
+<li>加载完成可以使用<code>cat \proc\devices</code>查看模块的设备号哦！</li>
+</ul>
+<blockquote>
+<p>模块的卸载</p>
+</blockquote>
+<ul>
+<li><code>rmmod</code>具体用法：<code>rmmod xxx.ko</code></li>
+<li><code>modprobe -r</code>具体用法：<code>modprobe -r xxx</code></li>
+</ul>
+<hr>
+<h2 id="设备树"><a href="#设备树" class="headerlink" title="设备树"></a>设备树</h2><hr>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="打开有管理员权限的文件管理器"><a href="#打开有管理员权限的文件管理器" class="headerlink" title="打开有管理员权限的文件管理器"></a>打开有管理员权限的文件管理器</h3><ul>
+<li><code>sudo nautilus</code></li>
+</ul>
+<h3 id="删除非空文件夹"><a href="#删除非空文件夹" class="headerlink" title="删除非空文件夹"></a>删除非空文件夹</h3><ul>
+<li><code>rm -r xxx</code>-r的意思就是递归操作，将会删除该文件夹下的所有子文件夹和文件！</li>
+</ul>
+<h3 id="查看dmesg日志信息"><a href="#查看dmesg日志信息" class="headerlink" title="查看dmesg日志信息"></a>查看dmesg日志信息</h3><ul>
+<li><code>dmesg</code>把从启动开始到当前是所有日志都打印出来</li>
+<li><code>dmesg | tail</code>默认打印最近的十条日志</li>
+<li><code>dmesg | tail -20</code>打印最近的二十条日志</li>
+</ul>
+<h3 id="挂载SD卡"><a href="#挂载SD卡" class="headerlink" title="挂载SD卡"></a>挂载SD卡</h3><ol>
+<li>通过<code>fdisk -l</code>确定sd卡的存在</li>
+<li>创建一个空文件夹，我选择<code>/mnt/mmc</code></li>
+<li>挂载sd卡到新创建的空文件夹<code>mount /dev/mmcblk0p1 /mnt/mmc</code></li>
+</ol>
+<ul>
+<li>卸载可以使用<code>umount /mnt/mmc</code>，注意卸载的时候你所在的当前目录不能是&#x2F;mnt，否则会卸载失败的。</li>
+</ul>
+<h3 id="复制非空文件夹"><a href="#复制非空文件夹" class="headerlink" title="复制非空文件夹"></a>复制非空文件夹</h3><ul>
+<li><code>cp -r /home/packageA/* /home/packageB/</code> 或者<code>cp /home/packageA/* /home/packageB/</code>是把packageA中的文件都复制到packageB中</li>
+<li><code>cp -r /home/packageA/ /home/cp/packageB/</code> 是直接把packageA文件夹复制到packageB中</li>
+</ul>
+
                 
               </div>
             
@@ -283,11 +400,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/SayHi/" class="print-no-link">#SayHi</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+        <a href="/tags/%E9%A9%B1%E5%8A%A8/" class="print-no-link">#驱动</a>
       
     </div>
   
@@ -299,8 +439,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Power By Hugo@kkl</div>
-      <div>https://zhangkeliang0627.github.io/2024/01/01/hello-world/</div>
+      <div>我的Linux驱动学习笔记</div>
+      <div>https://zhangkeliang0627.github.io/2023/12/13/MyLinuxLearningGuide/MyLinuxLearningGuide/</div>
     </div>
     <div class="license-meta">
       
@@ -312,7 +452,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月1日</div>
+          <div>2023年12月13日</div>
         </div>
       
       
@@ -344,12 +484,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/12/28/MyRaspberryPiLearningGuide/MyRaspberryPiLearningGuide/" title="MyRaspberryPiLearningGuide">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MyRaspberryPiLearningGuide</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/28/MyRaspberryPiLearningGuide/" title="MyRaspberryPiLearningGuide">
-                        <span class="hidden-mobile">MyRaspberryPiLearningGuide</span>
+                      <a href="/2023/12/09/MyFreeRTOSLearningGuide/MyFreeRTOSLearningGuide/" title="我的FreeRTOS使用指南">
+                        <span class="hidden-mobile">我的FreeRTOS使用指南</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
