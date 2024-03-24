@@ -1,0 +1,764 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sys/myicon.png">
+  <link rel="icon" href="/img/sys/myicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Zhang-keliang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="kkl | 这其实是一个连续剧的第一集！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESP32S3接入百度在线语音识别">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/03/24/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/index.html">
+<meta property="og:site_name" content="Hugo@kkl">
+<meta property="og:description" content="kkl | 这其实是一个连续剧的第一集！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image.png">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image-1.png">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image-2.png">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image-3.png">
+<meta property="article:published_time" content="2024-03-24T12:05:00.000Z">
+<meta property="article:modified_time" content="2024-03-24T12:11:51.534Z">
+<meta property="article:author" content="Zhang-keliang">
+<meta property="article:tag" content="ESP32">
+<meta property="article:tag" content="语音识别">
+<meta property="article:tag" content="Mic">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image.png">
+  
+  
+  
+  <title>ESP32S3接入百度在线语音识别 - Hugo@kkl</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zhangkeliang0627.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hugo@kkl&#39;s</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/sys/tag.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="ESP32S3接入百度在线语音识别"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-24 20:05" pubdate>
+          2024年3月24日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">ESP32S3接入百度在线语音识别</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="ESP32S3接入百度在线语音识别"><a href="#ESP32S3接入百度在线语音识别" class="headerlink" title="ESP32S3接入百度在线语音识别"></a>ESP32S3接入百度在线语音识别</h1><h2 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h2><hr>
+<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>使用ESP32S3接入百度智能云实现在线语音识别，记录中间遇到的问题和实现流程。</p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
+<li>主控：ESP32S3N16R8</li>
+<li>平台：Arduino + PlatformIO + VScode</li>
+</ul>
+<h2 id="二、步骤"><a href="#二、步骤" class="headerlink" title="二、步骤"></a>二、步骤</h2><ol>
+<li>在百度智能云控制端选择<code>语音识别</code>并创建应用获取<code>API Key</code>和<code>Secret Key</code></li>
+<li>根据创建应用生成的<code>API Key</code>和<code>Secret Key</code>来获取<code>access_token</code></li>
+<li>采集音频数据，打包数据，通过http协议将打包的数据（payload）POST请求发送语音识别的API上</li>
+<li>接收返回的数据（response）</li>
+</ol>
+<h2 id="三、实现"><a href="#三、实现" class="headerlink" title="三、实现"></a>三、实现</h2><h3 id="1-创建语音识别应用"><a href="#1-创建语音识别应用" class="headerlink" title="1. 创建语音识别应用"></a>1. 创建语音识别应用</h3><p>登录百度智能云的云账号，选择语音识别，创建一个新应用。<strong>（注意：分清楚百度账号还是云账号，这两个不一样的）</strong><br>百度智能云：<a target="_blank" rel="noopener" href="https://login.bce.baidu.com/?redirect=https://console.bce.baidu.com/ai/#/ai/speech/app/list">https://login.bce.baidu.com/?redirect=https%3A%2F%2Fconsole.bce.baidu.com%2Fai%2F#/ai/speech/app/list</a></p>
+<p><img src="/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image.png" srcset="/img/loading.gif" lazyload><br><img src="/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image-1.png" srcset="/img/loading.gif" lazyload><br><img src="/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image-2.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="2-根据创建应用生成的API-Key和Secret-Key来获取access-token"><a href="#2-根据创建应用生成的API-Key和Secret-Key来获取access-token" class="headerlink" title="2. 根据创建应用生成的API Key和Secret Key来获取access_token"></a>2. 根据创建应用生成的API Key和Secret Key来获取access_token</h3><p>创建好应用，在应用列表里会出现你刚刚创建的应用，当然<code>API Key</code>和<code>Secret Key</code>也有啦</p>
+<p><img src="/images/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/image-3.png" srcset="/img/loading.gif" lazyload></p>
+<p>有了<code>API Key</code>和<code>Secret Key</code>，下面我们可以在ESP32S3上进行GET请求得到access_token的代码！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/* 获取token */</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">gainToken</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>   </span><br><span class="hljs-function"></span>&#123;<br>    HTTPClient http_client; <span class="hljs-comment">// #include &lt;HTTPClient.h&gt;</span><br>    <span class="hljs-comment">//注意，要把下面网址中的your_apikey和your_secretkey替换成自己的API Key和Secret Key</span><br>    http_client.<span class="hljs-built_in">begin</span>(<span class="hljs-string">&quot;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=your_apikey&amp;client_secret=your_secretkey&quot;</span>);<br>    <span class="hljs-type">int</span> httpResponseCode = http_client.<span class="hljs-built_in">GET</span>();<br><br>    <span class="hljs-keyword">if</span>(httpResponseCode == HTTP_CODE_OK)<br>    &#123;<br>        String response = http_client.<span class="hljs-built_in">getString</span>();<br>        Serial.<span class="hljs-built_in">println</span>(response);<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        Serial.<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;[HTTP] GET... failed, error: %s\n&quot;</span>, http_client.<span class="hljs-built_in">errorToString</span>(httpResponseCode).<span class="hljs-built_in">c_str</span>());<br>    &#125;<br>    http_client.<span class="hljs-built_in">end</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>请求成功会返回如下数据，我们主要关注<code>access_token</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;refresh_token&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;25.b55fe1d287227ca97aab219bb249b8ab.315360000.1798284651.282335-8574074&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;expires_in&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2592000</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;scope&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;public wise_adapt&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;session_key&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;9mzdDZXu3dENdFZQurfg0Vz8slgSgvvOAUebNFzyzcpQ5EnbxbF+hfG9DQkpUVQdh4p6HbQcAiz5RmuBAja1JJGgIdJI&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;access_token&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;24.6c5e1ff107f0e8bcef8c46d3424a0e78.2592000.1485516651.282335-8574074&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;session_secret&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;dfac94a3489fe9fca7c3221cbf7525ff&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li><code>access_token</code>对应的值就是可用的token，每次申请的<code>token</code>有效期限为30天，过期就需要重新申请。所以咱定时更新<code>access_token</code>就行，不用每次调用语音识别都申请一遍。</li>
+</ul>
+<h3 id="3-采集数据，通过POST请求发送到语音识别API上"><a href="#3-采集数据，通过POST请求发送到语音识别API上" class="headerlink" title="3. 采集数据，通过POST请求发送到语音识别API上"></a>3. 采集数据，通过POST请求发送到语音识别API上</h3><p>数据上传POST的方式有两种：JSON格式和RAW格式。这里我们使用JSON格式，下图为JSON格式上传的一些必要的参数说明：</p>
+<table>
+<thead>
+<tr>
+<th align="center">字段名</th>
+<th align="center">类型</th>
+<th align="center">可需</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">format</td>
+<td align="center">String</td>
+<td align="center">必填</td>
+<td align="left">语音文件的格式，pcm&#x2F;wav&#x2F;amr&#x2F;m4a。不区分大小写。推荐pcm文件！</td>
+</tr>
+<tr>
+<td align="center">rate</td>
+<td align="center">int</td>
+<td align="center">必填</td>
+<td align="left">采样率，16000、8000，固定值</td>
+</tr>
+<tr>
+<td align="center">channel</td>
+<td align="center">int</td>
+<td align="center">必填</td>
+<td align="left">声道数，仅支持单声道，请填固定值1</td>
+</tr>
+<tr>
+<td align="center">cuid</td>
+<td align="center">String</td>
+<td align="center">必填</td>
+<td align="left">用户唯一标识，用来区分用户，计算UV值。建议填写能区分用户的机器MAC地址或IMEI码，长度为60字符以内。</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">String</td>
+<td align="center">必填</td>
+<td align="left">开放平台获取到的开发者[access_token]</td>
+</tr>
+<tr>
+<td align="center">dev_pid</td>
+<td align="center">int</td>
+<td align="center">选填</td>
+<td align="left">不填写lan参数生效，都不填写就默认1537（普通话，输入法模型）</td>
+</tr>
+<tr>
+<td align="center">lm_id</td>
+<td align="center">int</td>
+<td align="center">选填</td>
+<td align="left">自训练平台模型id，填dev_id &#x3D; 8001 或 8002 生效</td>
+</tr>
+<tr>
+<td align="center">lan</td>
+<td align="center">String</td>
+<td align="center">选填，废弃参数</td>
+<td align="left">历史兼容参数，已不再使用</td>
+</tr>
+<tr>
+<td align="center">speech</td>
+<td align="center">String</td>
+<td align="center">必填</td>
+<td align="left">本地语音文件的二进制语音数据，需要进行 base64 编码，与len参数一起使用</td>
+</tr>
+<tr>
+<td align="center">len</td>
+<td align="center">int</td>
+<td align="center">必填</td>
+<td align="left">本地语音文件的字节数，单位是字节（byte）</td>
+</tr>
+</tbody></table>
+<p>图中对数据类型和内容说的很明确了，只需要按照这个格式打包好数据然后发送就行，下面是ESP32S3的具体实现代码。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">char</span> payload[<span class="hljs-number">160000</span>];<br><br><span class="hljs-comment">/* 在线语音识别 */</span><br><span class="hljs-function">String <span class="hljs-title">speechRecognition</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span><br><span class="hljs-function"></span>&#123;<br>  HTTPClient http_client; <span class="hljs-comment">// #include &lt;HTTPClient.h&gt;</span><br><br>  _LOG(<span class="hljs-string">&quot;[Recognition] Start recognition!\r\n&quot;</span>);<br><br>  result = Mic.<span class="hljs-built_in">record</span>(_rawData, _samples); <span class="hljs-comment">// 录制声音</span><br>  _LOG(<span class="hljs-string">&quot;[Mic] record:%s\r\n&quot;</span>, (result == <span class="hljs-literal">true</span> ? <span class="hljs-string">&quot;true&quot;</span> : <span class="hljs-string">&quot;false&quot;</span>));<br>  <span class="hljs-keyword">while</span> (Mic.<span class="hljs-built_in">isRecording</span>()); <span class="hljs-comment">// 当录制完成时</span><br>  _LOG(<span class="hljs-string">&quot;[Mic] record is done!\r\n&quot;</span>);<br><br>  <span class="hljs-built_in">memset</span>(payload, <span class="hljs-string">&#x27;\0&#x27;</span>, <span class="hljs-built_in">strlen</span>(payload)); <span class="hljs-comment">// 将数组清空</span><br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;&#123;&quot;</span>);<br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;format\&quot;:\&quot;pcm\&quot;,&quot;</span>);<br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;rate\&quot;:16000,&quot;</span>); <span class="hljs-comment">// 采样率，如果采样率改变了，记得修改该值，只有16000、8000两个固定采样率</span><br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;dev_pid\&quot;:1537,&quot;</span>); <span class="hljs-comment">// 中文普通话</span><br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;channel\&quot;:1,&quot;</span>); <span class="hljs-comment">// 单声道</span><br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;cuid\&quot;:\&quot;hugozkl\&quot;,&quot;</span>); <span class="hljs-comment">// 识别码，随便打几个字符，但最好唯一</span><br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;token\&quot;:\&quot;24.ba06cf95edb0b0aee7bfb016209e5948.2592000.1713715897.282335-57684431\&quot;,&quot;</span>); <span class="hljs-comment">// token，这里需要修改成自己申请到的token</span><br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;len\&quot;:65536,&quot;</span>); <span class="hljs-comment">// 数据长度，如果传输的数据长度改变了，记得修改该值，该值是ADC采集的数据字节数，不是base64编码后的长度</span><br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;speech\&quot;:\&quot;&quot;</span>);<br>  <span class="hljs-built_in">strcat</span>(payload, base64::<span class="hljs-built_in">encode</span>((<span class="hljs-type">uint8_t</span> *)_rawData, <span class="hljs-number">65536</span>).<span class="hljs-built_in">c_str</span>()); <span class="hljs-comment">// base64编码数据 // #include &quot;base64.h&quot;</span><br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;\&quot;&quot;</span>);<br>  <span class="hljs-built_in">strcat</span>(payload, <span class="hljs-string">&quot;&#125;&quot;</span>);<br><br>  <span class="hljs-comment">// HTTP POST</span><br>  <span class="hljs-type">int</span> httpResponseCode;<br>  http_client.<span class="hljs-built_in">begin</span>(<span class="hljs-string">&quot;http://vop.baidu.com/server_api&quot;</span>);<br>  http_client.<span class="hljs-built_in">addHeader</span>(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/json&quot;</span>);<br>  http_client.<span class="hljs-built_in">setTimeout</span>(<span class="hljs-number">5000</span>); <span class="hljs-comment">// 5s超时时间</span><br>  httpResponseCode = http_client.<span class="hljs-built_in">POST</span>(payload);<br><br>  <span class="hljs-keyword">if</span> (httpResponseCode == HTTP_CODE_OK)<br>  &#123;<br>    String response = http_client.<span class="hljs-built_in">getString</span>();<br><br>    http_client.<span class="hljs-built_in">end</span>();<br>    _LOG(<span class="hljs-string">&quot;\r\n%s\r\n&quot;</span>, response.<span class="hljs-built_in">c_str</span>());<br><br>    <span class="hljs-comment">// Parse JSON response</span><br>    <span class="hljs-function">DynamicJsonDocument <span class="hljs-title">doc</span><span class="hljs-params">(<span class="hljs-number">2048</span>)</span></span>; <span class="hljs-comment">// #include &lt;ArduinoJson.h&gt;</span><br>    <span class="hljs-built_in">deserializeJson</span>(doc, response);<br><br>    String outPutText = doc[<span class="hljs-string">&quot;result&quot;</span>];<br>    <span class="hljs-comment">// 去掉首尾的[&quot;&quot;]</span><br>    outPutText = outPutText.<span class="hljs-built_in">substring</span>(<span class="hljs-number">2</span>);<br>    outPutText = outPutText.<span class="hljs-built_in">substring</span>(<span class="hljs-number">0</span>, outPutText.<span class="hljs-built_in">length</span>() - <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">return</span> outPutText;<br>  &#125;<br>  <span class="hljs-keyword">else</span><br>  &#123;<br>    _LOG(<span class="hljs-string">&quot;[HTTP] GET... failed, error: %s\n&quot;</span>, http_client.<span class="hljs-built_in">errorToString</span>(httpResponseCode).<span class="hljs-built_in">c_str</span>());<br>    http_client.<span class="hljs-built_in">end</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&lt;error&gt;&quot;</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>POST发送数据有一个固定头部：<code>Content-Type:application/json</code>，POST前需要设置一下，代码中已经有展示。</p>
+<h3 id="4-接收数据"><a href="#4-接收数据" class="headerlink" title="4. 接收数据"></a>4. 接收数据</h3><p>在上一步代码中实现了接收数据，这里列一下返回的数据：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;corpus_no&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;7349831540333925029&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;err_msg&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;success.&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;err_no&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span><span class="hljs-string">&quot;你好，你是谁？&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sn&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;593363272001711266008&quot;</span><span class="hljs-punctuation">&#125;</span><br><br><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;corpus_no&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;7349831596084473860&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;err_msg&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;success.&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;err_no&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span><span class="hljs-string">&quot;现在多少点？&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sn&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;671001951581711266021&quot;</span><span class="hljs-punctuation">&#125;</span><br><br><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;corpus_no&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;7349831639168589351&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;err_msg&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;success.&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;err_no&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span><span class="hljs-string">&quot;深圳天气如何？&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sn&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;13152229661711266031&quot;</span><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>数据发送成功则会返回正确的识别数据，当然声音信号不好时返回的语音识别也会不准确。</li>
+<li>谨记，返回的语音识别结果是<code>UTF-8</code>方式编码，所以代码的编码最好也改为<code>UTF-8</code>编码格式。</li>
+</ul>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><ul>
+<li>百度智能云的语音识别服务是可以免费领取到一定使用次数的，15万次，足够我们测试使用，记得开始测试前先领取一下，不然会出现返回<code>报错：&#123;&#39;err_msg&#39;: &#39;request pv too much&#39;, &#39;err_no&#39;: 3305, &#39;sn&#39;: &#39;876137091191590632079&#39; &#125;</code>，报错原因多半是免费次数没领取或者用完了要开通付费功能。</li>
+</ul>
+<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p>项目教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wojueburenshu/article/details/119244390">https://blog.csdn.net/wojueburenshu/article/details/119244390</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ESP32/" class="print-no-link">#ESP32</a>
+      
+        <a href="/tags/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" class="print-no-link">#语音识别</a>
+      
+        <a href="/tags/Mic/" class="print-no-link">#Mic</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>ESP32S3接入百度在线语音识别</div>
+      <div>https://zhangkeliang0627.github.io/2024/03/24/ESP32S3接入百度在线语音识别/ESP32S3接入百度在线语音识别/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Zhang-keliang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/03/21/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/" title="Lvgl添加自定义字体和图片">
+                        <span class="hidden-mobile">Lvgl添加自定义字体和图片</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      
+<div class="text-center py-1"> <div class="img-circle rotate"><img src="/img/sys/myimg.png" srcset="/img/loading.gif" lazyload></div> <br> <span># Carpe diem </span> <p> </div>
+<span> Framwork </span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-switch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>
+<div> <span>Copyright © 2023-2024</span> <a href="https://zhangkeliang0627.github.io/" target="_blank" rel="nofollow noopener"> <span>Hugo@kkl</span> </a> </div>
+<style> .img-circle { display: block; margin: 0 auto; border-radius: 50%; overflow: hidden; width: 150px; height: 150px; } .img-circle img { display: block; max-width: 100%; height: auto; } .text-center { text-align: center; } .py-1 { padding-top: 1rem; padding-bottom: 1rem; } .rotate { transition: transform 0.8s; } .rotate:hover { transform: rotate(360deg); } div { line-height: 1.5; } </style> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
+</html>
