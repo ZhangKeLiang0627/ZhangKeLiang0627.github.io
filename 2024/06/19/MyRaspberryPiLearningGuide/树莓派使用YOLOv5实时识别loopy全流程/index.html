@@ -16,20 +16,21 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
+    <meta name="description" content="树莓派搞yolov5？一帧能玩，两帧流畅，三帧电竞啦...">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【树莓派】OpenCV的环境安装与基本使用">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/06/17/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84OpenCV%E7%9A%84%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="【树莓派】YOLOv5实时识别loopy全流程😒">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/06/19/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8YOLOv5%E5%AE%9E%E6%97%B6%E8%AF%86%E5%88%ABloopy%E5%85%A8%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
+<meta property="og:description" content="树莓派搞yolov5？一帧能玩，两帧流畅，三帧电竞啦...">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/img/post/7.jpg">
-<meta property="article:published_time" content="2024-06-17T14:35:00.000Z">
-<meta property="article:modified_time" content="2024-06-17T15:05:41.111Z">
+<meta property="article:published_time" content="2024-06-18T17:02:00.000Z">
+<meta property="article:modified_time" content="2024-06-18T19:05:42.125Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="RaspberryPi">
 <meta property="article:tag" content="OpenCV">
+<meta property="article:tag" content="YOLOv5">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://zhangkeliang0627.github.io/img/post/7.jpg">
   
@@ -37,7 +38,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>【树莓派】OpenCV的环境安装与基本使用 - Hugo@kkl</title>
+  <title>【树莓派】YOLOv5实时识别loopy全流程😒 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【树莓派】OpenCV的环境安装与基本使用"></span>
+            <span id="subtitle" data-typed-text="【树莓派】YOLOv5实时识别loopy全流程😒"></span>
           
         </div>
 
@@ -226,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-17 22:35" pubdate>
-          2024年6月17日 晚上
+        <time datetime="2024-06-19 01:02" pubdate>
+          2024年6月19日 凌晨
         </time>
       </span>
     
@@ -238,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          617 字
+          709 字
         
       </span>
     
@@ -294,40 +295,74 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">【树莓派】OpenCV的环境安装与基本使用</h1>
+            <h1 id="seo-header">【树莓派】YOLOv5实时识别loopy全流程😒</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="【树莓派】OpenCV的环境安装与基本使用"><a href="#【树莓派】OpenCV的环境安装与基本使用" class="headerlink" title="【树莓派】OpenCV的环境安装与基本使用"></a>【树莓派】OpenCV的环境安装与基本使用</h3><h3 id="【Raspberry-PI】-OpenCV-environment-installation-and-basical-usage"><a href="#【Raspberry-PI】-OpenCV-environment-installation-and-basical-usage" class="headerlink" title="【Raspberry PI】 OpenCV environment installation and basical usage"></a>【Raspberry PI】 OpenCV environment installation and basical usage</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr>
+                <h3 id="【树莓派】YOLOv5实时识别loopy全流程😒"><a href="#【树莓派】YOLOv5实时识别loopy全流程😒" class="headerlink" title="【树莓派】YOLOv5实时识别loopy全流程😒"></a>【树莓派】YOLOv5实时识别loopy全流程😒</h3><h3 id="【Raspberry-PI】-YOLOv5-identifies-the-loopy-in-real-time"><a href="#【Raspberry-PI】-YOLOv5-identifies-the-loopy-in-real-time" class="headerlink" title="【Raspberry PI】 YOLOv5 identifies the loopy in real time"></a>【Raspberry PI】 YOLOv5 identifies the loopy in real time</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr>
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <ul>
+<li>PC：Win11, GTX3060(4GB)</li>
 <li>硬件：Raspberry Pi 4B</li>
 <li>摄像头：中星微摄像头（型号：USB301PL）</li>
 <li>镜像版本：2022-09-22-raspios-bullseye-arm64.img</li>
-<li>Python版本：<code>3.9.2</code></li>
+<li>树莓派Python版本：<code>3.9.2</code></li>
+</ul>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>请提前确认摄像头和OpenCV是否可以正常使用，详情请查看我从前的文章<code>【树莓派】OpenCV的环境安装与基本使用</code>。</p>
+<h2 id="文件树"><a href="#文件树" class="headerlink" title="文件树"></a>文件树</h2><ul>
+<li>关联的Github仓库<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv5-loopy-RaspberryPi">戳这里</a>。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">RaspberryPiDeployYOLOv5/<br>├─1.yolov5ForTrain <span class="hljs-comment"># 用于PC端进行模型训练</span><br>└─2.yolov5ForDetect <span class="hljs-comment"># 用于树莓派进行实时推理</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="一、准备运动"><a href="#一、准备运动" class="headerlink" title="一、准备运动"></a>一、准备运动</h2><h2 id="1-对树莓派"><a href="#1-对树莓派" class="headerlink" title="1. 对树莓派"></a>1. 对树莓派</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><ol>
+<li><p>Pytorch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装torch</span><br>pip install torch==1.8.1<br><span class="hljs-comment"># 安装torchvision</span><br>pip install torchvision==0.9.1<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>YOLOv5</p>
+</li>
+</ol>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv5-loopy-RaspberryPi">戳这里:)</a>下载YOLOv5的依赖，这是已经整理好适配此Python版本树莓派的包。</li>
+<li>将下载完的<code>yolov5-master.zip</code>放到树莓派文件路径<code>home/pi/Download/</code>中，并输入命令<code>unzip yolov5-master.zip</code>将压缩包解压到当前目录。</li>
+<li>解压完成后，<code>cd yolov5-master/</code>进入文件夹。</li>
+<li>使用命令<code>pip install -r requirement.txt</code>安装依赖，时间会比较长，最终看见<code>Successfully</code>类似字样则表示安装成功。</li>
+</ul>
+<h3 id="运行示例"><a href="#运行示例" class="headerlink" title="运行示例"></a>运行示例</h3><ul>
+<li>下载：<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv5-loopy-RaspberryPi">戳这里:)</a>下载<code>yolov5s.pt</code>，这是YOLOv5的预训练权重文件，后续将使用此模型来进行示例测试。</li>
+<li>文件传输：将此模型复制到之前解压好的<code>yolov5-master</code>文件夹当中。</li>
+<li>运行代码：在<code>yolov5-master</code>文件夹中，运行命令<code>python detect.py</code>，倘若出现<code>Results saved to run/detect/expX</code>，代表代码执行成功，你可以前往此路径查看预测结果图片。</li>
+</ul>
+<h2 id="2-对Windows端PC"><a href="#2-对Windows端PC" class="headerlink" title="2. 对Windows端PC"></a>2. 对Windows端PC</h2><h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create -n yolov5_60 python=3.8<br><br>conda activate yolov5_60<br></code></pre></td></tr></table></figure>
+
+<h3 id="安装依赖-1"><a href="#安装依赖-1" class="headerlink" title="安装依赖"></a>安装依赖</h3><ol>
+<li><p>Pytorch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>YOLOv5</p>
+</li>
+</ol>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv5-loopy-RaspberryPi">戳这里:)</a>下载YOLOv5的依赖，这是在PC端训练使用的包，此包中已经含有<code>yolov5s.pt</code>。</li>
+<li>解压完成后，进入文件夹。</li>
+<li>使用命令<code>pip install -r requirement.txt</code>安装依赖，时间会比较长，最终看见<code>Successfully</code>类似字样则表示安装成功。发生报错不要紧，要是模块没有当前的版本，我们就挑一个稍微靠近的版本就行。</li>
+<li>训练模型：<code>train.py</code>中的参数已经手动进行修改，使用命令<code>python train.py</code>，训练完成会在<code>runs/train/expX/weight</code>中生成训练好的模型，我们将<code>test.pt</code>扔到树莓派解压后的文件夹中即可。</li>
+</ul>
+<blockquote>
+<p>常见报错</p>
+<ul>
+<li>报错：RuntimeError: result type Float can’t be cast to the desired output type __int64 -&gt; <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43573527/article/details/132963466?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171870434616800215045407%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171870434616800215045407&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-132963466-null-null.142">解决方法</a></li>
+<li>报错：cache文件已存在 -&gt; 解决方法：前往<code>data/loopy/labels</code>删除所有文件后缀<code>.cache</code>的文件即可。</li>
 </ul>
 </blockquote>
 <hr>
-<h2 id="摄像头安装"><a href="#摄像头安装" class="headerlink" title="摄像头安装"></a>摄像头安装</h2><p>我这里使用的是某宝随便淘来的<strong>linux免驱动USB摄像头</strong>，下面讲解几个安装摄像头时的注意事项：</p>
-<ul>
-<li>先将摄像头连接上树莓派，再将树莓派上电开机，不然树莓派无法识别设备。</li>
-<li>输入<code>lsusb</code>命令查看当前的USB总线上面有没有挂载Camera字样的设备，如果有就说明摄像头连接成功了。</li>
-<li>如果不是USB摄像头，可以输入<code>ls /dev/video*</code>命令，查看是否有<code>/dev/video0</code>设备。如果设备存在，则说明摄像头挂载成功。</li>
+<h2 id="二、推理运动"><a href="#二、推理运动" class="headerlink" title="二、推理运动"></a>二、推理运动</h2><h3 id="1-对树莓派-1"><a href="#1-对树莓派-1" class="headerlink" title="1. 对树莓派"></a>1. 对树莓派</h3><p><code>cd home/pi/Download/yolov5-master/</code>，输入命令<code>python3 detect.py --weight best_loopy.pt --source 0</code>，注意<code>best_loopy.pt</code>即为我们在PC端训练好的模型！<code>--source 0</code>表示使用摄像头实时进行识别。</p>
+<h3 id="2-对PC端"><a href="#2-对PC端" class="headerlink" title="2. 对PC端"></a>2. 对PC端</h3><p><code>python detect.py --weight best_loopy.pt --source 0</code></p>
+<hr>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><ul>
+<li>可可爱爱的loopy来自这里<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv8-loopy">数据集来源</a>。</li>
+<li>关联的Github仓库<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv5-loopy-RaspberryPi">戳这里</a>。</li>
 </ul>
-<h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装opencv</span><br>pip install opencv-python<br><br><span class="hljs-comment"># 由于opencv只支持 numpy v1.x 版本</span><br><span class="hljs-comment"># 这里进行numpy版本的统一</span><br>pip install numpy==1.19.3<br></code></pre></td></tr></table></figure>
-
-<h2 id="环境验证"><a href="#环境验证" class="headerlink" title="环境验证"></a>环境验证</h2><ol>
-<li><p>使用命令行<code>python3</code>，打开Python交互模式。</p>
-</li>
-<li><p>在Python交互模式中输入以下命令，对cv2模块进行验证，如果没有报错并显示出当前的cv2版本则环境已经安装成功。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><br>cv2.__version__<br></code></pre></td></tr></table></figure></li>
-<li><p>在路径 <code>/home/pi/Downloads</code> 创建一个<code>testCV2.py</code>文件，并填入下方代码。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br>cap = cv2.VideoCapture(<span class="hljs-number">0</span>)  <span class="hljs-comment"># 调用摄像头‘0’一般是打开电脑自带摄像头，‘1’是打开外部摄像头（只有一个摄像头的情况）</span><br>width = <span class="hljs-number">1280</span><br>height = <span class="hljs-number">960</span><br>cap.<span class="hljs-built_in">set</span>(cv2.CAP_PROP_FRAME_WIDTH, width)  <span class="hljs-comment"># 设置图像宽度</span><br>cap.<span class="hljs-built_in">set</span>(cv2.CAP_PROP_FRAME_HEIGHT, height)  <span class="hljs-comment"># 设置图像高度</span><br><span class="hljs-comment"># 显示图像</span><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>: <br>    ret, frame = cap.read()  <span class="hljs-comment"># 读取图像(frame就是读取的视频帧，对frame处理就是对整个视频的处理)</span><br>    <span class="hljs-comment"># print(ret)</span><br>    <span class="hljs-comment"># 例如将图像灰度化处理</span><br>    img=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)  <span class="hljs-comment"># 转灰度图</span><br>    <br>    cv2.imshow(<span class="hljs-string">&quot;img&quot;</span>, img)<br>    <span class="hljs-comment"># 图像不处理的情况</span><br>    cv2.imshow(<span class="hljs-string">&quot;frame&quot;</span>, frame)    <br> <br>    input_str = cv2.waitKey(<span class="hljs-number">20</span>)<br>    <span class="hljs-keyword">if</span> input_str == <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;q&#x27;</span>):  <span class="hljs-comment"># 如过输入的是q就break，结束图像显示，鼠标点击视频画面输入字符</span><br>        <span class="hljs-keyword">break</span><br>    <br>cap.release()  <span class="hljs-comment"># 释放摄像头</span><br>cv2.destroyAllWindows()  <span class="hljs-comment"># 销毁窗口</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>最后在<strong>VNC远程登录模式</strong>或者在<strong>树莓派图形界面操作系统</strong>下，在命令行中输入指令<code>cd /home/pi/Downloads/</code>，接着执行指令<code>python3 testCV2.py</code>。幸运的话，你会看到摄像头捕捉到的原画面和经过处理的灰度画面两个窗口，按下<code>q</code>键即可退出代码程序。到这里OpenCV的环境安装和基本使用就完成啦！</p>
-</li>
-</ol>
 
                 
               </div>
@@ -367,6 +402,8 @@
       
         <a href="/tags/OpenCV/" class="print-no-link">#OpenCV</a>
       
+        <a href="/tags/YOLOv5/" class="print-no-link">#YOLOv5</a>
+      
     </div>
   
 </div>
@@ -377,8 +414,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【树莓派】OpenCV的环境安装与基本使用</div>
-      <div>https://zhangkeliang0627.github.io/2024/06/17/MyRaspberryPiLearningGuide/树莓派的OpenCV的环境安装与基本使用/</div>
+      <div>【树莓派】YOLOv5实时识别loopy全流程😒</div>
+      <div>https://zhangkeliang0627.github.io/2024/06/19/MyRaspberryPiLearningGuide/树莓派使用YOLOv5实时识别loopy全流程/</div>
     </div>
     <div class="license-meta">
       
@@ -390,7 +427,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月17日</div>
+          <div>2024年6月19日</div>
         </div>
       
       
@@ -422,18 +459,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/19/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8YOLOv5%E5%AE%9E%E6%97%B6%E8%AF%86%E5%88%ABloopy%E5%85%A8%E6%B5%81%E7%A8%8B/" title="【树莓派】YOLOv5实时识别loopy全流程😒">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【树莓派】YOLOv5实时识别loopy全流程😒</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/26/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" title="ESP32S3接入百度在线语音合成">
-                        <span class="hidden-mobile">ESP32S3接入百度在线语音合成</span>
+                      <a href="/2024/06/17/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84OpenCV%E7%9A%84%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="【树莓派】OpenCV的环境安装与基本使用">
+                        <span class="hidden-mobile">【树莓派】OpenCV的环境安装与基本使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
