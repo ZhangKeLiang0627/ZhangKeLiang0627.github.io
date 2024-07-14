@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>【简易速记24.07】最近在学习网络编程...</title>
+    <link href="/2024/07/14/2024%E5%B9%B4%E7%AE%80%E6%98%93%E9%80%9F%E8%AE%B0/7%E6%9C%88/README/"/>
+    <url>/2024/07/14/2024%E5%B9%B4%E7%AE%80%E6%98%93%E9%80%9F%E8%AE%B0/7%E6%9C%88/README/</url>
+    
+    <content type="html"><![CDATA[<h3 id="【简易速记24-07】最近在学习网络编程…"><a href="#【简易速记24-07】最近在学习网络编程…" class="headerlink" title="【简易速记24.07】最近在学习网络编程…"></a>【简易速记24.07】最近在学习网络编程…</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h3><p>一直有一个机器人梦啊，这回不能再gugubird啦。只不过刚好碰上忙时，知识点零散，一点点慢慢积累吧。</p><hr><h3 id="【2024-07-14】找到一个有趣且强大的网络工具Socat"><a href="#【2024-07-14】找到一个有趣且强大的网络工具Socat" class="headerlink" title="【2024&#x2F;07&#x2F;14】找到一个有趣且强大的网络工具Socat"></a>【2024&#x2F;07&#x2F;14】找到一个有趣且强大的网络工具<code>Socat</code></h3><p><img src="/images/2024%E5%B9%B4%E7%AE%80%E6%98%93%E9%80%9F%E8%AE%B0/7%E6%9C%88/image.png" alt="socat"></p><ul><li>在linux环境<code>(Debian/Ubuntu)</code>下安装socat</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># sudo apt-get update</span><br><br>sudo apt-get install socat<br></code></pre></td></tr></table></figure><ul><li>接着可以尝试一个简单的TCP通信测试</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 分别打开两个终端窗口</span><br><br><span class="hljs-comment"># 窗口1输入以下命令，监听端口5555</span><br>socat -d -d TCP-LISTEN:5555 -<br><br><span class="hljs-comment"># 窗口2输入以下命令，连接端口5555</span><br><span class="hljs-comment"># ip地址可以使用ifconfig指令查询</span><br>socat -d -d TCP-CONNECT:192.168.26.163:5555 -<br><br><span class="hljs-comment"># 连接成功以后，可以在各自的窗口发言，信息会传送到对方的窗口！</span><br></code></pre></td></tr></table></figure><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study Page</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Web</tag>
+      
+      <tag>简易速记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【ROS】ROS的搭建与安装</title>
     <link href="/2024/06/24/%E6%88%91%E7%9A%84ROS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/ROS%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%AE%89%E8%A3%85/README/"/>
     <url>/2024/06/24/%E6%88%91%E7%9A%84ROS%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/ROS%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%AE%89%E8%A3%85/README/</url>
