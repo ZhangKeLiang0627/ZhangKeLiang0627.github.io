@@ -25,13 +25,14 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/img/post/11.jpg">
 <meta property="article:published_time" content="2024-07-14T10:43:00.000Z">
-<meta property="article:modified_time" content="2024-07-16T08:59:25.260Z">
+<meta property="article:modified_time" content="2024-07-28T15:33:14.939Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="简易速记">
 <meta property="article:tag" content="Socat">
 <meta property="article:tag" content="Cmake">
+<meta property="article:tag" content="tar">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://zhangkeliang0627.github.io/img/post/11.jpg">
   
@@ -240,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          858 字
+          1.3k 字
         
       </span>
     
@@ -251,7 +252,7 @@
         
         
         
-          8 分钟
+          11 分钟
         
       </span>
     
@@ -351,9 +352,45 @@
 </blockquote>
 <p>找到一个关于<code>Cmake</code>的优良教程，阿里嘎多这位作者：<a target="_blank" rel="noopener" href="https://subingwen.cn/cmake/CMake-primer/">教程戳我:)</a></p>
 <hr>
+<h3 id="【2024-7-27】tar：常用的文件打包和压缩工具"><a href="#【2024-7-27】tar：常用的文件打包和压缩工具" class="headerlink" title="【2024&#x2F;7&#x2F;27】tar：常用的文件打包和压缩工具"></a>【2024&#x2F;7&#x2F;27】tar：常用的文件打包和压缩工具</h3><blockquote>
+<p>最近遇到镜像压缩、解压缩的小问题，找到这些tar常用的命令，这里统一收集一下。</p>
+</blockquote>
+<p>当然还有其他的工具比如zip、unzip等，这里只讲解tar，其他自行百度吧！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">tar [选项] [压缩文件名] [文件或目录...]<br></code></pre></td></tr></table></figure>
+
+<p>常用的选项包括：</p>
+<ul>
+<li><code>-c</code>：创建压缩文件</li>
+<li><code>-x</code>：提取压缩文件</li>
+<li><code>-z</code>：使用<code>gzip</code>算法压缩文件</li>
+<li><code>-j</code>：使用<code>bzip2</code>算法压缩文件</li>
+<li><code>-J</code>：使用<code>xz</code>算法压缩文件</li>
+<li><code>-f</code>：指定归档文件的名称</li>
+<li><code>-v</code>：显示详细的处理信息</li>
+</ul>
+<p><code>-z -j -J</code>这三种参数如何选择？<br>如果对时间比较敏感，可以使用<code>-z</code>参数进行<code>gzip</code>压缩，虽然压缩率比较低，但是速度较快。<br>而如果您对压缩率比较看重，可以选择<code>-j</code>参数进行<code>bzip2</code>压缩，尽管速度较慢，但压缩率比较高。<br>如果您对压缩率要求非常高，可以选择<code>-J</code>参数进行<code>xz</code>压缩，这需要更长的时间。</p>
+<p><br></br></p>
+<p>下面提供几个常见的后缀名和对应的压缩和解压命令，大家不用过于纠结命令组合，以后看见相应的后缀直接用对应的命令就行。</p>
+<ol>
+<li><code>.tar.gz 或 .tgz</code>：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">1 压缩：tar -czf package.tar.gz file1.txt file.txt directory<br>2 解压缩：tar -xzf package.tar.gz<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><code>.tar.bz2 或 .tbz2</code>：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">1 压缩：tar -cjf package.tar.bz2 file1.txt file.txt directory<br>2 解压缩：tar -xjf package.tar.bz2<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><code>.tar.xz</code>：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">1 压缩：tar -cJf package.tar.xz file1.txt file.txt directory<br>2 解压缩：tar -xJf package.tar.xz<br></code></pre></td></tr></table></figure>
+
+<hr>
 <h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><ul>
 <li>鸣谢文章的思路：<a target="_blank" rel="noopener" href="https://blog.csdn.net/hitgavin/article/details/116162329">https://blog.csdn.net/hitgavin/article/details/116162329</a></li>
 <li>鸣谢文章答疑解惑，我对此内容做了搬运：<a target="_blank" rel="noopener" href="https://lianshaohua.blog.csdn.net/article/details/135709779">https://lianshaohua.blog.csdn.net/article/details/135709779</a></li>
+<li>鸣谢文档：<a target="_blank" rel="noopener" href="https://lceda001.feishu.cn/wiki/WXwJw77ZRitCiYkimVGcO5q5nGh">https://lceda001.feishu.cn/wiki/WXwJw77ZRitCiYkimVGcO5q5nGh</a></li>
 </ul>
 <hr>
 
@@ -398,6 +435,8 @@
         <a href="/tags/Socat/" class="print-no-link">#Socat</a>
       
         <a href="/tags/Cmake/" class="print-no-link">#Cmake</a>
+      
+        <a href="/tags/tar/" class="print-no-link">#tar</a>
       
     </div>
   
