@@ -18,17 +18,18 @@
   
     <meta name="description" content="正点原子，俺的伙伴？！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的Linux驱动学习笔记">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/12/13/MyLinuxLearningGuide/MyLinuxLearningGuide/index.html">
+<meta property="og:title" content="我的Linux驱动学习笔记 - IMX6ULL">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/12/13/MyLinuxLearningGuide/MyLinuxLearningGuide%20-%20IMX6ULL/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
 <meta property="og:description" content="正点原子，俺的伙伴？！">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/img/post/5.jpg">
 <meta property="article:published_time" content="2023-12-13T07:38:00.000Z">
-<meta property="article:modified_time" content="2024-07-25T11:36:54.986Z">
+<meta property="article:modified_time" content="2024-07-29T05:47:24.817Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="驱动">
+<meta property="article:tag" content="IMX6ULL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://zhangkeliang0627.github.io/img/post/5.jpg">
   
@@ -36,7 +37,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>我的Linux驱动学习笔记 - Hugo@kkl</title>
+  <title>我的Linux驱动学习笔记 - IMX6ULL - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的Linux驱动学习笔记"></span>
+            <span id="subtitle" data-typed-text="我的Linux驱动学习笔记 - IMX6ULL"></span>
           
         </div>
 
@@ -237,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.5k 字
+          4.3k 字
         
       </span>
     
@@ -248,7 +249,7 @@
         
         
         
-          29 分钟
+          36 分钟
         
       </span>
     
@@ -293,15 +294,63 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">我的Linux驱动学习笔记</h1>
+            <h1 id="seo-header">我的Linux驱动学习笔记 - IMX6ULL</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="我的Linux驱动学习笔记"><a href="#我的Linux驱动学习笔记" class="headerlink" title="我的Linux驱动学习笔记"></a>我的Linux驱动学习笔记</h3><h3 id="MyLinuxLearningGuide"><a href="#MyLinuxLearningGuide" class="headerlink" title="MyLinuxLearningGuide"></a>MyLinuxLearningGuide</h3><h3 id="By-kkl"><a href="#By-kkl" class="headerlink" title="By @kkl"></a>By @kkl</h3> <p class="note note-warning">该笔记目前处于积极开发阶段。</p>
+                <h3 id="我的Linux驱动学习笔记-IMX6ULL"><a href="#我的Linux驱动学习笔记-IMX6ULL" class="headerlink" title="我的Linux驱动学习笔记 - IMX6ULL"></a>我的Linux驱动学习笔记 - IMX6ULL</h3><h3 id="MyLinuxLearningGuide-IMX6ULL"><a href="#MyLinuxLearningGuide-IMX6ULL" class="headerlink" title="MyLinuxLearningGuide - IMX6ULL"></a>MyLinuxLearningGuide - IMX6ULL</h3><h3 id="By-kkl"><a href="#By-kkl" class="headerlink" title="By @kkl"></a>By @kkl</h3><p class="note note-warning">该笔记目前处于积极开发阶段。</p>
 
 <hr>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><h3 id="通过命令行更新emmc的内核和设备树固件"><a href="#通过命令行更新emmc的内核和设备树固件" class="headerlink" title="通过命令行更新emmc的内核和设备树固件"></a>通过命令行更新emmc的内核和设备树固件</h3><h4 id="更新原理"><a href="#更新原理" class="headerlink" title="更新原理"></a>更新原理</h4><p>因为Linux内核和设备树是在uboot运行的时候被从emmc加载到内存当中去的，所以Linux系统正在运行的时候，我们是可以修改emmc中存放的固件的，然后reset等待重启即可。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
+<p>PC：Win11<br>虚拟机：Ubuntu18.04<br>开发板：正点原子IMX6ULL开发板emmc-512MB</p>
+</blockquote>
+<blockquote>
+<p>镜像：</p>
+<ol>
+<li>出厂镜像：linux-imx-4.1.15-2.1.0-g3dc0a4b-v2.7</li>
+<li>教程镜像：linux-imx-rel_imx_4.1.15_2.1.1_ga_alientek_v2.4</li>
+</ol>
+</blockquote>
+<h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>用于不同启动方式的拨码开关设置：</p>
+<ul>
+<li>USB_OTG启动(0 1 0 0 0 0 0 0)<br>该启动方式主要用于mfg固化系统，烧录镜像。</li>
+</ul>
+<p class="note note-warning">注意：从USB_OTG启动时，开发板上如果有SD卡，要先把SD卡拔出来，上电后再重新插上SD卡，否则会影响镜像的烧录。
+</p>
+
+<ul>
+<li><p>从TF(SDcard)卡启动(1 0 0 0 0 0 1 0)<br>该启动方式主要用于从TF(SDcard)卡启动内核。</p>
+</li>
+<li><p>从eMMC启动(1 0 1 00 1 1 0)<br>该启动方式主要用于从eMMC启动内核。</p>
+</li>
+</ul>
+<h3 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h3><p>烧录方法请查看<strong>I.MX6U用户快速体验V2.6 P25</strong></p>
+<ol>
+<li>出厂镜像：linux-imx-4.1.15-2.1.0-g3dc0a4b-v2.7</li>
+</ol>
+<ul>
+<li>可以通过<code>【正点原子】阿尔法Linux开发板（A盘）-基础资料\05、开发工具\04、正点原子MFG_TOOL出厂固件烧录工具\mfgtool</code>进行烧录。</li>
+</ul>
+<ol start="2">
+<li>教程镜像：linux-imx-rel_imx_4.1.15_2.1.1_ga_alientek_v2.4</li>
+</ol>
+<ul>
+<li><p>可以通过<code>【正点原子】阿尔法Linux开发板（A盘）-基础资料\08、系统镜像\02、教程系统镜像\02、V2.4版本及以后的底板\mfgtool(study)</code>进行烧录。</p>
+</li>
+<li><p>烧录结束以后，重启以后是无法成功加载系统的，需要在Uboot中重新配置一下环境变量，如下：</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">使用Type-C数据线连接开发板的串口和个人PC</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">使用MobaXterm，Serial连接，波特率设置为115200</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">开发板上电，在Uboot准备加载内核前的倒计时结束前，按回车键留在Uboot</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">依次输入以下命令，修改环境变量</span><br><br>setenv bootcmd &#x27;mmc dev 1;fatload mmc 1:1 80800000 zImage;fatload mmc 1:1 83000000 imx6ull-alientek-emmc.dtb;bootz 80800000 - 83000000&#x27;<br><br>setenv bootargs &#x27;console=ttymxc0,115200 root=/dev/mmcblk1p2 rootwait rw&#x27;<br><br>saveenv<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">配置好环境变量后，重新上电启动内核，就可以成功进入系统啦！</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">上述内容来自【正点原子】阿尔法Linux开发板（A盘）-基础资料\08、系统镜像\02、教程系统镜像\02、V2.4版本及以后的底板\mfgtool(study)\【EMMC-bootcmd-bootargs】.txt or 【NAND-bootcmd-bootargs】.txt</span><br></code></pre></td></tr></table></figure>
+
+<p class="note note-success">
+当然，你可以使用该工具 <b>mfgtool(study)</b> 烧录你自己制作的镜像。
+<br></br>
+只要把 <b>mfgtool(study)\Profiles\Linux\OS Firmware\files\boot</b> 路径下的对应镜像和u-boot修改成你制作的就可以啦，但是名字要和原来的同名噢！！！
+</p>
+
+
+<h3 id="通过命令行更新emmc的内核和设备树固件"><a href="#通过命令行更新emmc的内核和设备树固件" class="headerlink" title="通过命令行更新emmc的内核和设备树固件"></a>通过命令行更新emmc的内核和设备树固件</h3><h4 id="更新原理"><a href="#更新原理" class="headerlink" title="更新原理"></a>更新原理</h4><p>因为Linux内核和设备树是在uboot运行的时候被从emmc加载到内存当中去的，所以Linux系统正在运行的时候，我们是可以修改emmc中存放的固件的，然后reset等待重启即可。</p>
 <h4 id="更新方法"><a href="#更新方法" class="headerlink" title="更新方法"></a>更新方法</h4><ol>
 <li>查看emmc分区</li>
 </ol>
@@ -333,17 +382,30 @@
 <p>network&#x3D;{<br> ssid&#x3D;”MagicEyes”<br> psk&#x3D;”12345678”<br>}</p>
 </blockquote>
 </li>
-<li><p><code>vi wpa_supplicant.conf</code>用vim打开这个文件配置你的网络</p>
+<li><p><code>vi wpa_supplicant.conf</code>用vi打开这个文件配置你的网络</p>
 </li>
-<li><p><code>wpa_supplicant -D wext -c /etc/wpa_supplicant.conf -i wlan0 &amp;</code></p>
+<li><p><code>modprobe 8188eu.ko</code>加载 RTL8188 驱动模块（USB-WiFi-RTL8188EUS）</p>
 </li>
-<li><p><code>udhcpc -i wlan0</code></p>
+<li><p><code>wpa_supplicant -D wext -c /etc/wpa_supplicant.conf -i wlan0 &amp;</code>使用 wpa_supplicant 工具让 RTL8188 USB WIFI 连接到热点上</p>
+</li>
+<li><p><code>udhcpc -i wlan0</code>从路由器获取IP地址，执行了这一步才可以得到分配的IP地址</p>
+</li>
+<li><p><code>ifconfig wlan0</code>查看IP地址</p>
+</li>
+</ul>
+<p><br></br></p>
+<ul>
+<li><p><code>ping [-I wlan0的IP地址] www.baidu.com</code>可以使用这个指令测试WiFi是否工作正常，[]的内容可以省略，-I 是指定执行 ping 操作的网卡 IP 地址，我们可以指定要使用的 wlan0 去 ping 百度网站。</p>
 </li>
 <li><p>更加详细的内容在<strong>驱动开发指南P1765</strong></p>
 </li>
 </ul>
+<p class="note note-warning">注意！RTL8188EUS 请使用 8188eu.ko 驱动，RTL8188CUS 请使用 8192cu.ko 驱动！</p>
+
+
 <h2 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h2><h3 id="内核编译"><a href="#内核编译" class="headerlink" title="内核编译"></a>内核编译</h3><ul>
-<li><p><code>Uboot</code>和内核的编译步骤：</p>
+<li><code>Uboot</code>和内核的编译步骤：</li>
+</ul>
 <blockquote>
 <ol>
 <li><code>distclean</code>清理工程</li>
@@ -355,20 +417,35 @@
 <li>编译的时间会比较长</li>
 </ul>
 </blockquote>
-</li>
-<li><p>Plus:</p>
+<ul>
+<li><strong>Warning:</strong></li>
+</ul>
 <blockquote>
 <p><strong>内核的解压和编译绝对不可以在共享文件夹里进行！</strong><br>否则会出现无法软链接的情况，比如<code>ln: failed to create symbolic link &#39;./dt-bindings&#39;: Operation not permitted</code><br>因为共享文件夹是windows和linux的的共享目录，而windows下的文件系统，不支持linux的<code>symbolic link</code>!</p>
 </blockquote>
-</li>
-<li><p>这里的编译的内核选用<code>linux-imx-4.1.15-2.1.0-g3dc0a4b-v2.7.tar.bz2</code>即正点原子imx6ull的出厂镜像</p>
-</li>
-<li><p>解压方法：<code>tar -vxjf xxx.tar.bz2</code></p>
-</li>
-<li><p>注意！编译内核时，请先安装Poky交叉编译工具链（具体参照<strong>用户快速体验P115</strong>）</p>
-</li>
-<li><p>最后请使用<strong>04、正点原子MFG_TOOL出厂固件烧录工具</strong>进行开发板的烧录哦！</p>
-</li>
+<ul>
+<li>实践</li>
+</ul>
+<blockquote>
+<ol>
+<li>出厂镜像：linux-imx-4.1.15-2.1.0-g3dc0a4b-v2.7</li>
+</ol>
+</blockquote>
+<ul>
+<li>这里的编译的内核选用<code>linux-imx-4.1.15-2.1.0-g3dc0a4b-v2.7.tar.bz2</code>即正点原子imx6ull的出厂镜像</li>
+<li>解压方法：<code>tar -vxjf xxx.tar.bz2</code></li>
+<li>注意！编译内核时，请先安装Poky交叉编译工具链（具体参照<strong>用户快速体验P115</strong>）</li>
+<li>执行<code>linux-imx-4.1.15-2.1.0-g3dc0a4b-v2.7</code>文件夹内的<code>build.sh</code>一键全编译。</li>
+<li>最后请使用<strong>04、正点原子MFG_TOOL出厂固件烧录工具</strong>进行开发板的烧录哦！</li>
+</ul>
+<blockquote>
+<ol start="2">
+<li>教程镜像：linux-imx-rel_imx_4.1.15_2.1.1_ga_alientek_v2.4</li>
+</ol>
+</blockquote>
+<ul>
+<li>这里的编译的内核选用<code>linux-imx-rel_imx_4.1.15_2.1.1_ga_alientek_v2.4.tar.bz2</code>即正点原子imx6ull的教程镜像</li>
+<li>解压方法：<code>tar -vxjf xxx.tar.bz2</code></li>
 </ul>
 <h2 id="驱动开发"><a href="#驱动开发" class="headerlink" title="驱动开发"></a>驱动开发</h2><ul>
 <li>Linux驱动有<strong>两种运行方式</strong>，<strong>第一种</strong>就是将驱动<strong>编译进Linux内核</strong>中，这样当Linux内核启动的时候就会自动运行驱动程序。<strong>第二种</strong>就是<strong>将驱动编译成模块</strong>(Linux下模块扩展名为.ko)，在Linux内核启动以后使用<code>insmod</code>或<code>modprobe</code>命令加载驱动模块，使用<code>rmmod</code>或<code>modprobe -r</code>命令卸载驱动模块。</li>
@@ -558,6 +635,8 @@
       
         <a href="/tags/%E9%A9%B1%E5%8A%A8/" class="print-no-link">#驱动</a>
       
+        <a href="/tags/IMX6ULL/" class="print-no-link">#IMX6ULL</a>
+      
     </div>
   
 </div>
@@ -568,8 +647,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的Linux驱动学习笔记</div>
-      <div>https://zhangkeliang0627.github.io/2023/12/13/MyLinuxLearningGuide/MyLinuxLearningGuide/</div>
+      <div>我的Linux驱动学习笔记 - IMX6ULL</div>
+      <div>https://zhangkeliang0627.github.io/2023/12/13/MyLinuxLearningGuide/MyLinuxLearningGuide - IMX6ULL/</div>
     </div>
     <div class="license-meta">
       
