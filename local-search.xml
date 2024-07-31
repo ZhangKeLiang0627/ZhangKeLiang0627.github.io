@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>关于Hexo&#39;s Fluid主题拓展的N种配置👾</title>
+    <link href="/2024/07/31/%E5%85%B3%E4%BA%8EHexo&#39;s%20Fluid%E4%B8%BB%E9%A2%98%E6%8B%93%E5%B1%95%E7%9A%84N%E7%A7%8D%E9%85%8D%E7%BD%AE/README/"/>
+    <url>/2024/07/31/%E5%85%B3%E4%BA%8EHexo&#39;s%20Fluid%E4%B8%BB%E9%A2%98%E6%8B%93%E5%B1%95%E7%9A%84N%E7%A7%8D%E9%85%8D%E7%BD%AE/README/</url>
+    
+    <content type="html"><![CDATA[<h3 id="关于Hexo’s-Fluid主题拓展的N种配置👾"><a href="#关于Hexo’s-Fluid主题拓展的N种配置👾" class="headerlink" title="关于Hexo’s Fluid主题拓展的N种配置👾"></a>关于Hexo’s Fluid主题拓展的N种配置👾</h3><h3 id="make-your-Hexo’s-Fluid-theme-more-graceful"><a href="#make-your-Hexo’s-Fluid-theme-more-graceful" class="headerlink" title="make your Hexo’s Fluid theme more graceful!!!"></a>make your Hexo’s Fluid theme more graceful!!!</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h2 id="给Hexo’s-Fluid主题添加MAC风格代码块"><a href="#给Hexo’s-Fluid主题添加MAC风格代码块" class="headerlink" title="给Hexo’s Fluid主题添加MAC风格代码块"></a>给Hexo’s Fluid主题添加MAC风格代码块</h2><ul><li>首先，到<code>hexo-theme-fluid</code>主题根目录下<code>source/css/</code>创建名为<code>macpanel.styl</code>的文件并往该文件当中写入以下内容：</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.highlight</span><br>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#21252b</span><br>    border-radius: <span class="hljs-number">5px</span><br>    box-shadow: <span class="hljs-number">0</span> <span class="hljs-number">0px</span> <span class="hljs-number">20px</span> <span class="hljs-number">0</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, .<span class="hljs-number">4</span>)<br>    padding-top: <span class="hljs-number">30px</span><br><br>    &amp;::before<br>      background: <span class="hljs-number">#fc625d</span><br>      border-radius: <span class="hljs-number">50%</span><br>      box-shadow: <span class="hljs-number">20px</span> <span class="hljs-number">0</span> <span class="hljs-number">#fdbc40</span>, <span class="hljs-number">40px</span> <span class="hljs-number">0</span> <span class="hljs-number">#35cd4b</span><br>      content: <span class="hljs-string">&#x27; &#x27;</span><br>      height: <span class="hljs-number">12px</span><br>      left: <span class="hljs-number">12px</span><br>      margin-top: -<span class="hljs-number">20px</span><br>      position: absolute<br>      width: <span class="hljs-number">12px</span><br></code></pre></td></tr></table></figure><ul><li>到管理主题的<code>_config.fluid.yml</code>配置文件当中添加新建的<code>macpanel.styl</code>文件，如下：</li></ul><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs DTS"><span class="hljs-symbol">custom_css:</span>    <br>  - <span class="hljs-keyword">/css/</span>macpanel<br></code></pre></td></tr></table></figure><ul><li>随后，重新<code>hexo g</code>后就可以看到效果啦。不过可能会出现MAC栏是黑色的，但是代码块背景是白色的情况（因为代码块风格默认为白色。此时如果你不满意，可以继续在<code>_config.fluid.yml</code>配置文件当中修改代码块风格，操作如下：</li></ul><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs DTS"><span class="hljs-symbol">highlightjs:</span><br><br>  <span class="hljs-meta"># style: <span class="hljs-string">&quot;github gist&quot;</span></span><br><span class="hljs-symbol"></span><br><span class="hljs-symbol">  style:</span> <span class="hljs-string">&quot;github dark dimmed&quot;</span><br><span class="hljs-symbol">  style_dark:</span> <span class="hljs-string">&quot;dark&quot;</span><br></code></pre></td></tr></table></figure><p>其实呢，建议不需要修改这个默认的代码块背景颜色的风格，因为你选择使用夜间模式，画面就可以对的上了哈哈哈哈哈！</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul><li>前端麻瓜也能有出头的一天😁！</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study Page</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Fluid</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>在ESP32-Arduino中使用MQTT</title>
     <link href="/2024/07/20/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8MQTT/README/"/>
     <url>/2024/07/20/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8MQTT/README/</url>
