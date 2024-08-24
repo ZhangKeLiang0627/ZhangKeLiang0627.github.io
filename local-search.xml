@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</title>
+    <link href="/2024/08/24/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS+Hexo+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/README/"/>
+    <url>/2024/08/24/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS+Hexo+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/README/</url>
+    
+    <content type="html"><![CDATA[<h3 id="基于阿里云OSS-Hexo-PicGo搭建图床🖼️🛏️"><a href="#基于阿里云OSS-Hexo-PicGo搭建图床🖼️🛏️" class="headerlink" title="基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️"></a>基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</h3><h4 id="阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍"><a href="#阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍" class="headerlink" title="阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍"></a>阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍</h4><h4 id="LUV-form-aliyun…"><a href="#LUV-form-aliyun…" class="headerlink" title="LUV form aliyun…"></a>LUV form aliyun…</h4><h4 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h4><hr><h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p>随着博客文章的数量越来越多，难免地，图片存储的数量也渐渐增多。之前是使用文件夹本地存储图片，部署的时候是全数上传到Github的，慢慢会使得这个仓库变得极其臃肿，而且不便于更换网站的托管。于是还是决定使用图床！！！</p><p>没错，阿里云的对象存储OSS！买了三年的空间才27元，40GB，又可以霍霍一阵啦！</p><hr><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="等待施工…"><a href="#等待施工…" class="headerlink" title="等待施工…"></a>等待施工…</h3><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul><li>等待施工…</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study Page</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>aliyun</tag>
+      
+      <tag>PicGo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【耐背王】计算机网络🤓📖！</title>
     <link href="/2024/08/20/%E8%80%90%E8%83%8C%E7%8E%8B%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/README/"/>
     <url>/2024/08/20/%E8%80%90%E8%83%8C%E7%8E%8B%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/README/</url>
