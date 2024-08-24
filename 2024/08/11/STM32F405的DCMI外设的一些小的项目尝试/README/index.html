@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/img/post/14.jpg">
 <meta property="article:published_time" content="2024-08-11T04:35:00.000Z">
-<meta property="article:modified_time" content="2024-08-24T05:42:43.621Z">
+<meta property="article:modified_time" content="2024-08-24T08:00:57.736Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="单片机">
 <meta property="article:tag" content="STM32">
@@ -307,7 +307,7 @@
                 <h3 id="STM32F405的DCMI外设的一些小的项目尝试🎶"><a href="#STM32F405的DCMI外设的一些小的项目尝试🎶" class="headerlink" title="STM32F405的DCMI外设的一些小的项目尝试🎶"></a>STM32F405的DCMI外设的一些小的项目尝试🎶</h3><h3 id="Use-STM32F405-DCMI-peripheral-to-do-some-small-projects"><a href="#Use-STM32F405-DCMI-peripheral-to-do-some-small-projects" class="headerlink" title="Use STM32F405 DCMI peripheral to do some small projects!!!"></a>Use STM32F405 DCMI peripheral to do some small projects!!!</h3><h3 id="Project-name：Color-Tracer"><a href="#Project-name：Color-Tracer" class="headerlink" title="Project name：Color-Tracer"></a>Project name：Color-Tracer</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr>
 <!-- <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/pic2.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="75%;"></div><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/pic3.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div></div> -->
 
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/202408241300054.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="75%;"></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/202408241300043.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div></div>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/pic2.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="75%;"></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/pic3.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div></div>
 
 <h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p>这些个项目Demos都是基于先前设计的基于STM32F405的HMI开发板LUMOS进行的开发。当时不知道是从哪里听来的STM32F405也可以使用DCMI外设的这个说法，我反复翻阅了意法半导体的芯片手册，上面明确指出STM32F405是没有DCMI这个外设的。</p>
 <p>但是出于好奇，也算是机缘巧合之下，在Bilibil看见有同学拿F405结合摄像头实现了电赛送药小车题目的数字识别，根据那位同学的描述，F405其实是有DCMI外设的，使用标准库可以驱动，但是在HAL库将这个外设阉割掉了hhh，当然现在使用HAL库是趋势，但难免还是为这样的损失而感到可惜。</p>
@@ -320,7 +320,7 @@
 </ol>
 </blockquote>
 <!-- <center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/pic1.jpg" srcset="/img/loading.gif" lazyload width="80%;"></center> -->
-<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/202408241300830.jpg" srcset="/img/loading.gif" lazyload width="80%;"></center>
+<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/pic1.jpg" srcset="/img/loading.gif" lazyload width="80%;"></center>
 
 
 
@@ -332,7 +332,7 @@
 <p>默认烧录为识别追踪浅绿色（草绿色），可以前往<code>dcmi.c</code>文件当中修改<code>TARGET_CONDI Conditionred</code>变量为其他色彩阈值。</p>
 <p>演示效果如下：</p>
 <!-- <center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio1_converted.gif" srcset="/img/loading.gif" lazyload width="90%;"></center> -->
-<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/202408241300864.gif" srcset="/img/loading.gif" lazyload width="90%;"></center>
+<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio1_converted.gif" srcset="/img/loading.gif" lazyload width="90%;"></center>
 
 <h3 id="识别标准数字-0-9"><a href="#识别标准数字-0-9" class="headerlink" title="识别标准数字(0-9)"></a>识别标准数字(0-9)</h3><blockquote>
 <ol start="3">
@@ -340,7 +340,7 @@
 </ol>
 </blockquote>
 <!-- <center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio2_converted.gif" srcset="/img/loading.gif" lazyload width="50%;"></center> -->
-<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/202408241301403.gif" srcset="/img/loading.gif" lazyload width="50%;"></center>
+<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio2_converted.gif" srcset="/img/loading.gif" lazyload width="50%;"></center>
 
 <h2 id="关于硬件"><a href="#关于硬件" class="headerlink" title="关于硬件"></a>关于硬件</h2><p>硬件是我自己制作的基于STM32F405的HMI开发板LUMOS，但不是最新的版本，<a target="_blank" rel="noopener" href="https://oshwhub.com/hugego/lumos-stm32f405-based-hmi-core-board">最新版本戳这里:p</a>.</p>
 <p>您可以到关联仓库当中的<code>2.Hardware</code>当中获取旧版本的PCB打样文件，top为顶板，base为底板，但是本项目不建议复刻。</p>
@@ -348,7 +348,7 @@
 <p><br></br></p>
 <!-- <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio3_converted.gif" srcset="/img/loading.gif" lazyload width="99.5%;"></div><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio4_converted.gif" srcset="/img/loading.gif" lazyload width="100%;"></div></div></div> -->
 
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/202408241301261.gif" srcset="/img/loading.gif" lazyload width="99.5%;"></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/202408241301574.gif" srcset="/img/loading.gif" lazyload width="100%;"></div></div></div>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio3_converted.gif" srcset="/img/loading.gif" lazyload width="99.5%;"></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio4_converted.gif" srcset="/img/loading.gif" lazyload width="100%;"></div></div></div>
 
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
 <li>关联的仓库<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/Color-Tracer">请戳这里;P</a>，您可以在该仓库中获取项目源码和PCB打样文件，但，<strong>因为历史过于悠久不推荐复刻本项目。</strong></li>
