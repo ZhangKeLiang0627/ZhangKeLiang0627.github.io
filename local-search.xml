@@ -49,9 +49,9 @@
     
     <tags>
       
-      <tag>计算机网络</tag>
-      
       <tag>耐背王</tag>
+      
+      <tag>计算机网络</tag>
       
     </tags>
     
@@ -76,9 +76,9 @@
     
     <tags>
       
-      <tag>简易速记</tag>
-      
       <tag>生活</tag>
+      
+      <tag>简易速记</tag>
       
     </tags>
     
@@ -103,11 +103,11 @@
     
     <tags>
       
-      <tag>单片机</tag>
-      
       <tag>STM32</tag>
       
       <tag>Camera</tag>
+      
+      <tag>单片机</tag>
       
     </tags>
     
@@ -190,9 +190,9 @@
       
       <tag>Linux</tag>
       
-      <tag>Web</tag>
-      
       <tag>简易速记</tag>
+      
+      <tag>Web</tag>
       
       <tag>Socat</tag>
       
@@ -470,9 +470,9 @@
       
       <tag>Linux</tag>
       
-      <tag>驱动</tag>
-      
       <tag>IMX6ULL</tag>
+      
+      <tag>驱动</tag>
       
     </tags>
     
@@ -549,11 +549,11 @@
     
     <tags>
       
-      <tag>Lua</tag>
+      <tag>STM32</tag>
       
       <tag>单片机</tag>
       
-      <tag>STM32</tag>
+      <tag>Lua</tag>
       
     </tags>
     
