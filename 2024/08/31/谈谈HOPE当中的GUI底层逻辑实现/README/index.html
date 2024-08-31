@@ -16,28 +16,29 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍">
+    <meta name="description" content="第一次萌发想要如此激烈追寻技术大佬的心愿，感恩，感谢🥹">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/08/24/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS+Hexo+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/README/index.html">
+<meta property="og:title" content="【项目】谈谈HOPE当中的GUI底层逻辑实现🎶">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/08/31/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍">
+<meta property="og:description" content="第一次萌发想要如此激烈追寻技术大佬的心愿，感恩，感谢🥹">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/20.jpg">
-<meta property="article:published_time" content="2024-08-24T08:21:00.000Z">
-<meta property="article:modified_time" content="2024-08-25T01:47:35.954Z">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/index-cover.jpg">
+<meta property="article:published_time" content="2024-08-31T03:55:00.000Z">
+<meta property="article:modified_time" content="2024-08-31T04:27:32.937Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="aliyun">
-<meta property="article:tag" content="PicGo">
+<meta property="article:tag" content="STM32">
+<meta property="article:tag" content="Project">
+<meta property="article:tag" content="GUI">
+<meta property="article:tag" content="MCU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/20.jpg">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/index-cover.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️ - Hugo@kkl</title>
+  <title>【项目】谈谈HOPE当中的GUI底层逻辑实现🎶 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,13 +215,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/20.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/images/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/index-cover.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️"></span>
+            <span id="subtitle" data-typed-text="【项目】谈谈HOPE当中的GUI底层逻辑实现🎶"></span>
           
         </div>
 
@@ -231,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-24 16:21" pubdate>
-          2024年8月24日 下午
+        <time datetime="2024-08-31 11:55" pubdate>
+          2024年8月31日 中午
         </time>
       </span>
     
@@ -243,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          126 字
         
       </span>
     
@@ -254,7 +255,7 @@
         
         
         
-          10 分钟
+          2 分钟
         
       </span>
     
@@ -299,51 +300,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</h1>
+            <h1 id="seo-header">【项目】谈谈HOPE当中的GUI底层逻辑实现🎶</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="基于阿里云OSS-Hexo-PicGo搭建图床🖼️🛏️"><a href="#基于阿里云OSS-Hexo-PicGo搭建图床🖼️🛏️" class="headerlink" title="基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️"></a>基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</h3><h4 id="阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍"><a href="#阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍" class="headerlink" title="阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍"></a>阿里云是真的香啊！快是真的快，贵还真的没这么贵😍😍😍</h4><h4 id="LUV-form-aliyun…"><a href="#LUV-form-aliyun…" class="headerlink" title="LUV form aliyun…"></a>LUV form aliyun…</h4><h4 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h4><hr>
-<h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p>随着博客文章的数量越来越多，难免地，图片存储的数量也渐渐增多。之前是使用文件夹本地存储图片，部署的时候是全数上传到Github的，慢慢会使得这个仓库变得极其臃肿，而且不便于更换网站的托管。于是还是决定使用图床！！！</p>
-<p>没错，阿里云的对象存储OSS！买了三年的空间才27元，40GB，又可以霍霍一阵啦！</p>
-<blockquote>
-<p><strong>Q：关于为什么要搭建图床？</strong></p>
-</blockquote>
-<blockquote>
-<p>A：我首先能给出的答复就是，<strong>快！访问快，上传快，迁移快。</strong>然后我选择aliyun就是<strong>求稳，不丢数据。</strong>最后，搭建图床，其实也可以<strong>用来实现一些其他的功能如：网页Download。</strong>比方说我可以往OSS当中存放一些PDF、PPT、txt等文件文档，我可以随时在我的博客当中下载获取，<strong>非常的便利！</strong></p>
-</blockquote>
-<hr>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="PicGo图床工具"><a href="#PicGo图床工具" class="headerlink" title="PicGo图床工具"></a>PicGo图床工具</h3><p>PicGo是一款非常优秀的图床工具，支持微博、腾讯云COS、阿里云OSS、七牛云、又拍云、GitHub、SM.MS、imgur等。功能强大，简单易用，可惜我不爱它…</p>
-<p>我还是喜欢简单粗暴，因为我是直接用Vscode敲原生Markdown，用不惯Typora、Obsidian之类的编辑器，所以敲文章编辑图片的时候还要在中间插入一层PicGo，过程繁琐。最后还是没有使用PicGo，后面我会分享我敲Markdown对图片管理的技巧，这里讲讲PicGo的安装和使用，优秀的软件工具说不定适合您！</p>
-<h4 id="PicGo的下载与安装"><a href="#PicGo的下载与安装" class="headerlink" title="PicGo的下载与安装"></a>PicGo的下载与安装</h4><ul>
-<li>下载</li>
-</ul>
-<p>您可以在PicGo的Github仓库的Releases当中获取对应的版本：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">戳这里:)</a></p>
-<p>选择最新的版本就行啦（截止2024&#x2F;8&#x2F;25）：</p>
-<!-- ![PicGo版本选择](images/基于阿里云OSS与Hexo与PicGo搭建图床/image-0.png) -->
+                <h3 id="【项目】谈谈HOPE当中的GUI底层逻辑实现🎶"><a href="#【项目】谈谈HOPE当中的GUI底层逻辑实现🎶" class="headerlink" title="【项目】谈谈HOPE当中的GUI底层逻辑实现🎶"></a>【项目】谈谈HOPE当中的GUI底层逻辑实现🎶</h3><h3 id="Let’s-talk-about-how-to-make-a-GUI-like-HOPE’s"><a href="#Let’s-talk-about-how-to-make-a-GUI-like-HOPE’s" class="headerlink" title="Let’s talk about how to make a GUI like HOPE’s !!!"></a>Let’s talk about how to make a GUI like HOPE’s !!!</h3><h3 id="Project-name：HOPE"><a href="#Project-name：HOPE" class="headerlink" title="Project name：HOPE"></a>Project name：HOPE</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><p class="note note-warning">本文由于Gif图片存储较大，请耐心等待图片加载🙇‍♂️🙇‍♂️...</p>
 
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B8%8EHexo%E4%B8%8EPicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/image-0.png" srcset="/img/loading.gif" lazyload alt="PicGo版本选择"></p>
-<ul>
-<li>安装</li>
-</ul>
-<p>进行安装，一路打 √ 即可！</p>
-<h3 id="阿里云对象存储OSS"><a href="#阿里云对象存储OSS" class="headerlink" title="阿里云对象存储OSS"></a>阿里云对象存储OSS</h3><p>关于阿里云对象存储OSS的创建和配置，我找到了一篇优秀的教程<a target="_blank" rel="noopener" href="https://blog.csdn.net/Unamattina_/article/details/136463281">戳这里:P</a></p>
-<p>当然，其中还包括了对PicGo图床工具的配置，教的很赞！</p>
-<p>谢谢该教程作者的分享！非常的手把手教学！</p>
-<h3 id="阿里云对象存储OSS-Vscode替换本地图片链接"><a href="#阿里云对象存储OSS-Vscode替换本地图片链接" class="headerlink" title="阿里云对象存储OSS+Vscode替换本地图片链接"></a>阿里云对象存储OSS+Vscode替换本地图片链接</h3><p>emmm，说来奇怪，我初使用PicGo的时候，我发现我不能用PicGo查看已经存在于OSS当中的图片，只能查看通过PicGo上传到OSS的图片。同时，在PicGo端对图片进行删除后，并不会连同OSS端的图片一起删除。这就导致了操作的不流畅性。</p>
-<p>而且，PicGo不能批量扫描文件夹，上传图片过多过大的时候，会出现<strong>在OSS端已经成功上传但在PicGo端查看不到该图片的情况。</strong></p>
-<p>最后，PicGo不能随我心意地自如的将图片上传到OSS对应的文件夹当中，一张一张地传真的很要命。</p>
-<p>我还遇到一个问题是，<strong>OSS当中的图片是上传后不能也不允许改动在文件夹当中的位置的</strong>，比方说：原来图片A在文件夹1中，现在我想要将图片A从文件夹1移动到文件夹2当中去，这是做不到的。你只能删除文件夹1中的图片A，并在文件夹2中重新上传图片A。</p>
-<p>关于这个问题的解答，我询问了我的从事后端的盆友。它说，你可以把OSS当作是每一个存储对象都对应着一个URL，这个URL是由文件夹的存储路径决定的。倘若你上传了图片A到文件夹1，返回的永久的URL是<code>https://hugokkl.com/file1/pictureA.jpg</code>，云端会根据这个URL到对应的路径当作找到对应的图片。此时你修改该图片A的路径到文件夹2，可是URL却不会改变，会导致文件路径和URL对应不上，云端也不知道去哪里找这个URL对应的图片A了。</p>
-<p>于是，最后我选择使用简单粗暴，<strong>扫描文件夹 + 给原来的图片链接加上前缀的方式</strong>完成了图片的迁移以及图床的搭建！这真的很方便！</p>
-<!-- ![](images/基于阿里云OSS与Hexo与PicGo搭建图床/image-1.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B8%8EHexo%E4%B8%8EPicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/image-1.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-0.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-1.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-2.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-3.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-4.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div></div>
+
+
+
+
+
+<h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p class="note note-info">当然，这些DEMOs都比较远古，包括代码和硬件设计都比较稚嫩，仅仅只做提供思路和参考的作用！仅以此博客，纪念这个有趣的尝试hhh😁</p>
+
+
+
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
-<li><p>OSS当中的文件夹以及文件名不要带有标点符号一类的，否则可能会导致生成的URL不可用。</p>
-</li>
-<li><p>目前，截至到2024&#x2F;8&#x2F;25，本博客绝大部分的图片已经转移到阿里云OSS进行存储！于是，即便不使用魔法，也可以快速地访问本博客！解决了一个挺令人头疼的难题😁</p>
-</li>
+<li>关联的仓库<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/HOPE">请戳这里;P</a>，您可以在该仓库中获取项目源码和PCB打样文件.</li>
 </ul>
 
                 
@@ -378,11 +354,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="/tags/STM32/" class="print-no-link">#STM32</a>
       
-        <a href="/tags/aliyun/" class="print-no-link">#aliyun</a>
+        <a href="/tags/Project/" class="print-no-link">#Project</a>
       
-        <a href="/tags/PicGo/" class="print-no-link">#PicGo</a>
+        <a href="/tags/GUI/" class="print-no-link">#GUI</a>
+      
+        <a href="/tags/MCU/" class="print-no-link">#MCU</a>
       
     </div>
   
@@ -394,8 +372,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</div>
-      <div>https://zhangkeliang0627.github.io/2024/08/24/基于阿里云OSS+Hexo+PicGo搭建图床/README/</div>
+      <div>【项目】谈谈HOPE当中的GUI底层逻辑实现🎶</div>
+      <div>https://zhangkeliang0627.github.io/2024/08/31/谈谈HOPE当中的GUI底层逻辑实现/README/</div>
     </div>
     <div class="license-meta">
       
@@ -407,7 +385,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月24日</div>
+          <div>2024年8月31日</div>
         </div>
       
       
@@ -439,18 +417,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/31/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/README/" title="【项目】谈谈HOPE当中的GUI底层逻辑实现🎶">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【项目】谈谈HOPE当中的GUI底层逻辑实现🎶</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/20/%E8%80%90%E8%83%8C%E7%8E%8B%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/README/" title="【耐背王】计算机网络🤓📖！">
-                        <span class="hidden-mobile">【耐背王】计算机网络🤓📖！</span>
+                      <a href="/2024/08/24/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS+Hexo+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/README/" title="基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️">
+                        <span class="hidden-mobile">基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

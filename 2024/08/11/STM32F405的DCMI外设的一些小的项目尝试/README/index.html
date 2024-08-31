@@ -18,26 +18,27 @@
   
     <meta name="description" content="真的没有想到过，F405居然还可以用来做摄像头方向👍！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STM32F405的DCMI外设的一些小的项目尝试🎶">
+<meta property="og:title" content="【项目】STM32F405的DCMI外设的一些小的项目尝试🎶">
 <meta property="og:url" content="https://zhangkeliang0627.github.io/2024/08/11/STM32F405%E7%9A%84DCMI%E5%A4%96%E8%AE%BE%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%B0%9D%E8%AF%95/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
 <meta property="og:description" content="真的没有想到过，F405居然还可以用来做摄像头方向👍！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/14.jpg">
+<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405%E7%9A%84DCMI%E5%A4%96%E8%AE%BE%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%B0%9D%E8%AF%95/pic2.jpg">
 <meta property="article:published_time" content="2024-08-11T04:35:00.000Z">
-<meta property="article:modified_time" content="2024-08-24T15:51:35.489Z">
+<meta property="article:modified_time" content="2024-08-31T04:25:31.125Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="STM32">
 <meta property="article:tag" content="Camera">
-<meta property="article:tag" content="单片机">
+<meta property="article:tag" content="Project">
+<meta property="article:tag" content="MCU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/14.jpg">
+<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405%E7%9A%84DCMI%E5%A4%96%E8%AE%BE%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%B0%9D%E8%AF%95/pic2.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>STM32F405的DCMI外设的一些小的项目尝试🎶 - Hugo@kkl</title>
+  <title>【项目】STM32F405的DCMI外设的一些小的项目尝试🎶 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -220,7 +221,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="STM32F405的DCMI外设的一些小的项目尝试🎶"></span>
+            <span id="subtitle" data-typed-text="【项目】STM32F405的DCMI外设的一些小的项目尝试🎶"></span>
           
         </div>
 
@@ -243,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          544 字
+          566 字
         
       </span>
     
@@ -299,12 +300,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">STM32F405的DCMI外设的一些小的项目尝试🎶</h1>
+            <h1 id="seo-header">【项目】STM32F405的DCMI外设的一些小的项目尝试🎶</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="STM32F405的DCMI外设的一些小的项目尝试🎶"><a href="#STM32F405的DCMI外设的一些小的项目尝试🎶" class="headerlink" title="STM32F405的DCMI外设的一些小的项目尝试🎶"></a>STM32F405的DCMI外设的一些小的项目尝试🎶</h3><h3 id="Use-STM32F405-DCMI-peripheral-to-do-some-small-projects"><a href="#Use-STM32F405-DCMI-peripheral-to-do-some-small-projects" class="headerlink" title="Use STM32F405 DCMI peripheral to do some small projects!!!"></a>Use STM32F405 DCMI peripheral to do some small projects!!!</h3><h3 id="Project-name：Color-Tracer"><a href="#Project-name：Color-Tracer" class="headerlink" title="Project name：Color-Tracer"></a>Project name：Color-Tracer</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr>
+                <h3 id="【项目】STM32F405的DCMI外设的一些小的项目尝试🎶"><a href="#【项目】STM32F405的DCMI外设的一些小的项目尝试🎶" class="headerlink" title="【项目】STM32F405的DCMI外设的一些小的项目尝试🎶"></a>【项目】STM32F405的DCMI外设的一些小的项目尝试🎶</h3><h3 id="Use-STM32F405-DCMI-peripheral-to-do-some-small-projects"><a href="#Use-STM32F405-DCMI-peripheral-to-do-some-small-projects" class="headerlink" title="Use STM32F405 DCMI peripheral to do some small projects!!!"></a>Use STM32F405 DCMI peripheral to do some small projects!!!</h3><h3 id="Project-name：Color-Tracer"><a href="#Project-name：Color-Tracer" class="headerlink" title="Project name：Color-Tracer"></a>Project name：Color-Tracer</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><p class="note note-warning">本文由于Gif图片存储较大，请耐心等待图片加载🙇‍♂️🙇‍♂️...</p>
+
+<hr>
 <!-- <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/pic2.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="75%;"></div><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/pic3.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div></div> -->
 
 <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/pic2.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="75%;"></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/pic3.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div></div>
@@ -319,8 +322,8 @@
 <li>全屏显示(240x240)</li>
 </ol>
 </blockquote>
-<!-- <center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/pic1.jpg" srcset="/img/loading.gif" lazyload width="80%;"></center> -->
-<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/pic1.jpg" srcset="/img/loading.gif" lazyload width="80%;"></center>
+<center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/pic1.jpg" srcset="/img/loading.gif" lazyload width="80%;"></center>
+<!-- <center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/pic1.jpg" srcset="/img/loading.gif" lazyload width="80%;"></center> -->
 
 
 
@@ -331,24 +334,24 @@
 </blockquote>
 <p>默认烧录为识别追踪浅绿色（草绿色），可以前往<code>dcmi.c</code>文件当中修改<code>TARGET_CONDI Conditionred</code>变量为其他色彩阈值。</p>
 <p>演示效果如下：</p>
-<!-- <center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio1_converted.gif" srcset="/img/loading.gif" lazyload width="90%;"></center> -->
-<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio1_converted.gif" srcset="/img/loading.gif" lazyload width="90%;"></center>
+<center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio1_converted.gif" srcset="/img/loading.gif" lazyload width="90%;"></center>
+<!-- <center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio1_converted.gif" srcset="/img/loading.gif" lazyload width="90%;"></center> -->
 
 <h3 id="识别标准数字-0-9"><a href="#识别标准数字-0-9" class="headerlink" title="识别标准数字(0-9)"></a>识别标准数字(0-9)</h3><blockquote>
 <ol start="3">
 <li>数字识别(模板匹配)</li>
 </ol>
 </blockquote>
-<!-- <center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio2_converted.gif" srcset="/img/loading.gif" lazyload width="50%;"></center> -->
-<center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio2_converted.gif" srcset="/img/loading.gif" lazyload width="50%;"></center>
+<center><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio2_converted.gif" srcset="/img/loading.gif" lazyload width="50%;"></center>
+<!-- <center><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio2_converted.gif" srcset="/img/loading.gif" lazyload width="50%;"></center> -->
 
 <h2 id="关于硬件"><a href="#关于硬件" class="headerlink" title="关于硬件"></a>关于硬件</h2><p>硬件是我自己制作的基于STM32F405的HMI开发板LUMOS，但不是最新的版本，<a target="_blank" rel="noopener" href="https://oshwhub.com/hugego/lumos-stm32f405-based-hmi-core-board">最新版本戳这里:p</a>.</p>
 <p>您可以到关联仓库当中的<code>2.Hardware</code>当中获取旧版本的PCB打样文件，top为顶板，base为底板，但是本项目不建议复刻。</p>
 <p>外观展示如下：</p>
 <p><br></br></p>
-<!-- <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio3_converted.gif" srcset="/img/loading.gif" lazyload width="99.5%;"></div><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio4_converted.gif" srcset="/img/loading.gif" lazyload width="100%;"></div></div></div> -->
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio3_converted.gif" srcset="/img/loading.gif" lazyload width="99.5%;"></div><div class="group-image-wrap"><img src="/images/STM32F405的DCMI外设的一些小的项目尝试/vedio4_converted.gif" srcset="/img/loading.gif" lazyload width="100%;"></div></div></div>
 
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio3_converted.gif" srcset="/img/loading.gif" lazyload width="99.5%;"></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio4_converted.gif" srcset="/img/loading.gif" lazyload width="100%;"></div></div></div>
+<!-- <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio3_converted.gif" srcset="/img/loading.gif" lazyload width="99.5%;"></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/STM32F405的DCMI外设的一些小的项目尝试/vedio4_converted.gif" srcset="/img/loading.gif" lazyload width="100%;"></div></div></div> -->
 
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
 <li>关联的仓库<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/Color-Tracer">请戳这里;P</a>，您可以在该仓库中获取项目源码和PCB打样文件，但，<strong>因为历史过于悠久不推荐复刻本项目。</strong></li>
@@ -390,7 +393,9 @@
       
         <a href="/tags/Camera/" class="print-no-link">#Camera</a>
       
-        <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" class="print-no-link">#单片机</a>
+        <a href="/tags/Project/" class="print-no-link">#Project</a>
+      
+        <a href="/tags/MCU/" class="print-no-link">#MCU</a>
       
     </div>
   
@@ -402,7 +407,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>STM32F405的DCMI外设的一些小的项目尝试🎶</div>
+      <div>【项目】STM32F405的DCMI外设的一些小的项目尝试🎶</div>
       <div>https://zhangkeliang0627.github.io/2024/08/11/STM32F405的DCMI外设的一些小的项目尝试/README/</div>
     </div>
     <div class="license-meta">
