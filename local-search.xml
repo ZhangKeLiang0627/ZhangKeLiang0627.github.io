@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>基于Qt+高德地图API+阿里云MQTT实现的EasyMap🗺️</title>
+    <link href="/2024/09/02/%E5%9F%BA%E4%BA%8EQt%E4%B8%8E%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%B8%8E%E9%98%BF%E9%87%8C%E4%BA%91MQTT%E7%9A%84EasyMap/README/"/>
+    <url>/2024/09/02/%E5%9F%BA%E4%BA%8EQt%E4%B8%8E%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%B8%8E%E9%98%BF%E9%87%8C%E4%BA%91MQTT%E7%9A%84EasyMap/README/</url>
+    
+    <content type="html"><![CDATA[<h3 id="基于Qt-高德地图API-阿里云MQTT实现的EasyMap🗺️"><a href="#基于Qt-高德地图API-阿里云MQTT实现的EasyMap🗺️" class="headerlink" title="基于Qt+高德地图API+阿里云MQTT实现的EasyMap🗺️"></a>基于Qt+高德地图API+阿里云MQTT实现的EasyMap🗺️</h3><h4 id="终于，在我的三脚猫功夫之下，慢慢地憋出了EasyGPS的上位机…"><a href="#终于，在我的三脚猫功夫之下，慢慢地憋出了EasyGPS的上位机…" class="headerlink" title="终于，在我的三脚猫功夫之下，慢慢地憋出了EasyGPS的上位机…"></a>终于，在我的三脚猫功夫之下，慢慢地憋出了EasyGPS的上位机…</h4><h4 id="LUV-form-aliyun-again…"><a href="#LUV-form-aliyun-again…" class="headerlink" title="LUV form aliyun again…"></a>LUV form aliyun again…</h4><h4 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h4><hr><p><img src="/images/%E5%9F%BA%E4%BA%8EQt%E4%B8%8E%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%B8%8E%E9%98%BF%E9%87%8C%E4%BA%91MQTT%E7%9A%84EasyMap/image-0.jpg" alt="EasyMap"></p><p><img src="/images/%E5%9F%BA%E4%BA%8EQt%E4%B8%8E%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%B8%8E%E9%98%BF%E9%87%8C%E4%BA%91MQTT%E7%9A%84EasyMap/image-1.jpg" alt="EasyMap"></p><h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p>这次为了制作EasyGPS的上位机，需要使用高德地图JSAPI，陆陆续续接触了JS、HTML的零零散散的知识，我愿意称之为完全面向ChatGPT编程，真是帮大忙了！</p><p>Qt虽然以前也接触过，不过算是学了忘、忘了学的状态，这次冥冥中有重新捡起来的迹象。</p><p>MQTT也是一个多月前接触的协议，算是终于集齐的这么多要素，勇者终于要屠龙救公主啦😎！</p><p>但是，事实上，并没有这么简单，这几天开发遇到的bug，已经足够环绕地球一大圈了，而且还拿的是我刷短视频的时间来写！写高数都没这么累（www</p><hr><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>等待施工…</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul><li>Qt编译路径不要包含中文、标点符号、空格等，否则极有可能造成编译失败…</li><li>有缘更新吧，这次挖了一个大坑。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study Page</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>aliyun</tag>
+      
+      <tag>MQTT</tag>
+      
+      <tag>Qt</tag>
+      
+      <tag>高德地图</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【简易速记24.09】学生思维如何破局？</title>
     <link href="/2024/09/01/%E7%AE%80%E6%98%93%E9%80%9F%E8%AE%B0/2024%E5%B9%B4/9%E6%9C%88/README/"/>
     <url>/2024/09/01/%E7%AE%80%E6%98%93%E9%80%9F%E8%AE%B0/2024%E5%B9%B4/9%E6%9C%88/README/</url>
