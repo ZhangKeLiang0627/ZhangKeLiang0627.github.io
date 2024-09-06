@@ -20,11 +20,11 @@
     
     <tags>
       
-      <tag>aliyun</tag>
-      
       <tag>MQTT</tag>
       
       <tag>Qt</tag>
+      
+      <tag>aliyun</tag>
       
       <tag>高德地图</tag>
       
@@ -51,9 +51,9 @@
     
     <tags>
       
-      <tag>生活</tag>
-      
       <tag>简易速记</tag>
+      
+      <tag>生活</tag>
       
     </tags>
     
@@ -78,13 +78,13 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>Project</tag>
       
-      <tag>GUI</tag>
+      <tag>STM32</tag>
       
       <tag>MCU</tag>
+      
+      <tag>GUI</tag>
       
     </tags>
     
@@ -165,9 +165,9 @@
     
     <tags>
       
-      <tag>生活</tag>
-      
       <tag>简易速记</tag>
+      
+      <tag>生活</tag>
       
     </tags>
     
@@ -192,11 +192,11 @@
     
     <tags>
       
+      <tag>Project</tag>
+      
       <tag>STM32</tag>
       
       <tag>Camera</tag>
-      
-      <tag>Project</tag>
       
       <tag>MCU</tag>
       
@@ -281,8 +281,6 @@
       
       <tag>Linux</tag>
       
-      <tag>简易速记</tag>
-      
       <tag>Web</tag>
       
       <tag>Socat</tag>
@@ -290,6 +288,8 @@
       <tag>Cmake</tag>
       
       <tag>tar</tag>
+      
+      <tag>简易速记</tag>
       
     </tags>
     
@@ -588,9 +588,9 @@
     
     <tags>
       
-      <tag>单片机</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>单片机</tag>
       
     </tags>
     
@@ -642,9 +642,9 @@
       
       <tag>STM32</tag>
       
-      <tag>Lua</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>Lua</tag>
       
     </tags>
     
