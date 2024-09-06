@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#2b2b2b">
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/13.jpg">
 <meta property="article:published_time" content="2024-07-31T04:35:00.000Z">
-<meta property="article:modified_time" content="2024-08-24T15:35:56.336Z">
+<meta property="article:modified_time" content="2024-09-06T11:05:15.439Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -101,7 +101,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 70vh;">
+<div class="header-inner" style="height: 60vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          388 字
+          671 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          4 分钟
+          6 分钟
         
       </span>
     
@@ -337,6 +337,60 @@
 <li>在Fluid主题配置文件<code>_config.fluid.yml</code>中添加自定义CSS，操作如下：</li>
 </ul>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">custom_css:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/indeximg-hover.css</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="一些我常用到的Fluid特性（记性不好，这里再记一记📖✏️"><a href="#一些我常用到的Fluid特性（记性不好，这里再记一记📖✏️" class="headerlink" title="一些我常用到的Fluid特性（记性不好，这里再记一记📖✏️"></a>一些我常用到的Fluid特性（记性不好，这里再记一记📖✏️</h2><h3 id="折叠块"><a href="#折叠块" class="headerlink" title="折叠块"></a>折叠块</h3>
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-554d8661" role="button" aria-expanded="false" aria-controls="collapse-554d8661">
+        <div class="fold-arrow">▶</div>你确定要打开看看么？
+      </div>
+      <div class="fold-collapse collapse" id="collapse-554d8661">
+        <div class="fold-content">
+          <p>好吧，既然你看到这里，我祝你今天愉快🤗</p>
+        </div>
+      </div>
+    </div>
+
+<p>使用折叠块，可以折叠代码、图片、文字等任何内容，你可以在 markdown 中按如下格式：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% fold info @title %&#125;<br>需要折叠的一段内容，支持 markdown<br>&#123;% endfold %&#125;<br><br>example:<br><br>&#123;% fold info @你确定要打开看看么？ %&#125;<br>好吧，既然你看到这里，我祝你今天愉快🤗<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h3><p>如果想把多张图片按一定布局组合显示，你可以在 markdown 中按如下格式：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% gi total n1-n2-... %&#125;<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>&#123;% endgi %&#125;<br></code></pre></td></tr></table></figure>
+
+<p>total：图片总数量，对应中间包含的图片 url 数量<br>n1-n2-…：每行的图片数量，可以省略，默认单行最多 3 张图，求和必须相等于 total，否则按默认样式</p>
+<h3 id="便签"><a href="#便签" class="headerlink" title="便签"></a>便签</h3><p>在 markdown 中加入如下的代码来使用便签：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs md">&#123;% note success %&#125;<br>文字 或者 <span class="hljs-code">`markdown`</span> 均可<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure>
+
+<p>或者使用 HTML 形式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>可选便签：</p>
+<div class="note note-primary">
+            <p>primary</p>
+          </div>
+
+<div class="note note-secondary">
+            <p>secondary</p>
+          </div>
+
+<div class="note note-success">
+            <p>success</p>
+          </div>
+
+<div class="note note-danger">
+            <p>danger</p>
+          </div>
+
+<div class="note note-warning">
+            <p>warning</p>
+          </div>
+
+<div class="note note-info">
+            <p>info</p>
+          </div>
+
+<div class="note note-light">
+            <p>light</p>
+          </div>
 
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
 <li>前端麻瓜也能有出头的一天😁！</li>
