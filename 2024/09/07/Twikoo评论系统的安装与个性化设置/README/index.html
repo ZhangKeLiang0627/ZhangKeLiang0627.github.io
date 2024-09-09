@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/image-0.png">
 <meta property="article:published_time" content="2024-09-07T07:00:00.000Z">
-<meta property="article:modified_time" content="2024-09-09T11:39:52.518Z">
+<meta property="article:modified_time" content="2024-09-09T11:58:09.287Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Twikoo">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.3k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          9 分钟
+          11 分钟
         
       </span>
     
@@ -316,28 +316,42 @@
 <h3 id="Twikoo个性化设置"><a href="#Twikoo个性化设置" class="headerlink" title="Twikoo个性化设置"></a>Twikoo个性化设置</h3><p>Twikoo评论系统的个性化设置参考了<a target="_blank" rel="noopener" href="https://www.gigigatgat.ca/posts/twikoo-tutorial/">这篇文章</a>，非常谢谢这位Po主！</p>
 <h4 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h4><p><code>Configuration-General-GRAVATAR_CDN</code>一栏填入<code>gravatar.com</code>.</p>
 <p>自定义头像，可以前往<a target="_blank" rel="noopener" href="https://gravatar.com/">Gravatar</a>这个网站用自己的邮箱注册账号并上传个人头像，即可使用该邮箱进行评论时显示自己的自定义头像啦！</p>
-<h4 id="自定义表情包"><a href="#自定义表情包" class="headerlink" title="自定义表情包"></a>自定义表情包</h4><p><code>Configuration-Plugin-EMOTION_CDN</code>一栏输入<code>https://raw.githubusercontent.com/avocadoTiff/twikoo/main/owo.json</code>，这是原文章Po主制作的自定义表情包库，然后你也可以拥有这么一只可爱小猫.</p>
+<h4 id="自定义表情包"><a href="#自定义表情包" class="headerlink" title="自定义表情包"></a>自定义表情包</h4><p><code>Configuration-Plugin-EMOTION_CDN</code>一栏输入<code>https://raw.githubusercontent.com/avocadoTiff/twikoo/main/owo.json</code>，这是原文章Po主制作的自定义表情包库，然后你也可以拥有这么一只可爱小猫！</p>
 <p><strong>WHAT A LOVELY CAT!!!</strong></p>
 <p><img src="/images/Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/image-1.png" srcset="/img/loading.gif" lazyload alt="Twikoo评论效果图"></p>
 <p>接下来，我也照猫画虎地尝试起制作自己的自定义表情包库啦（撸起袖子状！</p>
+<p>表情包的制作其实很简单！只要按照以下的<code>json</code>文件格式制作一份<code>owo.json</code>文件，然后将这个文件放到你的仓库，或者对象存储等区域就可以进行调用啦！</p>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-16f8b946" role="button" aria-expanded="false" aria-controls="collapse-16f8b946">
+        <div class="fold-arrow">▶</div>制作表情包的 json 文件格式
+      </div>
+      <div class="fold-collapse collapse" id="collapse-16f8b946">
+        <div class="fold-content">
+          <p>制作表情包有三种<code>type</code>：</p><ul><li><code>emoticon</code>：颜文字，文字类。</li><li><code>emoji</code>：这个怎么翻译啊，小表情包吗hhh？</li><li><code>image</code>：获取图片当成表情包，需要提供URL。</li></ul><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;颜文字&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;emoticon&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;container&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>            <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;icon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;(ノ°ο°)ノ&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;前方高能预警&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;icon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;(´இ皿இ｀)&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;我从未见过如此厚颜无耻之人&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-punctuation">]</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;Emoji&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;emoji&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;container&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>            <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;icon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;😂&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;icon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;😀&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-punctuation">]</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;Bilibili&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;container&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>            <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;icon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;img src=\&quot;https://owo.imaegoo.com/bilibili/6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png\&quot;&gt;&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tv_doge&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;icon&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;img src=\&quot;https://owo.imaegoo.com/bilibili/a8111ad55953ef5e3be3327ef94eb4a39d535d06.png\&quot;&gt;&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tv_亲亲&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-punctuation">]</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+
 <p>以下是几个包含了很多很多各种各样的自定义表情包的地址：</p>
 <ul>
 <li><a href="Twikoo-Magic">Twikoo-Magic</a>，一个搜罗了许多热门Twikoo表情包的仓库。</li>
-<li><a target="_blank" rel="noopener" href="https://slackmojis.com/">Slackmojis</a>，超超超多表情包，提供了<code>alt text</code>，右键可以<code>复制图片链接</code>！</li>
+<li><a target="_blank" rel="noopener" href="https://slackmojis.com/">Slackmojis</a>，超超超多表情包，提供了<code>alt text</code>，右键可以<code>复制图片链接</code>。</li>
 <li><a target="_blank" rel="noopener" href="https://emotion.xiaokang.me/#/">小康的表情速查</a>，居然可以一键生成Twikoo表情包的 json 文件，不过看上眼的就少了些（</li>
 </ul>
 <p>最后终于，我也制作了一个自定义的表情包库，和我的博客扔在同一个Github仓库啦！</p>
-<p><code>Configuration-Plugin-EMOTION_CDN</code>一栏输入<code>https://raw.githubusercontent.com/xxx/main/owo.json</code>，即可使用同款表情ahhh！</p>
+<p><code>Configuration-Plugin-EMOTION_CDN</code>一栏输入<code>https://raw.githubusercontent.com/ZhangKeLiang0627/ZhangKeLiang0627.github.io/main/img/sys/owo.json</code>，即可使用同款表情ahhh！</p>
 <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://emojis.slackmojis.com/emojis/images/1643514476/4594/blob-wave.gif?1643514476" srcset="/img/loading.gif" lazyload width = "135" height = "135" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="https://emojis.slackmojis.com/emojis/images/1666924513/62049/blob_crazy_happy.gif?1666924513" srcset="/img/loading.gif" lazyload width = "135" height = "135" style="border-radius: 15px;"></div></div></div>
 
 <h4 id="配置邮件通知服务"><a href="#配置邮件通知服务" class="headerlink" title="配置邮件通知服务"></a>配置邮件通知服务</h4><p>这里以配置QQ邮箱为例：</p>
 <p>首先，你要先开启邮箱的POP3&#x2F;SMTP服务：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_58068682/article/details/122770936">-&gt;click here to know more details</a>.</p>
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-8f7bdefe" role="button" aria-expanded="false" aria-controls="collapse-8f7bdefe">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-dcdac752" role="button" aria-expanded="false" aria-controls="collapse-dcdac752">
         <div class="fold-arrow">▶</div>你仅需要填写的邮件通知选项
       </div>
-      <div class="fold-collapse collapse" id="collapse-8f7bdefe">
+      <div class="fold-collapse collapse" id="collapse-dcdac752">
         <div class="fold-content">
           <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs md">SENDER<span class="hljs-emphasis">_EMAIL: &lt;你的QQ邮箱地址&gt;</span><br><span class="hljs-emphasis">SENDER_</span>NAME: &lt;发送邮件者名称&gt;<br>MAIL<span class="hljs-emphasis">_SUBJECT: &lt;自定义通知邮件主题&gt;</span><br><span class="hljs-emphasis">SMTP_</span>SERVICE: &lt;你的邮件服务提供商&gt;<br>SMTP<span class="hljs-emphasis">_USER: &lt;邮件通知邮箱用户名&gt;(需与SENDER_</span>EMAIL一致)<br>SMTP<span class="hljs-emphasis">_PASS: &lt;邮件通知邮箱密码&gt;(授权码)</span><br></code></pre></td></tr></table></figure>
         </div>
