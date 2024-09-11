@@ -49,9 +49,9 @@
       
       <tag>MQTT</tag>
       
-      <tag>aliyun</tag>
-      
       <tag>Qt</tag>
+      
+      <tag>aliyun</tag>
       
       <tag>高德地图</tag>
       
@@ -105,11 +105,11 @@
     
     <tags>
       
+      <tag>Project</tag>
+      
       <tag>STM32</tag>
       
       <tag>MCU</tag>
-      
-      <tag>Project</tag>
       
       <tag>GUI</tag>
       
@@ -219,13 +219,13 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
-      <tag>MCU</tag>
-      
       <tag>Project</tag>
       
+      <tag>STM32</tag>
+      
       <tag>Camera</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -667,11 +667,11 @@
     
     <tags>
       
-      <tag>Lua</tag>
-      
       <tag>STM32</tag>
       
       <tag>MCU</tag>
+      
+      <tag>Lua</tag>
       
     </tags>
     
