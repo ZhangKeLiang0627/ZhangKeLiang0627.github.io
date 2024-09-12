@@ -16,20 +16,20 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="第一次萌发想要如此激烈追寻技术大佬的心愿，感恩，感谢🥹">
+    <meta name="description" content="第一次萌发想要如此激烈追寻技术大佬的心愿，感恩，感谢！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【项目】谈谈HOPE当中的GUI底层逻辑实现✨">
+<meta property="og:title" content="谈谈HOPE当中的GUI底层逻辑实现✨">
 <meta property="og:url" content="https://zhangkeliang0627.github.io/2024/08/31/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="第一次萌发想要如此激烈追寻技术大佬的心愿，感恩，感谢🥹">
+<meta property="og:description" content="第一次萌发想要如此激烈追寻技术大佬的心愿，感恩，感谢！">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/index-cover.jpg">
 <meta property="article:published_time" content="2024-08-31T03:55:00.000Z">
-<meta property="article:modified_time" content="2024-09-07T04:45:08.737Z">
+<meta property="article:modified_time" content="2024-09-12T16:56:52.339Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="MCU">
 <meta property="article:tag" content="Project">
 <meta property="article:tag" content="STM32">
+<meta property="article:tag" content="MCU">
 <meta property="article:tag" content="GUI">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/index-cover.jpg">
@@ -38,7 +38,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>【项目】谈谈HOPE当中的GUI底层逻辑实现✨ - Hugo@kkl</title>
+  <title>谈谈HOPE当中的GUI底层逻辑实现✨ - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -80,7 +80,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"zhangkeliang0627.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"zhangkeliang0627.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -220,7 +220,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【项目】谈谈HOPE当中的GUI底层逻辑实现✨"></span>
+            <span id="subtitle" data-typed-text="谈谈HOPE当中的GUI底层逻辑实现✨"></span>
           
         </div>
 
@@ -299,12 +299,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">【项目】谈谈HOPE当中的GUI底层逻辑实现✨</h1>
+            <h1 id="seo-header">谈谈HOPE当中的GUI底层逻辑实现✨</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="【项目】谈谈HOPE当中的GUI底层逻辑实现✨"><a href="#【项目】谈谈HOPE当中的GUI底层逻辑实现✨" class="headerlink" title="【项目】谈谈HOPE当中的GUI底层逻辑实现✨"></a>【项目】谈谈HOPE当中的GUI底层逻辑实现✨</h3><h3 id="Let’s-talk-about-how-to-make-a-GUI-like-HOPE’s"><a href="#Let’s-talk-about-how-to-make-a-GUI-like-HOPE’s" class="headerlink" title="Let’s talk about how to make a GUI like HOPE’s !!!"></a>Let’s talk about how to make a GUI like HOPE’s !!!</h3><h3 id="Project-name：HOPE"><a href="#Project-name：HOPE" class="headerlink" title="Project name：HOPE"></a>Project name：HOPE</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><p class="note note-warning">本文由于Gif图片存储较大，请耐心等待图片加载🙇‍♂️🙇‍♂️...</p>
+                <h3 id="谈谈HOPE当中的GUI底层逻辑实现✨"><a href="#谈谈HOPE当中的GUI底层逻辑实现✨" class="headerlink" title="谈谈HOPE当中的GUI底层逻辑实现✨"></a>谈谈HOPE当中的GUI底层逻辑实现✨</h3><h3 id="Let’s-talk-about-how-to-make-a-GUI-like-HOPE’s"><a href="#Let’s-talk-about-how-to-make-a-GUI-like-HOPE’s" class="headerlink" title="Let’s talk about how to make a GUI like HOPE’s !!!"></a>Let’s talk about how to make a GUI like HOPE’s !!!</h3><h3 id="Project-name：HOPE"><a href="#Project-name：HOPE" class="headerlink" title="Project name：HOPE"></a>Project name：HOPE</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><p class="note note-warning">本文由于Gif图片存储较大，请耐心等待图片加载🙇‍♂️🙇‍♂️...</p>
 
 <hr>
 <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-0.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-1.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-2.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-3.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div><div class="group-image-wrap"><img src="/images/谈谈HOPE当中的GUI底层逻辑实现/image-4.jpg" srcset="/img/loading.gif" lazyload alt="exhibition" width="100%;"></div></div></div>
@@ -371,7 +371,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
+  <a href="/categories/Project-Page/" class="category-chain-item">Project Page</a>
   
   
 
@@ -386,11 +386,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/MCU/" class="print-no-link">#MCU</a>
-      
         <a href="/tags/Project/" class="print-no-link">#Project</a>
       
         <a href="/tags/STM32/" class="print-no-link">#STM32</a>
+      
+        <a href="/tags/MCU/" class="print-no-link">#MCU</a>
       
         <a href="/tags/GUI/" class="print-no-link">#GUI</a>
       
@@ -404,7 +404,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【项目】谈谈HOPE当中的GUI底层逻辑实现✨</div>
+      <div>谈谈HOPE当中的GUI底层逻辑实现✨</div>
       <div>https://zhangkeliang0627.github.io/2024/08/31/谈谈HOPE当中的GUI底层逻辑实现/README/</div>
     </div>
     <div class="license-meta">
@@ -596,8 +596,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-      
-<div class="text-center py-1"> <div class="img-circle rotate"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/myimg.png" srcset="/img/loading.gif" lazyload></div> <br> <span># Carpe diem </span> <p> </div>
+       <div class="text-center py-1"> <div class="img-circle rotate"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/myimg.png" srcset="/img/loading.gif" lazyload></div> <br> <span># Carpe diem </span> <p> </div>
 <span> Framwork </span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-switch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>
 <div> <span>Copyright © 2023-2024</span> <a href="https://zhangkeliang0627.github.io/" target="_blank" rel="nofollow noopener"> <span>Hugo@kkl</span> </a> </div>
 <style> .img-circle { display: block; margin: 0 auto; border-radius: 50%; overflow: hidden; width: 150px; height: 150px; } .img-circle img { display: block; max-width: 100%; height: auto; } .text-center { text-align: center; } .py-1 { padding-top: 1rem; padding-bottom: 1rem; } .rotate { transition: transform 0.8s; } .rotate:hover { transform: rotate(360deg); } div { line-height: 1.5; } </style> 
@@ -790,5 +789,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<!-- hexo injector body_end start --><script src="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/js/index.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
+<!-- hexo injector body_end start --><script src="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/js/index.js"></script><!-- hexo injector body_end end --></body>
 </html>

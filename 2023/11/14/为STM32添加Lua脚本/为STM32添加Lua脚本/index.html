@@ -16,19 +16,19 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="为STM32添加Lua脚本环境">
+    <meta name="description" content="为STM32添加Lua脚本（跳针">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在单片机环境下移植Lua">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/11/14/%E5%9C%A8%E5%8D%95%E7%89%87%E6%9C%BA%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%A7%BB%E6%A4%8DLua/%E5%9C%A8%E5%8D%95%E7%89%87%E6%9C%BA%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%A7%BB%E6%A4%8DLua/index.html">
+<meta property="og:title" content="为STM32添加Lua脚本">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/11/14/%E4%B8%BASTM32%E6%B7%BB%E5%8A%A0Lua%E8%84%9A%E6%9C%AC/%E4%B8%BASTM32%E6%B7%BB%E5%8A%A0Lua%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="为STM32添加Lua脚本环境">
+<meta property="og:description" content="为STM32添加Lua脚本（跳针">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/1.jpg">
 <meta property="article:published_time" content="2023-11-14T11:21:00.000Z">
-<meta property="article:modified_time" content="2024-09-07T04:47:45.901Z">
+<meta property="article:modified_time" content="2024-09-12T16:59:08.463Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="MCU">
 <meta property="article:tag" content="STM32">
+<meta property="article:tag" content="MCU">
 <meta property="article:tag" content="Lua">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/1.jpg">
@@ -37,7 +37,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>在单片机环境下移植Lua - Hugo@kkl</title>
+  <title>为STM32添加Lua脚本 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"zhangkeliang0627.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"zhangkeliang0627.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -219,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在单片机环境下移植Lua"></span>
+            <span id="subtitle" data-typed-text="为STM32添加Lua脚本"></span>
           
         </div>
 
@@ -298,12 +298,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在单片机环境下移植Lua</h1>
+            <h1 id="seo-header">为STM32添加Lua脚本</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="在单片机环境下移植Lua🤗"><a href="#在单片机环境下移植Lua🤗" class="headerlink" title="在单片机环境下移植Lua🤗"></a>在单片机环境下移植Lua🤗</h1><h2 id="软件：keil"><a href="#软件：keil" class="headerlink" title="软件：keil"></a>软件：keil</h2><h2 id="所需环境：Malloc、Fatfs"><a href="#所需环境：Malloc、Fatfs" class="headerlink" title="所需环境：Malloc、Fatfs"></a>所需环境：Malloc、Fatfs</h2><ul>
+                <h1 id="为STM32添加Lua脚本🤗"><a href="#为STM32添加Lua脚本🤗" class="headerlink" title="为STM32添加Lua脚本🤗"></a>为STM32添加Lua脚本🤗</h1><h2 id="软件：keil"><a href="#软件：keil" class="headerlink" title="软件：keil"></a>软件：keil</h2><h2 id="所需环境：Malloc、Fatfs"><a href="#所需环境：Malloc、Fatfs" class="headerlink" title="所需环境：Malloc、Fatfs"></a>所需环境：Malloc、Fatfs</h2><ul>
 <li>声明这里使用的是正点原子家的源码，感谢！</li>
 <li>上述环境是为了实现Lua能够从外置存储介质读取文件所准备的，如果没有需求可以不用</li>
 </ul>
@@ -430,9 +430,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/MCU/" class="print-no-link">#MCU</a>
-      
         <a href="/tags/STM32/" class="print-no-link">#STM32</a>
+      
+        <a href="/tags/MCU/" class="print-no-link">#MCU</a>
       
         <a href="/tags/Lua/" class="print-no-link">#Lua</a>
       
@@ -446,8 +446,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在单片机环境下移植Lua</div>
-      <div>https://zhangkeliang0627.github.io/2023/11/14/在单片机环境下移植Lua/在单片机环境下移植Lua/</div>
+      <div>为STM32添加Lua脚本</div>
+      <div>https://zhangkeliang0627.github.io/2023/11/14/为STM32添加Lua脚本/为STM32添加Lua脚本/</div>
     </div>
     <div class="license-meta">
       
@@ -632,8 +632,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-      
-<div class="text-center py-1"> <div class="img-circle rotate"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/myimg.png" srcset="/img/loading.gif" lazyload></div> <br> <span># Carpe diem </span> <p> </div>
+       <div class="text-center py-1"> <div class="img-circle rotate"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/myimg.png" srcset="/img/loading.gif" lazyload></div> <br> <span># Carpe diem </span> <p> </div>
 <span> Framwork </span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-switch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>
 <div> <span>Copyright © 2023-2024</span> <a href="https://zhangkeliang0627.github.io/" target="_blank" rel="nofollow noopener"> <span>Hugo@kkl</span> </a> </div>
 <style> .img-circle { display: block; margin: 0 auto; border-radius: 50%; overflow: hidden; width: 150px; height: 150px; } .img-circle img { display: block; max-width: 100%; height: auto; } .text-center { text-align: center; } .py-1 { padding-top: 1rem; padding-bottom: 1rem; } .rotate { transition: transform 0.8s; } .rotate:hover { transform: rotate(360deg); } div { line-height: 1.5; } </style> 
@@ -826,5 +825,5 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<!-- hexo injector body_end start --><script src="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/js/index.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
+<!-- hexo injector body_end start --><script src="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/js/index.js"></script><!-- hexo injector body_end end --></body>
 </html>
