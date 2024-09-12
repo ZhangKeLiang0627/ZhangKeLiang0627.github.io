@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/3.jpg">
 <meta property="article:published_time" content="2023-12-08T17:10:00.000Z">
-<meta property="article:modified_time" content="2024-08-24T15:31:47.046Z">
+<meta property="article:modified_time" content="2024-09-12T09:54:34.875Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="FreeRTOS">
 <meta property="article:tag" content="单片机">
@@ -329,17 +329,17 @@
 <li>那么在FreeRTOS中各个任务都有自己的堆栈，一般呢我们只管写这个任务需要多大的堆栈，FreeRTOS会自动帮我们从RAM中申请内存。包括信号量、队列这些都是。</li>
 <li><code>configSUPPORT_STATIC_ALLOCATION</code>为0的时候，FreeRTOS会使用<code>heap_x.c(x为 1~5)</code>中的动态内存管理函数来自动申请RAM；当此宏定义为1的时候，用户可以给FreeRTOS指定一块静态RAM内存，你就可以执行类似<code>xTaskCreateStatic</code>的函数啦。一般咱们写0就行（默认也是写0的</li>
 <li><code>configTOTAL_HEAP_SIZE</code></li>
-<li><code>#define XXX_STK_SIZE 256</code>意思是设置XXX任务的堆栈大小为256*4(字&#x2F;byte</li>
+<li><code>#define XXX_STK_SIZE 256</code>意思是设置XXX任务的堆栈大小为256*4(字节&#x2F;byte</li>
 </ul>
 </blockquote>
 </li>
 </ul>
 </blockquote>
 <blockquote>
-<p><strong>2.字和字节</strong></p>
+<p><strong>2.位和字节</strong></p>
 <ul>
-<li><strong>字节(bit)</strong></li>
-<li><strong>字(Byte)</strong> ：1 byte &#x3D; 4 bits</li>
+<li><strong>位(bit)</strong></li>
+<li><strong>字节(Byte)</strong> ：1 byte &#x3D; 8 bit</li>
 <li>在单片机中可以简单的把<code>byte</code>理解成<code>char</code>类型或者<code>unsigned char</code>类型</li>
 </ul>
 </blockquote>
@@ -352,7 +352,7 @@
 <blockquote>
 <p><strong>4.优先级</strong></p>
 <ul>
-<li>使用FreeRTOS最好把优先级分组选择为<code>NVIC_PriorityGroup_4</code>，寄存器的4位字节都设置为抢占优先级，这样就有 0~15 共16个抢占优先级可供选择。因为FreeRTOS的中断配置里不能处理亚优先级（排队优先级）的这种情况。</li>
+<li>使用FreeRTOS最好把优先级分组选择为<code>NVIC_PriorityGroup_4</code>，寄存器的4位bit都设置为抢占优先级，这样就有 0~15 共16个抢占优先级可供选择。因为FreeRTOS的中断配置里不能处理亚优先级（排队优先级）的这种情况。</li>
 <li>任务优先级</li>
 <li>FreeRTOS的任务优先级是0最不优先，越大越优先，和中断优先级相反的哈！</li>
 </ul>
