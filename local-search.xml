@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>杂记丨10月：思乡只是一种情绪</title>
+    <link href="/2024/09/20/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/10%E6%9C%88/README/"/>
+    <url>/2024/09/20/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/10%E6%9C%88/README/</url>
+    
+    <content type="html"><![CDATA[<h3 id="杂记丨10月：思乡只是一种情绪"><a href="#杂记丨10月：思乡只是一种情绪" class="headerlink" title="杂记丨10月：思乡只是一种情绪"></a>杂记丨10月：思乡只是一种情绪</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>…</p><hr><h3 id="【2024-09-20】思乡只是一种情绪"><a href="#【2024-09-20】思乡只是一种情绪" class="headerlink" title="【2024&#x2F;09&#x2F;20】思乡只是一种情绪"></a>【2024&#x2F;09&#x2F;20】思乡只是一种情绪</h3><p>…</p><hr><h3 id="【2024-10-01】等待施工"><a href="#【2024-10-01】等待施工" class="headerlink" title="【2024&#x2F;10&#x2F;01】等待施工"></a>【2024&#x2F;10&#x2F;01】等待施工</h3><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script><div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><ul><li>可能会更新？</li></ul><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>Life Page</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>life</tag>
+      
+      <tag>record</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Twikoo评论系统的安装与个性化设置</title>
     <link href="/2024/09/07/Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/README/"/>
     <url>/2024/09/07/Twikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/README/</url>
@@ -47,13 +74,13 @@
     
     <tags>
       
-      <tag>Qt</tag>
+      <tag>MQTT</tag>
       
       <tag>aliyun</tag>
       
-      <tag>高德地图</tag>
+      <tag>Qt</tag>
       
-      <tag>MQTT</tag>
+      <tag>高德地图</tag>
       
     </tags>
     
@@ -78,9 +105,9 @@
     
     <tags>
       
-      <tag>record</tag>
-      
       <tag>life</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
@@ -105,11 +132,11 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
-      
-      <tag>MCU</tag>
       
       <tag>GUI</tag>
       
@@ -192,9 +219,9 @@
     
     <tags>
       
-      <tag>record</tag>
-      
       <tag>life</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
@@ -219,13 +246,13 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
       
       <tag>Camera</tag>
-      
-      <tag>MCU</tag>
       
     </tags>
     
@@ -279,9 +306,9 @@
       
       <tag>ESP32</tag>
       
-      <tag>MQTT</tag>
-      
       <tag>Arduino</tag>
+      
+      <tag>MQTT</tag>
       
     </tags>
     
@@ -308,6 +335,8 @@
       
       <tag>Linux</tag>
       
+      <tag>record</tag>
+      
       <tag>Web</tag>
       
       <tag>Socat</tag>
@@ -315,8 +344,6 @@
       <tag>Cmake</tag>
       
       <tag>tar</tag>
-      
-      <tag>record</tag>
       
     </tags>
     
@@ -615,9 +642,9 @@
     
     <tags>
       
-      <tag>MCU</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -667,9 +694,9 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>STM32</tag>
       
       <tag>Lua</tag>
       
