@@ -49,9 +49,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -103,9 +103,9 @@
     
     <tags>
       
-      <tag>aliyun</tag>
-      
       <tag>Qt</tag>
+      
+      <tag>aliyun</tag>
       
       <tag>高德地图</tag>
       
@@ -134,9 +134,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -161,11 +161,11 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
-      
-      <tag>MCU</tag>
       
       <tag>GUI</tag>
       
@@ -248,9 +248,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -275,13 +275,13 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
       
       <tag>Camera</tag>
-      
-      <tag>MCU</tag>
       
     </tags>
     
@@ -364,8 +364,6 @@
       
       <tag>Linux</tag>
       
-      <tag>record</tag>
-      
       <tag>Web</tag>
       
       <tag>Socat</tag>
@@ -373,6 +371,8 @@
       <tag>Cmake</tag>
       
       <tag>tar</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
@@ -671,9 +671,9 @@
     
     <tags>
       
-      <tag>MCU</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -686,7 +686,7 @@
     <link href="/2023/12/09/GitxVScode-CodeManageGuide/GitxVScode-CodeManageGuide/"/>
     <url>/2023/12/09/GitxVScode-CodeManageGuide/GitxVScode-CodeManageGuide/</url>
     
-    <content type="html"><![CDATA[<h1 id="GitxVScode-CodeManageGuide"><a href="#GitxVScode-CodeManageGuide" class="headerlink" title="GitxVScode-CodeManageGuide"></a>GitxVScode-CodeManageGuide</h1><h1 id="Git与VScode联合使用的源代码管理指南"><a href="#Git与VScode联合使用的源代码管理指南" class="headerlink" title="Git与VScode联合使用的源代码管理指南"></a>Git与VScode联合使用的源代码管理指南</h1><h2 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h2><hr><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>建议有一点Git管理基础的人使用！至少你得Github有号吧，是吧（玩笑！</li><li>这些指令其实并不常用，我们只是稍作理解，剩下的交给Vscode点点点吧！</li></ul><hr><h2 id="相关插件"><a href="#相关插件" class="headerlink" title="相关插件"></a>相关插件</h2><ul><li><p>Git Graph</p><ul><li>可以清晰地看到存储仓库的每一次提交(Commit)，每一个分支(Branch)，和每一次合并的记录，非常nice！</li><li>同时可以很方便的查询每一次的记录，进行文件代码比对。</li></ul></li><li><p>GitLens</p><ul><li>可以直接在源代码里看到每一行代码的更改时间！</li></ul></li><li><p>GitHistory</p><ul><li>和Git Graph功能类似，细节注重点不太一样。</li></ul></li></ul><hr><h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul><li><strong>提交(Commit)</strong><ul><li><code>git add .</code>添加所有被修改文件到暂存更改区</li><li><code>git commit -m &quot;massage&quot;</code> 提交暂存更改区的内容作为一个新版本，<code>massage</code>为该版本的关键字</li><li><code>-m</code>的作用就是可以不弹窗直接写关键字，如果你只输入<code>git commit</code>就会弹出一个窗口让你填写该版本的关键字。</li></ul></li></ul><blockquote><p>这个操作我们使用VScode自带的源代码管理来完成。<br>暂存我们所需的修改之后点击提交，接着会跳转到<code>COMMIT_EDITMSG</code>文件页面，顾名思义就是提交编辑信息。<br>你可以在这个文件最顶部写一些你这次提交的一些消息备注。写完保存，关掉这个文件页面，即可完成一次提交！</p></blockquote><ul><li><strong>推送(Push)</strong></li></ul><blockquote><p>这个操作需要我们的VScode关联自己的Github仓库后才可以使用。<br>提交之后，提交记录会暂存在我们本地的仓库内，如果想要把提交记录推送至Github，我们只需要在VScode的源代码管理里选择推送即可。<br>如果你Github没有创建相关的仓库，VScode也会弹窗让你创建的！</p></blockquote><ul><li><strong>签出到(Checkout)</strong></li></ul><blockquote><ul><li><code>git checkout branch_name</code>切换分支。 </li><li>切换分支的时候要保证当前暂存区没有需要修改的文件哦！可以用<code>git status</code>确保现在的状态是<code>clean</code>，否则就会切换分支失败了。</li></ul></blockquote><ul><li><strong>版本回退(Reset)</strong></li></ul><blockquote><p>有3种常用的回退方式，分别是<code>soft</code>, <code>mixed</code>, <code>hard</code></p></blockquote><blockquote><p>1.<code>git reset --soft &lt;Hash&gt;</code>（这里<code>&lt;Hash&gt;</code>是你的版本号哈！<br><code>soft</code>回退方式只会把Head指针往回指到你回退的版本，然后你仓库里的文件不会发生任何的增删，状态大概就是你已经commit了，但是没有push的状态。（？不知道理解的对不对</p></blockquote><blockquote><p>2.<code>git reset --mixed &lt;Hash&gt;</code><br><code>mixed</code>回退方式，会把Head指针往回指到我们希望回退到的版本，然后仓库里的文件也不会发生任何的增删（暂时），为什么说是暂时呢？因为它把你这个回退版本之后所有的commit都放回了暂存更改区，你就可以在暂存更改区里决定要恢复什么文件，恢复什么代码啦！</p></blockquote><blockquote><p>3.<code>git reset --hard &lt;Hash&gt;</code><br><code>hard</code>回退方式，会把Head指针往回指到我们希望回退到的版本，然后该版本号以后的版本统统都会不见使用<code>git log</code>时就看不见当前回退版本以后的版本号了（所以要谨慎！</p><ul><li>这种回退方式会简单粗暴的把你本地仓库回退版本的什么文件啊什么代码原封不动地一字不拉地归还它的原样！</li><li>当然，你仍然可以通过<code>git reflog</code>找回从前的版本号，然后使用<code>git reset --hard &lt;Hash&gt;</code>跳回去，<strong>理论上，你的代码不会丢，</strong> nice！</li><li><code>git reset --hard HEAD^</code>表示硬回退到<strong>上一个</strong>版本</li><li>同理<code>HEAD^^</code>表示<strong>上上个</strong>版本，<code>HEAD^^^</code>表示<strong>上上上个</strong>版本，而且你也可以用<code>HEAD~3</code>表示<strong>上上上个</strong>版本噢！</li></ul></blockquote><h2 id="辅助操作"><a href="#辅助操作" class="headerlink" title="辅助操作"></a>辅助操作</h2><h3 id="记录查看"><a href="#记录查看" class="headerlink" title="记录查看"></a>记录查看</h3><ul><li><code>git log</code></li></ul><blockquote><ul><li><code>git log</code>用来查看commit提交历史记录。</li><li><code>git log --graph</code>这条命令使用了就会有优雅的树状图可以看啦（也不算是树状图，反正就是图形化显示</li><li>在终端按<code>Q</code>键退出日志哦！</li></ul></blockquote><ul><li><code>git reflog</code></li></ul><blockquote><p>用来查看Git仓库的所有git命令操作的历史记录，比如你用过的<code>reset</code>, <code>checkout</code>, <code>commit</code>, <code>push</code> 的记录都能在这里看到。</p></blockquote><ul><li><code>git status</code></li></ul><blockquote><p>用来查看本地仓库状态。</p></blockquote><h3 id="清除已经被跟踪的文件"><a href="#清除已经被跟踪的文件" class="headerlink" title="清除已经被跟踪的文件"></a>清除已经被跟踪的文件</h3><p>如果文件已经被 Git 跟踪（即已经提交到仓库），那么修改<code>.gitignore</code>文件将不会对这些文件产生任何效果。你需要先从 Git 的跟踪列表中移除这些文件。你可以使用：</p><blockquote><p><code>git rm --cached &lt;file&gt;</code>，清除单个文件.<br><code>git rm -r --cached &lt;file&gt;</code>，清除文件夹以及文件夹内的所有内容.</p></blockquote><h3 id="分支查找"><a href="#分支查找" class="headerlink" title="分支查找"></a>分支查找</h3><ul><li><code>git branch</code></li></ul><blockquote><ul><li><code>git branch</code>用来查看当前所在的分支。</li><li><code>git branch -v</code>用来查看当前所在分支最后一次提交的版本号和版本关键字。</li><li><code>git branch branch_name</code>用来创建名字为<code>branch_name</code>的新分支。</li></ul></blockquote><h3 id="远程仓库克隆"><a href="#远程仓库克隆" class="headerlink" title="远程仓库克隆"></a>远程仓库克隆</h3><ul><li><code>git clone</code></li></ul><blockquote><ul><li><code>git clone &lt;address&gt;</code>老熟人了，打开一个文件夹，打开它的命令行窗口，你就敲上面的命令，<code>&lt;address&gt;</code>是被克隆的远程仓库的地址。就这个命令可以完成目前所有开源项目90%的克隆。</li><li><code>git clone --recursive &lt;address&gt;</code>剩下的10%就比较专业一点，可能人家远程代码库里运用了别人的子项目，你直接克隆下来就是个空文件夹，所以你就需要用这个命令来<strong>递归</strong>克隆！把别人子项目的内容也可以克隆下来！</li></ul></blockquote><h3 id="本地仓库初始化"><a href="#本地仓库初始化" class="headerlink" title="本地仓库初始化"></a>本地仓库初始化</h3><ul><li><code>git init</code></li></ul><blockquote><p>在该文件夹下初始化git仓库</p></blockquote><h3 id="本地仓库全局配置"><a href="#本地仓库全局配置" class="headerlink" title="本地仓库全局配置"></a>本地仓库全局配置</h3><ul><li><code>git config</code></li></ul><blockquote><p>在初始化完成Git本地仓库后，开始正式使用前，是需要有一些全局设置的，如用户名、邮箱等</p><ul><li><code>git config --global user.name &quot;your name&quot;</code>用于设置全局用户名</li><li><code>git config --global uer.email &quot;your email&quot;</code>用于设置全局邮箱<br>其中，<code>--global</code>指定全局配置，不使用该参数，则为当前所在仓库配置。</li></ul></blockquote><blockquote><p>我的Github用户名和邮箱：</p></blockquote><script >function checkPassword() {  var password = document.getElementById("password").value;  if (password === "0000") {  document.getElementById("user").style.display = "block";  } else {  alert("不准偷看！！！");  document.getElementById("user").style.display = "none";  }}</script><body title="哒咩">  口令是什么？  <input type="password" id="password">  <button onclick="checkPassword()" style="border-radius: 5px;">确认</button>  <div id="user" style="display: none;">    <p>俺滴Github用户名：ZhangKeLiang0627</p>    <p>俺滴Github邮箱：111654293+ZhangKeLiang0627@users.noreply.github.com</p>  </div></body><style>  input[type="password"] {    padding: 3px;    margin: 5px;    border: 1px solid #ccc;    border-radius: 5px;  }  #user {    display: none;    background-color: #f4f4f4;    padding: 5px;    margin-top: 10px;    border-radius: 5px;    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  }</style><blockquote><p>注意我的不是你的哦🫸</p></blockquote><blockquote><p>于是可以如下配置：<br><code>git config --global user.name &quot;xxx&quot;</code><br><code>git config --global uer.email &quot;xxx.example.com&quot;</code></p></blockquote><blockquote><p>可以输入以下两条指令，检查用户名和邮箱是否输入正确。<br><code>git config user.name</code><br><code>git config user.email</code></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="GitxVScode-CodeManageGuide"><a href="#GitxVScode-CodeManageGuide" class="headerlink" title="GitxVScode-CodeManageGuide"></a>GitxVScode-CodeManageGuide</h2><h3 id="Git与VScode联合使用的源代码管理指南"><a href="#Git与VScode联合使用的源代码管理指南" class="headerlink" title="Git与VScode联合使用的源代码管理指南"></a>Git与VScode联合使用的源代码管理指南</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li><del>建议有一点Git管理基础的人使用！至少你得Github有号吧，是吧（玩笑！</del></li><li>这些指令其实并不常用，我们只是稍作理解，剩下的交给Vscode点点点吧！</li></ul><hr><h2 id="相关插件"><a href="#相关插件" class="headerlink" title="相关插件"></a>相关插件</h2><ol><li>Git Graph</li></ol><p>可以清晰地看到存储仓库的每一次提交(Commit)，每一个分支(Branch)，和每一次合并的记录，非常nice！<br>同时可以很方便的查询每一次的记录，进行文件代码比对。</p><ol start="2"><li>GitLens</li></ol><p>可以直接在源代码里看到每一行代码的更改时间！</p><ol start="3"><li>GitHistory</li></ol><p>和Git Graph功能类似，细节注重点不太一样。</p><h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul><li><strong>提交(Commit)</strong></li></ul><p>这个操作我们使用VScode自带的源代码管理来完成。<br>暂存我们所需的修改之后点击提交，接着会跳转到<code>COMMIT_EDITMSG</code>文件页面，顾名思义就是提交编辑信息。<br>你可以在这个文件最顶部写一些你这次提交的一些消息备注。写完保存，关掉这个文件页面，即可完成一次提交！</p><blockquote><p> <code>git add .</code>添加所有被修改文件到暂存更改区<br><code>git commit -m &quot;massage&quot;</code> 提交暂存更改区的内容作为一个新版本，<code>massage</code>为该版本的关键字<br><code>-m</code>的作用就是可以不弹窗直接写关键字，如果你只输入<code>git commit</code>就会弹出一个窗口让你填写该版本的关键字。</p></blockquote><ul><li><strong>推送(Push)</strong></li></ul><blockquote><p>这个操作需要我们的VScode关联自己的Github仓库后才可以使用。</p></blockquote><p>提交之后，提交记录会暂存在我们本地的仓库内，如果想要把提交记录推送至Github，我们只需要在VScode的源代码管理里选择推送即可。</p><p>如果你Github没有创建相关的仓库，VScode也会弹窗让你创建的！</p><ul><li><strong>签出到(Checkout)</strong></li></ul><blockquote><p><code>git checkout branch_name</code>切换分支。<br>切换分支的时候要保证当前暂存区没有需要修改的文件哦！可以用<code>git status</code>确保现在的状态是<code>clean</code>，否则就会切换分支失败了。</p></blockquote><ul><li><strong>版本回退(Reset)</strong></li></ul><p>有3种常用的回退方式，分别是<code>soft</code>, <code>mixed</code>, <code>hard</code></p><p>第一种：</p><p><code>soft</code>回退方式只会把Head指针往回指到你回退的版本，然后你仓库里的文件不会发生任何的增删，状态大概就是你已经commit了，但是没有push的状态。（？不知道理解的对不对</p><blockquote><p><code>git reset --soft &lt;Hash&gt;</code>（这里<code>&lt;Hash&gt;</code>是你的版本号哈！</p></blockquote><p>第二种：</p><p><code>mixed</code>回退方式，会把Head指针往回指到我们希望回退到的版本，然后仓库里的文件也不会发生任何的增删（暂时），为什么说是暂时呢？因为它把你这个回退版本之后所有的commit都放回了暂存更改区，你就可以在暂存更改区里决定要恢复什么文件，恢复什么代码啦！</p><blockquote><p><code>git reset --mixed &lt;Hash&gt;</code></p></blockquote><p>第三种：</p><p><code>hard</code>回退方式，会把Head指针往回指到我们希望回退到的版本，然后该版本号以后的版本统统都会不见使用<code>git log</code>时就看不见当前回退版本以后的版本号了（所以要谨慎！</p><blockquote><p><code>git reset --hard &lt;Hash&gt;</code></p></blockquote><p>这种回退方式会简单粗暴的把你本地仓库回退版本的什么文件啊什么代码原封不动地一字不拉地归还它的原样！<br>当然，你仍然可以通过<code>git reflog</code>找回从前的版本号，然后使用<code>git reset --hard &lt;Hash&gt;</code>跳回去，<strong>理论上，你的代码不会丢，</strong> nice！</p><blockquote><p><code>git reset --hard HEAD^</code>表示硬回退到<strong>上一个</strong>版本<br>同理<code>HEAD^^</code>表示<strong>上上个</strong>版本，<code>HEAD^^^</code>表示<strong>上上上个</strong>版本，而且你也可以用<code>HEAD~3</code>表示<strong>上上上个</strong>版本噢！</p></blockquote><h2 id="辅助操作"><a href="#辅助操作" class="headerlink" title="辅助操作"></a>辅助操作</h2><h3 id="记录查看"><a href="#记录查看" class="headerlink" title="记录查看"></a>记录查看</h3><ul><li><code>git log</code></li></ul><blockquote><p><code>git log</code>用来查看commit提交历史记录。<br><code>git log --graph</code>这条命令使用了就会有优雅的树状图可以看啦（也不算是树状图，反正就是图形化显示<br>在终端按<code>Q</code>键退出日志哦！</p></blockquote><ul><li><code>git reflog</code></li></ul><blockquote><p>用来查看Git仓库的所有git命令操作的历史记录，比如你用过的<code>reset</code>, <code>checkout</code>, <code>commit</code>, <code>push</code> 的记录都能在这里看到。</p></blockquote><ul><li><code>git status</code></li></ul><blockquote><p>用来查看本地仓库状态。</p></blockquote><h3 id="清除已经被跟踪的文件"><a href="#清除已经被跟踪的文件" class="headerlink" title="清除已经被跟踪的文件"></a>清除已经被跟踪的文件</h3><p>如果文件已经被 Git 跟踪（即已经提交到仓库），那么修改<code>.gitignore</code>文件将不会对这些文件产生任何效果。你需要先从 Git 的跟踪列表中移除这些文件。你可以使用：</p><blockquote><p><code>git rm --cached &lt;file&gt;</code>，清除单个文件.<br><code>git rm -r --cached &lt;file&gt;</code>，清除文件夹以及文件夹内的所有内容.</p></blockquote><h3 id="分支查找"><a href="#分支查找" class="headerlink" title="分支查找"></a>分支查找</h3><ul><li><code>git branch</code></li></ul><blockquote><p><code>git branch</code>用来查看当前所在的分支。<br><code>git branch -v</code>用来查看当前所在分支最后一次提交的版本号和版本关键字。<br><code>git branch branch_name</code>用来创建名字为<code>branch_name</code>的新分支。</p></blockquote><h3 id="远程仓库克隆"><a href="#远程仓库克隆" class="headerlink" title="远程仓库克隆"></a>远程仓库克隆</h3><ul><li><code>git clone</code></li></ul><blockquote><p><code>git clone &lt;address&gt;</code>老熟人了，打开一个文件夹，打开它的命令行窗口，你就敲上面的命令，<code>&lt;address&gt;</code>是被克隆的远程仓库的地址。就这个命令可以完成目前所有开源项目90%的克隆。<br><code>git clone --recursive &lt;address&gt;</code>剩下的10%就比较专业一点，可能人家远程代码库里运用了别人的子项目，你直接克隆下来就是个空文件夹，所以你就需要用这个命令来<strong>递归</strong>克隆！把别人子项目的内容也可以克隆下来！</p></blockquote><h3 id="本地仓库初始化"><a href="#本地仓库初始化" class="headerlink" title="本地仓库初始化"></a>本地仓库初始化</h3><ul><li><code>git init</code></li></ul><blockquote><p>在该文件夹下初始化git仓库.</p></blockquote><h3 id="本地仓库全局配置"><a href="#本地仓库全局配置" class="headerlink" title="本地仓库全局配置"></a>本地仓库全局配置</h3><ul><li><code>git config</code></li></ul><p>在初始化完成Git本地仓库后，开始正式使用前，是需要有一些全局设置的，如用户名、邮箱等：</p><blockquote><p><code>git config --global user.name &quot;your name&quot;</code>用于设置全局用户名<br><code>git config --global uer.email &quot;your email&quot;</code>用于设置全局邮箱<br>其中，<code>--global</code>指定全局配置，不使用该参数，则为当前所在仓库配置。</p></blockquote><p>于是可以如下配置：</p><blockquote><p><code>git config --global user.name &quot;xxx&quot;</code><br><code>git config --global uer.email &quot;xxx.example.com&quot;</code></p></blockquote><p>可以输入以下两条指令，检查用户名和邮箱是否输入正确。</p><blockquote><p><code>git config user.name</code><br><code>git config user.email</code></p></blockquote><!-- > 我的Github用户名和邮箱： --><script >function checkPassword() {  var password = document.getElementById("password").value;  if (password === "0000") {  document.getElementById("user").style.display = "block";  } else {  alert("不准偷看！！！");  document.getElementById("user").style.display = "none";  }}</script><body title="哒咩">  口令是什么？  <input type="password" id="password">  <button onclick="checkPassword()" style="border-radius: 5px;">确认</button>  <div id="user" style="display: none;">    <p>俺滴Github用户名：ZhangKeLiang0627</p>    <p>俺滴Github邮箱：111654293+ZhangKeLiang0627@users.noreply.github.com</p>  </div></body><style>  input[type="password"] {    padding: 3px;    margin: 5px;    border: 1px solid #ccc;    border-radius: 5px;  }  #user {    display: none;    background-color: #f4f4f4;    padding: 5px;    margin-top: 10px;    border-radius: 5px;    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  }</style>]]></content>
     
     
     <categories>
@@ -723,9 +723,9 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>STM32</tag>
       
       <tag>Lua</tag>
       
