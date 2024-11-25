@@ -16,27 +16,28 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="感受代码之外，离开技术，我们还能够好好生活么，EMOING!!!">
+    <meta name="description" content="折磨人的东西，终于是编译出来啦！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="杂记丨8月：你说，要多多设想代码之外...">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/08/12/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/README/index.html">
+<meta property="og:title" content="全志T113-s3的TinaLinux编译流程记录">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="感受代码之外，离开技术，我们还能够好好生活么，EMOING!!!">
+<meta property="og:description" content="折磨人的东西，终于是编译出来啦！">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/11.jpg">
-<meta property="article:published_time" content="2024-08-12T14:52:00.000Z">
-<meta property="article:modified_time" content="2024-09-21T03:11:02.430Z">
+<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
+<meta property="article:published_time" content="2024-11-24T05:41:00.000Z">
+<meta property="article:modified_time" content="2024-11-25T06:59:44.405Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="record">
-<meta property="article:tag" content="life">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Allwinner">
+<meta property="article:tag" content="T113-s3">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/11.jpg">
+<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>杂记丨8月：你说，要多多设想代码之外... - Hugo@kkl</title>
+  <title>全志T113-s3的TinaLinux编译流程记录 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,13 +201,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/12.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="杂记丨8月：你说，要多多设想代码之外..."></span>
+            <span id="subtitle" data-typed-text="全志T113-s3的TinaLinux编译流程记录"></span>
           
         </div>
 
@@ -217,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-12 22:52" pubdate>
-          August 12, 2024 pm
+        <time datetime="2024-11-24 13:41" pubdate>
+          November 24, 2024 pm
         </time>
       </span>
     
@@ -285,42 +286,67 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">杂记丨8月：你说，要多多设想代码之外...</h1>
+            <h1 id="seo-header">全志T113-s3的TinaLinux编译流程记录</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="杂记丨8月：你说，要多多设想代码之外…"><a href="#杂记丨8月：你说，要多多设想代码之外…" class="headerlink" title="杂记丨8月：你说，要多多设想代码之外…"></a>杂记丨8月：你说，要多多设想代码之外…</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr>
-<h3 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h3><p>和朋友也聊过许多回这件在目前的年龄来看并不重要的事情，多想想代码之外的世界是怎么样的吧？</p>
-<p>比方说，程序员的35岁危机，学历贬值带来的技术贬值，或者很多公众号常提到的穷人活该干一辈子技术之类的话，还有程序员得学会人情世故才可以向上晋升等…</p>
-<p>这目前看起来确实危言耸听，但是也给我自身拉响了长鸣的警钟，人生不能没用技术，也不能只有技术，如何平衡？这似乎非常关键。</p>
-<p>那么，要如何发展代码之外的世界呢。</p>
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/杂记/2024年/8月/image-0.gif" srcset="/img/loading.gif" lazyload alt="---" width = "300" height = "150" style="border-radius: 10px;"></div><div class="group-image-wrap"><img src="/images/杂记/2024年/8月/image-1.gif" srcset="/img/loading.gif" lazyload alt="---" width = "300" height = "150" style="border-radius: 10px;"></div></div></div>
+                <h3 id="全志T113-S3的TinaLinux编译流程记录"><a href="#全志T113-S3的TinaLinux编译流程记录" class="headerlink" title="全志T113-S3的TinaLinux编译流程记录"></a>全志T113-S3的TinaLinux编译流程记录</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-success">
+            <p>挖坑ing…有空来填坑！！！</p>
+          </div>
+
+<div class="note note-info">
+            <p>填好啦:)</p>
+          </div>
 
 <hr>
-<h3 id="【2024-08-12】等待施工…"><a href="#【2024-08-12】等待施工…" class="headerlink" title="【2024&#x2F;08&#x2F;12】等待施工…"></a>【2024&#x2F;08&#x2F;12】等待施工…</h3><p>看看未来的我会给出什么样的答案吧？</p>
-<h3 id="【2024-8-20】我治好了自己的鹅足肌腱炎，一次稀里糊涂的自救"><a href="#【2024-8-20】我治好了自己的鹅足肌腱炎，一次稀里糊涂的自救" class="headerlink" title="【2024&#x2F;8&#x2F;20】我治好了自己的鹅足肌腱炎，一次稀里糊涂的自救"></a>【2024&#x2F;8&#x2F;20】我治好了自己的鹅足肌腱炎，一次稀里糊涂的自救</h3><p>八月初，某天起床发现膝盖内侧开始出现酸痛和撕裂的痛楚。</p>
-<p>起初以为是前两天运动的时候意外挫伤膝盖导致的，没有太多注意这回事，因为不影响正常的走路，也就没有当一回事了。</p>
-<p>起床当天中午，长时间坐在工位上，突然想要起身去倒水，膝盖一用力就出现了一阵突如其来的疼痛，让我在座位上缓了很久才可以颤颤巍巍地扶着撑桌子起身，一瘸一拐地走起路来…</p>
-<blockquote>
-<p>感觉感觉，身体告诉我，自己不再年轻洋溢，不再像小猫般到处蹦蹦跳跳摔跤打滚，这儿那儿磕磕碰碰，也就哭一哭睡一觉醒来第二天身体就恢复如初。心里始终以为自己还是小孩，唯独真正到病痛入侵的时刻！好无奈灰心，膝盖，你什么时候才能重返健康？ ​​​</p>
-</blockquote>
-<blockquote>
-<p>就像是到了每个阴雨天患处要开始隐隐作痛，走路一瘸一拐的时候云淡风轻地解释：“老毛病啦！” 或者，当我找张椅子坐下，要慢慢吞吞地扶着把手晃晃悠悠地支撑着弯腿，待到结实地触底，嘴里还要长舒口气：唉呀… 我曾几何时想过“唉呀”这种语气词会轮到我发出来哈哈哈，像个小老头小老太。<code>from my Weibos --2024-8-8</code></p>
-</blockquote>
-<p>果断地，我开始上网搜索查询相关的病症，百度上说，我这是内侧半月板损伤…半信半疑，我预想我的下半生会不会坐在轮椅上度日hhh，当然事实上并没有这么严重，最后通过症状对比，这似乎更加符合鹅足肌腱炎的表征：膝盖内侧髌骨和股骨的交界处，按压时疼痛，同时弯腿直腿的时候这个位置会有肌肉拉伸的疼痛，同时在走路时，会仿佛感觉膝盖内侧总会有向外翻的趋势。</p>
-<p>下面我来讲讲我是怎么治好鹅足肌腱炎的：</p>
-<p>首先，我立马在某团下单了云南白药喷雾，然后当天中午用上，睡前再喷了药才睡，那时候还是非常的难，我习惯侧睡，睡觉不怎么安分，总会有翻来覆去的时候，于是前几个夜晚总是睡梦中被腿伤疼醒。但不得不说，云南白药确实很厉害，在第二天白天，疼痛的症状就减轻了许多，虽然还是只能慢慢晃悠地走路，但至少可以直行了。</p>
-<p>然后呢，我是大概养伤一个多礼拜才开始象征性地做一些康复运动，对腿部的肌肉做拉伸，疏解。尽量避免上下楼梯这种需要弯腿的动作。还有，最好坐下的时候腿打直不要弯曲，这样在下一次需要站起来的时候，可以避免大量的疼痛，都是经验之谈！</p>
-<p>目前到今天为止，我的膝盖已经恢复得七七八八，但依然在避免高强度的运动，毕竟恢复的周期漫长…</p>
-<h3 id="【2024-8-24】领导在PUA，无非就是想谈个好价"><a href="#【2024-8-24】领导在PUA，无非就是想谈个好价" class="headerlink" title="【2024&#x2F;8&#x2F;24】领导在PUA，无非就是想谈个好价"></a>【2024&#x2F;8&#x2F;24】领导在PUA，无非就是想谈个好价</h3><p>看呼兰的脱口秀，有感摘抄!!!</p>
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow2.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow3.jpg" srcset="/img/loading.gif" lazyload></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow4.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow5.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow6.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow7.jpg" srcset="/img/loading.gif" lazyload></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow8.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow9.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow10.jpg" srcset="/img/loading.gif" lazyload></div></div></div>
-
-<!-- <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow1.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow2.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow3.jpg" srcset="/img/loading.gif" lazyload></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow4.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow5.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow6.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow7.jpg" srcset="/img/loading.gif" lazyload></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow8.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow9.jpg" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/8%E6%9C%88/talkshow10.jpg" srcset="/img/loading.gif" lazyload></div></div></div> -->
-
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong>T113-s3</strong>是<strong>全志</strong>的一款非常不错的能够跑Linux系统的Soc，该芯片采用<strong>双核A7</strong>，<strong>主频高达1.2GHz</strong>，具备<strong>高效能</strong>和<strong>低功耗</strong>的特点，<strong>片上内存128MB</strong>，<strong>支持硬件解码</strong>，和D1s Pin to Pin，支持相互替换支持全志提供的Tina Linux SDK，文档齐全，对于DIY玩家来说用于制作一些带显示屏的小设备是非常完美了。</p>
+<p>前阵子在“海鲜市场”低价入了韦东山的T113-s3的开发板，经过一番摸索以后发现了TinaLinux这个新奇的东西，听说是全志基于<code>Openwrt</code>自研的系统（被戏谑为全志家的小女儿。</p>
+<p><strong><em>本篇文章将简述如何迅速地对Tina Linux进行编译、打包，最终生成可烧录的镜像。</em></strong></p>
+<h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul>
+<li>虚拟机：VirtualBox Ubuntu 18.04</li>
+<li>开发板：100ASK_T113-PRO</li>
+</ul>
 <hr>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><ul>
-<li>等待施工…</li>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="获取SDK源码"><a href="#获取SDK源码" class="headerlink" title="获取SDK源码"></a>获取SDK源码</h4><p>首先我们需要获取<code>Tina-sdk</code>的源码：</p>
+<blockquote>
+<p>百度网盘获取地址链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/13uKlqDXImmMl9cgKc41tZg?pwd=qcw7">https://pan.baidu.com/s/13uKlqDXImmMl9cgKc41tZg?pwd=qcw7</a> 提取码：qcw7</p>
+</blockquote>
+<ol>
+<li><p>下载完成后将包含所有压缩文件的<code>DongshanNezhaSTU-TinaV2.0-SDK</code>文件夹拷贝到Ubuntu系统中，注意请不要在共享文件夹当中直接解压，要先拷贝到Linux系统目录中。位置可以随意，这里为了方便演示，我直接拷贝到Ubuntu系统的<code>~</code>目录下。</p>
+</li>
+<li><p>进入该文件夹<code>cd ~/DongshanNezhaSTU-TinaV2.0-SDK/</code>并执行如下解压缩命令<code>cat tina-d1-h.tar.bz2.* | tar -jxv</code>，等待解压缩完成（大致要 3 ~ 5 分钟。</p>
+</li>
+<li><p>把解压缩出的文件夹移动到<code>~</code>目录下：<code>mv ~/DongshanNezhaSTU-TinaV2.0-SDK/tina-d1-h ~</code></p>
+</li>
+</ol>
+<h4 id="配置ubuntu环境"><a href="#配置ubuntu环境" class="headerlink" title="配置ubuntu环境"></a>配置ubuntu环境</h4><p>接着，我们配置开发环境，这里以<code>Ubuntu 18.04</code>举例，执行以下命令:<br><code>sudo apt-get install build-essential subversion git libncurses5-dev zlib1g-dev gawk flex quilt libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip lib32z1 lib32z1-dev lib32stdc++6 libstdc++6 libc6:i386 libstdc++6:i386 lib32ncurses5 lib32z1 -y</code></p>
+<h4 id="获取补丁包"><a href="#获取补丁包" class="headerlink" title="获取补丁包"></a>获取补丁包</h4><p>SDK源码解压缩完毕后，我们获取扩展支持仓库（因为SDK源码不适配T113，要打个补丁，让源码支持T113，然后加以应用，依旧是在<code>~</code>目录下按顺序执行以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~$ git clone https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK.git<br>book@ubuntu1804:~$ cd 100ASK_T113-Pro_TinaSDK<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ git submodule update --init<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ cp ./* -rfvd ~/tina-d1-h<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ sync<br></code></pre></td></tr></table></figure>
+
+
+<h4 id="配置单板编译"><a href="#配置单板编译" class="headerlink" title="配置单板编译"></a>配置单板编译</h4><p>应用完成，可以进入之前解压缩过的<code>tina-d1-h</code>的sdk目录内<code>cd ~/tina-d1-h/</code>，执行如下命令来开始编译<code>T113 Tina-SDK</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ source build/envsetup.sh<br>Setup env done! Please run lunch next.<br>book@ubuntu1804:~/tina-d1-h$ lunch<br><br>You&#x27;re building on Linux<br><br>Lunch menu... pick a combo:<br>     1. d1-h_nezha_min-tina<br>     2. d1-h_nezha-tina<br>     3. d1s_nezha-tina<br>     4. t113_nezha-tina<br><br>Which would you like?: 4<br>============================================<br>TINA_BUILD_TOP=/home/book/tina-d1-h<br>TINA_TARGET_ARCH=arm<br>TARGET_PRODUCT=t113_nezha<br>TARGET_PLATFORM=t113<br>TARGET_BOARD=t113-nezha<br>TARGET_PLAN=nezha<br>TARGET_BUILD_VARIANT=tina<br>TARGET_BUILD_TYPE=release<br>TARGET_KERNEL_VERSION=5.4<br>TARGET_UBOOT=u-boot-2018<br>TARGET_CHIP=sun8iw20p1<br>============================================<br>no buildserver to clean<br>[1] 35382<br><br>book@ubuntu1804:~/tina-d1-h$ make<br></code></pre></td></tr></table></figure>
+
+<p>编译时间比较漫长，单核编译大概要 40 ~ 60 分钟…<strong>途中可能会出现让你填写<code>[Y/n]</code>的情况，会填就按照自己的需求来填，不会填就全部填<code>n</code>，影响不大的。</strong></p>
+<p>编译成功的现象：<br><img src="/images/%E5%85%A8%E5%BF%97T113-s3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image.png" srcset="/img/loading.gif" lazyload alt="编译成功的现象"></p>
+<p><strong>但是编译总不是一帆风顺的，我在这儿也花费了不少时间来解决一些报错问题，下面一一罗列出来：</strong></p>
+<p><strong>问题1.</strong> <code>~/tina-d1-h/out/t113-100ask/compile_dir/target/fontconfig-2.13.1/missing: line 81: gperf: command not found</code>：具体错误是缺少 <code>gperf</code> 工具。</p>
+<p><strong>解决方法</strong>：<code>sudo apt-get install gperf</code>，通过系统的软件包管理工具来安装<code>gperf</code>.</p>
+<p><strong>问题2.</strong> Tina-Linux尝试下载<code>qt-5.12.9.tar.xz</code>失败。</p>
+<p><strong>解决方法</strong>：因为我使用T113s3主要还是使用LVGL图形库的，跑Qt还是比较吃力，于是干脆就不编译Qt了，具体方法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ make menuconfig<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">找到 gui -&gt; Qt，进入其中并把所有的 [*] 都取消，保存并退出，然后重新编译make。</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="烧写更新系统"><a href="#烧写更新系统" class="headerlink" title="烧写更新系统"></a>烧写更新系统</h4><p>编译完成后，执行<code>pack</code>命令即可开始打包系统操作，打包完成后，最后会提示<code>pack finish</code>以及使用<strong>红色背景色</strong>告诉你最终输出的镜像文件。</p>
+<p>我们可以通过 <code>ssh / vmware</code> 拖拽等工具，将生成的镜像文件 <code>copy</code> 出来使用即可。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ pack<br></code></pre></td></tr></table></figure>
+
+<p>打包成功的现象：<br><img src="/images/%E5%85%A8%E5%BF%97T113-s3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image-1.png" srcset="/img/loading.gif" lazyload alt="打包成功的现象"></p>
+<p>烧写方式有两种，一种是使用OTG线连接板子进行烧写，使用<code>PhoenixSuit</code>将编译生成的镜像烧录至<code>spi nand</code>存储设备上；另一种是通过<a target="_blank" rel="noopener" href="https://gitlab.com/dongshanpi/tools/-/raw/main/PhoenixCard-V2.8.zip">PhoenixCard-V2.8</a>工具将系统镜像烧录至TF卡启动。</p>
+<hr>
+<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK">https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK</a></li>
 </ul>
 <hr>
 
@@ -341,7 +367,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Life-Page/" class="category-chain-item">Life Page</a>
+  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
   
   
 
@@ -356,9 +382,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/record/" class="print-no-link">#record</a>
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
       
-        <a href="/tags/life/" class="print-no-link">#life</a>
+        <a href="/tags/Allwinner/" class="print-no-link">#Allwinner</a>
+      
+        <a href="/tags/T113-s3/" class="print-no-link">#T113-s3</a>
       
     </div>
   
@@ -370,8 +398,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>杂记丨8月：你说，要多多设想代码之外...</div>
-      <div>https://zhangkeliang0627.github.io/2024/08/12/杂记/2024年/8月/README/</div>
+      <div>全志T113-s3的TinaLinux编译流程记录</div>
+      <div>https://zhangkeliang0627.github.io/2024/11/24/全志T113-S3的TinaLinux编译流程记录/全志T113-S3的TinaLinux编译流程记录/</div>
     </div>
     <div class="license-meta">
       
@@ -383,7 +411,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 12, 2024</div>
+          <div>November 24, 2024</div>
         </div>
       
       
@@ -415,18 +443,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/20/%E8%80%90%E8%83%8C%E7%8E%8B%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/README/" title="【耐背王】计算机网络🤓📖">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【耐背王】计算机网络🤓📖</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/11/STM32F405%E7%9A%84DCMI%E5%A4%96%E8%AE%BE%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%B0%9D%E8%AF%95/README/" title="STM32F405的DCMI外设的一些小的项目尝试🎶">
-                        <span class="hidden-mobile">STM32F405的DCMI外设的一些小的项目尝试🎶</span>
+                      <a href="/2024/11/23/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/" title="使用Ubuntu对Lvgl进行simulate - LVGL Simulator">
+                        <span class="hidden-mobile">使用Ubuntu对Lvgl进行simulate - LVGL Simulator</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

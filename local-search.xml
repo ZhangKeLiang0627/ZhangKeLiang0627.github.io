@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>全志T113-s3的TinaLinux编译流程记录</title>
+    <link href="/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/"/>
+    <url>/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h3 id="全志T113-S3的TinaLinux编译流程记录"><a href="#全志T113-S3的TinaLinux编译流程记录" class="headerlink" title="全志T113-S3的TinaLinux编译流程记录"></a>全志T113-S3的TinaLinux编译流程记录</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-success">            <p>挖坑ing…有空来填坑！！！</p>          </div><div class="note note-info">            <p>填好啦:)</p>          </div><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong>T113-s3</strong>是<strong>全志</strong>的一款非常不错的能够跑Linux系统的Soc，该芯片采用<strong>双核A7</strong>，<strong>主频高达1.2GHz</strong>，具备<strong>高效能</strong>和<strong>低功耗</strong>的特点，<strong>片上内存128MB</strong>，<strong>支持硬件解码</strong>，和D1s Pin to Pin，支持相互替换支持全志提供的Tina Linux SDK，文档齐全，对于DIY玩家来说用于制作一些带显示屏的小设备是非常完美了。</p><p>前阵子在“海鲜市场”低价入了韦东山的T113-s3的开发板，经过一番摸索以后发现了TinaLinux这个新奇的东西，听说是全志基于<code>Openwrt</code>自研的系统（被戏谑为全志家的小女儿。</p><p><strong><em>本篇文章将简述如何迅速地对Tina Linux进行编译、打包，最终生成可烧录的镜像。</em></strong></p><h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul><li>虚拟机：VirtualBox Ubuntu 18.04</li><li>开发板：100ASK_T113-PRO</li></ul><hr><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="获取SDK源码"><a href="#获取SDK源码" class="headerlink" title="获取SDK源码"></a>获取SDK源码</h4><p>首先我们需要获取<code>Tina-sdk</code>的源码：</p><blockquote><p>百度网盘获取地址链接：<a href="https://pan.baidu.com/s/13uKlqDXImmMl9cgKc41tZg?pwd=qcw7">https://pan.baidu.com/s/13uKlqDXImmMl9cgKc41tZg?pwd=qcw7</a> 提取码：qcw7</p></blockquote><ol><li><p>下载完成后将包含所有压缩文件的<code>DongshanNezhaSTU-TinaV2.0-SDK</code>文件夹拷贝到Ubuntu系统中，注意请不要在共享文件夹当中直接解压，要先拷贝到Linux系统目录中。位置可以随意，这里为了方便演示，我直接拷贝到Ubuntu系统的<code>~</code>目录下。</p></li><li><p>进入该文件夹<code>cd ~/DongshanNezhaSTU-TinaV2.0-SDK/</code>并执行如下解压缩命令<code>cat tina-d1-h.tar.bz2.* | tar -jxv</code>，等待解压缩完成（大致要 3 ~ 5 分钟。</p></li><li><p>把解压缩出的文件夹移动到<code>~</code>目录下：<code>mv ~/DongshanNezhaSTU-TinaV2.0-SDK/tina-d1-h ~</code></p></li></ol><h4 id="配置ubuntu环境"><a href="#配置ubuntu环境" class="headerlink" title="配置ubuntu环境"></a>配置ubuntu环境</h4><p>接着，我们配置开发环境，这里以<code>Ubuntu 18.04</code>举例，执行以下命令:<br><code>sudo apt-get install build-essential subversion git libncurses5-dev zlib1g-dev gawk flex quilt libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip lib32z1 lib32z1-dev lib32stdc++6 libstdc++6 libc6:i386 libstdc++6:i386 lib32ncurses5 lib32z1 -y</code></p><h4 id="获取补丁包"><a href="#获取补丁包" class="headerlink" title="获取补丁包"></a>获取补丁包</h4><p>SDK源码解压缩完毕后，我们获取扩展支持仓库（因为SDK源码不适配T113，要打个补丁，让源码支持T113，然后加以应用，依旧是在<code>~</code>目录下按顺序执行以下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~$ git clone https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK.git<br>book@ubuntu1804:~$ cd 100ASK_T113-Pro_TinaSDK<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ git submodule update --init<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ cp ./* -rfvd ~/tina-d1-h<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ sync<br></code></pre></td></tr></table></figure><h4 id="配置单板编译"><a href="#配置单板编译" class="headerlink" title="配置单板编译"></a>配置单板编译</h4><p>应用完成，可以进入之前解压缩过的<code>tina-d1-h</code>的sdk目录内<code>cd ~/tina-d1-h/</code>，执行如下命令来开始编译<code>T113 Tina-SDK</code>：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ source build/envsetup.sh<br>Setup env done! Please run lunch next.<br>book@ubuntu1804:~/tina-d1-h$ lunch<br><br>You&#x27;re building on Linux<br><br>Lunch menu... pick a combo:<br>     1. d1-h_nezha_min-tina<br>     2. d1-h_nezha-tina<br>     3. d1s_nezha-tina<br>     4. t113_nezha-tina<br><br>Which would you like?: 4<br>============================================<br>TINA_BUILD_TOP=/home/book/tina-d1-h<br>TINA_TARGET_ARCH=arm<br>TARGET_PRODUCT=t113_nezha<br>TARGET_PLATFORM=t113<br>TARGET_BOARD=t113-nezha<br>TARGET_PLAN=nezha<br>TARGET_BUILD_VARIANT=tina<br>TARGET_BUILD_TYPE=release<br>TARGET_KERNEL_VERSION=5.4<br>TARGET_UBOOT=u-boot-2018<br>TARGET_CHIP=sun8iw20p1<br>============================================<br>no buildserver to clean<br>[1] 35382<br><br>book@ubuntu1804:~/tina-d1-h$ make<br></code></pre></td></tr></table></figure><p>编译时间比较漫长，单核编译大概要 40 ~ 60 分钟…<strong>途中可能会出现让你填写<code>[Y/n]</code>的情况，会填就按照自己的需求来填，不会填就全部填<code>n</code>，影响不大的。</strong></p><p>编译成功的现象：<br><img src="/images/%E5%85%A8%E5%BF%97T113-s3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image.png" alt="编译成功的现象"></p><p><strong>但是编译总不是一帆风顺的，我在这儿也花费了不少时间来解决一些报错问题，下面一一罗列出来：</strong></p><p><strong>问题1.</strong> <code>~/tina-d1-h/out/t113-100ask/compile_dir/target/fontconfig-2.13.1/missing: line 81: gperf: command not found</code>：具体错误是缺少 <code>gperf</code> 工具。</p><p><strong>解决方法</strong>：<code>sudo apt-get install gperf</code>，通过系统的软件包管理工具来安装<code>gperf</code>.</p><p><strong>问题2.</strong> Tina-Linux尝试下载<code>qt-5.12.9.tar.xz</code>失败。</p><p><strong>解决方法</strong>：因为我使用T113s3主要还是使用LVGL图形库的，跑Qt还是比较吃力，于是干脆就不编译Qt了，具体方法如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ make menuconfig<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">找到 gui -&gt; Qt，进入其中并把所有的 [*] 都取消，保存并退出，然后重新编译make。</span><br></code></pre></td></tr></table></figure><h4 id="烧写更新系统"><a href="#烧写更新系统" class="headerlink" title="烧写更新系统"></a>烧写更新系统</h4><p>编译完成后，执行<code>pack</code>命令即可开始打包系统操作，打包完成后，最后会提示<code>pack finish</code>以及使用<strong>红色背景色</strong>告诉你最终输出的镜像文件。</p><p>我们可以通过 <code>ssh / vmware</code> 拖拽等工具，将生成的镜像文件 <code>copy</code> 出来使用即可。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ pack<br></code></pre></td></tr></table></figure><p>打包成功的现象：<br><img src="/images/%E5%85%A8%E5%BF%97T113-s3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image-1.png" alt="打包成功的现象"></p><p>烧写方式有两种，一种是使用OTG线连接板子进行烧写，使用<code>PhoenixSuit</code>将编译生成的镜像烧录至<code>spi nand</code>存储设备上；另一种是通过<a href="https://gitlab.com/dongshanpi/tools/-/raw/main/PhoenixCard-V2.8.zip">PhoenixCard-V2.8</a>工具将系统镜像烧录至TF卡启动。</p><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：</p><ul><li><a href="https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK">https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK</a></li></ul><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study Page</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Ubuntu</tag>
+      
+      <tag>Allwinner</tag>
+      
+      <tag>T113-s3</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用Ubuntu对Lvgl进行simulate - LVGL Simulator</title>
     <link href="/2024/11/23/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/"/>
     <url>/2024/11/23/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/</url>
@@ -35,7 +64,7 @@
     <link href="/2024/11/19/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/11%E6%9C%88/README/"/>
     <url>/2024/11/19/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/11%E6%9C%88/README/</url>
     
-    <content type="html"><![CDATA[<h3 id="杂记丨11月：你想活出怎样的人生？"><a href="#杂记丨11月：你想活出怎样的人生？" class="headerlink" title="杂记丨11月：你想活出怎样的人生？"></a>杂记丨11月：你想活出怎样的人生？</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>混沌、迷茫、怀疑、灯光、勇气、坚毅、追寻，你想活出怎样的人生？</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/杂记/2024年/11月/Warawara-1.gif" alt="Warawara" width = "300" height = "200" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/杂记/2024年/11月/Warawara-2.gif" alt="Warawara" width = "300" height = "200" style="border-radius: 15px;"></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/杂记/2024年/11月/image-0.jpg" alt="秋天摄于天桥" width = "300" height = "200" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/杂记/2024年/11月/image-3.jpg" alt="「苍鹭与少年」" width = "300" height = "200" style="border-radius: 15px;"></div></div></div><hr><h3 id="Little-Miss-Sunshine"><a href="#Little-Miss-Sunshine" class="headerlink" title="Little Miss Sunshine"></a>Little Miss Sunshine</h3><div style="position: relative; width: 100%; height: 0; padding-bottom: 50%;">    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=38852212&bvid=BV1Wt411k7gW&cid=68287647&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;"></iframe></div><p><br></br></p><h3 id="2024-11-24-走错路就是走对路"><a href="#2024-11-24-走错路就是走对路" class="headerlink" title="2024&#x2F;11&#x2F;24 - 走错路就是走对路"></a>2024&#x2F;11&#x2F;24 - 走错路就是走对路</h3><div class="note note-success">            <p>是写于九月中旬啦其实。</p>          </div><p>这几年发现自己越来越变得现实，从前那些觉得很理想化的事物常常挂在嘴边的现在竟然都完全记不得了。刷题漫漫，我挂着李诞直播卖货，听着唠叨了几句人生观，不知不觉就记了下来，「充满期待，降低预期；永远坚持，随时放弃」。</p><p>他的直播间的受众群体年龄和我大相径庭，于是乎解答了许多这个年龄段人生问题，我觉得很受用，至少迷茫焦虑最近很少找上门，但是不代表我不感到忧愁，只是没时间想啦…</p><p>好朋友们在准备秋招、考公和考研。实验室里，七月的考研圈好友信誓旦旦互相激励，然而人影全无。在上个礼拜保研名单公布那一刻全面崩溃，邻桌的同事与保研失之交臂，第二天跑来跟我说，他不考了，想要找份工，想要赚钱去。我内心百感交集，明明他暑假为了保研干了整整两个月的义工，四月份开始上下奔走又是考研背书复习，又是保研准备材料。</p><p>我为他感到可惜，那时我还是一个意志摇摆不定的工作党。我们立场从对立来到相同，最终又回到对立。待到我艰难地做出选择升学的决定，他倒是反过来问我：「咱们考研也只是为了三年以后可以找到一份好工作对吧，如果现在本科毕业已经能够找到心仪的工作，那又何必非得考研呢？对吧？」</p><p>我觉得他在搬起石头砸自己的脚，明明几个月前他不是这幅嘴脸，他的那声 “对吧” 像是在哀求着务必请我表示赞同以给他一点精神支柱。我并没有讽刺他的意思，只是令我感到不可思议的是为什么他可以态度转变的这么快。我说我已经allin考研了，我也在赌，一起加油吧，我们这么年轻，无论干什么都是错的，走错路就是走对路，尽管去尝试，努力就好。</p><p>对啊，我们这么年轻，二十几岁的年纪，这么青春活力，却像是被什么东西困住了，仿佛每一岁都要比之前有进步才是有意义的人生，这样实在是太累了。于是我又想起李诞那句话「对人生要永远充满期待，但是要降低预期；或者可以这么说，你得永远坚持，随时放弃」。</p><p>好友圆九月初开始准备秋招了，他手上稳稳捏着两份大厂实习经历，周末我们常常一起泡图书馆，他和我聊了许多关于在大厂工作的经历。最近边在字节实习边等着简历投递回执，他老是焦虑，每次有电话打来都要正襟危坐，害怕错过任何一个HR发来的面试邀请。我说：「圆，你呀，放宽心吧，绝对能够去到大厂的。到时候base腾讯了记得帮我内推噢！」每次听到类似的话，他总是笑着摸摸鼻子：「哎呀，等到真的进腾讯先吧，现在还悬着呢」，但我觉得他眼底有光。</p><p>我说，读研有个好处，就是我现在这种清澈愚蠢的心境还可以再维持多几年，看看你哟，已经变成职场老油条啦。互相打趣，他说，没事，我如果还base南山，周末说不定还能和你泡泡图书馆，补充补充清澈的能量哈。</p><p>眼看着身边的人都找到了更加遥远的方向，倒是我的未来，朋友四向奔走，在更远的地方，各自努力安好。能看见的最好的终局，就是我留在原地，在这里，在这所已经生活了四年的大学，继续耕读研学，完成我最后的使命，真正留下自己的足迹吧…</p><div class="note note-info">            <p>然而，显然那时候的我似乎没有意识到考研巨大的沉没成本和冗长的战线。待到两个同事都通过了华为的面试，泡进了华为的池子；身边关于秋招的喜讯频传，而我还在死磕习题无法脱身时，我似乎萌生出一个可恨的想法：要是我七月的时候选择去工作实习，我肯定也可以……</p><p>Anyway，我们总会美化那条从没涉足的道路对吧？那时的我也不会想到，两个月后，在多个下着冷雨的夜晚，这位选择考研的年轻人会蹲坐在实验室的门外倚着墙壁偷偷抹着眼泪低声啜泣，如果如果如果…事实上，不可能也没那么多如果。</p><p>走错路就是走对路，我一直用这句话来安慰自己，轻轻地呢喃着，这是二一年高考前在某个周末的茶餐厅父亲跟我说的为数不多的大道理。</p><p>Ps：圆最终收到了他心目中的Offer！我衷心地为他感到开心。他笑着说：我的好消息已经来了，接下来就是等你的好消息啦！加油!</p>          </div><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script><div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>我想研究生考试结束后去坐一次过山车hhh，最好再拽上行李搭乘飞往云南的飞机，什么也不想地看山看水（为什么是云南呢，是实验室的一个朋友家就住在云南，对我一番极力的安利。</p><p>回来好好思考以后的路，或许我会去实习一段时间？可能我真的更加适合工作，反正认识我的朋友都这么说…？当然我还是希望考试这边能够有一个好的结果，但无论好坏，我应该要做到平静地接受它，然后快速地做出决策，大不了换一条新的路嘛。</p><p><strong><em>噢，我的朋友，走错路就是走对路！</em></strong></p><hr>]]></content>
+    <content type="html"><![CDATA[<h3 id="杂记丨11月：你想活出怎样的人生？"><a href="#杂记丨11月：你想活出怎样的人生？" class="headerlink" title="杂记丨11月：你想活出怎样的人生？"></a>杂记丨11月：你想活出怎样的人生？</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>混沌、迷茫、怀疑、灯光、勇气、坚毅、追寻，你想活出怎样的人生？</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/杂记/2024年/11月/Warawara-1.gif" alt="Warawara" width = "300" height = "200" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/杂记/2024年/11月/Warawara-2.gif" alt="Warawara" width = "300" height = "200" style="border-radius: 15px;"></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/杂记/2024年/11月/image-0.jpg" alt="秋天摄于天桥" width = "300" height = "200" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/杂记/2024年/11月/image-3.jpg" alt="「苍鹭与少年」" width = "300" height = "200" style="border-radius: 15px;"></div></div></div><hr><h3 id="Little-Miss-Sunshine"><a href="#Little-Miss-Sunshine" class="headerlink" title="Little Miss Sunshine"></a>Little Miss Sunshine</h3><div style="position: relative; width: 100%; height: 0; padding-bottom: 50%;">    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=38852212&bvid=BV1Wt411k7gW&cid=68287647&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;"></iframe></div><p><br></br></p><h3 id="2024-11-24-走错路就是走对路"><a href="#2024-11-24-走错路就是走对路" class="headerlink" title="2024&#x2F;11&#x2F;24 - 走错路就是走对路"></a>2024&#x2F;11&#x2F;24 - 走错路就是走对路</h3><div class="note note-success">            <p>是写于九月中旬啦其实。</p>          </div><p>这几年发现自己越来越变得现实，从前那些觉得很理想化的事物常常挂在嘴边的现在竟然都完全记不得了。刷题漫漫，我挂着李诞直播卖货，听着唠叨了几句人生观，不知不觉就记了下来，「充满期待，降低预期；永远坚持，随时放弃」。</p><p>他的直播间的受众群体年龄和我大相径庭，于是乎解答了许多这个年龄段人生问题，我觉得很受用，至少迷茫焦虑最近很少找上门，但是不代表我不感到忧愁，只是没时间想啦…</p><p>好朋友们在准备秋招、考公和考研。实验室里，七月的考研圈好友信誓旦旦互相激励，然而人影全无。在上个礼拜保研名单公布那一刻全面崩溃，邻桌的同事与保研失之交臂，第二天跑来跟我说，他不考了，想要找份工，想要赚钱去。我内心百感交集，明明他暑假为了保研干了整整两个月的义工，四月份开始上下奔走又是考研背书复习，又是保研准备材料。</p><p>我为他感到可惜，那时我还是一个意志摇摆不定的工作党。我们立场从对立来到相同，最终又回到对立。待到我艰难地做出选择升学的决定，他倒是反过来问我：「咱们考研也只是为了三年以后可以找到一份好工作对吧，如果现在本科毕业已经能够找到心仪的工作，那又何必非得考研呢？对吧？」</p><p>我觉得他在搬起石头砸自己的脚，明明几个月前他不是这幅嘴脸，他的那声 “对吧” 像是在哀求着务必请我表示赞同以给他一点精神支柱。我并没有讽刺他的意思，只是令我感到不可思议的是为什么他可以态度转变的这么快。我说我已经allin考研了，我也在赌，一起加油吧，我们这么年轻，无论干什么都是错的，走错路就是走对路，尽管去尝试，努力就好。</p><p>对啊，我们这么年轻，二十几岁的年纪，这么青春活力，却像是被什么东西困住了，仿佛每一岁都要比之前有进步才是有意义的人生，这样实在是太累了。于是我又想起李诞那句话「对人生要永远充满期待，但是要降低预期；或者可以这么说，你得永远坚持，随时放弃」。</p><p>好友圆九月初开始准备秋招了，他手上稳稳捏着两份大厂实习经历，周末我们常常一起泡图书馆，他和我聊了许多关于在大厂工作的经历。最近边在字节实习边等着简历投递回执，他老是焦虑，每次有电话打来都要正襟危坐，害怕错过任何一个HR发来的面试邀请。我说：「圆，你呀，放宽心吧，绝对能够去到大厂的。到时候base腾讯了记得帮我内推噢！」每次听到类似的话，他总是笑着摸摸鼻子：「哎呀，等到真的进腾讯先吧，现在还悬着呢」，但我觉得他眼底有光。</p><p>我说，读研有个好处，就是我现在这种清澈愚蠢的心境还可以再维持多几年。看看你哟，已经变成职场老油条啦。互相打趣着，他说，没事，我如果还base南山，周末说不定还能和你泡泡图书馆，补充补充清澈的能量哈。</p><p>眼看着身边的人都找到了更加遥远的方向，倒是我的未来，朋友四向奔走，在更远的地方，各自努力安好。能看见的最好的终局，就是我留在原地，在这里，在这所已经生活了四年的大学，继续耕读研学，完成我最后的使命，真正留下自己的足迹吧…</p><div class="note note-info">            <p>然而，显然那时候的我似乎没有意识到考研巨大的沉没成本和冗长的战线。待到两个同事都通过了华为的面试，泡进了华为的池子；身边关于秋招的喜讯频传，而我还在死磕习题无法脱身时，我似乎萌生出一个可恨的想法：要是我七月的时候选择去工作实习，我肯定也可以……</p><p>Anyway，我们总会美化那条从没涉足的道路对吧？那时的我也不会想到，两个月后，在多个下着冷雨的夜晚，这位选择考研的年轻人会蹲坐在实验室的门外倚着墙壁偷偷抹着眼泪低声啜泣，如果如果如果…事实上，不可能也没那么多如果。</p><p>走错路就是走对路，我一直用这句话来安慰自己，轻轻地呢喃着，这是二一年高考前在某个周末下午的茶餐厅里父亲跟我说的为数不多的大道理。</p><p>Ps：圆最终收到了他心目中的Offer！我衷心地为他感到开心。他笑着说：我的好消息已经来了，接下来就是等你的好消息啦！加油!</p>          </div><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script><div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>我想研究生考试结束后去坐一次过山车hhh，最好再拽上行李搭乘飞往云南的飞机，什么也不想地看山看水（为什么是云南呢，是实验室的一个朋友家就住在云南，对我一番极力的安利。</p><p>回来好好思考以后的路，或许我会去实习一段时间？可能我真的更加适合工作，反正认识我的朋友都这么说…？当然我还是希望考试这边能够有一个好的结果，但无论好坏，我应该要做到平静地接受它，然后快速地做出决策，大不了换一条新的路嘛。</p><p><strong><em>噢，我的朋友，走错路就是走对路！</em></strong></p><hr>]]></content>
     
     
     <categories>
@@ -47,9 +76,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -103,9 +132,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -157,11 +186,11 @@
     
     <tags>
       
-      <tag>aliyun</tag>
-      
       <tag>MQTT</tag>
       
       <tag>Qt</tag>
+      
+      <tag>aliyun</tag>
       
       <tag>高德地图</tag>
       
@@ -188,9 +217,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -302,9 +331,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -418,8 +447,6 @@
       
       <tag>Linux</tag>
       
-      <tag>record</tag>
-      
       <tag>Web</tag>
       
       <tag>Socat</tag>
@@ -427,6 +454,8 @@
       <tag>Cmake</tag>
       
       <tag>tar</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
