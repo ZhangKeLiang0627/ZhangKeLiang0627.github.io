@@ -20,11 +20,11 @@
     
     <tags>
       
+      <tag>Ubuntu</tag>
+      
       <tag>Allwinner</tag>
       
       <tag>T113-s3</tag>
-      
-      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -76,9 +76,9 @@
     
     <tags>
       
-      <tag>record</tag>
-      
       <tag>life</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
@@ -132,9 +132,9 @@
     
     <tags>
       
-      <tag>record</tag>
-      
       <tag>life</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
@@ -186,13 +186,13 @@
     
     <tags>
       
+      <tag>MQTT</tag>
+      
       <tag>Qt</tag>
       
       <tag>aliyun</tag>
       
       <tag>高德地图</tag>
-      
-      <tag>MQTT</tag>
       
     </tags>
     
@@ -217,9 +217,9 @@
     
     <tags>
       
-      <tag>record</tag>
-      
       <tag>life</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
@@ -244,11 +244,11 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
-      
-      <tag>MCU</tag>
       
       <tag>GUI</tag>
       
@@ -331,9 +331,9 @@
     
     <tags>
       
-      <tag>record</tag>
-      
       <tag>life</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
@@ -358,13 +358,13 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
       
       <tag>Camera</tag>
-      
-      <tag>MCU</tag>
       
     </tags>
     
@@ -418,9 +418,9 @@
       
       <tag>ESP32</tag>
       
-      <tag>MQTT</tag>
-      
       <tag>Arduino</tag>
+      
+      <tag>MQTT</tag>
       
     </tags>
     
@@ -447,6 +447,8 @@
       
       <tag>Linux</tag>
       
+      <tag>record</tag>
+      
       <tag>Web</tag>
       
       <tag>Socat</tag>
@@ -454,8 +456,6 @@
       <tag>Cmake</tag>
       
       <tag>tar</tag>
-      
-      <tag>record</tag>
       
     </tags>
     
@@ -754,9 +754,9 @@
     
     <tags>
       
-      <tag>MCU</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -806,9 +806,9 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>STM32</tag>
       
       <tag>Lua</tag>
       
