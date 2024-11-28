@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>杂记丨12月：最终幻想...</title>
+    <link href="/2024/12/03/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/12%E6%9C%88/README/"/>
+    <url>/2024/12/03/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/12%E6%9C%88/README/</url>
+    
+    <content type="html"><![CDATA[<h3 id="杂记丨12月：最终幻想…"><a href="#杂记丨12月：最终幻想…" class="headerlink" title="杂记丨12月：最终幻想…"></a>杂记丨12月：最终幻想…</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>博客成立一周年啦！这里的冬天也要来到，安啦我们一定都可以平安顺遂！</p><figure><img src="/images/杂记/2024年/12月/image-1.jpg" alt="摄于大师兄：小野人筷子筒" width = "400" height = "300" style="border-radius: 15px;"><figcaption>摄于大师兄：小野人筷子筒</figcaption></figure><hr><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script><div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>…</p><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>Life Page</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>life</tag>
+      
+      <tag>record</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>全志T113-s3的TinaLinux编译流程记录</title>
     <link href="/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/"/>
     <url>/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/</url>
@@ -20,11 +47,11 @@
     
     <tags>
       
-      <tag>Ubuntu</tag>
-      
       <tag>Allwinner</tag>
       
       <tag>T113-s3</tag>
+      
+      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -244,11 +271,11 @@
     
     <tags>
       
-      <tag>Project</tag>
+      <tag>MCU</tag>
       
       <tag>STM32</tag>
       
-      <tag>MCU</tag>
+      <tag>Project</tag>
       
       <tag>GUI</tag>
       
@@ -358,13 +385,13 @@
     
     <tags>
       
-      <tag>Project</tag>
+      <tag>MCU</tag>
       
       <tag>STM32</tag>
       
-      <tag>Camera</tag>
+      <tag>Project</tag>
       
-      <tag>MCU</tag>
+      <tag>Camera</tag>
       
     </tags>
     
@@ -754,9 +781,9 @@
     
     <tags>
       
-      <tag>MCU</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -806,11 +833,11 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>MCU</tag>
       
       <tag>Lua</tag>
+      
+      <tag>STM32</tag>
       
     </tags>
     
