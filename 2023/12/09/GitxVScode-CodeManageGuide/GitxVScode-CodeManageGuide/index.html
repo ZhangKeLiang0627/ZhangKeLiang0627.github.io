@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/18.jpg">
 <meta property="article:published_time" content="2023-12-08T16:11:00.000Z">
-<meta property="article:modified_time" content="2024-11-02T03:01:56.156Z">
+<meta property="article:modified_time" content="2024-11-30T03:02:25.049Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary_large_image">
@@ -307,31 +307,19 @@
 <li>GitHistory</li>
 </ol>
 <p>和Git Graph功能类似，细节注重点不太一样。</p>
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul>
-<li><strong>提交(Commit)</strong></li>
-</ul>
-<p>这个操作我们使用VScode自带的源代码管理来完成。<br>暂存我们所需的修改之后点击提交，接着会跳转到<code>COMMIT_EDITMSG</code>文件页面，顾名思义就是提交编辑信息。<br>你可以在这个文件最顶部写一些你这次提交的一些消息备注。写完保存，关掉这个文件页面，即可完成一次提交！</p>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><h3 id="提交-Commit"><a href="#提交-Commit" class="headerlink" title="提交(Commit)"></a>提交(Commit)</h3><p>这个操作我们使用VScode自带的源代码管理来完成。<br>暂存我们所需的修改之后点击提交，接着会跳转到<code>COMMIT_EDITMSG</code>文件页面，顾名思义就是提交编辑信息。<br>你可以在这个文件最顶部写一些你这次提交的一些消息备注。写完保存，关掉这个文件页面，即可完成一次提交！</p>
 <blockquote>
 <p> <code>git add .</code>添加所有被修改文件到暂存更改区<br><code>git commit -m &quot;massage&quot;</code> 提交暂存更改区的内容作为一个新版本，<code>massage</code>为该版本的关键字<br><code>-m</code>的作用就是可以不弹窗直接写关键字，如果你只输入<code>git commit</code>就会弹出一个窗口让你填写该版本的关键字。</p>
 </blockquote>
-<ul>
-<li><strong>推送(Push)</strong></li>
-</ul>
-<blockquote>
+<h3 id="推送-Push"><a href="#推送-Push" class="headerlink" title="推送(Push)"></a>推送(Push)</h3><blockquote>
 <p>这个操作需要我们的VScode关联自己的Github仓库后才可以使用。</p>
 </blockquote>
 <p>提交之后，提交记录会暂存在我们本地的仓库内，如果想要把提交记录推送至Github，我们只需要在VScode的源代码管理里选择推送即可。</p>
 <p>如果你Github没有创建相关的仓库，VScode也会弹窗让你创建的！</p>
-<ul>
-<li><strong>签出到(Checkout)</strong></li>
-</ul>
-<blockquote>
+<h3 id="签出到-Checkout"><a href="#签出到-Checkout" class="headerlink" title="签出到(Checkout)"></a>签出到(Checkout)</h3><blockquote>
 <p><code>git checkout branch_name</code>切换分支。<br>切换分支的时候要保证当前暂存区没有需要修改的文件哦！可以用<code>git status</code>确保现在的状态是<code>clean</code>，否则就会切换分支失败了。</p>
 </blockquote>
-<ul>
-<li><strong>版本回退(Reset)</strong></li>
-</ul>
-<p>有3种常用的回退方式，分别是<code>soft</code>, <code>mixed</code>, <code>hard</code></p>
+<h3 id="版本回退-Reset"><a href="#版本回退-Reset" class="headerlink" title="版本回退(Reset)"></a>版本回退(Reset)</h3><p>有3种常用的回退方式，分别是<code>soft</code>, <code>mixed</code>, <code>hard</code></p>
 <p>第一种：</p>
 <p><code>soft</code>回退方式只会把Head指针往回指到你回退的版本，然后你仓库里的文件不会发生任何的增删，状态大概就是你已经commit了，但是没有push的状态。（？不知道理解的对不对</p>
 <blockquote>
