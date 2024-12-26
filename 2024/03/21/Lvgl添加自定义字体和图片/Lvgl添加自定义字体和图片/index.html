@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
 <meta property="article:published_time" content="2024-03-21T14:09:00.000Z">
-<meta property="article:modified_time" content="2024-11-28T05:39:50.165Z">
+<meta property="article:modified_time" content="2024-12-26T16:27:25.205Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Lvgl">
 <meta name="twitter:card" content="summary_large_image">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          654 words
+          992 words
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          6 mins
+          9 mins
         
       </span>
     
@@ -289,8 +289,8 @@
             
               <div class="markdown-body">
                 
-                <h3 id="在Lvgl中添加自定义字体和图片"><a href="#在Lvgl中添加自定义字体和图片" class="headerlink" title="在Lvgl中添加自定义字体和图片"></a>在Lvgl中添加自定义字体和图片</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><hr>
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>仅仅<strong>保证</strong>对于<code>X-TRACK</code>项目的自定义字体和图片的有效使用哦！</p>
+                <h1 id="在Lvgl中添加自定义字体和图片"><a href="#在Lvgl中添加自定义字体和图片" class="headerlink" title="在Lvgl中添加自定义字体和图片"></a>在Lvgl中添加自定义字体和图片</h1><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>仅仅<strong>保证</strong>对于<code>X-TRACK</code>项目的自定义字体和图片的有效使用哦！</p>
 <hr>
 <h2 id="Font-convert-字体格式转换成-c文件"><a href="#Font-convert-字体格式转换成-c文件" class="headerlink" title="Font convert - 字体格式转换成.c文件"></a>Font convert - 字体格式转换成.c文件</h2><h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>首先我们要访问到Lvgl官方网站上的<strong>Online Font Converter</strong>.</p>
 <p>网址：<a target="_blank" rel="noopener" href="https://lvgl.io/tools/fontconverter">https://lvgl.io/tools/fontconverter</a></p>
@@ -369,9 +369,46 @@
 <ol start="4">
 <li>最后拿去Lvgl仿真或者MCU跑一下，基本上没有问题啦！</li>
 </ol>
-<h2 id="Pictures-convert-图片格式转换成-c文件"><a href="#Pictures-convert-图片格式转换成-c文件" class="headerlink" title="Pictures convert - 图片格式转换成.c文件"></a>Pictures convert - 图片格式转换成.c文件</h2><p>LVGL Online Image Converter: <a target="_blank" rel="noopener" href="https://lvgl.io/tools/imageconverter">https://lvgl.io/tools/imageconverter</a></p>
+<h2 id="Pictures-convert-图片格式转换成-c文件"><a href="#Pictures-convert-图片格式转换成-c文件" class="headerlink" title="Pictures convert - 图片格式转换成.c文件"></a>Pictures convert - 图片格式转换成.c文件</h2><blockquote>
+<p>LVGL官方在线图片转换器(LVGL Online Image Converter): <a target="_blank" rel="noopener" href="https://lvgl.io/tools/imageconverter">https://lvgl.io/tools/imageconverter</a></p>
+</blockquote>
+<p>这里主要讲解使用代码中的变量（存储着像素值的C数组）进行图像显示。</p>
+<p>首先，我们打开LVGL官方在线图片转换器，可以看到以下最新（截止2024.12.26）的应用界面：</p>
+<p><img src="/images/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/image-1.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<ol>
+<li>Select image file(s)：选择图片文件，可批量选择，记得修改文件名，因为稍后生成的c文件是和图片文件同名的</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>Color format：设置颜色格式</li>
+</ol>
+</blockquote>
+<p><img src="/images/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/image-2.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
-<li>未完待续…</li>
+<li>一般的彩色图片，选择<code>CF_TRUE_COLOR_ALPHA</code></li>
+<li>如果想要省空间，图片想要显示成纯白色的，可以选择<code>CF_INDEXED_X_BIT</code>，<code>X</code>越大图片内存越大也越清晰，<code>X</code>越小图片内存越小锯齿越明显</li>
+<li>如果想要省空间，图片想要显示成纯黑色的，可以选择<code>CF_ALPHA_X_BIT</code>，<code>X</code>越大图片内存越大也越清晰，<code>X</code>越小图片内存越小锯齿越明显</li>
+</ul>
+<blockquote>
+<ol start="3">
+<li>Output format：可以选择输出的文件格式，C数组或者bin文件（bin文件需要配合LVGL的文件系统使用），这里选择C数组（C array）即可</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>Dither images (can improve quality)：加入图像抖动算法，可以提升图像最终质量（这里不打勾）</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>Output in big-endian format：以<code>big-endian</code>格式输出（这里不打勾）</li>
+</ol>
+</blockquote>
+<p>全部选择好了之后就可以点击<code>Convert</code>即可！</p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><ul>
+<li>鸣谢：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45677295/article/details/137949968">https://blog.csdn.net/weixin_45677295/article/details/137949968</a></li>
 </ul>
 
                 
