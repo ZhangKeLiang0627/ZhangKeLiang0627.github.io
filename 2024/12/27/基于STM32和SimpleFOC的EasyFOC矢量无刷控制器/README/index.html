@@ -16,28 +16,28 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="折磨人的东西，终于是编译出来啦！">
+    <meta name="description" content="基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆">
 <meta property="og:type" content="article">
-<meta property="og:title" content="全志T113-s3的TinaLinux编译流程记录">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="基于STM32和SimpleFOC的EasyFOC矢量无刷控制器">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/12/27/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%97%A0%E5%88%B7%E6%8E%A7%E5%88%B6%E5%99%A8/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="折磨人的东西，终于是编译出来啦！">
+<meta property="og:description" content="基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
-<meta property="article:published_time" content="2024-11-24T05:41:00.000Z">
-<meta property="article:modified_time" content="2024-12-22T11:06:42.163Z">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%97%A0%E5%88%B7%E6%8E%A7%E5%88%B6%E5%99%A8/image-0.jpg">
+<meta property="article:published_time" content="2024-12-27T06:54:00.000Z">
+<meta property="article:modified_time" content="2024-12-27T07:34:09.539Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Allwinner">
-<meta property="article:tag" content="T113-s3">
-<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Project">
+<meta property="article:tag" content="STM32">
+<meta property="article:tag" content="SimpleFOC">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%97%A0%E5%88%B7%E6%8E%A7%E5%88%B6%E5%99%A8/image-0.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>全志T113-s3的TinaLinux编译流程记录 - Hugo@kkl</title>
+  <title>基于STM32和SimpleFOC的EasyFOC矢量无刷控制器 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,13 +201,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%97%A0%E5%88%B7%E6%8E%A7%E5%88%B6%E5%99%A8/image-0.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="全志T113-s3的TinaLinux编译流程记录"></span>
+            <span id="subtitle" data-typed-text="基于STM32和SimpleFOC的EasyFOC矢量无刷控制器"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-24 13:41" pubdate>
-          November 24, 2024 pm
+        <time datetime="2024-12-27 14:54" pubdate>
+          December 27, 2024 pm
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          292 words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          10 mins
+          3 mins
         
       </span>
     
@@ -286,72 +286,69 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">全志T113-s3的TinaLinux编译流程记录</h1>
+            <h1 id="seo-header">基于STM32和SimpleFOC的EasyFOC矢量无刷控制器</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="全志T113-S3的TinaLinux编译流程记录"><a href="#全志T113-S3的TinaLinux编译流程记录" class="headerlink" title="全志T113-S3的TinaLinux编译流程记录"></a>全志T113-S3的TinaLinux编译流程记录</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-success">
-            <p>挖坑ing…有空来填坑！！！</p>
+                <h3 id="基于STM32和SimpleFOC的EasyFOC矢量无刷控制器"><a href="#基于STM32和SimpleFOC的EasyFOC矢量无刷控制器" class="headerlink" title="基于STM32和SimpleFOC的EasyFOC矢量无刷控制器"></a>基于STM32和SimpleFOC的EasyFOC矢量无刷控制器</h3><h4 id="基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆"><a href="#基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆" class="headerlink" title="基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆"></a>基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆</h4><h4 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h4><hr>
+<p><img src="/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%97%A0%E5%88%B7%E6%8E%A7%E5%88%B6%E5%99%A8/image-0.jpg" srcset="/img/loading.gif" lazyload alt="EasyFOC"></p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><div class="note note-info">
+            <p>本项目基于：<strong>SimpleFOC</strong> &amp; <strong>Ctrl-FOC-Lite</strong></p>
           </div>
 
-<div class="note note-info">
-            <p>填好啦:)</p>
-          </div>
-
+<p>Github关联仓库：<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/EasyFOC">https://github.com/ZhangKeLiang0627/EasyFOC</a><br>立创硬件开源：<a target="_blank" rel="noopener" href="https://oshwhub.com/hugego/easyfoc">https://oshwhub.com/hugego/easyfoc</a></p>
 <hr>
-<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong>T113-s3</strong>是<strong>全志</strong>的一款非常不错的能够跑Linux系统的Soc，该芯片采用<strong>双核A7</strong>，<strong>主频高达1.2GHz</strong>，具备<strong>高效能</strong>和<strong>低功耗</strong>的特点，<strong>片上内存128MB</strong>，<strong>支持硬件解码</strong>，和D1s Pin to Pin，支持相互替换支持全志提供的Tina Linux SDK，文档齐全，对于DIY玩家来说用于制作一些带显示屏的小设备是非常完美了。</p>
-<p>前阵子在“海鲜市场”低价入了韦东山的T113-s3的开发板，经过一番摸索以后发现了TinaLinux这个新奇的东西，听说是全志基于<code>Openwrt</code>自研的系统（被戏谑为全志家的小女儿。</p>
-<p><strong><em>本篇文章将简述如何迅速地对Tina Linux进行编译、打包，最终生成可烧录的镜像。</em></strong></p>
-<h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul>
-<li>虚拟机：VirtualBox Ubuntu 18.04</li>
-<li>开发板：100ASK_T113-PRO</li>
-</ul>
-<hr>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="获取SDK源码"><a href="#获取SDK源码" class="headerlink" title="获取SDK源码"></a>获取SDK源码</h4><p>首先我们需要获取<code>Tina-sdk</code>的源码：</p>
-<blockquote>
-<p>百度网盘获取地址链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/13uKlqDXImmMl9cgKc41tZg?pwd=qcw7">https://pan.baidu.com/s/13uKlqDXImmMl9cgKc41tZg?pwd=qcw7</a> 提取码：qcw7</p>
-</blockquote>
-<ol>
-<li><p>下载完成后将包含所有压缩文件的<code>DongshanNezhaSTU-TinaV2.0-SDK</code>文件夹拷贝到Ubuntu系统中，注意请不要在共享文件夹当中直接解压，要先拷贝到Linux系统目录中。位置可以随意，这里为了方便演示，我直接拷贝到Ubuntu系统的<code>~</code>目录下。</p>
-</li>
-<li><p>进入该文件夹<code>cd ~/DongshanNezhaSTU-TinaV2.0-SDK/</code>并执行如下解压缩命令<code>cat tina-d1-h.tar.bz2.* | tar -jxv</code>，等待解压缩完成（大致要 3 ~ 5 分钟。</p>
-</li>
-<li><p>把解压缩出的文件夹移动到<code>~</code>目录下：<code>mv ~/DongshanNezhaSTU-TinaV2.0-SDK/tina-d1-h ~</code></p>
-</li>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="Hardware"><a href="#Hardware" class="headerlink" title="Hardware"></a>Hardware</h3><h4 id="硬件配置"><a href="#硬件配置" class="headerlink" title="硬件配置"></a>硬件配置</h4><ul>
+<li><ol>
+<li>主控：STM32F401RET6</li>
 </ol>
-<h4 id="配置ubuntu环境"><a href="#配置ubuntu环境" class="headerlink" title="配置ubuntu环境"></a>配置ubuntu环境</h4><p>接着，我们配置开发环境，这里以<code>Ubuntu 18.04</code>举例，执行以下命令:<br><code>sudo apt-get install build-essential subversion git libncurses5-dev zlib1g-dev gawk flex quilt libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip lib32z1 lib32z1-dev lib32stdc++6 libstdc++6 libc6:i386 libstdc++6:i386 lib32ncurses5 lib32z1 -y</code></p>
-<h4 id="获取补丁包"><a href="#获取补丁包" class="headerlink" title="获取补丁包"></a>获取补丁包</h4><p>SDK源码解压缩完毕后，我们获取扩展支持仓库（因为SDK源码不适配T113，要打个补丁，让源码支持T113，然后加以应用，依旧是在<code>~</code>目录下按顺序执行以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~$ git clone https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK.git<br>book@ubuntu1804:~$ cd 100ASK_T113-Pro_TinaSDK<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ git submodule update --init<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ cp ./* -rfvd ~/tina-d1-h<br>book@ubuntu1804:~/100ASK_T113-Pro_TinaSDK$ sync<br></code></pre></td></tr></table></figure>
-
-
-<h4 id="配置单板编译"><a href="#配置单板编译" class="headerlink" title="配置单板编译"></a>配置单板编译</h4><p>应用完成，可以进入之前解压缩过的<code>tina-d1-h</code>的sdk目录内<code>cd ~/tina-d1-h/</code>，执行如下命令来开始编译<code>T113 Tina-SDK</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ source build/envsetup.sh<br>Setup env done! Please run lunch next.<br>book@ubuntu1804:~/tina-d1-h$ lunch<br><br>You&#x27;re building on Linux<br><br>Lunch menu... pick a combo:<br>     1. d1-h_nezha_min-tina<br>     2. d1-h_nezha-tina<br>     3. d1s_nezha-tina<br>     4. t113_nezha-tina<br><br>Which would you like?: 4<br>============================================<br>TINA_BUILD_TOP=/home/book/tina-d1-h<br>TINA_TARGET_ARCH=arm<br>TARGET_PRODUCT=t113_nezha<br>TARGET_PLATFORM=t113<br>TARGET_BOARD=t113-nezha<br>TARGET_PLAN=nezha<br>TARGET_BUILD_VARIANT=tina<br>TARGET_BUILD_TYPE=release<br>TARGET_KERNEL_VERSION=5.4<br>TARGET_UBOOT=u-boot-2018<br>TARGET_CHIP=sun8iw20p1<br>============================================<br>no buildserver to clean<br>[1] 35382<br><br>book@ubuntu1804:~/tina-d1-h$ make<br></code></pre></td></tr></table></figure>
-
-<p>编译时间比较漫长，单核编译大概要 40 ~ 60 分钟…<strong>途中可能会出现让你填写<code>[Y/n]</code>的情况，会填就按照自己的需求来填，不会填就全部填<code>n</code>，影响不大的。</strong></p>
-<p>编译成功的现象：<br><img src="/images/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image.png" srcset="/img/loading.gif" lazyload alt="编译成功"></p>
-<p><strong>但是编译总不是一帆风顺的，我在这儿也花费了不少时间来解决一些报错问题，下面一一罗列出来：</strong></p>
-<p><strong>问题1.</strong> <code>~/tina-d1-h/out/t113-100ask/compile_dir/target/fontconfig-2.13.1/missing: line 81: gperf: command not found</code>：具体错误是缺少 <code>gperf</code> 工具。</p>
-<p><strong>解决方法</strong>：<code>sudo apt-get install gperf</code>，通过系统的软件包管理工具来安装<code>gperf</code>.</p>
-<p><strong>问题2.</strong> Tina-Linux尝试下载<code>qt-5.12.9.tar.xz</code>失败。</p>
-<p><strong>解决方法</strong>：因为我使用T113s3主要还是使用LVGL图形库的，跑Qt还是比较吃力，于是干脆就不编译Qt了，具体方法如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ make menuconfig<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">找到 gui -&gt; Qt，进入其中并把所有的 [*] 都取消，保存并退出，然后重新编译make。</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="烧写更新系统"><a href="#烧写更新系统" class="headerlink" title="烧写更新系统"></a>烧写更新系统</h4><p>编译完成后，执行<code>pack</code>命令即可开始打包系统操作，打包完成后，最后会提示<code>pack finish</code>以及使用<strong>红色背景色</strong>告诉你最终输出的镜像文件。</p>
-<p>我们可以通过 <code>ssh / vmware</code> 拖拽等工具，将生成的镜像文件 <code>copy</code> 出来使用即可。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ pack<br></code></pre></td></tr></table></figure>
-
-<p>打包成功的现象：<br><img src="/images/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image-1.png" srcset="/img/loading.gif" lazyload alt="打包成功"></p>
-<p>烧写方式有两种，一种是使用OTG线连接板子进行烧写，使用<code>PhoenixSuit</code>将编译生成的镜像烧录至<code>spi nand</code>存储设备上；另一种是通过<a target="_blank" rel="noopener" href="https://gitlab.com/dongshanpi/tools/-/raw/main/PhoenixCard-V2.8.zip">PhoenixCard-V2.8</a>工具将系统镜像烧录至TF卡启动。</p>
-<blockquote>
-<p>先使用<code>SD Card Formatter</code>将TF卡进行格式化，然后使用<code>PhoenixCard-V2.8</code>对TF卡进行烧写，操作如图所示：<br><img src="/images/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image-2.png" srcset="/img/loading.gif" lazyload alt="PhoenixCard-V2.8"></p>
-</blockquote>
-<hr>
-<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK">https://github.com/DongshanPI/100ASK_T113-Pro_TinaSDK</a></li>
+</li>
+<li><ol start="2">
+<li>屏幕：SSD1312 Oled 0.96inch IIC接口 128x64分辨率</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>电机驱动：DRV8313</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>电流采样：INA240A2</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>蓝牙通信：KT6368A</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>串口通信：CH340N</li>
+</ol>
+</li>
+<li><ol start="7">
+<li>外壳：3D打印</li>
+</ol>
+</li>
 </ul>
-<hr>
+<h4 id="Snapshots"><a href="#Snapshots" class="headerlink" title="Snapshots"></a>Snapshots</h4><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/基于STM32和SimpleFOC的EasyFOC矢量无刷控制器/image-1.jpg" srcset="/img/loading.gif" lazyload alt="PCB-Front" width = "300" height = "300" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/基于STM32和SimpleFOC的EasyFOC矢量无刷控制器/image-2.jpg" srcset="/img/loading.gif" lazyload alt="PCB-Back" width = "300" height = "300" style="border-radius: 15px;"></div></div></div>
+
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/基于STM32和SimpleFOC的EasyFOC矢量无刷控制器/image-4.jpg" srcset="/img/loading.gif" lazyload alt="PCB-Front" width = "300" height = "300" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/基于STM32和SimpleFOC的EasyFOC矢量无刷控制器/image-5.jpg" srcset="/img/loading.gif" lazyload alt="PCB-Back" width = "300" height = "300" style="border-radius: 15px;"></div></div></div>
+
+<p><img src="/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%97%A0%E5%88%B7%E6%8E%A7%E5%88%B6%E5%99%A8/image-3.jpg" srcset="/img/loading.gif" lazyload alt="3D-Shell"></p>
+<h3 id="Firmware"><a href="#Firmware" class="headerlink" title="Firmware"></a>Firmware</h3><h4 id="软件功能"><a href="#软件功能" class="headerlink" title="软件功能"></a>软件功能</h4><ul>
+<li>目前已经实现小功率无刷电机的位置、角度开闭环控制，适配了电流环的代码，可以正常运行。 </li>
+<li>支持使用串口进行有线调试或者使用蓝牙进行无线调试。</li>
+<li>支持3S航模锂电池接入（12.6V &#x2F; XT60接口）.</li>
+<li>板载Oled、两颗实体按钮以及蜂鸣器方便于人机交互。</li>
+<li>引出一路IIC接口和一路SPI接口。</li>
+<li>引出SWD烧录口，方便使用<code>ST-Link</code>or<code>DAP-Link</code>进行程序烧录。</li>
+</ul>
+<h3 id="帕克变换"><a href="#帕克变换" class="headerlink" title="帕克变换"></a>帕克变换</h3><h3 id="克拉克变换"><a href="#克拉克变换" class="headerlink" title="克拉克变换"></a>克拉克变换</h3><p>等待施工…</p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>相关文章参考：</p>
+<ul>
+<li>@稚晖君：<a target="_blank" rel="noopener" href="https://zhihui.lingjun.life/2020/07/02/foc/">https://zhihui.lingjun.life/2020/07/02/foc/</a></li>
+<li>@loop222：<a target="_blank" rel="noopener" href="https://blog.csdn.net/loop222/article/details/119220638">https://blog.csdn.net/loop222/article/details/119220638</a></li>
+<li>@SimpleFOC：<a target="_blank" rel="noopener" href="http://simplefoc.cn/#/">http://simplefoc.cn/#/</a></li>
+</ul>
 
                 
               </div>
@@ -370,7 +367,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
+  <a href="/categories/Project-Page/" class="category-chain-item">Project Page</a>
   
   
 
@@ -385,11 +382,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Allwinner/" class="print-no-link">#Allwinner</a>
+        <a href="/tags/Project/" class="print-no-link">#Project</a>
       
-        <a href="/tags/T113-s3/" class="print-no-link">#T113-s3</a>
+        <a href="/tags/STM32/" class="print-no-link">#STM32</a>
       
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+        <a href="/tags/SimpleFOC/" class="print-no-link">#SimpleFOC</a>
       
     </div>
   
@@ -401,8 +398,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>全志T113-s3的TinaLinux编译流程记录</div>
-      <div>https://zhangkeliang0627.github.io/2024/11/24/全志T113-S3的TinaLinux编译流程记录/全志T113-S3的TinaLinux编译流程记录/</div>
+      <div>基于STM32和SimpleFOC的EasyFOC矢量无刷控制器</div>
+      <div>https://zhangkeliang0627.github.io/2024/12/27/基于STM32和SimpleFOC的EasyFOC矢量无刷控制器/README/</div>
     </div>
     <div class="license-meta">
       
@@ -414,7 +411,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>November 24, 2024</div>
+          <div>December 27, 2024</div>
         </div>
       
       
@@ -446,18 +443,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/03/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/12%E6%9C%88/README/" title="杂记丨12月：最终幻想...">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">杂记丨12月：最终幻想...</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/23/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/" title="使用Ubuntu对Lvgl进行simulate - LVGL Simulator">
-                        <span class="hidden-mobile">使用Ubuntu对Lvgl进行simulate - LVGL Simulator</span>
+                      <a href="/2024/12/22/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/" title="在全志T113-S3的TinaLinux上运行LVGL">
+                        <span class="hidden-mobile">在全志T113-S3的TinaLinux上运行LVGL</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
