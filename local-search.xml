@@ -68,7 +68,7 @@
     <link href="/2024/12/03/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/12%E6%9C%88/README/"/>
     <url>/2024/12/03/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/12%E6%9C%88/README/</url>
     
-    <content type="html"><![CDATA[<h3 id="杂记丨12月：最终幻想…"><a href="#杂记丨12月：最终幻想…" class="headerlink" title="杂记丨12月：最终幻想…"></a>杂记丨12月：最终幻想…</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>博客成立一周年啦！这里的冬天也要来到，安啦我们一定都可以平安顺遂！</p><figure><img src="/images/杂记/2024年/12月/image-1.jpg" alt="摄于大师兄：小野人筷子筒" width = "400" height = "300" style="border-radius: 15px;"><figcaption>摄于大师兄：小野人筷子筒</figcaption></figure><hr><h3 id="2024-12-22-看，其实也没有那么难，对吧？"><a href="#2024-12-22-看，其实也没有那么难，对吧？" class="headerlink" title="2024&#x2F;12&#x2F;22 - 看，其实也没有那么难，对吧？"></a>2024&#x2F;12&#x2F;22 - 看，其实也没有那么难，对吧？</h3><p>…</p><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script><div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>很简单，最终幻想其实就是…我不再幻想。</p><p><em><strong>「正因为我们足够乐观和自信，才可以直面悲剧。」</strong></em></p><div class="note note-success">            <p><strong>We Wish You a Merry Christmas!</strong></p>          </div><p>…</p><hr>]]></content>
+    <content type="html"><![CDATA[<h3 id="杂记丨12月：最终幻想…"><a href="#杂记丨12月：最终幻想…" class="headerlink" title="杂记丨12月：最终幻想…"></a>杂记丨12月：最终幻想…</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>博客成立一周年啦！这里的冬天也要来到，安啦我们一定都可以平安顺遂！</p><figure><img src="/images/杂记/2024年/12月/image-1.jpg" alt="摄于大师兄：小野人筷子筒" width = "400" height = "300" style="border-radius: 15px;"><figcaption>摄于大师兄：小野人筷子筒</figcaption></figure><hr><h3 id="2024-12-22-看，其实也没有那么难，对吧？"><a href="#2024-12-22-看，其实也没有那么难，对吧？" class="headerlink" title="2024&#x2F;12&#x2F;22 - 看，其实也没有那么难，对吧？"></a>2024&#x2F;12&#x2F;22 - 看，其实也没有那么难，对吧？</h3><p>…</p><!-- 热力图的挂件 --><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script><div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div><!-- Sakana鱼的挂件 --><link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/sakana-widget@2.7.0/lib/sakana.min.css"/><div id="sakana-widget" style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000;"></div><script>  function initSakanaWidget() {    new SakanaWidget().mount('#sakana-widget');  }</script><script  async  onload="initSakanaWidget()"  src="https://cdn.jsdelivr.net/npm/sakana-widget@2.7.0/lib/sakana.min.js"></script><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>很简单，最终幻想其实就是…我不再幻想。</p><p><em><strong>「正因为我们足够乐观和自信，才可以直面悲剧。」</strong></em></p><div class="note note-success">            <p><strong>We Wish You a Merry Christmas!</strong></p>          </div><p>…</p><hr>]]></content>
     
     
     <categories>
@@ -80,9 +80,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -192,9 +192,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -246,13 +246,13 @@
     
     <tags>
       
-      <tag>MQTT</tag>
-      
       <tag>Qt</tag>
       
       <tag>aliyun</tag>
       
       <tag>高德地图</tag>
+      
+      <tag>MQTT</tag>
       
     </tags>
     
@@ -277,9 +277,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -391,9 +391,9 @@
     
     <tags>
       
-      <tag>life</tag>
-      
       <tag>record</tag>
+      
+      <tag>life</tag>
       
     </tags>
     
@@ -478,9 +478,9 @@
       
       <tag>ESP32</tag>
       
-      <tag>Arduino</tag>
-      
       <tag>MQTT</tag>
+      
+      <tag>Arduino</tag>
       
     </tags>
     
@@ -507,8 +507,6 @@
       
       <tag>Linux</tag>
       
-      <tag>record</tag>
-      
       <tag>Web</tag>
       
       <tag>Socat</tag>
@@ -516,6 +514,8 @@
       <tag>Cmake</tag>
       
       <tag>tar</tag>
+      
+      <tag>record</tag>
       
     </tags>
     
