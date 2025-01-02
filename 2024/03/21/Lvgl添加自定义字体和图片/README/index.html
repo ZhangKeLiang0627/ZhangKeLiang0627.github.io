@@ -1,0 +1,844 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><link href="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sys/myicon.png">
+  <link rel="icon" href="/img/sys/myicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2b2b2b">
+  <meta name="author" content="Zhang-keliang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="kkl | 搞Lvgl的都赚不了几个钱的啦！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Lvgl中添加自定义字体和图片">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/03/21/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/README/index.html">
+<meta property="og:site_name" content="Hugo@kkl">
+<meta property="og:description" content="kkl | 搞Lvgl的都赚不了几个钱的啦！">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
+<meta property="article:published_time" content="2024-03-21T14:09:00.000Z">
+<meta property="article:modified_time" content="2024-12-26T16:27:25.205Z">
+<meta property="article:author" content="Zhang-keliang">
+<meta property="article:tag" content="Lvgl">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>在Lvgl中添加自定义字体和图片 - Hugo@kkl</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/indeximg-hover.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zhangkeliang0627.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hugo@kkl&#39;s</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="在Lvgl中添加自定义字体和图片"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-21 22:09" pubdate>
+          March 21, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          992 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">在Lvgl中添加自定义字体和图片</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="在Lvgl中添加自定义字体和图片"><a href="#在Lvgl中添加自定义字体和图片" class="headerlink" title="在Lvgl中添加自定义字体和图片"></a>在Lvgl中添加自定义字体和图片</h1><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>仅仅<strong>保证</strong>对于<code>X-TRACK</code>项目的自定义字体和图片的有效使用哦！</p>
+<hr>
+<h2 id="Font-convert-字体格式转换成-c文件"><a href="#Font-convert-字体格式转换成-c文件" class="headerlink" title="Font convert - 字体格式转换成.c文件"></a>Font convert - 字体格式转换成.c文件</h2><h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>首先我们要访问到Lvgl官方网站上的<strong>Online Font Converter</strong>.</p>
+<p>网址：<a target="_blank" rel="noopener" href="https://lvgl.io/tools/fontconverter">https://lvgl.io/tools/fontconverter</a></p>
+<p>然后我们会看到以下页面！</p>
+<!-- ![](images/Lvgl添加自定义字体和图片/image.png) -->
+<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/image.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<ol>
+<li>Name</li>
+</ol>
+</blockquote>
+<p>填写.c文件的名字，如<code>font_smliey_36</code>，36表示字号大小，这样就清晰明了！</p>
+<blockquote>
+<ol start="2">
+<li>Size</li>
+</ol>
+</blockquote>
+<p>填写字号大小，刚刚我们名字写了<code>font_smliey_36</code>，字号是36，那我们这里就填写36px的字号大小，统一格式规范。</p>
+<blockquote>
+<ol start="3">
+<li>Bpp(bit-per-piel)</li>
+</ol>
+</blockquote>
+<p>填写Bpp为4，这个值会让字体看起来更顺滑而且占据的内存空间相对不大（填别的也行，自己尝试对比一下</p>
+<blockquote>
+<ol start="4">
+<li>Fallback</li>
+</ol>
+</blockquote>
+<p>这里填写和Name一样的<code>font_smliey_36</code>就行啦！</p>
+<blockquote>
+<ol start="5">
+<li>三个选项框都不要勾选！</li>
+</ol>
+</blockquote>
+<p>不然生成的字体在<code>X-TRACK</code>没法用！</p>
+<blockquote>
+<ol start="6">
+<li>TTF&#x2F;WOFF file</li>
+</ol>
+</blockquote>
+<p>在这里选择我们准备好的字体文件，推荐用<code>ttf</code>格式。</p>
+<blockquote>
+<ol start="7">
+<li>Range</li>
+</ol>
+</blockquote>
+<p>这里是设置范围来选择你的.c文件需要包含哪些文字（Symbols），我们不用这个，这里空着，我们直接在下面的Symbols栏里面写我们需要的字。</p>
+<blockquote>
+<ol start="8">
+<li>Symbols</li>
+</ol>
+</blockquote>
+<p>在这里我们填入希望在Lvgl里使用的文字，比方说我想要在Lvgl里显示<code>鸡你太美</code>，那我就需要在这个栏里填入<code>鸡你太美</code>。</p>
+<blockquote>
+<ol start="9">
+<li>点击红色的Convert按钮等待.c文件的渲染和下载即可！</li>
+</ol>
+</blockquote>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>首先打开刚刚生成的.c文件，如<code>font_smiley_36.c</code></p>
+<ol>
+<li>找到注释<code>KERNING</code>和注释<code>ALL CUSTOM DATA</code>之间的一大串，注释掉或者删掉！</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 里面注释掉或者删掉！</span><br><span class="hljs-comment">/*-----------------</span><br><span class="hljs-comment"> *    KERNING</span><br><span class="hljs-comment"> *----------------*/</span><br><br><br><span class="hljs-comment">/*Map glyph_ids to kern left classes*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">uint8_t</span> kern_left_class_mapping[] =<br>&#123;<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>,<br>    <span class="hljs-number">7</span><br>&#125;;<br><br><span class="hljs-comment">/*Map glyph_ids to kern right classes*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">uint8_t</span> kern_right_class_mapping[] =<br>&#123;<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>,<br>    <span class="hljs-number">6</span><br>&#125;;<br><br><span class="hljs-comment">/*Kern values between classes*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">int8_t</span> kern_class_values[] =<br>&#123;<br>    <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-12</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-12</span>,<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-12</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-12</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-17</span>,<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">0</span>,<br>    <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>,<br>    <span class="hljs-number">-12</span>, <span class="hljs-number">0</span><br>&#125;;<br><br><br><span class="hljs-comment">/*Collect the kern class&#x27; data in one place*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">lv_font_fmt_txt_kern_classes_t</span> kern_classes =<br>&#123;<br>    .class_pair_values   = kern_class_values,<br>    .left_class_mapping  = kern_left_class_mapping,<br>    .right_class_mapping = kern_right_class_mapping,<br>    .left_class_cnt      = <span class="hljs-number">7</span>,<br>    .right_class_cnt     = <span class="hljs-number">6</span>,<br>&#125;;<br><br><span class="hljs-comment">/*--------------------</span><br><span class="hljs-comment"> *  ALL CUSTOM DATA</span><br><span class="hljs-comment"> *--------------------*/</span><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>将注释<code>ALL CUSTOM DATA</code>和注释<code>PUBLIC FONT</code>之间的一大坨，用以下代码替换掉！</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 用它们替换掉原来的一大坨！</span><br><span class="hljs-comment">/*--------------------</span><br><span class="hljs-comment"> *  ALL CUSTOM DATA</span><br><span class="hljs-comment"> *--------------------*/</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">if</span> LV_VERSION_CHECK(8, 0, 0)</span><br><span class="hljs-comment">/*Store all the custom data of the font*/</span><br><span class="hljs-type">static</span>  <span class="hljs-type">lv_font_fmt_txt_glyph_cache_t</span> cache;<br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">lv_font_fmt_txt_dsc_t</span> font_dsc = &#123;<br><span class="hljs-meta">#<span class="hljs-keyword">else</span></span><br><span class="hljs-type">static</span> <span class="hljs-type">lv_font_fmt_txt_dsc_t</span> font_dsc = &#123;<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br>    .glyph_bitmap = glyph_bitmap,<br>    .glyph_dsc = glyph_dsc,<br>    .cmaps = cmaps,<br>    .kern_dsc = <span class="hljs-literal">NULL</span>,<br>    .kern_scale = <span class="hljs-number">0</span>,<br>    .cmap_num = <span class="hljs-number">1</span>,<br>    .bpp = <span class="hljs-number">4</span>,<br>    .kern_classes = <span class="hljs-number">0</span>,<br>    .bitmap_format = <span class="hljs-number">0</span>,<br><span class="hljs-meta">#<span class="hljs-keyword">if</span> LV_VERSION_CHECK(8, 0, 0)</span><br>    .cache = &amp;cache<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br>&#125;;<br><br><span class="hljs-comment">/*-----------------</span><br><span class="hljs-comment"> *  PUBLIC FONT</span><br><span class="hljs-comment"> *----------------*/</span><br><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>最后，删除注释<code>PUBLIC FONT</code>下的<code>.fallback</code>和<code>.user_data</code></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 删除以下两条！</span><br><span class="hljs-comment">/*-----------------</span><br><span class="hljs-comment"> *  PUBLIC FONT</span><br><span class="hljs-comment"> *----------------*/</span><br><br>    <span class="hljs-comment">// ...</span><br><br>    .fallback = &amp;font_smiley_36,<br>    .user_data = <span class="hljs-literal">NULL</span>,<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>最后拿去Lvgl仿真或者MCU跑一下，基本上没有问题啦！</li>
+</ol>
+<h2 id="Pictures-convert-图片格式转换成-c文件"><a href="#Pictures-convert-图片格式转换成-c文件" class="headerlink" title="Pictures convert - 图片格式转换成.c文件"></a>Pictures convert - 图片格式转换成.c文件</h2><blockquote>
+<p>LVGL官方在线图片转换器(LVGL Online Image Converter): <a target="_blank" rel="noopener" href="https://lvgl.io/tools/imageconverter">https://lvgl.io/tools/imageconverter</a></p>
+</blockquote>
+<p>这里主要讲解使用代码中的变量（存储着像素值的C数组）进行图像显示。</p>
+<p>首先，我们打开LVGL官方在线图片转换器，可以看到以下最新（截止2024.12.26）的应用界面：</p>
+<p><img src="/images/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/image-1.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<ol>
+<li>Select image file(s)：选择图片文件，可批量选择，记得修改文件名，因为稍后生成的c文件是和图片文件同名的</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>Color format：设置颜色格式</li>
+</ol>
+</blockquote>
+<p><img src="/images/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/image-2.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>一般的彩色图片，选择<code>CF_TRUE_COLOR_ALPHA</code></li>
+<li>如果想要省空间，图片想要显示成纯白色的，可以选择<code>CF_INDEXED_X_BIT</code>，<code>X</code>越大图片内存越大也越清晰，<code>X</code>越小图片内存越小锯齿越明显</li>
+<li>如果想要省空间，图片想要显示成纯黑色的，可以选择<code>CF_ALPHA_X_BIT</code>，<code>X</code>越大图片内存越大也越清晰，<code>X</code>越小图片内存越小锯齿越明显</li>
+</ul>
+<blockquote>
+<ol start="3">
+<li>Output format：可以选择输出的文件格式，C数组或者bin文件（bin文件需要配合LVGL的文件系统使用），这里选择C数组（C array）即可</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>Dither images (can improve quality)：加入图像抖动算法，可以提升图像最终质量（这里不打勾）</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>Output in big-endian format：以<code>big-endian</code>格式输出（这里不打勾）</li>
+</ol>
+</blockquote>
+<p>全部选择好了之后就可以点击<code>Convert</code>即可！</p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><ul>
+<li>鸣谢：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45677295/article/details/137949968">https://blog.csdn.net/weixin_45677295/article/details/137949968</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Lvgl/" class="print-no-link">#Lvgl</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>在Lvgl中添加自定义字体和图片</div>
+      <div>https://zhangkeliang0627.github.io/2024/03/21/Lvgl添加自定义字体和图片/README/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Zhang-keliang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 21, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/03/24/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/README/" title="ESP32S3接入百度在线语音识别">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ESP32S3接入百度在线语音识别</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/01/01/WelcomePage/hello-world/" title="Power By Hugo@kkl">
+                        <span class="hidden-mobile">Power By Hugo@kkl</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-api-sooty.vercel.app/","region":null,"path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div class="text-center py-1"> <div class="img-circle rotate"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/avatar.png" srcset="/img/loading.gif" lazyload></div> <br> <span># Carpe diem </span> <p> </div>
+<span> Framwork </span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-switch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>
+<div> <span>Copyright © 2023-2025</span> <a href="https://zhangkeliang0627.github.io/" target="_blank" rel="nofollow noopener"> <span>Hugo@kkl</span> </a> </div>
+<style> .img-circle { display: block; margin: 0 auto; border-radius: 50%; overflow: hidden; width: 150px; height: 150px; } .img-circle img { display: block; max-width: 100%; height: auto; } .text-center { text-align: center; } .py-1 { padding-top: 1rem; padding-bottom: 1rem; } .rotate { transition: transform 0.8s; } .rotate:hover { transform: rotate(360deg); } div { line-height: 1.5; } </style> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/js/index.js"></script><!-- hexo injector body_end end --></body>
+</html>

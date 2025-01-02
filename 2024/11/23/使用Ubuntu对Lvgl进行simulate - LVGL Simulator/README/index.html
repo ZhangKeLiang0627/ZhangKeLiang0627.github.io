@@ -16,36 +16,27 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="kkl | 这其实是一个连续剧的第二集！">
+    <meta name="description" content="似乎比起Win，使用Ubuntu来模拟LVGL更加方便一些耶.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ESP32S3接入文心一言">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/03/25/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/index.html">
+<meta property="og:title" content="使用Ubuntu对Lvgl进行simulate - LVGL Simulator">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/11/23/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="kkl | 这其实是一个连续剧的第二集！">
+<meta property="og:description" content="似乎比起Win，使用Ubuntu来模拟LVGL更加方便一些耶.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-1.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-2.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-3.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-4.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-5.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-6.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-7.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-8.png">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-9.png">
-<meta property="article:published_time" content="2024-03-24T16:37:00.000Z">
-<meta property="article:modified_time" content="2024-09-07T04:47:45.901Z">
+<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
+<meta property="article:published_time" content="2024-11-23T15:31:00.000Z">
+<meta property="article:modified_time" content="2024-11-23T16:01:05.576Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="ESP32">
-<meta property="article:tag" content="文心一言">
+<meta property="article:tag" content="Lvgl">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image.png">
+<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>ESP32S3接入文心一言 - Hugo@kkl</title>
+  <title>使用Ubuntu对Lvgl进行simulate - LVGL Simulator - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,13 +200,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/default.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ESP32S3接入文心一言"></span>
+            <span id="subtitle" data-typed-text="使用Ubuntu对Lvgl进行simulate - LVGL Simulator"></span>
           
         </div>
 
@@ -226,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-25 00:37" pubdate>
-          March 25, 2024 am
+        <time datetime="2024-11-23 23:31" pubdate>
+          November 23, 2024 pm
         </time>
       </span>
     
@@ -238,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          569 words
+          130 words
         
       </span>
     
@@ -249,7 +240,7 @@
         
         
         
-          5 mins
+          2 mins
         
       </span>
     
@@ -294,60 +285,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ESP32S3接入文心一言</h1>
+            <h1 id="seo-header">使用Ubuntu对Lvgl进行simulate - LVGL Simulator</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="ESP32S3接入文心一言"><a href="#ESP32S3接入文心一言" class="headerlink" title="ESP32S3接入文心一言"></a>ESP32S3接入文心一言</h1><h2 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h2><hr>
-<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>使用ESP32S3接入文心一言，其实是为我后面的某个小项目做铺垫啦！这里记录一下实现的过程。</p>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
-<li>主控：ESP32S3N16R8</li>
-<li>平台：Arduino + PlatformIO + VScode</li>
-</ul>
-<h2 id="二、步骤"><a href="#二、步骤" class="headerlink" title="二、步骤"></a>二、步骤</h2><ol>
-<li>在百度智能云的云千帆控制台并创建应用获取<code>API Key</code>和<code>Secret Key</code></li>
-<li>根据创建应用生成的<code>API Key</code>和<code>Secret Key</code>来获取<code>access_token</code></li>
-<li>在ESP32S3中发送POST请求API</li>
-</ol>
-<h2 id="三、实现"><a href="#三、实现" class="headerlink" title="三、实现"></a>三、实现</h2><h3 id="1-在百度智能云的云千帆控制台并创建应用获取API-Key和Secret-Key"><a href="#1-在百度智能云的云千帆控制台并创建应用获取API-Key和Secret-Key" class="headerlink" title="1. 在百度智能云的云千帆控制台并创建应用获取API Key和Secret Key"></a>1. 在百度智能云的云千帆控制台并创建应用获取<code>API Key</code>和<code>Secret Key</code></h3><p>首先要使用云账号登录百度智能云，然后进入千帆大模型平台，创建一个新应用。<strong>（注意：分清楚百度账号还是云账号，这两个不一样的）</strong></p>
-<p>百度智能云千帆控制台：<a target="_blank" rel="noopener" href="https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application">https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application</a></p>
-<p>创建新应用：</p>
-<!-- ![](images/ESP32S3接入文心一言/image.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image.png" srcset="/img/loading.gif" lazyload></p>
-<!-- ![](images/ESP32S3接入文心一言/image-1.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-1.png" srcset="/img/loading.gif" lazyload></p>
-<p>创建好应用以后就可以得到<code>API Key</code>和<code>Secret Key</code>！</p>
-<!-- ![](images/ESP32S3接入文心一言/image-2.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-2.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="2-根据创建应用生成的API-Key和Secret-Key来获取access-token"><a href="#2-根据创建应用生成的API-Key和Secret-Key来获取access-token" class="headerlink" title="2. 根据创建应用生成的API Key和Secret Key来获取access_token"></a>2. 根据创建应用生成的<code>API Key</code>和<code>Secret Key</code>来获取<code>access_token</code></h3><p>进入API代码调试界面：</p>
-<!-- ![](images/ESP32S3接入文心一言/image-3.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-3.png" srcset="/img/loading.gif" lazyload></p>
-<!-- ![](images/ESP32S3接入文心一言/image-4.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-4.png" srcset="/img/loading.gif" lazyload></p>
-<!-- ![](images/ESP32S3接入文心一言/image-5.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-5.png" srcset="/img/loading.gif" lazyload></p>
-<p>应用列表选择自己创建的ESP32S3智能语音助手</p>
-<!-- ![](images/ESP32S3接入文心一言/image-6.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-6.png" srcset="/img/loading.gif" lazyload></p>
-<p>获取<code>access_token</code></p>
-<!-- ![](images/ESP32S3接入文心一言/image-7.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-7.png" srcset="/img/loading.gif" lazyload></p>
-<p>指令格式：<code>&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;介绍一下名侦探柯南这部动画&quot;</code></p>
-<!-- ![](images/ESP32S3接入文心一言/image-8.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-8.png" srcset="/img/loading.gif" lazyload></p>
-<p>调试结果如下：</p>
-<!-- ![](images/ESP32S3接入文心一言/image-9.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/ESP32S3%E6%8E%A5%E5%85%A5%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/image-9.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="3-在ESP32S3中发送POST请求API"><a href="#3-在ESP32S3中发送POST请求API" class="headerlink" title="3. 在ESP32S3中发送POST请求API"></a>3. 在ESP32S3中发送POST请求API</h3><p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs cpp">String apiERNIEbotUrl = <span class="hljs-string">&quot;https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions?access_token=xxxxxxxxx&quot;</span>; <span class="hljs-comment">// 把申请的access_token填上去</span><br>String inputText = <span class="hljs-string">&quot;你好！&quot;</span>;<br><br><span class="hljs-comment">/* 文心一言 */</span><br><span class="hljs-function">String <span class="hljs-title">getGPTResponse</span><span class="hljs-params">(String inputText)</span></span><br><span class="hljs-function"></span>&#123;<br>  HTTPClient http_client;<br><br>  http_client.<span class="hljs-built_in">begin</span>(apiERNIEbotUrl);<br>  http_client.<span class="hljs-built_in">addHeader</span>(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/json&quot;</span>);<br><br>  http_client.<span class="hljs-built_in">setTimeout</span>(<span class="hljs-number">20000</span>); <span class="hljs-comment">// 20s的超时时间</span><br><br>  String payload = <span class="hljs-string">&quot;&#123;\&quot;messages\&quot;:[&#123;\&quot;role\&quot;: \&quot;user\&quot;,\&quot;content\&quot;: \&quot;&quot;</span> + inputText + <span class="hljs-string">&quot;\&quot;&#125;],\&quot;disable_search\&quot;: false,\&quot;enable_citation\&quot;: false&#125;&quot;</span>;<br><br>  <span class="hljs-type">int</span> httpResponseCode = http_client.<span class="hljs-built_in">POST</span>(payload);<br><br>  <span class="hljs-keyword">if</span> (httpResponseCode == HTTP_CODE_OK)<br>  &#123;<br>    String response = http_client.<span class="hljs-built_in">getString</span>();<br><br>    http_client.<span class="hljs-built_in">end</span>();<br>    _LOG(<span class="hljs-string">&quot;\r\n%s\r\n&quot;</span>, response.<span class="hljs-built_in">c_str</span>());<br><br>    <span class="hljs-comment">// Parse JSON response</span><br>    <span class="hljs-function">DynamicJsonDocument <span class="hljs-title">doc</span><span class="hljs-params">(<span class="hljs-number">2048</span>)</span></span>;<br>    <span class="hljs-built_in">deserializeJson</span>(doc, response);<br><br>    String outPutText = doc[<span class="hljs-string">&quot;result&quot;</span>];<br>    <span class="hljs-keyword">return</span> outPutText;<br>  &#125;<br>  <span class="hljs-keyword">else</span><br>  &#123;<br>    _LOG(<span class="hljs-string">&quot;[HTTP] GET... failed, error: %s\n&quot;</span>, http_client.<span class="hljs-built_in">errorToString</span>(httpResponseCode).<span class="hljs-built_in">c_str</span>());<br>    http_client.<span class="hljs-built_in">end</span>();<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;[HTTP] GET... failed, error!&quot;</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h3 id="使用Ubuntu对Lvgl进行simulate-LVGL-Simulator"><a href="#使用Ubuntu对Lvgl进行simulate-LVGL-Simulator" class="headerlink" title="使用Ubuntu对Lvgl进行simulate - LVGL Simulator"></a>使用Ubuntu对Lvgl进行simulate - LVGL Simulator</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-success">
+            <p>挖坑ing…有空来填坑！！！</p>
+          </div>
 
-<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>意外的顺利耶！Yapi😘</p>
-<ul>
-<li>要注意的是，文心一言的API新用户第一个月可以获得一张20元的优惠券有效期1个月，1个月以后就要付费使用文心一言啦！</li>
-<li>access_token默认有效期30天，单位是秒，生产环境注意及时刷新。刷新了旧的也能用（只要不超时）</li>
-</ul>
-<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p>项目教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/vor234/article/details/135372118">https://blog.csdn.net/vor234/article/details/135372118</a></p>
+<hr>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>最近看到很多LVGL的项目都改用<code>Ubuntu</code>来编译<code>Simulator</code>，一开始还是有些不太习惯<code>CMake</code>的这种方式，后面习惯了以后是真香呢！再也不用为不同的环境版本而担心，再也不用依赖任何<code>IDE</code>，一键编译，一键执行，是极简的优雅！</p>
+<p><em>本篇文章将简述如何迅速地使用Ubuntu搭建出LVGL的项目模拟程序。</em></p>
+<hr>
+<p>…</p>
+<hr>
+<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>…</p>
+<hr>
 
                 
               </div>
@@ -381,9 +335,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/ESP32/" class="print-no-link">#ESP32</a>
+        <a href="/tags/Lvgl/" class="print-no-link">#Lvgl</a>
       
-        <a href="/tags/%E6%96%87%E5%BF%83%E4%B8%80%E8%A8%80/" class="print-no-link">#文心一言</a>
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
       
     </div>
   
@@ -395,8 +349,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ESP32S3接入文心一言</div>
-      <div>https://zhangkeliang0627.github.io/2024/03/25/ESP32S3接入文心一言/ESP32S3接入文心一言/</div>
+      <div>使用Ubuntu对Lvgl进行simulate - LVGL Simulator</div>
+      <div>https://zhangkeliang0627.github.io/2024/11/23/使用Ubuntu对Lvgl进行simulate - LVGL Simulator/README/</div>
     </div>
     <div class="license-meta">
       
@@ -408,7 +362,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 25, 2024</div>
+          <div>November 23, 2024</div>
         </div>
       
       
@@ -440,9 +394,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/26/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/" title="ESP32S3接入百度在线语音合成">
+                      <a href="/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/README/" title="全志T113-s3的TinaLinux编译流程记录">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ESP32S3接入百度在线语音合成</span>
+                        <span class="hidden-mobile">全志T113-s3的TinaLinux编译流程记录</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -450,8 +404,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/24/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/" title="ESP32S3接入百度在线语音识别">
-                        <span class="hidden-mobile">ESP32S3接入百度在线语音识别</span>
+                      <a href="/2024/11/19/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/11%E6%9C%88/README/" title="杂记丨11月：你想活出怎样的人生？">
+                        <span class="hidden-mobile">杂记丨11月：你想活出怎样的人生？</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

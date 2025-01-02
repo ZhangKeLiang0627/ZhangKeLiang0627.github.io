@@ -16,37 +16,30 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="似乎比起Win，使用Ubuntu来模拟LVGL更加方便一些耶.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用Ubuntu对Lvgl进行simulate - LVGL Simulator">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/11/23/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/%E4%BD%BF%E7%94%A8Ubuntu%E5%AF%B9Lvgl%E8%BF%9B%E8%A1%8Csimulate%20-%20LVGL%20Simulator/index.html">
+    <meta name="description" content="PPPack！一处打包到处运行，🥳🐍">
+<meta property="og:type" content="website">
+<meta property="og:title" content="对Qt项目进行打包的三种方式">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/README.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="似乎比起Win，使用Ubuntu来模拟LVGL更加方便一些耶.">
+<meta property="og:description" content="PPPack！一处打包到处运行，🥳🐍">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
-<meta property="article:published_time" content="2024-11-23T15:31:00.000Z">
-<meta property="article:modified_time" content="2024-11-23T16:01:05.576Z">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-0.png">
+<meta property="article:published_time" content="2025-01-02T13:04:00.000Z">
+<meta property="article:modified_time" content="2025-01-02T13:49:33.607Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Lvgl">
-<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Qt">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-0.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>使用Ubuntu对Lvgl进行simulate - LVGL Simulator - Hugo@kkl</title>
+  <title>对Qt项目进行打包的三种方式 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -200,63 +193,15 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-0.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用Ubuntu对Lvgl进行simulate - LVGL Simulator"></span>
+            <span id="subtitle" data-typed-text="对Qt项目进行打包的三种方式"></span>
           
         </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-23 23:31" pubdate>
-          November 23, 2024 pm
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          130 words
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          2 mins
-        
-      </span>
-    
-
-    
-    
-      
-        <span id="busuanzi_container_page_pv" style="display: none">
-          <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> views
-        </span>
-        
-      
-    
-  </div>
-
 
         
       </div>
@@ -272,150 +217,55 @@
 
   <main>
     
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <h1 id="seo-header">使用Ubuntu对Lvgl进行simulate - LVGL Simulator</h1>
-            
-            
-              <div class="markdown-body">
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
                 
-                <h3 id="使用Ubuntu对Lvgl进行simulate-LVGL-Simulator"><a href="#使用Ubuntu对Lvgl进行simulate-LVGL-Simulator" class="headerlink" title="使用Ubuntu对Lvgl进行simulate - LVGL Simulator"></a>使用Ubuntu对Lvgl进行simulate - LVGL Simulator</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-success">
-            <p>挖坑ing…有空来填坑！！！</p>
+
+<article class="page-content">
+  <h3 id="对Qt项目进行打包的三种方式"><a href="#对Qt项目进行打包的三种方式" class="headerlink" title="对Qt项目进行打包的三种方式"></a>对Qt项目进行打包的三种方式</h3><h4 id="PPPack！一处打包到处运行！"><a href="#PPPack！一处打包到处运行！" class="headerlink" title="PPPack！一处打包到处运行！"></a>PPPack！一处打包到处运行！</h4><h4 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h4><div class="note note-success">
+            <p>首先！是来到了2025年！新年快乐各位！🥳🐍</p>
           </div>
 
 <hr>
-<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>最近看到很多LVGL的项目都改用<code>Ubuntu</code>来编译<code>Simulator</code>，一开始还是有些不太习惯<code>CMake</code>的这种方式，后面习惯了以后是真香呢！再也不用为不同的环境版本而担心，再也不用依赖任何<code>IDE</code>，一键编译，一键执行，是极简的优雅！</p>
-<p><em>本篇文章将简述如何迅速地使用Ubuntu搭建出LVGL的项目模拟程序。</em></p>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>先前，我有使用Qt写过一些项目，类似<code>EasyGPS</code>的上位机<a href="https://zhangkeliang0627.github.io/2024/09/02/%E5%9F%BA%E4%BA%8EQt%E4%B8%8E%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%B8%8E%E9%98%BF%E9%87%8C%E4%BA%91MQTT%E7%9A%84EasyMap/README/">EasyGPS-MAP</a>，然后我发现我每一回要向他人展示的时候都需要打开<code>Qt Creater</code>然后重新编译一下这个项目才行（而且在Windows中打开Qt<strong>真的很慢</strong>，显然这种操作是不够优雅的，同时我有在别的电脑环境运行上位机的需要。基于以上诉求，这篇文章将会记录三种对Qt项目进行打包的方式！</p>
+<p><strong><em>本篇文章将简述如何迅速地对Qt项目进行打包。</em></strong></p>
+<h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul>
+<li>电脑环境：Windows 11</li>
+<li>Qt版本：5.14.1</li>
+</ul>
 <hr>
-<p>…</p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h3 id="1-打包成绿色便携版本"><a href="#1-打包成绿色便携版本" class="headerlink" title="1. 打包成绿色便携版本"></a>1. 打包成绿色便携版本</h3><blockquote>
+<p>特点：无需安装，可以制作成为一个压缩包文件来转发给别人，解压即用。</p>
+</blockquote>
+<ol>
+<li><p>首先，将项目的编译版本修改为<code>Release</code>，然后执行一次编译运行。这里不是必须要改，只是修改后发布的软件体积比较小，推荐使用<code>Release</code>.</p>
+</li>
+<li><p>然后找到编译输出的目录类似<code>/build-EasyGPS-Map-Desktop_Qt_5_14_1_MSVC2017_64bit-Release</code>，然后进入<code>release</code>文件夹.</p>
+</li>
+</ol>
+<p><img src="/image-1.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="3">
+<li><p>把<code>release</code>文件夹中除了.exe文件以外的所有文件都删除，当然你也可以不删除，只不过会徒增内存，对功能无影响.<br><img src="/image-2.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>根据你的编译Kit打开对应的命令行工具，比方说我这里使用的是<code>MSVC2017_64bit</code>进行的编译，那我就选择如图所示的工具：<br><img src="/image-3.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>打开对应的命令行工具，cd到对应的<code>release</code>文件夹，然后执行<code>windeployqt + xxxname.exe</code>.<br><img src="/image-4.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ol>
+<p>然后Qt自带的工具程序，会把该.exe缺失的库文件补充齐全，如下图。此时你就可以双击打开该.exe文件，惊喜地发现，它可以直接运行啦！<br><img src="/image-5.png" srcset="/img/loading.gif" lazyload><br><img src="/image-6.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="6">
+<li>接着，你可以单独将这个<code>release</code>文件夹压缩成压缩包发送给别人，解压即用！非常舒适！</li>
+</ol>
+<h3 id="2-打包成单文件版本"><a href="#2-打包成单文件版本" class="headerlink" title="2. 打包成单文件版本"></a>2. 打包成单文件版本</h3><h3 id="3-打包成可安装版本"><a href="#3-打包成可安装版本" class="headerlink" title="3. 打包成可安装版本"></a>3. 打包成可安装版本</h3><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/KK_2018/article/details/131899658">https://blog.csdn.net/KK_2018/article/details/131899658</a></p>
 <hr>
-<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>…</p>
-<hr>
 
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
+
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Lvgl/" class="print-no-link">#Lvgl</a>
-      
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>使用Ubuntu对Lvgl进行simulate - LVGL Simulator</div>
-      <div>https://zhangkeliang0627.github.io/2024/11/23/使用Ubuntu对Lvgl进行simulate - LVGL Simulator/使用Ubuntu对Lvgl进行simulate - LVGL Simulator/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>Author</div>
-          <div>Zhang-keliang</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>November 23, 2024</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>Licensed under</div>
-          <div>
-            
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
-                    <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/" title="全志T113-s3的TinaLinux编译流程记录">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">全志T113-s3的TinaLinux编译流程记录</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2024/11/19/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/11%E6%9C%88/README/" title="杂记丨11月：你想活出怎样的人生？">
-                        <span class="hidden-mobile">杂记丨11月：你想活出怎样的人生？</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
   
   
     <article id="comments" lazyload>
@@ -449,59 +299,15 @@
   
 
 
-          </article>
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
     
 
     
@@ -622,99 +428,6 @@
 
 
 
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 
