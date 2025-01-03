@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-0.png">
 <meta property="article:published_time" content="2025-01-02T13:04:00.000Z">
-<meta property="article:modified_time" content="2025-01-02T14:05:28.088Z">
+<meta property="article:modified_time" content="2025-01-03T17:07:45.942Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Qt">
 <meta name="twitter:card" content="summary_large_image">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          662 words
+          930 words
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          6 mins
+          8 mins
         
       </span>
     
@@ -331,7 +331,38 @@
 <ol start="6">
 <li>接着，你可以单独将这个<code>release</code>文件夹压缩成压缩包发送给别人，解压即用！非常舒适！</li>
 </ol>
-<h3 id="2-打包成单文件版本"><a href="#2-打包成单文件版本" class="headerlink" title="2. 打包成单文件版本"></a>2. 打包成单文件版本</h3><p>…</p>
+<h3 id="2-打包成单文件版本"><a href="#2-打包成单文件版本" class="headerlink" title="2. 打包成单文件版本"></a>2. 打包成单文件版本</h3><blockquote>
+<p>特点：给他人发送一个包含运行环境的.exe文件，双击即用！无需压缩or解压。</p>
+</blockquote>
+<p><strong>首先，你需要对Qt项目做<code>打包成绿色便携版本</code>的操作！</strong></p>
+<p>这里使用软件<code>Enigma Virtual Box</code>进行Qt项目的封包，该软件官网下载地址：<a target="_blank" rel="noopener" href="https://www.enigmaprotector.com/en/downloads.html">https://www.enigmaprotector.com/en/downloads.html</a></p>
+<div class="note note-warning">
+            <p>我的电脑环境是Windows 11，我选择64位的版本，然后下载安装时一路<code>next</code>就行，没什么特别的操作。</p>
+          </div>
+
+<ol>
+<li>打开软件<code>Enigma Virtual Box</code>，选择等待封包的主程.</li>
+</ol>
+<p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-7.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li>选择<code>增加...</code>-&gt;<code>增加文件夹[递归]</code>，选择<code>release</code>文件夹，点击<code>确定</code>.</li>
+</ol>
+<p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-8.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="3">
+<li>点击<code>文件选项</code>-&gt;<code>压缩文件</code>，然后点击<code>确定</code>.</li>
+</ol>
+<p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-9.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="4">
+<li>最后，点击<code>执行封包</code>.</li>
+</ol>
+<p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-10.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="5">
+<li>然后在<code>release</code>文件夹下会多出来一个<code>xxxname_boxed.exe</code>结尾的.exe文件啦！</li>
+</ol>
+<div class="note note-warning">
+            <p>不过请<strong>注意</strong>，如果你的Qt项目包含了类似<code>QtWebEngineWidgets</code>等模块，可能会导致封包失败或者封包之后的文件不可用！最好还是使用<code>打包成绿色便携版本</code>的方法吧，这个方法十分稳妥！</p>
+          </div>
+
 <h3 id="3-打包成可安装版本"><a href="#3-打包成可安装版本" class="headerlink" title="3. 打包成可安装版本"></a>3. 打包成可安装版本</h3><p>…</p>
 <div class="note note-info">
             <p>未完待续…</p>

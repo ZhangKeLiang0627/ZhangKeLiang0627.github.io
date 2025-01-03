@@ -8,7 +8,7 @@
     <link href="/2025/01/02/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/README/"/>
     <url>/2025/01/02/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/README/</url>
     
-    <content type="html"><![CDATA[<h3 id="对Qt项目进行打包的三种方式"><a href="#对Qt项目进行打包的三种方式" class="headerlink" title="对Qt项目进行打包的三种方式"></a>对Qt项目进行打包的三种方式</h3><h4 id="PPPack！一处打包到处运行！"><a href="#PPPack！一处打包到处运行！" class="headerlink" title="PPPack！一处打包到处运行！"></a>PPPack！一处打包到处运行！</h4><h4 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h4><div class="note note-success">            <p>首先！是来到了2025年！新年快乐各位！🥳🐍</p>          </div><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>先前，我有使用Qt写过一些项目，类似<code>EasyGPS</code>的上位机<a href="https://zhangkeliang0627.github.io/2024/09/02/%E5%9F%BA%E4%BA%8EQt%E4%B8%8E%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%B8%8E%E9%98%BF%E9%87%8C%E4%BA%91MQTT%E7%9A%84EasyMap/README/">EasyGPS-MAP</a>，然后我发现我每一回要向他人展示的时候都需要打开<code>Qt Creater</code>然后重新编译一下这个项目才行（而且在Windows中打开Qt<strong>真的很慢</strong>，显然这种操作是不够优雅的，同时我有在别的电脑环境运行上位机的需要。基于以上诉求，这篇文章将会记录三种对Qt项目进行打包的方式！</p><p><strong><em>本篇文章将简述如何迅速地对Qt项目进行打包。</em></strong></p><h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul><li>电脑环境：Windows 11</li><li>Qt版本：5.14.1</li></ul><hr><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h3 id="1-打包成绿色便携版本"><a href="#1-打包成绿色便携版本" class="headerlink" title="1. 打包成绿色便携版本"></a>1. 打包成绿色便携版本</h3><blockquote><p>特点：无需安装，可以制作成为一个压缩包文件来转发给别人，解压即用。</p></blockquote><ol><li><p>首先，将项目的编译版本修改为<code>Release</code>，然后执行一次编译运行。这里不是必须要改，只是修改后发布的软件体积比较小，推荐使用<code>Release</code>.</p></li><li><p>然后找到编译输出的目录类似<code>/build-EasyGPS-Map-Desktop_Qt_5_14_1_MSVC2017_64bit-Release</code>，然后进入<code>release</code>文件夹.</p></li><li><p>把<code>release</code>文件夹中除了.exe文件以外的所有文件都删除，当然你也可以不删除，只不过会徒增内存，对功能无影响.</p></li></ol><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/对Qt项目进行打包的三种方式/image-1.png" alt="---" width = "800" height = "350" style="border-radius: 10px;"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/images/对Qt项目进行打包的三种方式/image-2.png" alt="---" width = "800" height = "350" style="border-radius: 10px;"></div></div></div><ol><li><p>根据你的<strong>编译Kit</strong>打开对应的<strong>命令行工具</strong>，比方说我这里使用的是<code>MSVC2017_64bit</code>进行的编译，那我就选择如图所示的工具：<br><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-3.png"></p></li><li><p>打开对应的命令行工具，cd到对应的<code>release</code>文件夹，然后执行<code>windeployqt + xxxname.exe</code>.</p></li></ol><blockquote><p>这里记录在windows命令行使用<code>cd</code>命令的小技巧，倘若你仅仅在一个盘内进行cd（如只在C盘、只在D盘，正常<code>cd + address</code>即可。<br>如果你要跨盘cd（如从C盘到D盘，此时需要<code>cd /d + address</code>，或者先敲一个<code>D: + 回车键</code>切换盘符，然后正常cd。</p></blockquote><p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-4.png"></p><p>然后Qt自带的工具程序，会把该.exe文件缺失的库文件补充齐全，如下图。此时你就可以双击打开该.exe文件，惊喜地发现，它可以直接运行啦！</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/对Qt项目进行打包的三种方式/image-5.png" alt="---" width = "400" height = "230" style="border-radius: 10px;"></div><div class="group-image-wrap"><img src="/images/对Qt项目进行打包的三种方式/image-6.png" alt="---" width = "400" height = "230" style="border-radius: 10px;"></div></div></div><ol start="6"><li>接着，你可以单独将这个<code>release</code>文件夹压缩成压缩包发送给别人，解压即用！非常舒适！</li></ol><h3 id="2-打包成单文件版本"><a href="#2-打包成单文件版本" class="headerlink" title="2. 打包成单文件版本"></a>2. 打包成单文件版本</h3><p>…</p><h3 id="3-打包成可安装版本"><a href="#3-打包成可安装版本" class="headerlink" title="3. 打包成可安装版本"></a>3. 打包成可安装版本</h3><p>…</p><div class="note note-info">            <p>未完待续…</p>          </div><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：</p><ul><li>视频教程：<a href="https://www.bilibili.com/video/BV1cB4aeHEHr">https://www.bilibili.com/video/BV1cB4aeHEHr</a></li><li>图文教程：<a href="https://blog.csdn.net/KK_2018/article/details/131899658">https://blog.csdn.net/KK_2018/article/details/131899658</a></li></ul><hr>]]></content>
+    <content type="html"><![CDATA[<h3 id="对Qt项目进行打包的三种方式"><a href="#对Qt项目进行打包的三种方式" class="headerlink" title="对Qt项目进行打包的三种方式"></a>对Qt项目进行打包的三种方式</h3><h4 id="PPPack！一处打包到处运行！"><a href="#PPPack！一处打包到处运行！" class="headerlink" title="PPPack！一处打包到处运行！"></a>PPPack！一处打包到处运行！</h4><h4 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h4><div class="note note-success">            <p>首先！是来到了2025年！新年快乐各位！🥳🐍</p>          </div><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>先前，我有使用Qt写过一些项目，类似<code>EasyGPS</code>的上位机<a href="https://zhangkeliang0627.github.io/2024/09/02/%E5%9F%BA%E4%BA%8EQt%E4%B8%8E%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%B8%8E%E9%98%BF%E9%87%8C%E4%BA%91MQTT%E7%9A%84EasyMap/README/">EasyGPS-MAP</a>，然后我发现我每一回要向他人展示的时候都需要打开<code>Qt Creater</code>然后重新编译一下这个项目才行（而且在Windows中打开Qt<strong>真的很慢</strong>，显然这种操作是不够优雅的，同时我有在别的电脑环境运行上位机的需要。基于以上诉求，这篇文章将会记录三种对Qt项目进行打包的方式！</p><p><strong><em>本篇文章将简述如何迅速地对Qt项目进行打包。</em></strong></p><h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul><li>电脑环境：Windows 11</li><li>Qt版本：5.14.1</li></ul><hr><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h3 id="1-打包成绿色便携版本"><a href="#1-打包成绿色便携版本" class="headerlink" title="1. 打包成绿色便携版本"></a>1. 打包成绿色便携版本</h3><blockquote><p>特点：无需安装，可以制作成为一个压缩包文件来转发给别人，解压即用。</p></blockquote><ol><li><p>首先，将项目的编译版本修改为<code>Release</code>，然后执行一次编译运行。这里不是必须要改，只是修改后发布的软件体积比较小，推荐使用<code>Release</code>.</p></li><li><p>然后找到编译输出的目录类似<code>/build-EasyGPS-Map-Desktop_Qt_5_14_1_MSVC2017_64bit-Release</code>，然后进入<code>release</code>文件夹.</p></li><li><p>把<code>release</code>文件夹中除了.exe文件以外的所有文件都删除，当然你也可以不删除，只不过会徒增内存，对功能无影响.</p></li></ol><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/对Qt项目进行打包的三种方式/image-1.png" alt="---" width = "800" height = "350" style="border-radius: 10px;"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/images/对Qt项目进行打包的三种方式/image-2.png" alt="---" width = "800" height = "350" style="border-radius: 10px;"></div></div></div><ol><li><p>根据你的<strong>编译Kit</strong>打开对应的<strong>命令行工具</strong>，比方说我这里使用的是<code>MSVC2017_64bit</code>进行的编译，那我就选择如图所示的工具：<br><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-3.png"></p></li><li><p>打开对应的命令行工具，cd到对应的<code>release</code>文件夹，然后执行<code>windeployqt + xxxname.exe</code>.</p></li></ol><blockquote><p>这里记录在windows命令行使用<code>cd</code>命令的小技巧，倘若你仅仅在一个盘内进行cd（如只在C盘、只在D盘，正常<code>cd + address</code>即可。<br>如果你要跨盘cd（如从C盘到D盘，此时需要<code>cd /d + address</code>，或者先敲一个<code>D: + 回车键</code>切换盘符，然后正常cd。</p></blockquote><p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-4.png"></p><p>然后Qt自带的工具程序，会把该.exe文件缺失的库文件补充齐全，如下图。此时你就可以双击打开该.exe文件，惊喜地发现，它可以直接运行啦！</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/对Qt项目进行打包的三种方式/image-5.png" alt="---" width = "400" height = "230" style="border-radius: 10px;"></div><div class="group-image-wrap"><img src="/images/对Qt项目进行打包的三种方式/image-6.png" alt="---" width = "400" height = "230" style="border-radius: 10px;"></div></div></div><ol start="6"><li>接着，你可以单独将这个<code>release</code>文件夹压缩成压缩包发送给别人，解压即用！非常舒适！</li></ol><h3 id="2-打包成单文件版本"><a href="#2-打包成单文件版本" class="headerlink" title="2. 打包成单文件版本"></a>2. 打包成单文件版本</h3><blockquote><p>特点：给他人发送一个包含运行环境的.exe文件，双击即用！无需压缩or解压。</p></blockquote><p><strong>首先，你需要对Qt项目做<code>打包成绿色便携版本</code>的操作！</strong></p><p>这里使用软件<code>Enigma Virtual Box</code>进行Qt项目的封包，该软件官网下载地址：<a href="https://www.enigmaprotector.com/en/downloads.html">https://www.enigmaprotector.com/en/downloads.html</a></p><div class="note note-warning">            <p>我的电脑环境是Windows 11，我选择64位的版本，然后下载安装时一路<code>next</code>就行，没什么特别的操作。</p>          </div><ol><li>打开软件<code>Enigma Virtual Box</code>，选择等待封包的主程.</li></ol><p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-7.png"></p><ol><li>选择<code>增加...</code>-&gt;<code>增加文件夹[递归]</code>，选择<code>release</code>文件夹，点击<code>确定</code>.</li></ol><p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-8.png"></p><ol start="3"><li>点击<code>文件选项</code>-&gt;<code>压缩文件</code>，然后点击<code>确定</code>.</li></ol><p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-9.png"></p><ol start="4"><li>最后，点击<code>执行封包</code>.</li></ol><p><img src="/images/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/image-10.png"></p><ol start="5"><li>然后在<code>release</code>文件夹下会多出来一个<code>xxxname_boxed.exe</code>结尾的.exe文件啦！</li></ol><div class="note note-warning">            <p>不过请<strong>注意</strong>，如果你的Qt项目包含了类似<code>QtWebEngineWidgets</code>等模块，可能会导致封包失败或者封包之后的文件不可用！最好还是使用<code>打包成绿色便携版本</code>的方法吧，这个方法十分稳妥！</p>          </div><h3 id="3-打包成可安装版本"><a href="#3-打包成可安装版本" class="headerlink" title="3. 打包成可安装版本"></a>3. 打包成可安装版本</h3><p>…</p><div class="note note-info">            <p>未完待续…</p>          </div><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：</p><ul><li>视频教程：<a href="https://www.bilibili.com/video/BV1cB4aeHEHr">https://www.bilibili.com/video/BV1cB4aeHEHr</a></li><li>图文教程：<a href="https://blog.csdn.net/KK_2018/article/details/131899658">https://blog.csdn.net/KK_2018/article/details/131899658</a></li></ul><hr>]]></content>
     
     
     <categories>
@@ -76,11 +76,11 @@
       
       <tag>Lvgl</tag>
       
-      <tag>Ubuntu</tag>
-      
       <tag>Allwinner</tag>
       
       <tag>T113-s3</tag>
+      
+      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -93,7 +93,7 @@
     <link href="/2024/12/03/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/12%E6%9C%88/README/"/>
     <url>/2024/12/03/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/12%E6%9C%88/README/</url>
     
-    <content type="html"><![CDATA[<h3 id="杂记丨12月：最终幻想…"><a href="#杂记丨12月：最终幻想…" class="headerlink" title="杂记丨12月：最终幻想…"></a>杂记丨12月：最终幻想…</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>博客成立一周年啦！这里的冬天也要来到，安啦我们一定都可以平安顺遂！</p><figure><img src="/images/杂记/2024年/12月/image-1.jpg" alt="摄于大师兄：小野人筷子筒" width = "400" height = "300" style="border-radius: 15px;"><figcaption>摄于大师兄：小野人筷子筒</figcaption></figure><hr><h3 id="2024-12-22-看，其实也没有那么难，对吧？"><a href="#2024-12-22-看，其实也没有那么难，对吧？" class="headerlink" title="2024&#x2F;12&#x2F;22 - 看，其实也没有那么难，对吧？"></a>2024&#x2F;12&#x2F;22 - 看，其实也没有那么难，对吧？</h3><p>12月22日下午5时7分，随着老师们停止上下翻飞清点试卷，一声如释重负的：「好了，可以走了」，我见睹人群如河流，如堤坝泄洪，湍急地，头也不回地，要离开这里，离开这个为生活按下暂停键的地方，静默无声…</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>维持了大半年的情绪的压抑，劳累的眼神，努力，后悔，担心与焦虑，似乎在一瞬间烟消云散。</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>第二天，我拽上背包踏进了星期一的欢乐谷，我从来没有逛过这么空旷的游乐园，也是第一次觉得欢乐谷竟然这么小！一遍遍地坐上孤零零的过山车，也一遍遍浏览着热火朝天的招聘软件，最终在摇摇晃晃的海盗船上，我收到了第一份面试机会。</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>几个月前急忙得焦头烂额的毕设，不出一周竟然已经逐步成型，实现功能…做完了。</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>晕头转向的十二月的尾巴，没有按计划飞往云南，也没有大事发声，但是，我能够感受到开心了，这非常重要。</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>…</p><h3 id="2024-12-31-年终总结"><a href="#2024-12-31-年终总结" class="headerlink" title="2024&#x2F;12&#x2F;31 - 年终总结"></a>2024&#x2F;12&#x2F;31 - 年终总结</h3><p>…</p><!-- 热力图的挂件 --><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script><div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div><!-- Sakana鱼的挂件 --><link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/sakana-widget@2.7.0/lib/sakana.min.css"/><div id="sakana-widget" style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000;"></div><script>  function initSakanaWidget() {    new SakanaWidget().mount('#sakana-widget');  }</script><script  async  onload="initSakanaWidget()"  src="https://cdn.jsdelivr.net/npm/sakana-widget@2.7.0/lib/sakana.min.js"></script><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>很简单，最终幻想其实就是…我不再幻想。</p><p><em><strong>「正因为我们足够乐观和自信，才可以直面悲剧。」</strong></em></p><div class="note note-success">            <p><strong>We Wish You a Merry Christmas!</strong></p>          </div><p>…</p><hr>]]></content>
+    <content type="html"><![CDATA[<h3 id="杂记丨12月：最终幻想…"><a href="#杂记丨12月：最终幻想…" class="headerlink" title="杂记丨12月：最终幻想…"></a>杂记丨12月：最终幻想…</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>博客成立一周年啦！这里的冬天也要来到，安啦我们一定都可以平安顺遂！</p><figure><img src="/images/杂记/2024年/12月/image-1.jpg" alt="摄于大师兄：小野人筷子筒" width = "400" height = "300" style="border-radius: 15px;"><figcaption>摄于大师兄：小野人筷子筒</figcaption></figure><hr><h3 id="2024-12-22-看，其实也没有那么难，对吧？"><a href="#2024-12-22-看，其实也没有那么难，对吧？" class="headerlink" title="2024&#x2F;12&#x2F;22 - 看，其实也没有那么难，对吧？"></a>2024&#x2F;12&#x2F;22 - 看，其实也没有那么难，对吧？</h3><p>12月22日下午5时7分，随着老师们停止上下翻飞清点试卷，一声如释重负的：「好了，可以走了」，我见睹人群如河流，如堤坝泄洪，湍急地，头也不回地，要离开这里，离开这个为生活按下暂停键的地方，静默无声…</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>维持了大半年的情绪的压抑，劳累的眼神，努力，后悔，担心与焦虑，似乎在一瞬间烟消云散。</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>第二天，我拽上背包踏进了星期一的欢乐谷，我从来没有逛过这么空旷的游乐园，也是第一次觉得欢乐谷竟然这么小！一遍遍地坐上孤零零的过山车，也一遍遍浏览着热火朝天的招聘软件，最终在摇摇晃晃的海盗船上，我收到了第一份面试机会。</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>几个月前急忙得焦头烂额的毕设，不出一周竟然已经逐步成型，实现功能…做完了。</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>晕头转向的十二月的尾巴，没有按计划飞往云南，也没有大事发“声”，但是，我能够感受到开心了，这非常重要。</p><p><strong>看，其实也没有那么难，对吧？</strong></p><p>…</p><h3 id="2024-12-31-年终总结"><a href="#2024-12-31-年终总结" class="headerlink" title="2024&#x2F;12&#x2F;31 - 年终总结"></a>2024&#x2F;12&#x2F;31 - 年终总结</h3><p>…</p><!-- 热力图的挂件 --><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script><div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div><!-- Sakana鱼的挂件 --><link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/sakana-widget@2.7.0/lib/sakana.min.css"/><div id="sakana-widget" style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000;"></div><script>  function initSakanaWidget() {    new SakanaWidget().mount('#sakana-widget');  }</script><script  async  onload="initSakanaWidget()"  src="https://cdn.jsdelivr.net/npm/sakana-widget@2.7.0/lib/sakana.min.js"></script><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>很简单，最终幻想其实就是…我不再幻想。</p><p><em><strong>「正因为我们足够乐观和自信，才可以直面悲剧。」</strong></em></p><div class="note note-success">            <p><strong>We Wish You a Merry Christmas!</strong></p>          </div><p>…</p><hr>]]></content>
     
     
     <categories>
@@ -132,11 +132,11 @@
     
     <tags>
       
-      <tag>Ubuntu</tag>
-      
       <tag>Allwinner</tag>
       
       <tag>T113-s3</tag>
+      
+      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -298,13 +298,13 @@
     
     <tags>
       
-      <tag>Qt</tag>
+      <tag>MQTT</tag>
       
       <tag>aliyun</tag>
       
-      <tag>高德地图</tag>
+      <tag>Qt</tag>
       
-      <tag>MQTT</tag>
+      <tag>高德地图</tag>
       
     </tags>
     
@@ -356,11 +356,11 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
-      
-      <tag>MCU</tag>
       
       <tag>GUI</tag>
       
@@ -470,13 +470,13 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
       
       <tag>Camera</tag>
-      
-      <tag>MCU</tag>
       
     </tags>
     
@@ -530,9 +530,9 @@
       
       <tag>ESP32</tag>
       
-      <tag>MQTT</tag>
-      
       <tag>Arduino</tag>
+      
+      <tag>MQTT</tag>
       
     </tags>
     
@@ -866,9 +866,9 @@
     
     <tags>
       
-      <tag>MCU</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -918,9 +918,9 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>STM32</tag>
       
       <tag>Lua</tag>
       
