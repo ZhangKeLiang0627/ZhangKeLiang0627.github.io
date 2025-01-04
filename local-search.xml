@@ -8,7 +8,7 @@
     <link href="/2025/01/04/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/README/"/>
     <url>/2025/01/04/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/README/</url>
     
-    <content type="html"><![CDATA[<h3 id="在ESP32-Arduino中使用低功耗蓝牙BLE"><a href="#在ESP32-Arduino中使用低功耗蓝牙BLE" class="headerlink" title="在ESP32-Arduino中使用低功耗蓝牙BLE"></a>在ESP32-Arduino中使用低功耗蓝牙BLE</h3><h3 id="蓝牙蓝牙！Bluetooth🟦🦷！"><a href="#蓝牙蓝牙！Bluetooth🟦🦷！" class="headerlink" title="蓝牙蓝牙！Bluetooth🟦🦷！"></a>蓝牙蓝牙！Bluetooth🟦🦷！</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>以往项目中使用的蓝牙相关的例程都是一些鸡毛蒜皮的拼接，终于有空闲的时间可以来专门学习一下ESP32-Arduino中低功耗蓝牙BLE的使用方法啦，同时了解了解BLE的工作原理。</p><p><strong><em>本篇文章将简述如何迅速地学会在ESP32-Arduino中使用BLE的API。</em></strong></p><h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul><li>开发板：ESP32S3N16R8</li><li>开发平台：Arduino + PlatformIO + Vscode</li></ul><hr><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p><img src="/images/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/image-0.png" alt="BLE服务框图"><br>…</p><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>…</p><div class="note note-success">            <p>未完待续…</p>          </div><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><h2 id="鸣谢以下教程：-小鱼创意：https-www-bilibili-com-video-BV1XD4y1K7xW-koolins：https-www-bilibili-com-video-BV1iPs6efEu1"><a href="#鸣谢以下教程：-小鱼创意：https-www-bilibili-com-video-BV1XD4y1K7xW-koolins：https-www-bilibili-com-video-BV1iPs6efEu1" class="headerlink" title="鸣谢以下教程：- @小鱼创意：https://www.bilibili.com/video/BV1XD4y1K7xW- @koolins：https://www.bilibili.com/video/BV1iPs6efEu1"></a>鸣谢以下教程：<br>- @小鱼创意：<a href="https://www.bilibili.com/video/BV1XD4y1K7xW">https://www.bilibili.com/video/BV1XD4y1K7xW</a><br>- @koolins：<a href="https://www.bilibili.com/video/BV1iPs6efEu1">https://www.bilibili.com/video/BV1iPs6efEu1</a></h2>]]></content>
+    <content type="html"><![CDATA[<h3 id="在ESP32-Arduino中使用低功耗蓝牙BLE"><a href="#在ESP32-Arduino中使用低功耗蓝牙BLE" class="headerlink" title="在ESP32-Arduino中使用低功耗蓝牙BLE"></a>在ESP32-Arduino中使用低功耗蓝牙BLE</h3><h3 id="蓝牙蓝牙！Bluetooth🟦🦷！"><a href="#蓝牙蓝牙！Bluetooth🟦🦷！" class="headerlink" title="蓝牙蓝牙！Bluetooth🟦🦷！"></a>蓝牙蓝牙！Bluetooth🟦🦷！</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>以往项目中使用的蓝牙相关的例程都是一些鸡毛蒜皮的拼接，终于有空闲的时间可以来专门学习一下ESP32-Arduino中低功耗蓝牙BLE的使用方法啦，同时了解了解BLE的工作原理。</p><p><strong><em>本篇文章将简述如何迅速地学会在ESP32-Arduino中使用BLE的API。</em></strong></p><h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul><li>开发板：ESP32S3N16R8</li><li>开发平台：Arduino + PlatformIO + Vscode</li></ul><hr><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p><img src="/images/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/image-0.png" alt="BLE服务框图"><br>…</p><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>…</p><div class="note note-success">            <p>未完待续…</p>          </div><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：</p><ul><li>@小鱼创意：<a href="https://www.bilibili.com/video/BV1XD4y1K7xW">https://www.bilibili.com/video/BV1XD4y1K7xW</a></li><li>@koolins：<a href="https://www.bilibili.com/video/BV1iPs6efEu1">https://www.bilibili.com/video/BV1iPs6efEu1</a></li></ul><hr>]]></content>
     
     
     <categories>
@@ -107,11 +107,11 @@
       
       <tag>Lvgl</tag>
       
-      <tag>Ubuntu</tag>
-      
       <tag>Allwinner</tag>
       
       <tag>T113-s3</tag>
+      
+      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -163,11 +163,11 @@
     
     <tags>
       
-      <tag>Ubuntu</tag>
-      
       <tag>Allwinner</tag>
       
       <tag>T113-s3</tag>
+      
+      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -329,13 +329,13 @@
     
     <tags>
       
+      <tag>MQTT</tag>
+      
       <tag>Qt</tag>
       
       <tag>aliyun</tag>
       
       <tag>高德地图</tag>
-      
-      <tag>MQTT</tag>
       
     </tags>
     
@@ -387,11 +387,11 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
-      
-      <tag>MCU</tag>
       
       <tag>GUI</tag>
       
@@ -501,13 +501,13 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
       
       <tag>Camera</tag>
-      
-      <tag>MCU</tag>
       
     </tags>
     
@@ -897,9 +897,9 @@
     
     <tags>
       
-      <tag>MCU</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -949,9 +949,9 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>STM32</tag>
       
       <tag>Lua</tag>
       
