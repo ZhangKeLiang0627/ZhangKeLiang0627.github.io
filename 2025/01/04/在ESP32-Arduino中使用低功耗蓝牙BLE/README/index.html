@@ -16,29 +16,29 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="今天！可以放开地玩Linux啦🙆！">
+    <meta name="description" content="蓝牙蓝牙！Bluetooth🟦🦷！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在全志T113-S3的TinaLinux上运行LVGL">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/12/22/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/README/index.html">
+<meta property="og:title" content="在ESP32-Arduino中使用低功耗蓝牙BLE">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2025/01/04/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="今天！可以放开地玩Linux啦🙆！">
+<meta property="og:description" content="蓝牙蓝牙！Bluetooth🟦🦷！">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
-<meta property="article:published_time" content="2024-12-22T12:30:00.000Z">
-<meta property="article:modified_time" content="2025-01-01T01:40:14.566Z">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/image.jpg">
+<meta property="article:published_time" content="2025-01-04T02:17:00.000Z">
+<meta property="article:modified_time" content="2025-01-04T02:54:39.655Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Lvgl">
-<meta property="article:tag" content="Ubuntu">
-<meta property="article:tag" content="Allwinner">
-<meta property="article:tag" content="T113-s3">
+<meta property="article:tag" content="ESP32">
+<meta property="article:tag" content="MCU">
+<meta property="article:tag" content="Arduino">
+<meta property="article:tag" content="BLE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/image.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>在全志T113-S3的TinaLinux上运行LVGL - Hugo@kkl</title>
+  <title>在ESP32-Arduino中使用低功耗蓝牙BLE - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,13 +202,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/images/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/image.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在全志T113-S3的TinaLinux上运行LVGL"></span>
+            <span id="subtitle" data-typed-text="在ESP32-Arduino中使用低功耗蓝牙BLE"></span>
           
         </div>
 
@@ -219,8 +219,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-22 20:30" pubdate>
-          December 22, 2024 pm
+        <time datetime="2025-01-04 10:17" pubdate>
+          January 4, 2025 am
         </time>
       </span>
     
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k words
+          157 words
         
       </span>
     
@@ -242,7 +242,7 @@
         
         
         
-          10 mins
+          2 mins
         
       </span>
     
@@ -287,87 +287,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在全志T113-S3的TinaLinux上运行LVGL</h1>
+            <h1 id="seo-header">在ESP32-Arduino中使用低功耗蓝牙BLE</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="在全志T113-S3的TinaLinux上运行LVGL"><a href="#在全志T113-S3的TinaLinux上运行LVGL" class="headerlink" title="在全志T113-S3的TinaLinux上运行LVGL"></a>在全志T113-S3的TinaLinux上运行LVGL</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-success">
-            <p>大家看这篇文章之前，要先去看我先前的文章<code>全志T113-S3的TinaLinux编译流程记录</code>搭建好基本环境，<a href="https://zhangkeliang0627.github.io/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/">戳这儿直接跳转:)</a></p>
-          </div>
-
-<hr>
-<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong>T113-s3</strong>是<strong>全志</strong>的一款非常不错的能够跑Linux系统的Soc，该芯片采用<strong>双核A7</strong>，<strong>主频高达1.2GHz</strong>，具备<strong>高效能</strong>和<strong>低功耗</strong>的特点，<strong>片上内存128MB</strong>，<strong>支持硬件解码</strong>，和D1s Pin to Pin，支持相互替换支持全志提供的Tina Linux SDK，文档齐全，对于DIY玩家来说用于制作一些带显示屏的小设备是非常完美了。</p>
-<p>前阵子在“海鲜市场”低价入了韦东山的T113-s3的开发板，经过一番摸索以后发现了TinaLinux这个新奇的东西，听说是全志基于<code>Openwrt</code>自研的系统（被戏谑为全志家的小女儿。</p>
-<p><strong><em>本篇文章将简述如何迅速地在Tina Linux运行LVGL。</em></strong></p>
+                <h3 id="在ESP32-Arduino中使用低功耗蓝牙BLE"><a href="#在ESP32-Arduino中使用低功耗蓝牙BLE" class="headerlink" title="在ESP32-Arduino中使用低功耗蓝牙BLE"></a>在ESP32-Arduino中使用低功耗蓝牙BLE</h3><h3 id="蓝牙蓝牙！Bluetooth🟦🦷！"><a href="#蓝牙蓝牙！Bluetooth🟦🦷！" class="headerlink" title="蓝牙蓝牙！Bluetooth🟦🦷！"></a>蓝牙蓝牙！Bluetooth🟦🦷！</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><hr>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>以往项目中使用的蓝牙相关的例程都是一些鸡毛蒜皮的拼接，终于有空闲的时间可以来专门学习一下ESP32-Arduino中低功耗蓝牙BLE的使用方法啦，同时了解了解BLE的工作原理。</p>
+<p><strong><em>本篇文章将简述如何迅速地学会在ESP32-Arduino中使用BLE的API。</em></strong></p>
 <h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul>
-<li>虚拟机：VirtualBox Ubuntu 18.04</li>
-<li>开发板：100ASK_T113-PRO</li>
+<li>开发板：ESP32S3N16R8</li>
+<li>开发平台：Arduino + PlatformIO + Vscode</li>
 </ul>
 <hr>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="打开TinaLinux的menuconfig"><a href="#打开TinaLinux的menuconfig" class="headerlink" title="打开TinaLinux的menuconfig"></a>打开TinaLinux的menuconfig</h4><p>首先我们要进入TinaLinux-SDK的根目录，<code>cd ~/tina-d1-h</code>并执行以下命令来设置环境：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ source build/envsetup.sh<br>Setup env done! Please run lunch next.<br>book@ubuntu1804:~/tina-d1-h$ lunch<br><br>You&#x27;re building on Linux<br><br>Lunch menu... pick a combo:<br>     1. d1-h_nezha_min-tina<br>     2. d1-h_nezha-tina<br>     3. d1s_nezha-tina<br>     4. t113_nezha-tina<br><br>Which would you like?: 4<br>============================================<br>TINA_BUILD_TOP=/home/book/tina-d1-h<br>TINA_TARGET_ARCH=arm<br>TARGET_PRODUCT=t113_nezha<br>TARGET_PLATFORM=t113<br>TARGET_BOARD=t113-nezha<br>TARGET_PLAN=nezha<br>TARGET_BUILD_VARIANT=tina<br>TARGET_BUILD_TYPE=release<br>TARGET_KERNEL_VERSION=5.4<br>TARGET_UBOOT=u-boot-2018<br>TARGET_CHIP=sun8iw20p1<br>============================================<br>no buildserver to clean<br>[1] 35382<br><br>book@ubuntu1804:~/tina-d1-h$ make menuconfig<br></code></pre></td></tr></table></figure>
-<blockquote>
-<ol>
-<li>进入TinaLinux-SDK根目录<code>cd ~/tina-d1-h</code></li>
-<li><code>source build/envsetup.sh</code></li>
-<li><code>lunch</code>，并选择T113平台名称</li>
-<li><code>make menuconfig</code></li>
-</ol>
-</blockquote>
-<h4 id="修改TinaLinux的LVGL配置"><a href="#修改TinaLinux的LVGL配置" class="headerlink" title="修改TinaLinux的LVGL配置"></a>修改TinaLinux的LVGL配置</h4><p>由于TinaLinux是适配了<code>littleVGL-v8</code>的，因此我们只需要在menuconfig当中将其开启即可使用啦！</p>
-<p>按照下方步骤，打开对应的选项，然后保存退出即可！</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">Gui ---&gt;<br>    Littlevgl ---&gt;<br>        &lt; &gt; lv_demo<br>        &lt;*&gt; lv_examples （lvgl官方demo）<br>        -*- lvgl-8.1.0 use sunxifb double buffer （使能双缓冲，解决撕裂问题）<br>        [*] lvgl-8.1.0 use sunxifb cache （使能fb cache）<br>        [ ] lvgl-8.1.0 use sunxifb g2d （使能G2D硬件加速）<br>        [ ] lvgl-8.1.0 use sunxifb g2d rotate （使能G2D硬件旋转）<br>        [ ] lvgl-8.1.0 use freetype （自动链接freetype）<br>        &lt;*&gt; lv_g2d_test （g2d接口测试用例）<br>        &lt;*&gt; lv_monitor （压力测试与数据监测软件）<br>        &lt; &gt; smartva<br>        &lt; &gt; smartva_ota<br></code></pre></td></tr></table></figure>
-
-<p>LVGL的源码路径：<code>tina-d1-h/package/gui/littlevgl-8</code></p>
-<h4 id="重新编译内核"><a href="#重新编译内核" class="headerlink" title="重新编译内核"></a>重新编译内核</h4><p>在以上的修改都完成以后，重新按照正常的流程编译即可。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">内核编译</span><br>book@ubuntu1804:~/tina-d1-h$ source build/envsetup.sh<br>book@ubuntu1804:~/tina-d1-h$ lunch 4<br>book@ubuntu1804:~/tina-d1-h$ make<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">编译完成后，打包镜像</span><br>book@ubuntu1804:~/tina-d1-h$ pack<br></code></pre></td></tr></table></figure>
-
-<div class="note note-warning">
-            <p>注意：<code>pack</code>命令在打包镜像的时候，有可能会遇到dl包过大的报错，如下：</p>
-          </div>
-
-<p><img src="/images/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/image-1.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
-<p>这是因为内核编译时开启了LVGL的package，导致编译生成的<code>rootfs.fex</code>包大于设定的最大尺寸限制。因此，需要修改一下最大尺寸的设置，修改路径如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">gedit ~/tina-d1-h/device/config/chips/t113/configs/100ask/sys_partition.fex</span><br>vim ~/tina-d1-h/device/config/chips/t113/configs/100ask/sys_partition.fex<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改为如下的参数，增加rootfs分区容量</span><br>[partition]<br>    name         = rootfs<br>    size         = 74800<br>    downloadfile = &quot;rootfs.fex&quot;<br>    user_type    = 0x8000<br></code></pre></td></tr></table></figure>
-
-<p>修改后，重新执行<code>pack</code>即可！</p>
-<h4 id="测试LVGL"><a href="#测试LVGL" class="headerlink" title="测试LVGL"></a>测试LVGL</h4><p>将新生成的img镜像烧录到TF卡，将内存卡插入开发板，上电进入系统以后执行指令如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">~：lv_examples 0  (lv_demo_widgets)<br>~：lv_examples 1  (lv_demo_music)<br>~：lv_examples 2  (lv_demo_benchmark)<br>~：lv_examples 3  (lv_demo_keypad_encoder)<br>~：lv_examples 4  (lv_demo_stress)<br>~：lv_monitor<br></code></pre></td></tr></table></figure>
-
-<h4 id="加入触摸支持"><a href="#加入触摸支持" class="headerlink" title="加入触摸支持"></a>加入触摸支持</h4><div class="note note-info">
-            <p>按照上述方法一路走来，虽然LVGL的几个示例程序已经可以在开发板上运行了，但是无法通过触摸控制，因此接下来，我们为程序加入触摸支持吧！</p>
-          </div>
-
-<h5 id="修改TinaLinux的内核触摸配置"><a href="#修改TinaLinux的内核触摸配置" class="headerlink" title="修改TinaLinux的内核触摸配置"></a>修改TinaLinux的内核触摸配置</h5><p>配置内核增加电容屏驱动<code>GT911</code>：</p>
-<blockquote>
-<ol>
-<li>进入TinaLinux-SDK根目录<code>cd ~/tina-d1-h</code></li>
-<li><code>source build/envsetup.sh</code></li>
-<li><code>lunch</code>，并选择T113平台名称</li>
-<li><code>make kernel_menuconfig</code></li>
-</ol>
-</blockquote>
-<p>然后如下面这些图一样，把对应的选项都打上<code>*</code>：</p>
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/image-2.png" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/image-3.png" srcset="/img/loading.gif" lazyload></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/images/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/image-4.png" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/image-5.png" srcset="/img/loading.gif" lazyload></div><div class="group-image-wrap"><img src="/images/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/image-6.png" srcset="/img/loading.gif" lazyload></div></div></div>
-
-<h5 id="为LVGL的lv-drv-conf-h添加触摸屏控制"><a href="#为LVGL的lv-drv-conf-h添加触摸屏控制" class="headerlink" title="为LVGL的lv_drv_conf.h添加触摸屏控制"></a>为LVGL的<code>lv_drv_conf.h</code>添加触摸屏控制</h5><p>在<code>tina-d1-h/package/gui/littlevgl-8/lv_examples/src/lv_drv_conf.h</code>中修改<code>EVDEV_NAME</code>为触摸屏的<code>event</code>节点：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"># lv_drv_conf.h<br><br><span class="hljs-meta">#<span class="hljs-keyword">ifndef</span> USE_EVDEV</span><br><span class="hljs-meta">#  <span class="hljs-keyword">define</span> USE_EVDEV           1</span><br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br><br><span class="hljs-meta">#<span class="hljs-keyword">ifndef</span> USE_BSD_EVDEV</span><br><span class="hljs-meta">#  <span class="hljs-keyword">define</span> USE_BSD_EVDEV       0</span><br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br><br><span class="hljs-meta">#<span class="hljs-keyword">if</span> USE_EVDEV || USE_BSD_EVDEV</span><br><span class="hljs-meta">#  <span class="hljs-keyword">define</span> EVDEV_NAME   <span class="hljs-string">&quot;/dev/input/event1&quot;</span>        <span class="hljs-comment">/*You can use the &quot;evtest&quot; Linux tool to get the list of devices and test them*/</span></span><br><span class="hljs-meta">#  <span class="hljs-keyword">define</span> EVDEV_SWAP_AXES         0               <span class="hljs-comment">/*Swap the x and y axes of the touchscreen*/</span></span><br></code></pre></td></tr></table></figure>
-
-<p>这个地方一般情况下<code>event1</code>节点就是我们的触摸输入节点啦，或者你可以自行去查看：<code>event</code>可以在开发板的linux系统中使用<code>cat /dev/input/eventX</code>(X请用数字替代)，确认是否正确.</p>
-<p>最后没什么问题，就重新正常的编译内核，然后烧录，然后运行LVGL示例程序看看触摸效果啦！</p>
-<h5 id="触摸测试"><a href="#触摸测试" class="headerlink" title="触摸测试"></a>触摸测试</h5><p>查看输入节点：<code>cat /proc/bus/input/devices</code><br><img src="/images/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/image-7.png" srcset="/img/loading.gif" lazyload alt="查看输入节点"></p>
-<p>查看原始触摸数据：<code>hexdump /dev/input/event1</code></p>
-<p>查看中断：<code>cat /proc/interrupts</code></p>
-<hr>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>…</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>…</p>
 <div class="note note-success">
-            <p>如果你想要做自己的一些LVGL的开发，在TinaLinux上开发自己的LVGL项目，可以参照这篇文章：<a target="_blank" rel="noopener" href="https://allwinner-docs.100ask.net/Application/LVGL8-UI/100ASK_T113-PRO_01-Introduction.html">click here!</a></p>
+            <p>未完待续…</p>
           </div>
 
 <h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43482414/article/details/139090866">https://blog.csdn.net/weixin_43482414/article/details/139090866</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/noabcd32/article/details/130602900">https://blog.csdn.net/noabcd32/article/details/130602900</a></li>
+<li>@小鱼创意：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1XD4y1K7xW">https://www.bilibili.com/video/BV1XD4y1K7xW</a></li>
 </ul>
 <hr>
 
@@ -403,13 +344,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Lvgl/" class="print-no-link">#Lvgl</a>
+        <a href="/tags/ESP32/" class="print-no-link">#ESP32</a>
       
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+        <a href="/tags/MCU/" class="print-no-link">#MCU</a>
       
-        <a href="/tags/Allwinner/" class="print-no-link">#Allwinner</a>
+        <a href="/tags/Arduino/" class="print-no-link">#Arduino</a>
       
-        <a href="/tags/T113-s3/" class="print-no-link">#T113-s3</a>
+        <a href="/tags/BLE/" class="print-no-link">#BLE</a>
       
     </div>
   
@@ -421,8 +362,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在全志T113-S3的TinaLinux上运行LVGL</div>
-      <div>https://zhangkeliang0627.github.io/2024/12/22/在全志T113-S3的TinaLinux上运行LVGL/README/</div>
+      <div>在ESP32-Arduino中使用低功耗蓝牙BLE</div>
+      <div>https://zhangkeliang0627.github.io/2025/01/04/在ESP32-Arduino中使用低功耗蓝牙BLE/README/</div>
     </div>
     <div class="license-meta">
       
@@ -434,7 +375,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 22, 2024</div>
+          <div>January 4, 2025</div>
         </div>
       
       
@@ -466,18 +407,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/27/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/README/" title="基于STM32和SimpleFOC的EasyFOC矢量控制器">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">基于STM32和SimpleFOC的EasyFOC矢量控制器</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/03/%E6%9D%82%E8%AE%B0/2024%E5%B9%B4/12%E6%9C%88/README/" title="杂记丨12月：最终幻想...">
-                        <span class="hidden-mobile">杂记丨12月：最终幻想...</span>
+                      <a href="/2025/01/02/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/README/" title="对Qt项目进行打包的三种方式">
+                        <span class="hidden-mobile">对Qt项目进行打包的三种方式</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
