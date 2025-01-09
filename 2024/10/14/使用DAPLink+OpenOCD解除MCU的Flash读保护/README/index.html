@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/21.jpg">
 <meta property="article:published_time" content="2024-10-14T04:53:00.000Z">
-<meta property="article:modified_time" content="2024-10-15T14:49:18.341Z">
+<meta property="article:modified_time" content="2025-01-09T13:24:03.374Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="MCU">
 <meta property="article:tag" content="OpenOCD">
@@ -296,7 +296,8 @@
 <p>曾经我也不少时候遇到过这种情况，那时候的解决办法是利用烧录软件<code>flymcu</code>通过串口清除全部Flash内容，进而消除读保护；或者使用ST-Link搭配官方软件<code>STM32 ST-LINK Utility</code>来消除读保护。</p>
 <p>但是现在我手里只有DAPLink（ga…，于是绞尽脑汁搜寻方法，苦闷了好久。突然间想到似乎可以尝试一下<code>OpenOCD</code>，于是抱着实验的心态，我搜罗了大量相关的内容后，得到了以下的解决办法。</p>
 <h3 id="下载OpenOCD"><a href="#下载OpenOCD" class="headerlink" title="下载OpenOCD"></a>下载OpenOCD</h3><p>由于我当前的系统环境是<code>Win 11</code>，于是OpenOCD应该选择<code>Download pre-built OpenOCD for Windows</code>，选择任何版本都不影响最终效果，选择最新的版本即可。</p>
-<p><img src="/images/%E4%BD%BF%E7%94%A8DAPLink%E4%B8%8EOpenOCD%E8%A7%A3%E9%99%A4MCU%E7%9A%84Flash%E8%AF%BB%E4%BF%9D%E6%8A%A4/image.png" srcset="/img/loading.gif" lazyload alt="下载OpenOCD"></p>
+<!-- ![下载OpenOCD](images/使用DAPLink与OpenOCD解除MCU的Flash读保护/image.png) -->
+<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E4%BD%BF%E7%94%A8DAPLink%E4%B8%8EOpenOCD%E8%A7%A3%E9%99%A4MCU%E7%9A%84Flash%E8%AF%BB%E4%BF%9D%E6%8A%A4/image.png" srcset="/img/loading.gif" lazyload alt="下载OpenOCD"></p>
 <p>下载网址：<a target="_blank" rel="noopener" href="https://gnutoolchains.com/arm-eabi/openocd/">https://gnutoolchains.com/arm-eabi/openocd/</a></p>
 <h3 id="解除Flash读保护"><a href="#解除Flash读保护" class="headerlink" title="解除Flash读保护"></a>解除Flash读保护</h3><p>下载并且解压好OpenOCD压缩包以后，连接好单片机和DAPLink。</p>
 <div class="note note-warning">
@@ -305,7 +306,8 @@
 
 <p>接着在路径<code>\OpenOCD-20240916-0.12.0\bin</code>下打开命令行，输入命令：<code>.\openocd -f interface/cmsis-dap.cfg -f target/stm32f4x.cfg -c init -c &quot;reset halt&quot; -c &quot;stm32f4x unlock 0&quot; -c &quot;reset halt&quot; -c &quot;exit&quot;</code>.</p>
 <p>这时如果生成以下日志，则代表Flash读保护解除成功，可以重新使用<code>Keil</code>进行程序的烧录啦：</p>
-<p><img src="/images/%E4%BD%BF%E7%94%A8DAPLink%E4%B8%8EOpenOCD%E8%A7%A3%E9%99%A4MCU%E7%9A%84Flash%E8%AF%BB%E4%BF%9D%E6%8A%A4/image-1.png" srcset="/img/loading.gif" lazyload></p>
+<!-- ![](images/使用DAPLink与OpenOCD解除MCU的Flash读保护/image-1.png) -->
+<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E4%BD%BF%E7%94%A8DAPLink%E4%B8%8EOpenOCD%E8%A7%A3%E9%99%A4MCU%E7%9A%84Flash%E8%AF%BB%E4%BF%9D%E6%8A%A4/image-1.png" srcset="/img/loading.gif" lazyload></p>
 <p>如果没有成功，请检查单片机和DAPLink的连线。</p>
 <div class="note note-success">
             <p>由于我使用的单片机型号是<code>STM32F401RET6</code>，所以我选择了<code>target/stm32f4x.cfg</code> &amp; <code>stm32f4x</code>，你可以在该路径<code>\OpenOCD-20240916-0.12.0\share\openocd\scripts\target</code>找到适合你的单片机型号的对应文件，市面上大部分的单片机型号的对应文件应该都能够在这儿找到。</p>
@@ -315,7 +317,8 @@
 
 <h3 id="最后一件事（重要👀"><a href="#最后一件事（重要👀" class="headerlink" title="最后一件事（重要👀"></a>最后一件事（重要👀</h3><p>使用DAPLink+OpenOCD解除MCU的Flash读保护可能会导致Keil在程序烧录时出现<code>Verify failed</code>的情况，这并不影响程序的正常烧录，手动给单片机复位一下就行，只是有点不优雅，如果可以的话后面拿ST-Link重新再执行一次Flash解除读保护就最好了（谁叫人家是官方…</p>
 <p>当然也有可能只是单纯烧录频率太快了，在魔术棒的<code>Debug-&gt;CMSIS-DAP Debugger-&gt;Settings</code>设置中，将频率调整到<code>1MHz</code>，报错的警告就消失啦！</p>
-<p><img src="/images/%E4%BD%BF%E7%94%A8DAPLink%E4%B8%8EOpenOCD%E8%A7%A3%E9%99%A4MCU%E7%9A%84Flash%E8%AF%BB%E4%BF%9D%E6%8A%A4/image-2.png" srcset="/img/loading.gif" lazyload alt="&quot;Verify failed&quot;的解决办法"></p>
+<!-- !["Verify failed"的解决办法](images/使用DAPLink与OpenOCD解除MCU的Flash读保护/image-2.png) -->
+<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E4%BD%BF%E7%94%A8DAPLink%E4%B8%8EOpenOCD%E8%A7%A3%E9%99%A4MCU%E7%9A%84Flash%E8%AF%BB%E4%BF%9D%E6%8A%A4/image-2.png" srcset="/img/loading.gif" lazyload alt="&quot;Verify failed&quot;的解决办法"></p>
 <h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><ul>
 <li>感谢教程: <a target="_blank" rel="noopener" href="https://bbs.21ic.com/icview-3335340-1-1.html">https://bbs.21ic.com/icview-3335340-1-1.html</a></li>
 </ul>

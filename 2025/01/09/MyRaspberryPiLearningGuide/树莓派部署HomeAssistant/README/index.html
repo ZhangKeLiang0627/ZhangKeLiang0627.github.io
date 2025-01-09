@@ -18,25 +18,26 @@
   
     <meta name="description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【树莓派】远程登录方法">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/12/28/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="【树莓派】在树莓派部署HomeAssistant">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2025/01/09/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
 <meta property="og:description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/7.jpg">
-<meta property="article:published_time" content="2023-12-28T13:35:00.000Z">
-<meta property="article:modified_time" content="2025-01-09T09:06:32.116Z">
+<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image.png">
+<meta property="article:published_time" content="2025-01-09T12:55:00.000Z">
+<meta property="article:modified_time" content="2025-01-09T14:16:24.198Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="RaspberryPi">
+<meta property="article:tag" content="HomeAssistant">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/7.jpg">
+<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>【树莓派】远程登录方法 - Hugo@kkl</title>
+  <title>【树莓派】在树莓派部署HomeAssistant - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,13 +201,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/8.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/树莓派部署HomeAssistant/image.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【树莓派】远程登录方法"></span>
+            <span id="subtitle" data-typed-text="【树莓派】在树莓派部署HomeAssistant"></span>
           
         </div>
 
@@ -217,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-28 21:35" pubdate>
-          December 28, 2023 pm
+        <time datetime="2025-01-09 20:55" pubdate>
+          January 9, 2025 pm
         </time>
       </span>
     
@@ -229,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k words
+          712 words
         
       </span>
     
@@ -240,7 +241,7 @@
         
         
         
-          11 mins
+          6 mins
         
       </span>
     
@@ -285,121 +286,92 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">【树莓派】远程登录方法</h1>
+            <h1 id="seo-header">【树莓派】在树莓派部署HomeAssistant</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="My-Raspberry-Pi"><a href="#My-Raspberry-Pi" class="headerlink" title="My Raspberry Pi"></a>My Raspberry Pi</h1><h1 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h1><hr>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
-<ul>
-<li>硬件：raspberry Pi 4B</li>
-<li>镜像版本：2022-09-22-raspios-bullseye-arm64.img</li>
+                <h3 id="【树莓派】在树莓派部署HomeAssistant"><a href="#【树莓派】在树莓派部署HomeAssistant" class="headerlink" title="【树莓派】在树莓派部署HomeAssistant"></a>【树莓派】在树莓派部署HomeAssistant</h3><h3 id="【Raspberry-PI】Deploy-HomeAssistant-on-Raspberry-Pi"><a href="#【Raspberry-PI】Deploy-HomeAssistant-on-Raspberry-Pi" class="headerlink" title="【Raspberry PI】Deploy HomeAssistant on Raspberry Pi"></a>【Raspberry PI】Deploy HomeAssistant on Raspberry Pi</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><!-- ![HomeAssistant logo](images/MyRaspberryPiLearningGuide/树莓派部署HomeAssistant/image.png) -->
+<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image.png" srcset="/img/loading.gif" lazyload alt="HomeAssistant logo"></p>
+<p>学习需要用到<code>HomeAssistant</code>啦，这个词其实对我来说并不陌生，但是从前都只是只听其名不见闻其声，如今终于要上手啦！拯救落灰树莓派行动！出发！</p>
+<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><ul>
+<li>硬件：Raspberry Pi 4B</li>
+<li>镜像版本：2022-09-22-raspios-bullseye-arm64.img：<a target="_blank" rel="noopener" href="https://mirror.sjtu.edu.cn/raspberry-pi-os-images/raspios_arm64/images/raspios_arm64-2022-09-26/">-&gt; 上交的镜像源</a></li>
+<li>Python版本：<code>3.9.2</code></li>
 </ul>
-</blockquote>
+<p><strong><em>本篇文章将简述如何迅速地在树莓派部署 HomeAssistant。</em></strong></p>
 <hr>
-<h2 id="镜像烧录"><a href="#镜像烧录" class="headerlink" title="镜像烧录"></a>镜像烧录</h2><ul>
-<li>这步就是平常的烧录过程，推荐使用官方的烧录工具，这样前期可以排很多坑（这些坑后面我们会逐一提到）</li>
-</ul>
-<hr>
-<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ul>
-<li><strong>初次登录的时，这个地方有个大坑！</strong></li>
-</ul>
-<blockquote>
-<p>最新版的树莓派系统（2022年4月以及以后发布的），<strong>没有了初始化的用户名和密码</strong>，以前用户名是pi，密码是raspberry，但是这次需要进系统之后才能设置。</p>
-</blockquote>
-<blockquote>
-<p>意思就是，你如果初次登录，如果没有用图形化界面，无法创建你的个人用户，你也无法像以前一样直接使用默认账号密码进行登录。</p>
-</blockquote>
-<blockquote>
-<p><strong>解决方法</strong>：</p>
-<ul>
-<li>使用官方的烧录工具，烧录的时候会让你配置初始账号密码。</li>
-<li>外接屏幕、键鼠，使用图形化界面开机配置。</li>
-</ul>
-</blockquote>
-<ul>
-<li>我们重点来了解一下第三种方法，<strong>使用串口无屏幕的登录</strong>。</li>
-</ul>
-<ol>
-<li>往烧录好镜像的SD卡根目录下新建一个文件<code>userconf.txt</code></li>
-<li>文件内写入<code>pi:$6$/4.VdYgDm7RJ0qM1$FwXCeQgDKkqrOU3RIRuDSKpauAbBvP11msq9X58c8Que2l1Dwq3vdJMgiZlQSbEXGaY5esVHGBNbCxKLVNqZW1</code><blockquote>
-<p>这一段意思就是告诉系统，新建一个用户<br>用户名：pi<br>密码：raspberry</p>
-</blockquote>
-</li>
-<li>最后把SD卡插回到树莓派上，重新上电，就可以用这个用户密码登录啦！</li>
-</ol>
-<h3 id="串口登录"><a href="#串口登录" class="headerlink" title="串口登录"></a>串口登录</h3><ul>
-<li><p>串口登录我们需要准备一个USB-TTL Link！</p>
-</li>
-<li><p>排针连接图（<strong>此时TypeC口朝向我们时，即USB-A口朝向右手边时</strong>）：</p>
-<blockquote>
-<p><strong>&#x2F; * * G T R * * * * * * * * * * * * * * &#x2F;</strong><br><strong>&#x2F; * * * * * * * * * * * * * * * * * * * &#x2F;</strong><br><strong>G-&gt;GND &#x2F; T-&gt;TXD &#x2F; R-&gt;RXD</strong></p>
-</blockquote>
-</li>
-<li><p>接着检查烧录好镜像的SD卡根目录下的<code>cmdline.txt</code></p>
-<blockquote>
-<p>如果没有<code>console=serial0,115200</code>就自己在最前面加上去，用一个空格隔开和其他的指令就行</p>
-</blockquote>
-</li>
-<li><p>接着修改烧录好镜像的SD卡根目录下的<code>config.txt</code></p>
-<blockquote>
-<p>在该文件的最后一行加上<code>dtoverlay=pi3-miniuart-bt</code></p>
-</blockquote>
-</li>
-<li><p>这时连接串口就会打印login页面信息啦，记得串口连接选择<strong>波特率为115200，无流控模式</strong>噢！</p>
-</li>
-<li><p>如果没有任何东西显示出来，回去逐一检查，检查硬件是不是插错啦，要<strong>Link的Tx对Pi的Rx，Link的Rx对Pi的Tx</strong>！</p>
-</li>
-</ul>
-<h3 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h3><p>树莓派初次配置SSH登录其实也挺麻烦的，下面演示一下配置步骤。</p>
-<ul>
-<li><p>在烧录好镜像的SD卡根目录下新建文件<code>ssh</code>，空文件就行，命名好以后不用去动它</p>
-</li>
-<li><p>同样的在根目录下再新建一个空文件<code>wpa_supplicant.conf</code></p>
-</li>
-<li><p>使用编译器打开，我这里使用<code>Vscode</code></p>
-</li>
-<li><p>打开以后输入以下配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs conf">country=CN<br>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev<br>update_config=1<br> <br>network=&#123;<br>    ssid=&quot;EMMA&quot;<br>    psk=&quot;12345678&quot;<br>    priority=1<br>&#125;<br> <br>network=&#123;<br>    ssid=&quot;HUGO&quot;<br>    psk=&quot;12345678&quot;<br>    priority=2<br>&#125;<br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>解释一下：<br><code>ssid</code>是将要连接的wifi的名字，不能有中文！<br><code>psk</code>是将要连接的wifi的密码<br><code>priority</code>是连接的优先级，优先级数字大的wifi优先连接<br>你可以按照格式来记录多个wifi，注意优先级不要都相同。</p>
-</blockquote>
-</li>
-<li><p>上述步骤完成以后，把SD卡插回树莓派中运行，<code>ssh</code>和<code>wpa_supplicant.conf</code>文件都会自动被写入系统，写入成功后再次用电脑打开SD卡这两个文件会消失不见。如果你要添加或者修改wifi，你需要把<code>wpa_supplicant.conf</code>文件重新写一遍，重复上述操作，新的文件会自动覆盖旧的；<code>ssh</code>不用重新创建，之前创建过了就可以了。</p>
-</li>
-<li><p>重新给树莓派上电进入系统以后，你可能会发现以下问题警告<code>Wi-Fi is currently blocked by rfkill. Use raspi-config to set the country before use.</code></p>
-</li>
-<li><p>这是我们没有设置无线局域网所在国家，于是我们输入指令<code>sudo raspi-config nonint do_wifi_country CN</code>，顺利的话再输入指令<code>ifconfig</code>会查看到wlan0已经被分配了ip地址！</p>
-</li>
-<li><p>如果平时在同一局域网下我们不知道树莓派ip地址是多少，我们可以在Windows<code>win+R</code>输入cmd打开命令行，输入指令<code>ping raspberrypi -4</code>，可以查询同一局域网当中的树莓派的ip地址。</p>
-</li>
-<li><p>拿到ip地址就可以愉快的远程访问啦！</p>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">login as: pi<br>password: raspberry<br></code></pre></td></tr></table></figure>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="a-更新源"><a href="#a-更新源" class="headerlink" title="a. 更新源"></a>a. 更新源</h4><p>首先，拿到落灰的小树莓派，先更新源，确保系统能够获取到最新的软件和安全更新，稍微等待，完成即可：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get upgrade<br></code></pre></td></tr></table></figure>
 
-<p><img src="/images/MyRaspberryPiLearningGuide/image.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="VNC远程桌面登录"><a href="#VNC远程桌面登录" class="headerlink" title="VNC远程桌面登录"></a>VNC远程桌面登录</h3><ul>
-<li>问题1：VNC Viewer显示<code>Cannot currently show the desktop</code></li>
-</ul>
-<blockquote>
-<p><strong>问题分析</strong>：</p>
-</blockquote>
-<p>出现这个无法显示远程桌面的问题，其实是树莓派配置分辨率的关系，树莓派默认使用了最小分辨率，然后VNC不支持这么小的，咱改一下就行。</p>
-<blockquote>
-<p><strong>解决方法</strong>：</p>
-</blockquote>
+<h4 id="b-安装-HomeAssistant"><a href="#b-安装-HomeAssistant" class="headerlink" title="b. 安装 HomeAssistant"></a>b. 安装 HomeAssistant</h4><ol>
+<li>先安装一下依赖：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install -y python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev libjpeg-dev zlib1g-dev autoconf build-essential libopenjp2-7 libtiff5 --fix-missing<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>创建虚拟环境</li>
+</ol>
 <ul>
-<li><code>sudo raspi-config</code>打开设置界面</li>
-<li>按方向键向下选择到<code>Display Options</code></li>
-<li>接着继续选择<code>VNC Resolution</code></li>
-<li>接着选择除了<code>640x480</code>以外的分辨率</li>
-<li>然后回车确定，方向键左右选择<code>finish</code>退出，然后确认reboot重启，选择<code>yes</code></li>
-<li>最后等待重启就行啦！</li>
+<li>创建安装<code>Home Assistant</code>的目录</li>
 </ul>
-<hr>
-<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>请参照<strong>登录</strong>章节当中的<strong>SSH登录</strong>！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir ~/hass<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>创建并激活用于<code>Home Assistant</code>的虚拟环境</li>
+</ul>
+<p>先<code>cd ~/hass</code>，进入hass文件夹内，这就是以后要安装homeassistant的位置.</p>
+<p>然后，输入以下命令创建虚拟环境：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python3 -m venv /home/pi/hass<br></code></pre></td></tr></table></figure>
+
+<p>执行完成后，在hass文件夹内<code>ls</code>一下，可以看见多了很多文件，说明虚拟环境已经创建成功了…(这里补一个图)</p>
+<ul>
+<li>接下来，激活虚拟环境：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source bin/activate<br></code></pre></td></tr></table></figure>
+
+<p>看到命令行前多加了一个<code>(hass)</code>，就代表环境激活成功啦！</p>
+<ol start="3">
+<li>安装HomeAssistant</li>
+</ol>
+<ul>
+<li>这里国内的下载速度可能会很慢，导致数据丢包报错，我们可以尝试为pip3下载源换源：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">先为换源前的文件做备份</span><br>sudo cp /etc/pip.conf /etc/pip.conf.bak<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">为pip.conf加入aliyun的下载源</span><br>sudo vi /etc/pip.conf<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">将内容修改成以下内容，然后保存退出</span><br>[global]<br>index-url=https://mirrors.aliyun.com/pypi/simple/<br>extra-index-url=https://www.piwheels.org/simple<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>换源后，在虚拟环境中，安装Python package.</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">python3 -m pip install wheel<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>安装 Home Assistant Core.</li>
+</ul>
+<p>安装时会稍微有些爆警告，但是不要紧的，静待下载完成，看到绿色的<span class="label label-success">success</span>字样说明安装成功.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pip3 install homeassistant<br></code></pre></td></tr></table></figure>
+
+
+<h4 id="b-启动-HomeAssistant"><a href="#b-启动-HomeAssistant" class="headerlink" title="b. 启动 HomeAssistant"></a>b. 启动 HomeAssistant</h4><ol>
+<li>执行以下命令启动 HomeAssistant：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hass<br></code></pre></td></tr></table></figure>
+
+<p>首次启动 Home Assistant 时，系统会创建<code>~/.homeassistant</code>目录用于承载配置文件，并安装所需的基础依赖，这个过程会花费一定时间，请耐心等待（大约十分钟左右，可以去泡杯咖啡活动活动身体…</p>
+<p><img src="/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image-1.png" srcset="/img/loading.gif" lazyload alt="首次启动HA"></p>
+<ol start="2">
+<li>使用局域网内其他设备，通过浏览器访问HA页面</li>
+</ol>
+<p>就算过了很久，命令行也没有动静没有输出任何东西的话也不要紧，打开浏览器如<code>Edge</code>，输入<code>树莓派的ip地址:8123</code>，例如<code>192.168.137.88:8123</code>，查看是否初始化完成。</p>
+<p>初始化完成后会进入以下页面：</p>
+<p><img src="/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image-2.png" srcset="/img/loading.gif" lazyload alt="HA注册界面"></p>
+<p>接下来只要按步骤注册账号填写个人信息即可进入HA界面啦！</p>
+<p><img src="/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image-3.png" srcset="/img/loading.gif" lazyload alt="HA用户界面"></p>
+<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41793286/article/details/129041488">https://blog.csdn.net/qq_41793286/article/details/129041488</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44614230/article/details/127593587">https://blog.csdn.net/weixin_44614230/article/details/127593587</a></li>
+</ul>
 
                 
               </div>
@@ -437,6 +409,8 @@
       
         <a href="/tags/RaspberryPi/" class="print-no-link">#RaspberryPi</a>
       
+        <a href="/tags/HomeAssistant/" class="print-no-link">#HomeAssistant</a>
+      
     </div>
   
 </div>
@@ -447,8 +421,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【树莓派】远程登录方法</div>
-      <div>https://zhangkeliang0627.github.io/2023/12/28/MyRaspberryPiLearningGuide/树莓派的远程登录方法/</div>
+      <div>【树莓派】在树莓派部署HomeAssistant</div>
+      <div>https://zhangkeliang0627.github.io/2025/01/09/MyRaspberryPiLearningGuide/树莓派部署HomeAssistant/README/</div>
     </div>
     <div class="license-meta">
       
@@ -460,7 +434,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 28, 2023</div>
+          <div>January 9, 2025</div>
         </div>
       
       
@@ -492,18 +466,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/01/WelcomePage/hello-world/" title="Power By Hugo@kkl">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Power By Hugo@kkl</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/13/MyLinuxLearningGuide/MyLinuxLearningGuide%20-%20IMX6ULL/" title="我的Linux驱动学习笔记 - IMX6ULL">
-                        <span class="hidden-mobile">我的Linux驱动学习笔记 - IMX6ULL</span>
+                      <a href="/2025/01/04/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/README/" title="在ESP32-Arduino中使用低功耗蓝牙BLE">
+                        <span class="hidden-mobile">在ESP32-Arduino中使用低功耗蓝牙BLE</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -16,26 +16,27 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="kkl | 搞Lvgl的都赚不了几个钱的啦！">
+    <meta name="description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Lvgl中添加自定义字体和图片">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/03/21/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/README/index.html">
+<meta property="og:title" content="【树莓派】远程登录方法">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2023/12/28/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%96%B9%E6%B3%95/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="kkl | 搞Lvgl的都赚不了几个钱的啦！">
+<meta property="og:description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
-<meta property="article:published_time" content="2024-03-21T14:09:00.000Z">
-<meta property="article:modified_time" content="2025-01-09T13:11:43.002Z">
+<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/7.jpg">
+<meta property="article:published_time" content="2023-12-28T13:35:00.000Z">
+<meta property="article:modified_time" content="2025-01-09T13:03:31.349Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Lvgl">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="RaspberryPi">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg">
+<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/7.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>在Lvgl中添加自定义字体和图片 - Hugo@kkl</title>
+  <title>【树莓派】远程登录方法 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,13 +200,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/16.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/8.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在Lvgl中添加自定义字体和图片"></span>
+            <span id="subtitle" data-typed-text="【树莓派】远程登录方法"></span>
           
         </div>
 
@@ -216,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-21 22:09" pubdate>
-          March 21, 2024 pm
+        <time datetime="2023-12-28 21:35" pubdate>
+          December 28, 2023 pm
         </time>
       </span>
     
@@ -228,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          992 words
+          1.2k words
         
       </span>
     
@@ -239,7 +240,7 @@
         
         
         
-          9 mins
+          11 mins
         
       </span>
     
@@ -284,134 +285,121 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在Lvgl中添加自定义字体和图片</h1>
+            <h1 id="seo-header">【树莓派】远程登录方法</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="在Lvgl中添加自定义字体和图片"><a href="#在Lvgl中添加自定义字体和图片" class="headerlink" title="在Lvgl中添加自定义字体和图片"></a>在Lvgl中添加自定义字体和图片</h1><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr>
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>仅仅<strong>保证</strong>对于<code>X-TRACK</code>项目的自定义字体和图片的有效使用哦！</p>
-<hr>
-<h2 id="Font-convert-字体格式转换成-c文件"><a href="#Font-convert-字体格式转换成-c文件" class="headerlink" title="Font convert - 字体格式转换成.c文件"></a>Font convert - 字体格式转换成.c文件</h2><h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>首先我们要访问到Lvgl官方网站上的<strong>Online Font Converter</strong>.</p>
-<p>网址：<a target="_blank" rel="noopener" href="https://lvgl.io/tools/fontconverter">https://lvgl.io/tools/fontconverter</a></p>
-<p>然后我们会看到以下页面！</p>
-<!-- ![](images/Lvgl添加自定义字体和图片/image.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/image.png" srcset="/img/loading.gif" lazyload></p>
-<blockquote>
-<ol>
-<li>Name</li>
-</ol>
-</blockquote>
-<p>填写.c文件的名字，如<code>font_smliey_36</code>，36表示字号大小，这样就清晰明了！</p>
-<blockquote>
-<ol start="2">
-<li>Size</li>
-</ol>
-</blockquote>
-<p>填写字号大小，刚刚我们名字写了<code>font_smliey_36</code>，字号是36，那我们这里就填写36px的字号大小，统一格式规范。</p>
-<blockquote>
-<ol start="3">
-<li>Bpp(bit-per-piel)</li>
-</ol>
-</blockquote>
-<p>填写Bpp为4，这个值会让字体看起来更顺滑而且占据的内存空间相对不大（填别的也行，自己尝试对比一下</p>
-<blockquote>
-<ol start="4">
-<li>Fallback</li>
-</ol>
-</blockquote>
-<p>这里填写和Name一样的<code>font_smliey_36</code>就行啦！</p>
-<blockquote>
-<ol start="5">
-<li>三个选项框都不要勾选！</li>
-</ol>
-</blockquote>
-<p>不然生成的字体在<code>X-TRACK</code>没法用！</p>
-<blockquote>
-<ol start="6">
-<li>TTF&#x2F;WOFF file</li>
-</ol>
-</blockquote>
-<p>在这里选择我们准备好的字体文件，推荐用<code>ttf</code>格式。</p>
-<blockquote>
-<ol start="7">
-<li>Range</li>
-</ol>
-</blockquote>
-<p>这里是设置范围来选择你的.c文件需要包含哪些文字（Symbols），我们不用这个，这里空着，我们直接在下面的Symbols栏里面写我们需要的字。</p>
-<blockquote>
-<ol start="8">
-<li>Symbols</li>
-</ol>
-</blockquote>
-<p>在这里我们填入希望在Lvgl里使用的文字，比方说我想要在Lvgl里显示<code>鸡你太美</code>，那我就需要在这个栏里填入<code>鸡你太美</code>。</p>
-<blockquote>
-<ol start="9">
-<li>点击红色的Convert按钮等待.c文件的渲染和下载即可！</li>
-</ol>
-</blockquote>
-<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>首先打开刚刚生成的.c文件，如<code>font_smiley_36.c</code></p>
-<ol>
-<li>找到注释<code>KERNING</code>和注释<code>ALL CUSTOM DATA</code>之间的一大串，注释掉或者删掉！</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 里面注释掉或者删掉！</span><br><span class="hljs-comment">/*-----------------</span><br><span class="hljs-comment"> *    KERNING</span><br><span class="hljs-comment"> *----------------*/</span><br><br><br><span class="hljs-comment">/*Map glyph_ids to kern left classes*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">uint8_t</span> kern_left_class_mapping[] =<br>&#123;<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>,<br>    <span class="hljs-number">7</span><br>&#125;;<br><br><span class="hljs-comment">/*Map glyph_ids to kern right classes*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">uint8_t</span> kern_right_class_mapping[] =<br>&#123;<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>,<br>    <span class="hljs-number">6</span><br>&#125;;<br><br><span class="hljs-comment">/*Kern values between classes*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">int8_t</span> kern_class_values[] =<br>&#123;<br>    <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-12</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-12</span>,<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-12</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-12</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-17</span>,<br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">0</span>,<br>    <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>,<br>    <span class="hljs-number">-12</span>, <span class="hljs-number">0</span><br>&#125;;<br><br><br><span class="hljs-comment">/*Collect the kern class&#x27; data in one place*/</span><br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">lv_font_fmt_txt_kern_classes_t</span> kern_classes =<br>&#123;<br>    .class_pair_values   = kern_class_values,<br>    .left_class_mapping  = kern_left_class_mapping,<br>    .right_class_mapping = kern_right_class_mapping,<br>    .left_class_cnt      = <span class="hljs-number">7</span>,<br>    .right_class_cnt     = <span class="hljs-number">6</span>,<br>&#125;;<br><br><span class="hljs-comment">/*--------------------</span><br><span class="hljs-comment"> *  ALL CUSTOM DATA</span><br><span class="hljs-comment"> *--------------------*/</span><br></code></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>将注释<code>ALL CUSTOM DATA</code>和注释<code>PUBLIC FONT</code>之间的一大坨，用以下代码替换掉！</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 用它们替换掉原来的一大坨！</span><br><span class="hljs-comment">/*--------------------</span><br><span class="hljs-comment"> *  ALL CUSTOM DATA</span><br><span class="hljs-comment"> *--------------------*/</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">if</span> LV_VERSION_CHECK(8, 0, 0)</span><br><span class="hljs-comment">/*Store all the custom data of the font*/</span><br><span class="hljs-type">static</span>  <span class="hljs-type">lv_font_fmt_txt_glyph_cache_t</span> cache;<br><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">lv_font_fmt_txt_dsc_t</span> font_dsc = &#123;<br><span class="hljs-meta">#<span class="hljs-keyword">else</span></span><br><span class="hljs-type">static</span> <span class="hljs-type">lv_font_fmt_txt_dsc_t</span> font_dsc = &#123;<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br>    .glyph_bitmap = glyph_bitmap,<br>    .glyph_dsc = glyph_dsc,<br>    .cmaps = cmaps,<br>    .kern_dsc = <span class="hljs-literal">NULL</span>,<br>    .kern_scale = <span class="hljs-number">0</span>,<br>    .cmap_num = <span class="hljs-number">1</span>,<br>    .bpp = <span class="hljs-number">4</span>,<br>    .kern_classes = <span class="hljs-number">0</span>,<br>    .bitmap_format = <span class="hljs-number">0</span>,<br><span class="hljs-meta">#<span class="hljs-keyword">if</span> LV_VERSION_CHECK(8, 0, 0)</span><br>    .cache = &amp;cache<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br>&#125;;<br><br><span class="hljs-comment">/*-----------------</span><br><span class="hljs-comment"> *  PUBLIC FONT</span><br><span class="hljs-comment"> *----------------*/</span><br><br></code></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>最后，删除注释<code>PUBLIC FONT</code>下的<code>.fallback</code>和<code>.user_data</code></li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 删除以下两条！</span><br><span class="hljs-comment">/*-----------------</span><br><span class="hljs-comment"> *  PUBLIC FONT</span><br><span class="hljs-comment"> *----------------*/</span><br><br>    <span class="hljs-comment">// ...</span><br><br>    .fallback = &amp;font_smiley_36,<br>    .user_data = <span class="hljs-literal">NULL</span>,<br></code></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>最后拿去Lvgl仿真或者MCU跑一下，基本上没有问题啦！</li>
-</ol>
-<h2 id="Pictures-convert-图片格式转换成-c文件"><a href="#Pictures-convert-图片格式转换成-c文件" class="headerlink" title="Pictures convert - 图片格式转换成.c文件"></a>Pictures convert - 图片格式转换成.c文件</h2><blockquote>
-<p>LVGL官方在线图片转换器(LVGL Online Image Converter): <a target="_blank" rel="noopener" href="https://lvgl.io/tools/imageconverter">https://lvgl.io/tools/imageconverter</a></p>
-</blockquote>
-<p>这里主要讲解使用代码中的变量（存储着像素值的C数组）进行图像显示。</p>
-<p>首先，我们打开LVGL官方在线图片转换器，可以看到以下最新（截止2024.12.26）的应用界面：</p>
-<!-- ![](images/Lvgl添加自定义字体和图片/image-1.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/image-1.png" srcset="/img/loading.gif" lazyload></p>
-<blockquote>
-<ol>
-<li>Select image file(s)：选择图片文件，可批量选择，记得修改文件名，因为稍后生成的c文件是和图片文件同名的</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>Color format：设置颜色格式</li>
-</ol>
-</blockquote>
-<!-- ![](images/Lvgl添加自定义字体和图片/image-2.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/Lvgl%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E5%92%8C%E5%9B%BE%E7%89%87/image-2.png" srcset="/img/loading.gif" lazyload></p>
+                <h1 id="My-Raspberry-Pi"><a href="#My-Raspberry-Pi" class="headerlink" title="My Raspberry Pi"></a>My Raspberry Pi</h1><h1 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h1><hr>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <ul>
-<li>一般的彩色图片，选择<code>CF_TRUE_COLOR_ALPHA</code></li>
-<li>如果想要省空间，图片想要显示成纯白色的，可以选择<code>CF_INDEXED_X_BIT</code>，<code>X</code>越大图片内存越大也越清晰，<code>X</code>越小图片内存越小锯齿越明显</li>
-<li>如果想要省空间，图片想要显示成纯黑色的，可以选择<code>CF_ALPHA_X_BIT</code>，<code>X</code>越大图片内存越大也越清晰，<code>X</code>越小图片内存越小锯齿越明显</li>
+<li>硬件：raspberry Pi 4B</li>
+<li>镜像版本：2022-09-22-raspios-bullseye-arm64.img</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="镜像烧录"><a href="#镜像烧录" class="headerlink" title="镜像烧录"></a>镜像烧录</h2><ul>
+<li>这步就是平常的烧录过程，推荐使用官方的烧录工具，这样前期可以排很多坑（这些坑后面我们会逐一提到）</li>
+</ul>
+<hr>
+<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ul>
+<li><strong>初次登录的时，这个地方有个大坑！</strong></li>
 </ul>
 <blockquote>
-<ol start="3">
-<li>Output format：可以选择输出的文件格式，C数组或者bin文件（bin文件需要配合LVGL的文件系统使用），这里选择C数组（C array）即可</li>
-</ol>
+<p>最新版的树莓派系统（2022年4月以及以后发布的），<strong>没有了初始化的用户名和密码</strong>，以前用户名是pi，密码是raspberry，但是这次需要进系统之后才能设置。</p>
 </blockquote>
 <blockquote>
-<ol start="4">
-<li>Dither images (can improve quality)：加入图像抖动算法，可以提升图像最终质量（这里不打勾）</li>
-</ol>
+<p>意思就是，你如果初次登录，如果没有用图形化界面，无法创建你的个人用户，你也无法像以前一样直接使用默认账号密码进行登录。</p>
 </blockquote>
 <blockquote>
-<ol start="5">
-<li>Output in big-endian format：以<code>big-endian</code>格式输出（这里不打勾）</li>
-</ol>
-</blockquote>
-<p>全部选择好了之后就可以点击<code>Convert</code>即可！</p>
-<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><ul>
-<li>鸣谢：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45677295/article/details/137949968">https://blog.csdn.net/weixin_45677295/article/details/137949968</a></li>
+<p><strong>解决方法</strong>：</p>
+<ul>
+<li>使用官方的烧录工具，烧录的时候会让你配置初始账号密码。</li>
+<li>外接屏幕、键鼠，使用图形化界面开机配置。</li>
 </ul>
+</blockquote>
+<ul>
+<li>我们重点来了解一下第三种方法，<strong>使用串口无屏幕的登录</strong>。</li>
+</ul>
+<ol>
+<li>往烧录好镜像的SD卡根目录下新建一个文件<code>userconf.txt</code></li>
+<li>文件内写入<code>pi:$6$/4.VdYgDm7RJ0qM1$FwXCeQgDKkqrOU3RIRuDSKpauAbBvP11msq9X58c8Que2l1Dwq3vdJMgiZlQSbEXGaY5esVHGBNbCxKLVNqZW1</code><blockquote>
+<p>这一段意思就是告诉系统，新建一个用户<br>用户名：pi<br>密码：raspberry</p>
+</blockquote>
+</li>
+<li>最后把SD卡插回到树莓派上，重新上电，就可以用这个用户密码登录啦！</li>
+</ol>
+<h3 id="串口登录"><a href="#串口登录" class="headerlink" title="串口登录"></a>串口登录</h3><ul>
+<li><p>串口登录我们需要准备一个USB-TTL Link！</p>
+</li>
+<li><p>排针连接图（<strong>此时TypeC口朝向我们时，即USB-A口朝向右手边时</strong>）：</p>
+<blockquote>
+<p><strong>&#x2F; * * G T R * * * * * * * * * * * * * * &#x2F;</strong><br><strong>&#x2F; * * * * * * * * * * * * * * * * * * * &#x2F;</strong><br><strong>G-&gt;GND &#x2F; T-&gt;TXD &#x2F; R-&gt;RXD</strong></p>
+</blockquote>
+</li>
+<li><p>接着检查烧录好镜像的SD卡根目录下的<code>cmdline.txt</code></p>
+<blockquote>
+<p>如果没有<code>console=serial0,115200</code>就自己在最前面加上去，用一个空格隔开和其他的指令就行</p>
+</blockquote>
+</li>
+<li><p>接着修改烧录好镜像的SD卡根目录下的<code>config.txt</code></p>
+<blockquote>
+<p>在该文件的最后一行加上<code>dtoverlay=pi3-miniuart-bt</code></p>
+</blockquote>
+</li>
+<li><p>这时连接串口就会打印login页面信息啦，记得串口连接选择<strong>波特率为115200，无流控模式</strong>噢！</p>
+</li>
+<li><p>如果没有任何东西显示出来，回去逐一检查，检查硬件是不是插错啦，要<strong>Link的Tx对Pi的Rx，Link的Rx对Pi的Tx</strong>！</p>
+</li>
+</ul>
+<h3 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h3><p>树莓派初次配置SSH登录其实也挺麻烦的，下面演示一下配置步骤。</p>
+<ul>
+<li><p>在烧录好镜像的SD卡根目录下新建文件<code>ssh</code>，空文件就行，命名好以后不用去动它</p>
+</li>
+<li><p>同样的在根目录下再新建一个空文件<code>wpa_supplicant.conf</code></p>
+</li>
+<li><p>使用编译器打开，我这里使用<code>Vscode</code></p>
+</li>
+<li><p>打开以后输入以下配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs conf">country=CN<br>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev<br>update_config=1<br> <br>network=&#123;<br>    ssid=&quot;EMMA&quot;<br>    psk=&quot;12345678&quot;<br>    priority=1<br>&#125;<br> <br>network=&#123;<br>    ssid=&quot;HUGO&quot;<br>    psk=&quot;12345678&quot;<br>    priority=2<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>解释一下：<br><code>ssid</code>是将要连接的wifi的名字，不能有中文！<br><code>psk</code>是将要连接的wifi的密码<br><code>priority</code>是连接的优先级，优先级数字大的wifi优先连接<br>你可以按照格式来记录多个wifi，注意优先级不要都相同。</p>
+</blockquote>
+</li>
+<li><p>上述步骤完成以后，把SD卡插回树莓派中运行，<code>ssh</code>和<code>wpa_supplicant.conf</code>文件都会自动被写入系统，写入成功后再次用电脑打开SD卡这两个文件会消失不见。如果你要添加或者修改wifi，你需要把<code>wpa_supplicant.conf</code>文件重新写一遍，重复上述操作，新的文件会自动覆盖旧的；<code>ssh</code>不用重新创建，之前创建过了就可以了。</p>
+</li>
+<li><p>重新给树莓派上电进入系统以后，你可能会发现以下问题警告<code>Wi-Fi is currently blocked by rfkill. Use raspi-config to set the country before use.</code></p>
+</li>
+<li><p>这是我们没有设置无线局域网所在国家，于是我们输入指令<code>sudo raspi-config nonint do_wifi_country CN</code>，顺利的话再输入指令<code>ifconfig</code>会查看到wlan0已经被分配了ip地址！</p>
+</li>
+<li><p>如果平时在同一局域网下我们不知道树莓派ip地址是多少，我们可以在Windows<code>win+R</code>输入cmd打开命令行，输入指令<code>ping raspberrypi -4</code>，可以查询同一局域网当中的树莓派的ip地址。</p>
+</li>
+<li><p>拿到ip地址就可以愉快的远程访问啦！</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">login as: pi<br>password: raspberry<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%96%B9%E6%B3%95/image.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="VNC远程桌面登录"><a href="#VNC远程桌面登录" class="headerlink" title="VNC远程桌面登录"></a>VNC远程桌面登录</h3><ul>
+<li>问题1：VNC Viewer显示<code>Cannot currently show the desktop</code></li>
+</ul>
+<blockquote>
+<p><strong>问题分析</strong>：</p>
+</blockquote>
+<p>出现这个无法显示远程桌面的问题，其实是树莓派配置分辨率的关系，树莓派默认使用了最小分辨率，然后VNC不支持这么小的，咱改一下就行。</p>
+<blockquote>
+<p><strong>解决方法</strong>：</p>
+</blockquote>
+<ul>
+<li><code>sudo raspi-config</code>打开设置界面</li>
+<li>按方向键向下选择到<code>Display Options</code></li>
+<li>接着继续选择<code>VNC Resolution</code></li>
+<li>接着选择除了<code>640x480</code>以外的分辨率</li>
+<li>然后回车确定，方向键左右选择<code>finish</code>退出，然后确认reboot重启，选择<code>yes</code></li>
+<li>最后等待重启就行啦！</li>
+</ul>
+<hr>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>请参照<strong>登录</strong>章节当中的<strong>SSH登录</strong>！</p>
 
                 
               </div>
@@ -445,7 +433,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Lvgl/" class="print-no-link">#Lvgl</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+        <a href="/tags/RaspberryPi/" class="print-no-link">#RaspberryPi</a>
       
     </div>
   
@@ -457,8 +447,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在Lvgl中添加自定义字体和图片</div>
-      <div>https://zhangkeliang0627.github.io/2024/03/21/Lvgl添加自定义字体和图片/README/</div>
+      <div>【树莓派】远程登录方法</div>
+      <div>https://zhangkeliang0627.github.io/2023/12/28/MyRaspberryPiLearningGuide/树莓派的远程登录方法/树莓派的远程登录方法/</div>
     </div>
     <div class="license-meta">
       
@@ -470,7 +460,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 21, 2024</div>
+          <div>December 28, 2023</div>
         </div>
       
       
@@ -502,9 +492,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/24/ESP32S3%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%A8%E7%BA%BF%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB/README/" title="ESP32S3接入百度在线语音识别">
+                      <a href="/2024/01/01/WelcomePage/hello-world/" title="Power By Hugo@kkl">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ESP32S3接入百度在线语音识别</span>
+                        <span class="hidden-mobile">Power By Hugo@kkl</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -512,8 +502,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/01/WelcomePage/hello-world/" title="Power By Hugo@kkl">
-                        <span class="hidden-mobile">Power By Hugo@kkl</span>
+                      <a href="/2023/12/13/MyLinuxLearningGuide/MyLinuxLearningGuide%20-%20IMX6ULL/" title="我的Linux驱动学习笔记 - IMX6ULL">
+                        <span class="hidden-mobile">我的Linux驱动学习笔记 - IMX6ULL</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
