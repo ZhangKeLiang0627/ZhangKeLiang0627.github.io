@@ -16,28 +16,29 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
+    <meta name="description" content="树莓派能否也烤出树莓的香气...">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【树莓派】在树莓派部署HomeAssistant">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2025/01/09/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/README/index.html">
+<meta property="og:title" content="【树莓派】树莓派使用HomeAssistant连接ESPHome">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2025/01/14/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="久违地拿起了我那堆在阴暗小角落浮满灰尘的树莓...">
+<meta property="og:description" content="树莓派能否也烤出树莓的香气...">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image.png">
-<meta property="article:published_time" content="2025-01-09T12:55:00.000Z">
-<meta property="article:modified_time" content="2025-01-14T15:19:46.930Z">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/image-3.png">
+<meta property="article:published_time" content="2025-01-14T15:35:00.000Z">
+<meta property="article:modified_time" content="2025-01-14T15:45:32.887Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="RaspberryPi">
 <meta property="article:tag" content="HomeAssistant">
+<meta property="article:tag" content="ESPHome">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image.png">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/image-3.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>【树莓派】在树莓派部署HomeAssistant - Hugo@kkl</title>
+  <title>【树莓派】树莓派使用HomeAssistant连接ESPHome - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,13 +202,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/树莓派部署HomeAssistant/image.png') no-repeat center center; background-size: cover;">
+     style="background: url('/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/image-2.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【树莓派】在树莓派部署HomeAssistant"></span>
+            <span id="subtitle" data-typed-text="【树莓派】树莓派使用HomeAssistant连接ESPHome"></span>
           
         </div>
 
@@ -218,8 +219,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-09 20:55" pubdate>
-          January 9, 2025 pm
+        <time datetime="2025-01-14 23:35" pubdate>
+          January 14, 2025 pm
         </time>
       </span>
     
@@ -241,7 +242,7 @@
         
         
         
-          11 mins
+          10 mins
         
       </span>
     
@@ -286,25 +287,24 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">【树莓派】在树莓派部署HomeAssistant</h1>
+            <h1 id="seo-header">【树莓派】树莓派使用HomeAssistant连接ESPHome</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="【树莓派】在树莓派部署HomeAssistant"><a href="#【树莓派】在树莓派部署HomeAssistant" class="headerlink" title="【树莓派】在树莓派部署HomeAssistant"></a>【树莓派】在树莓派部署HomeAssistant</h3><h3 id="【Raspberry-PI】Deploy-HomeAssistant-on-Raspberry-Pi"><a href="#【Raspberry-PI】Deploy-HomeAssistant-on-Raspberry-Pi" class="headerlink" title="【Raspberry PI】Deploy HomeAssistant on Raspberry Pi"></a>【Raspberry PI】Deploy HomeAssistant on Raspberry Pi</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr>
-<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><!-- ![HomeAssistant logo](images/MyRaspberryPiLearningGuide/树莓派部署HomeAssistant/image.png) -->
-<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image.png" srcset="/img/loading.gif" lazyload alt="HomeAssistant logo"></p>
+                <h3 id="【树莓派】树莓派使用HomeAssistant连接ESPHome"><a href="#【树莓派】树莓派使用HomeAssistant连接ESPHome" class="headerlink" title="【树莓派】树莓派使用HomeAssistant连接ESPHome"></a>【树莓派】树莓派使用HomeAssistant连接ESPHome</h3><h3 id="【Raspberry-Raspberry-Pi-use-HomeAssistant-to-connect-ESPHome"><a href="#【Raspberry-Raspberry-Pi-use-HomeAssistant-to-connect-ESPHome" class="headerlink" title="【Raspberry Raspberry Pi use HomeAssistant to connect ESPHome"></a>【Raspberry Raspberry Pi use HomeAssistant to connect ESPHome</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: @kkl"></a>Author: @kkl</h3><hr>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><img src="/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/image.png" srcset="/img/loading.gif" lazyload alt="HomeAssistant logo"><br><img src="/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/image-3.png" srcset="/img/loading.gif" lazyload alt="ESPHome logo"></p>
 <p><code>HomeAssistant</code>是一个开源的智能家居自动化平台，它允许用户通过一个中心化的系统来控制和管理家中的各种智能设备。它的设计理念是为用户提供一个无需依赖特定制造商的解决方案，因此，它可以集成来自不同品牌的智能设备（如Xiaomi），为用户提供一个开放且可定制的智能家居体验。</p>
-<p>学习需要用到<code>HomeAssistant</code>啦，这个词其实对我来说并不陌生，但是从前都只是只听其名不见闻其声，如今终于要上手啦！拯救落灰树莓派行动！出发！</p>
+<p><code>ESPHome</code> is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.</p>
+<p>今天咱们使用<code>HomeAssistant</code>接入<code>ESPHome</code>，事不宜迟，趁热打铁，我们开始！</p>
 <h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><ul>
 <li>硬件：Raspberry Pi 4B</li>
-<li>镜像版本：2022-09-22-raspios-bullseye-arm64.img：<a target="_blank" rel="noopener" href="https://mirror.sjtu.edu.cn/raspberry-pi-os-images/raspios_arm64/images/raspios_arm64-2022-09-26/">-&gt; 上交的镜像源</a></li>
-<li>Python版本：<code>3.9.2</code></li>
+<li>镜像版本：<code>HA-OS</code>版本 HomeAssistant</li>
 </ul>
-<h4 id="HomeAssistant-版本"><a href="#HomeAssistant-版本" class="headerlink" title="HomeAssistant 版本"></a>HomeAssistant 版本</h4><p><img src="/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image-5.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="HomeAssistant-版本"><a href="#HomeAssistant-版本" class="headerlink" title="HomeAssistant 版本"></a>HomeAssistant 版本</h4><p><img src="/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/image-5.png" srcset="/img/loading.gif" lazyload></p>
 <p><code>HomeAssistant</code>一共推出了4种版本：HA-OS, Docker, Core, Supervised.</p>
 <p>优先推荐安装<code>HA-OS</code>版本，因为该版本安装简易，同时有<code>Add-on</code>和<code>Superviser</code>，拥有加载项商店，可以方便地下载插件！</p>
-<p><strong><em>本篇文章将简述如何迅速地在树莓派部署 HomeAssistant（<code>HA-OS</code>和<code>Core</code>）。</em></strong></p>
+<p><strong><em>本篇文章将简述使用树莓派 HomeAssistant 的<code>HA-OS</code>版本连接<code>ESPHome</code>。</em></strong></p>
 <hr>
 <h3 id="安装HA-OS版本的HA"><a href="#安装HA-OS版本的HA" class="headerlink" title="安装HA-OS版本的HA"></a>安装<code>HA-OS</code>版本的HA</h3><p>直接使用<code>Raspberry Pi Imager</code>对tf卡进行<code>HA-OS</code>系统烧录即可，具体操作官网写得很详细：<a target="_blank" rel="noopener" href="https://www.home-assistant.io/installation/raspberrypi">戳这里:)</a></p>
 <p>值得注意的是，烧录好tf卡后将tf卡插入树莓派，此时树莓派处于无网络状态，你可以使用网线连接树莓派给其提供网络环境，也可以用让树莓派连接WiFi的方式连接网络，用HDMI线将树莓派连接屏幕，屏幕会显示树莓派输出的命令行信息 (Home Assistant CLI)，接下来，将示范如何使用<code>HomeAssistant</code>首次使用配置连接无线网：</p>
@@ -425,6 +425,8 @@
       
         <a href="/tags/HomeAssistant/" class="print-no-link">#HomeAssistant</a>
       
+        <a href="/tags/ESPHome/" class="print-no-link">#ESPHome</a>
+      
     </div>
   
 </div>
@@ -435,8 +437,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【树莓派】在树莓派部署HomeAssistant</div>
-      <div>https://zhangkeliang0627.github.io/2025/01/09/MyRaspberryPiLearningGuide/树莓派部署HomeAssistant/README/</div>
+      <div>【树莓派】树莓派使用HomeAssistant连接ESPHome</div>
+      <div>https://zhangkeliang0627.github.io/2025/01/14/MyRaspberryPiLearningGuide/树莓派使用HomeAssistant连接ESPHome/README/</div>
     </div>
     <div class="license-meta">
       
@@ -448,7 +450,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>January 9, 2025</div>
+          <div>January 14, 2025</div>
         </div>
       
       
@@ -480,18 +482,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/14/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/README/" title="【树莓派】树莓派使用HomeAssistant连接ESPHome">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【树莓派】树莓派使用HomeAssistant连接ESPHome</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/04/%E5%9C%A8ESP32-Arduino%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%8E%E5%8A%9F%E8%80%97%E8%93%9D%E7%89%99BLE/README/" title="在ESP32-Arduino中使用低功耗蓝牙BLE">
-                        <span class="hidden-mobile">在ESP32-Arduino中使用低功耗蓝牙BLE</span>
+                      <a href="/2025/01/09/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/README/" title="【树莓派】在树莓派部署HomeAssistant">
+                        <span class="hidden-mobile">【树莓派】在树莓派部署HomeAssistant</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
