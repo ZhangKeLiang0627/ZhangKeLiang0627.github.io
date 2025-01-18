@@ -167,11 +167,11 @@
       
       <tag>Lvgl</tag>
       
-      <tag>Ubuntu</tag>
-      
       <tag>Allwinner</tag>
       
       <tag>T113-s3</tag>
+      
+      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -223,11 +223,11 @@
     
     <tags>
       
-      <tag>Ubuntu</tag>
-      
       <tag>Allwinner</tag>
       
       <tag>T113-s3</tag>
+      
+      <tag>Ubuntu</tag>
       
     </tags>
     
@@ -447,11 +447,11 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
-      
-      <tag>MCU</tag>
       
       <tag>GUI</tag>
       
@@ -561,13 +561,13 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
       
       <tag>Camera</tag>
-      
-      <tag>MCU</tag>
       
     </tags>
     
@@ -957,9 +957,9 @@
     
     <tags>
       
-      <tag>MCU</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -1009,9 +1009,9 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>STM32</tag>
       
       <tag>Lua</tag>
       
