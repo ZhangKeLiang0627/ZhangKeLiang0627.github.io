@@ -16,28 +16,28 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆">
+    <meta name="description" content="今天！可以放开地玩Linux啦🙆！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于STM32和SimpleFOC的EasyFOC矢量控制器">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/12/27/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/README/index.html">
+<meta property="og:title" content="在全志T113-S3的TinaLinux上添加驱动支持">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2025/01/20/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E6%B7%BB%E5%8A%A0%E9%A9%B1%E5%8A%A8%E6%94%AF%E6%8C%81/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆">
+<meta property="og:description" content="今天！可以放开地玩Linux啦🙆！">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/image-0.jpg">
-<meta property="article:published_time" content="2024-12-27T06:54:00.000Z">
-<meta property="article:modified_time" content="2024-12-27T12:49:54.942Z">
+<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
+<meta property="article:published_time" content="2025-01-20T12:30:00.000Z">
+<meta property="article:modified_time" content="2025-01-20T02:26:48.183Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Project">
-<meta property="article:tag" content="STM32">
-<meta property="article:tag" content="SimpleFOC">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Allwinner">
+<meta property="article:tag" content="T113-s3">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/image-0.jpg">
+<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>基于STM32和SimpleFOC的EasyFOC矢量控制器 - Hugo@kkl</title>
+  <title>在全志T113-S3的TinaLinux上添加驱动支持 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,13 +201,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/image-0.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="基于STM32和SimpleFOC的EasyFOC矢量控制器"></span>
+            <span id="subtitle" data-typed-text="在全志T113-S3的TinaLinux上添加驱动支持"></span>
           
         </div>
 
@@ -218,8 +218,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-27 14:54" pubdate>
-          December 27, 2024 pm
+        <time datetime="2025-01-20 20:30" pubdate>
+          January 20, 2025 pm
         </time>
       </span>
     
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          387 words
+          655 words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          4 mins
+          6 mins
         
       </span>
     
@@ -286,86 +286,57 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">基于STM32和SimpleFOC的EasyFOC矢量控制器</h1>
+            <h1 id="seo-header">在全志T113-S3的TinaLinux上添加驱动支持</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="基于STM32和SimpleFOC的EasyFOC矢量控制器"><a href="#基于STM32和SimpleFOC的EasyFOC矢量控制器" class="headerlink" title="基于STM32和SimpleFOC的EasyFOC矢量控制器"></a>基于STM32和SimpleFOC的EasyFOC矢量控制器</h3><h4 id="基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆"><a href="#基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆" class="headerlink" title="基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆"></a>基于STM32F401的迷你FOC矢量控制驱动器，巨小而且五脏俱全😆</h4><h4 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h4><hr>
-<p><img src="/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/image-0.jpg" srcset="/img/loading.gif" lazyload alt="EasyFOC"></p>
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><div class="note note-info">
-            <p>本项目基于：<strong>SimpleFOC</strong> &amp; <strong>Ctrl-FOC-Lite</strong></p>
+                <h3 id="在全志T113-S3的TinaLinux上添加驱动支持"><a href="#在全志T113-S3的TinaLinux上添加驱动支持" class="headerlink" title="在全志T113-S3的TinaLinux上添加驱动支持"></a>在全志T113-S3的TinaLinux上添加驱动支持</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-success">
+            <p>大家看这篇文章之前，要先去看我先前的文章<code>全志T113-S3的TinaLinux编译流程记录</code>搭建好基本环境，<a href="https://zhangkeliang0627.github.io/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/">戳这儿直接跳转:)</a></p>
           </div>
 
-<p>Github关联仓库：<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/EasyFOC">https://github.com/ZhangKeLiang0627/EasyFOC</a><br>立创硬件开源：<a target="_blank" rel="noopener" href="https://oshwhub.com/hugego/easyfoc">https://oshwhub.com/hugego/easyfoc</a></p>
-<blockquote>
-<p>本项目<code>EasyFOC</code>旨意用于学习FOC时对SimpleFOC算法的验证，感谢@loop222提供的系列移植教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/loop222/article/details/119220638">戳这里:)</a></p>
-</blockquote>
 <hr>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="Hardware"><a href="#Hardware" class="headerlink" title="Hardware"></a>Hardware</h3><h4 id="硬件配置"><a href="#硬件配置" class="headerlink" title="硬件配置"></a>硬件配置</h4><ul>
-<li><ol>
-<li>主控：STM32F401RET6</li>
-</ol>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong>T113-s3</strong>是<strong>全志</strong>的一款非常不错的能够跑Linux系统的Soc，该芯片采用<strong>双核A7</strong>，<strong>主频高达1.2GHz</strong>，具备<strong>高效能</strong>和<strong>低功耗</strong>的特点，<strong>片上内存128MB</strong>，<strong>支持硬件解码</strong>，和D1s Pin to Pin，支持相互替换支持全志提供的Tina Linux SDK，文档齐全，对于DIY玩家来说用于制作一些带显示屏的小设备是非常完美了。</p>
+<p>前阵子在“海鲜市场”低价入了韦东山的T113-s3的开发板，经过一番摸索以后发现了TinaLinux这个新奇的东西，听说是全志基于<code>Openwrt</code>自研的系统（被戏谑为全志家的小女儿。</p>
+<p>自从入坑以后，折腾折腾，就想加入更多的功能，加入自定义的外设，这个时候就不得不自己手动地修改设备树修改驱动啦。但是好在Tina-Linux已经为我们加入新的驱动做了许多的工作，于是我们今天所需完成的事情其实非常轻松，咱们来为T113s3添加一个<code>gpio-key驱动</code>和一个<code>xr829驱动</code>吧！</p>
+<p><strong><em>本篇文章将简述如何迅速地在Tina Linux添加驱动支持。</em></strong></p>
+<h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul>
+<li>虚拟机：VirtualBox Ubuntu 18.04</li>
+<li>开发板：100ASK_T113-PRO</li>
+<li>Tina-Linux版本：linux-5.4</li>
+</ul>
+<hr>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="添加gpio-key驱动"><a href="#添加gpio-key驱动" class="headerlink" title="添加gpio-key驱动"></a>添加gpio-key驱动</h4><blockquote>
+<p>这里的100ask原文档的内容：<a target="_blank" rel="noopener" href="https://dshanpi.100ask.net/docs/T113s3-Industrial/part8/TinaSDKV2.0LinuxKernelBasicDevelopment#%E5%A2%9E%E5%8A%A0%E6%8C%89%E9%94%AE%E9%A9%B1%E5%8A%A8">-&gt;戳这里:P</a></p>
+</blockquote>
+<h4 id="添加xr829驱动（WiFi-BLE"><a href="#添加xr829驱动（WiFi-BLE" class="headerlink" title="添加xr829驱动（WiFi &amp; BLE"></a>添加xr829驱动（WiFi &amp; BLE</h4><blockquote>
+<p>这段的100ask原文档支持：<a target="_blank" rel="noopener" href="https://dshanpi.100ask.net/docs/D1s-CVBS/part6/TransplantingWiFiModuleXR829IntoD1s">-&gt;戳这里:P</a></p>
+</blockquote>
+<h4 id="adb命令（这里临时穿插一条，不然以后找不到"><a href="#adb命令（这里临时穿插一条，不然以后找不到" class="headerlink" title="adb命令（这里临时穿插一条，不然以后找不到"></a>adb命令（这里临时穿插一条，不然以后找不到</h4><ul>
+<li><p><code>adb devices</code>，该命令用于查找已经连接上Ubuntu系统上的adb设备.</p>
 </li>
-<li><ol start="2">
-<li>屏幕：SSD1312 Oled 0.96inch IIC接口 128x64分辨率</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>电机驱动：DRV8313</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>电流采样：INA240A2</li>
-</ol>
-</li>
-<li><ol start="5">
-<li>蓝牙通信：KT6368A</li>
-</ol>
-</li>
-<li><ol start="6">
-<li>串口通信：CH340N</li>
-</ol>
-</li>
-<li><ol start="7">
-<li>外壳：3D打印</li>
-</ol>
+<li><p><code>adb push</code>，该命令用于<strong>将Ubuntu系统上的文件上传到开发板</strong>，比如:</p>
 </li>
 </ul>
-<h4 id="Snapshots"><a href="#Snapshots" class="headerlink" title="Snapshots"></a>Snapshots</h4><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/基于STM32和SimpleFOC的EasyFOC矢量控制器/image-1.jpg" srcset="/img/loading.gif" lazyload alt="PCB-Front" width = "300" height = "300" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/基于STM32和SimpleFOC的EasyFOC矢量控制器/image-2.jpg" srcset="/img/loading.gif" lazyload alt="PCB-Back" width = "300" height = "300" style="border-radius: 15px;"></div></div></div>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">adb push demo  /tmp<br></code></pre></td></tr></table></figure>
 
-<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/基于STM32和SimpleFOC的EasyFOC矢量控制器/image-4.jpg" srcset="/img/loading.gif" lazyload alt="PCB-Front" width = "300" height = "300" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/基于STM32和SimpleFOC的EasyFOC矢量控制器/image-5.jpg" srcset="/img/loading.gif" lazyload alt="PCB-Back" width = "300" height = "300" style="border-radius: 15px;"></div></div></div>
-
-<p><img src="/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/image-3.jpg" srcset="/img/loading.gif" lazyload alt="3D-Shell"></p>
-<h3 id="Firmware"><a href="#Firmware" class="headerlink" title="Firmware"></a>Firmware</h3><h4 id="软件功能"><a href="#软件功能" class="headerlink" title="软件功能"></a>软件功能</h4><ul>
-<li>目前已经实现<strong>小功率无刷电机的位置、角度开闭环控制，适配了电流环的代码，可以正常运行。</strong> </li>
-<li>支持使用串口进行有线调试或者使用<strong>蓝牙</strong>进行无线调试。</li>
-<li>支持3S航模锂电池接入（12.6V &#x2F; XT60接口）.</li>
-<li>板载Oled、两颗实体按钮以及蜂鸣器方便于人机交互。</li>
-<li>引出一路IIC接口和一路SPI接口。</li>
-<li>引出SWD烧录口，方便使用<code>ST-Link</code>or<code>DAP-Link</code>进行程序烧录。</li>
-</ul>
-<h4 id="Showcases"><a href="#Showcases" class="headerlink" title="Showcases"></a>Showcases</h4><ul>
-<li><p>力矩测试 - Torque<br><img src="/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/torque.gif" srcset="/img/loading.gif" lazyload alt="torque"></p>
-</li>
-<li><p>速度测试 - Velocity<br><img src="/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/velocity.gif" srcset="/img/loading.gif" lazyload alt="velocity"></p>
-</li>
-<li><p>角度测试 - Angle<br><img src="/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/angle.gif" srcset="/img/loading.gif" lazyload alt="Angle"></p>
-</li>
-<li><p>速度迅速转向测试 - Velocity hard test<br><img src="/images/%E5%9F%BA%E4%BA%8ESTM32%E5%92%8CSimpleFOC%E7%9A%84EasyFOC%E7%9F%A2%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8/velocity_hard_test.gif" srcset="/img/loading.gif" lazyload alt="Velocity hard test"></p>
-</li>
-</ul>
-<h4 id="待改进"><a href="#待改进" class="headerlink" title="待改进"></a>待改进</h4><ul>
-<li>该款MCU并不支持CAN通信（sad:(</li>
-<li><code>STM32F401</code>计算速度有限，驱动电机的同时驱动Oled稍显吃力，更换为<code>STM32F405</code>可能会更好，而且解决了没有CAN的问题。</li>
-<li>…</li>
-</ul>
-<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>相关文章参考：</p>
+<p>这表示将Ubuntu系统内当前目录下的<code>demo</code>文件上传到开发板的<code>/tmp</code>目录下.</p>
 <ul>
-<li>@稚晖君：<a target="_blank" rel="noopener" href="https://zhihui.lingjun.life/2020/07/02/foc/">https://zhihui.lingjun.life/2020/07/02/foc/</a></li>
-<li>@loop222：<a target="_blank" rel="noopener" href="https://blog.csdn.net/loop222/article/details/119220638">https://blog.csdn.net/loop222/article/details/119220638</a></li>
-<li>@SimpleFOC：<a target="_blank" rel="noopener" href="http://simplefoc.cn/#/">http://simplefoc.cn/#/</a></li>
+<li><code>adb pull</code>，该命令用于<strong>从开发板获取文件到Ubuntu系统上</strong>，比如：</li>
 </ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">adb pull /tmp/demo .<br></code></pre></td></tr></table></figure>
+
+<p>这表示下载开发板中的<code>/tmp/demo</code>文件到当前目录下.</p>
+<hr>
+<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>鸣谢以下教程：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://bbs.aw-ol.com/topic/618/faq-%E5%85%A8%E5%BF%97R%E7%B3%BB%E5%88%97%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3wpa_supplicant%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98">https://bbs.aw-ol.com/topic/618/faq-全志R系列如何解决wpa_supplicant服务启动问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://bbs.aw-ol.com/topic/427/D1%E5%93%AA%E5%90%92%E5%BC%80%E5%8F%91%E6%9D%BFwifi%E8%BF%9E%E6%8E%A5%E5%87%BA%E9%94%99-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5">https://bbs.aw-ol.com/topic/427/D1哪吒开发板wifi连接出错-这是什么情况</a></li>
+<li><a target="_blank" rel="noopener" href="https://bbs.aw-ol.com/topic/5173/%E5%B0%86%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AEext4%E6%A0%BC%E5%BC%8F-%E5%90%AF%E5%8A%A8%E6%8F%90%E7%A4%BAno-filesystem-could-mount-root">https://bbs.aw-ol.com/topic/5173/将系统文件设置ext4格式-启动提示no-filesystem-could-mount-root</a></li>
+<li><a target="_blank" rel="noopener" href="https://dshanpi.100ask.net/docs/D1s-CVBS/part6/TransplantingWiFiModuleXR829IntoD1s">https://dshanpi.100ask.net/docs/D1s-CVBS/part6/TransplantingWiFiModuleXR829IntoD1s</a></li>
+<li>全志 Linux Tina-SDK 开发完全手册：<a target="_blank" rel="noopener" href="https://tina.100ask.net/">https://tina.100ask.net</a></li>
+</ul>
+<hr>
 
                 
               </div>
@@ -384,7 +355,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Project-Page/" class="category-chain-item">Project Page</a>
+  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
   
   
 
@@ -399,11 +370,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Project/" class="print-no-link">#Project</a>
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
       
-        <a href="/tags/STM32/" class="print-no-link">#STM32</a>
+        <a href="/tags/Allwinner/" class="print-no-link">#Allwinner</a>
       
-        <a href="/tags/SimpleFOC/" class="print-no-link">#SimpleFOC</a>
+        <a href="/tags/T113-s3/" class="print-no-link">#T113-s3</a>
       
     </div>
   
@@ -415,8 +386,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>基于STM32和SimpleFOC的EasyFOC矢量控制器</div>
-      <div>https://zhangkeliang0627.github.io/2024/12/27/基于STM32和SimpleFOC的EasyFOC矢量控制器/README/</div>
+      <div>在全志T113-S3的TinaLinux上添加驱动支持</div>
+      <div>https://zhangkeliang0627.github.io/2025/01/20/在全志T113-S3的TinaLinux上添加驱动支持/README/</div>
     </div>
     <div class="license-meta">
       
@@ -428,7 +399,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 27, 2024</div>
+          <div>January 20, 2025</div>
         </div>
       
       
@@ -460,18 +431,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/02/%E5%AF%B9Qt%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/README/" title="对Qt项目进行打包的三种方式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">对Qt项目进行打包的三种方式</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/22/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/README/" title="在全志T113-S3的TinaLinux上运行LVGL">
-                        <span class="hidden-mobile">在全志T113-S3的TinaLinux上运行LVGL</span>
+                      <a href="/2025/01/14/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%BD%BF%E7%94%A8HomeAssistant%E8%BF%9E%E6%8E%A5ESPHome/README/" title="【树莓派】树莓派使用HomeAssistant连接ESPHome">
+                        <span class="hidden-mobile">【树莓派】树莓派使用HomeAssistant连接ESPHome</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
