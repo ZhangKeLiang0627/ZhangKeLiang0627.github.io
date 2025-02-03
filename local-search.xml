@@ -221,9 +221,9 @@
     
     <tags>
       
-      <tag>Project</tag>
-      
       <tag>STM32</tag>
+      
+      <tag>Project</tag>
       
       <tag>SimpleFOC</tag>
       
@@ -532,11 +532,11 @@
     
     <tags>
       
+      <tag>STM32</tag>
+      
       <tag>MCU</tag>
       
       <tag>Project</tag>
-      
-      <tag>STM32</tag>
       
       <tag>GUI</tag>
       
@@ -646,11 +646,11 @@
     
     <tags>
       
+      <tag>STM32</tag>
+      
       <tag>MCU</tag>
       
       <tag>Project</tag>
-      
-      <tag>STM32</tag>
       
       <tag>Camera</tag>
       
@@ -1042,9 +1042,9 @@
     
     <tags>
       
-      <tag>FreeRTOS</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>FreeRTOS</tag>
       
     </tags>
     
@@ -1094,11 +1094,11 @@
     
     <tags>
       
-      <tag>MCU</tag>
+      <tag>Lua</tag>
       
       <tag>STM32</tag>
       
-      <tag>Lua</tag>
+      <tag>MCU</tag>
       
     </tags>
     
