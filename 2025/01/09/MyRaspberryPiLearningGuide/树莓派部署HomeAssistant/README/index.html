@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/MyRaspberryPiLearningGuide/%E6%A0%91%E8%8E%93%E6%B4%BE%E9%83%A8%E7%BD%B2HomeAssistant/image.png">
 <meta property="article:published_time" content="2025-01-09T12:55:00.000Z">
-<meta property="article:modified_time" content="2025-01-18T12:17:31.983Z">
+<meta property="article:modified_time" content="2025-02-14T16:31:16.356Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="RaspberryPi">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k words
+          1.3k words
         
       </span>
     
@@ -312,8 +312,12 @@
 <h3 id="安装HA-OS版本的HA"><a href="#安装HA-OS版本的HA" class="headerlink" title="安装HA-OS版本的HA"></a>安装<code>HA-OS</code>版本的HA</h3><p>直接使用<code>Raspberry Pi Imager</code>对tf卡进行<code>HA-OS</code>系统烧录即可，具体操作官网写得很详细：<a target="_blank" rel="noopener" href="https://www.home-assistant.io/installation/raspberrypi">戳这里:)</a></p>
 <p>值得注意的是，烧录好tf卡后将tf卡插入树莓派，此时树莓派处于无网络状态，你可以使用网线连接树莓派给其提供网络环境，也可以用让树莓派连接WiFi的方式连接网络，用HDMI线将树莓派连接屏幕，屏幕会显示树莓派输出的命令行信息 (Home Assistant CLI)，接下来，将示范如何使用<code>HomeAssistant</code>首次使用配置连接无线网：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">在首次使用Home Assistant操作系统时，有网线方式可以直接联网；没网线时就需要配置好WiFi，就是在ha提示符下输入以下联网命令：</span><br>network update wlan0 --wifi-ssid &quot;你的WiFi名称&quot; --wifi-psk 你的WiFi密码 --wifi-auth wpa-psk --wifi-mode infrastructure --ipv4-method auto<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看网络信息（包括ip地址等</span><br>network info<br></code></pre></td></tr></table></figure>
+<div class="note note-info">
+            <p><strong>浏览器输入以下网址打开HA的页面：</strong></p><blockquote><p><code>homeassistant.local:8123</code>，HA的系统操作界面<br><code>homeassistant.local:4357</code>，HA的<code>Observer</code>界面</p></blockquote>
+          </div>
 
-<blockquote>
+
+<h4 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h4><blockquote>
 <p><strong>Q：</strong><code>homeassistant.local:8123</code>无法访问但是<code>homeassistant.local:4357</code>的<code>Observer</code>可访问？<br><strong>A：</strong>如果是<code>404 not found</code>就全部推倒重来；如果是提示暂时无法访问，其实是<code>Supervisor</code>在更新，得等待几分钟至几个小时。</p>
 </blockquote>
 <h3 id="安装Core版本的HA"><a href="#安装Core版本的HA" class="headerlink" title="安装Core版本的HA"></a>安装<code>Core</code>版本的HA</h3><h4 id="a-更新源"><a href="#a-更新源" class="headerlink" title="a. 更新源"></a>a. 更新源</h4><p>首先，拿到落灰的小树莓派，先更新源，确保系统能够获取到最新的软件和安全更新，稍微等待，完成即可：</p>
