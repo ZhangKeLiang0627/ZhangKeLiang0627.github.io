@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-1.jpg">
 <meta property="article:published_time" content="2025-02-01T07:10:00.000Z">
-<meta property="article:modified_time" content="2025-02-19T07:44:05.469Z">
+<meta property="article:modified_time" content="2025-02-20T14:16:52.269Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Allwinner">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k words
+          2.4k words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          20 mins
+          21 mins
         
       </span>
     
@@ -295,6 +295,10 @@
             <p>该笔记目前处于积极开发阶段。</p>
           </div>
 
+<div class="note note-info">
+            <p><strong>往期相关文章总览：</strong></p><ul><li><a href="https://zhangkeliang0627.github.io/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/README/">全志T113-S3的TinaLinux编译流程记录</a></li><li><a href="https://zhangkeliang0627.github.io/2024/12/22/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E8%BF%90%E8%A1%8CLVGL/README/">在全志T113-S3的TinaLinux上运行LVGL</a></li><li><a href="https://zhangkeliang0627.github.io/2025/01/20/%E5%9C%A8%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E4%B8%8A%E6%B7%BB%E5%8A%A0%E9%A9%B1%E5%8A%A8%E6%94%AF%E6%8C%81/README/">在全志T113-S3的TinaLinux上添加驱动支持</a></li></ul>
+          </div>
+
 <div class="note note-success">
             <p>hahaha标题有点吹大了哈，虽然说是关于一切，但再细节的东西的说不完的。但是我会把我上手以后摸索的整个心路历程尽量地都详细展现出来。本篇文章围绕着<a target="_blank" rel="noopener" href="https://oshwhub.com/fanhuacloud/t113-s3-86panel">基于T113-S3的86-Screen</a>的复现展开，by<a target="_blank" rel="noopener" href="https://oshwhub.com/fanhuacloud/works">@FanHuaCloud</a></p>
           </div>
@@ -315,7 +319,7 @@
           </div>
 
 <div class="note note-secondary">
-            <blockquote><p>虚拟机获取链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1INtes0puPvBo2v6UM7_SBA">https://pan.baidu.com/s/1INtes0puPvBo2v6UM7_SBA</a> 提取码: u4vt </p></blockquote><p>这个虚拟机是交流群中分享的，如果你不想折腾内核的话，可以直接拿来用，或者你想学习一下内核编译修改配置流程，可以按照作者的教程（在立创硬件开源的附件：<code>Tina SDK构建指南</code>）来。</p><p>或者戳这里获取：<a href="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/TinaSDK%E6%9E%84%E5%BB%BA%E6%8C%87%E5%8D%97.pdf">Tina SDK构建指南.pdf</a></p><p><strong>反正我接下来的教程会以分享的虚拟机为基础来进行，为了尽量保持统一哈。</strong></p>
+            <blockquote><p>虚拟机获取链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1INtes0puPvBo2v6UM7_SBA">https://pan.baidu.com/s/1INtes0puPvBo2v6UM7_SBA</a> 提取码: u4vt </p></blockquote><p>这个虚拟机是交流群中分享的，如果你不想折腾内核的话，可以直接拿来用，或者你想学习一下内核编译修改配置流程，可以按照作者的教程（在立创硬件开源的附件：<code>Tina SDK构建指南</code>）来。</p><p>或者戳这里获取：<a href="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/TinaSDK%E6%9E%84%E5%BB%BA%E6%8C%87%E5%8D%97.pdf">Tina SDK构建指南.pdf</a></p><p><strong>反正我接下来的教程会以分享的虚拟机为基础来进行，为了尽量保持环境统一哈。</strong></p>
           </div>
 
 <ul>
@@ -382,6 +386,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 先cd到 tina-sdk 文件夹的上级目录</span><br><span class="hljs-comment"># 压缩 tina-sdk 目录  </span><br>7z a tina-sdk.7z tina-sdk <br></code></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 解压 tina-sdk 文件夹到当前目录</span><br>7z x tina-sdk.7z<br></code></pre></td></tr></table></figure>
+
+<div class="note note-warning">
+            <p>注意：转移到其他虚拟机后，记得要将tina-sdk当中的out文件夹删除干净，然后<code>make clean</code>，再去做编译打包的操作哦！否则会遇到路径不一致的报错问题，是因为文件发生了移动，从前的编译结果在这里已经不适用了。</p>
+          </div>
+
 
 <h4 id="添加uboot启动logo"><a href="#添加uboot启动logo" class="headerlink" title="添加uboot启动logo"></a>添加uboot启动logo</h4><blockquote>
 <p>文章参考：<a target="_blank" rel="noopener" href="https://dshanpi.100ask.net/docs/T113s3-Industrial/part7/AddABootLogoImageInUboot/">https://dshanpi.100ask.net/docs/T113s3-Industrial/part7/AddABootLogoImageInUboot/</a></p>
