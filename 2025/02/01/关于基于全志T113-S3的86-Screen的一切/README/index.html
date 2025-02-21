@@ -25,11 +25,11 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-1.jpg">
 <meta property="article:published_time" content="2025-02-01T07:10:00.000Z">
-<meta property="article:modified_time" content="2025-02-21T05:38:51.543Z">
+<meta property="article:modified_time" content="2025-02-21T18:09:24.669Z">
 <meta property="article:author" content="Zhang-keliang">
+<meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Allwinner">
 <meta property="article:tag" content="T113-s3">
-<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-1.jpg">
   
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.6k words
+          3.9k words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          30 mins
+          33 mins
         
       </span>
     
@@ -398,6 +398,7 @@
 <p>然后分区表<code>sys_partition.fex</code>当中加入<code>rootfs_data</code>（若已有，就不用，操作如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 打开分区表，大致路径如下</span><br>gedit ~/tina-d1-h/device/config/chips/t113/configs/100ask/sys_partition.fex<br><br><span class="hljs-comment"># 加入rootfs_data，如果已经有了，就不需要加入</span><br>[partition]<br>    name = rootfs_data<br>    size = 25600<br>    user_type = 0x8000<br></code></pre></td></tr></table></figure>
 
+<p>最后就可以编译打包，烧录上电测试。顺利的话，此时在<code>/mnt/UDISK</code>文件夹中创建新文件就能够成功啦（或者adb传输文件就能成功啦！</p>
 <h4 id="添加uboot启动logo"><a href="#添加uboot启动logo" class="headerlink" title="添加uboot启动logo"></a>添加uboot启动logo</h4><blockquote>
 <p>文章参考：<a target="_blank" rel="noopener" href="https://dshanpi.100ask.net/docs/T113s3-Industrial/part7/AddABootLogoImageInUboot/">https://dshanpi.100ask.net/docs/T113s3-Industrial/part7/AddABootLogoImageInUboot/</a></p>
 </blockquote>
@@ -426,7 +427,7 @@
 <p>配置好内核以后，重新编译打包，烧录上电。</p>
 <h5 id="播放音视频（运行程序"><a href="#播放音视频（运行程序" class="headerlink" title="播放音视频（运行程序"></a>播放音视频（运行程序</h5><p>然后我们就可以在开发板的命令行中使用<code>tplayerdemo</code>命令播放音视频啦，如播放视频<code>tplayerdemo /mnt/UDISK/video.mp4</code>。</p>
 <div class="note note-warning">
-            <p><strong>注意：在执行<code>tplayerdemo</code>命令之前，要确认音频通路是否打开（是否解除静音），要执行<code>amixer -D hw:audiocodec cset name=&#39;Headphone Switch&#39; 1</code>！</strong></p>
+            <p><strong>注意：在执行<code>tplayerdemo</code>命令之前，要确认音频通路是否打开（是否解除静音），要执行<code>amixer -D hw:audiocodec cset name=&#39;Headphone Switch&#39; 1</code>打开音频通路，否则音视频播放几秒钟就会卡死！</strong></p>
           </div>
 
 <blockquote>
@@ -445,24 +446,24 @@
 
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-42d133e0" role="button" aria-expanded="false" aria-controls="collapse-42d133e0">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-d0dfa0ef" role="button" aria-expanded="false" aria-controls="collapse-d0dfa0ef">
         <div class="fold-arrow">▶</div>快速查看音频相关的设备节点
       </div>
-      <div class="fold-collapse collapse" id="collapse-42d133e0">
+      <div class="fold-collapse collapse" id="collapse-d0dfa0ef">
         <div class="fold-content">
-          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 命令amixer controls：快速查看音频相关的设备节点</span><br>root@TinaLinux:/<span class="hljs-comment"># amixer controls</span><br><br>numid=17,iface=MIXER,name=<span class="hljs-string">&#x27;Headphone volume&#x27;</span><br>numid=30,iface=MIXER,name=<span class="hljs-string">&#x27;Headphone Switch&#x27;</span><br>numid=12,iface=MIXER,name=<span class="hljs-string">&#x27;FMINL gain volume&#x27;</span><br>numid=13,iface=MIXER,name=<span class="hljs-string">&#x27;FMINR gain volume&#x27;</span><br>numid=2,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 ADC2 swap&#x27;</span><br>numid=24,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 Input FMINL Switch&#x27;</span><br>numid=25,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 Input LINEINL Switch&#x27;</span><br>numid=23,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 Input MIC1 Boost Switch&#x27;</span><br>numid=6,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 volume&#x27;</span><br>numid=27,iface=MIXER,name=<span class="hljs-string">&#x27;ADC2 Input FMINR Switch&#x27;</span><br>numid=28,iface=MIXER,name=<span class="hljs-string">&#x27;ADC2 Input LINEINR Switch&#x27;</span><br>numid=26,iface=MIXER,name=<span class="hljs-string">&#x27;ADC2 Input MIC2 Boost Switch&#x27;</span><br>numid=7,iface=MIXER,name=<span class="hljs-string">&#x27;ADC2 volume&#x27;</span><br>numid=3,iface=MIXER,name=<span class="hljs-string">&#x27;ADC3 ADC4 swap&#x27;</span><br>numid=29,iface=MIXER,name=<span class="hljs-string">&#x27;ADC3 Input MIC3 Boost Switch&#x27;</span><br>numid=8,iface=MIXER,name=<span class="hljs-string">&#x27;ADC3 volume&#x27;</span><br>numid=5,iface=MIXER,name=<span class="hljs-string">&#x27;DAC volume&#x27;</span><br>numid=31,iface=MIXER,name=<span class="hljs-string">&#x27;HpSpeaker Switch&#x27;</span><br>numid=14,iface=MIXER,name=<span class="hljs-string">&#x27;LINEINL gain volume&#x27;</span><br>numid=15,iface=MIXER,name=<span class="hljs-string">&#x27;LINEINR gain volume&#x27;</span><br>numid=32,iface=MIXER,name=<span class="hljs-string">&#x27;LINEOUT Switch&#x27;</span><br>numid=16,iface=MIXER,name=<span class="hljs-string">&#x27;LINEOUT volume&#x27;</span><br>numid=18,iface=MIXER,name=<span class="hljs-string">&#x27;LINEOUTL Output Select&#x27;</span><br>numid=19,iface=MIXER,name=<span class="hljs-string">&#x27;LINEOUTR Output Select&#x27;</span><br>numid=20,iface=MIXER,name=<span class="hljs-string">&#x27;MIC1 Input Select&#x27;</span><br>numid=9,iface=MIXER,name=<span class="hljs-string">&#x27;MIC1 gain volume&#x27;</span><br>numid=21,iface=MIXER,name=<span class="hljs-string">&#x27;MIC2 Input Select&#x27;</span><br>numid=10,iface=MIXER,name=<span class="hljs-string">&#x27;MIC2 gain volume&#x27;</span><br>numid=22,iface=MIXER,name=<span class="hljs-string">&#x27;MIC3 Input Select&#x27;</span><br>numid=11,iface=MIXER,name=<span class="hljs-string">&#x27;MIC3 gain volume&#x27;</span><br>numid=33,iface=MIXER,name=<span class="hljs-string">&#x27;Soft Volume Master&#x27;</span><br>numid=1,iface=MIXER,name=<span class="hljs-string">&#x27;codec hub mode&#x27;</span><br>numid=4,iface=MIXER,name=<span class="hljs-string">&#x27;digital volume&#x27;</span><br></code></pre></td></tr></table></figure>
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 命令amixer controls：快速查看音频相关的设备节点</span><br>root@TinaLinux:/<span class="hljs-comment"># amixer controls</span><br><br>numid=17,iface=MIXER,name=<span class="hljs-string">&#x27;Headphone volume&#x27;</span><br>numid=30,iface=MIXER,name=<span class="hljs-string">&#x27;Headphone Switch&#x27;</span><br>numid=12,iface=MIXER,name=<span class="hljs-string">&#x27;FMINL gain volume&#x27;</span><br>numid=13,iface=MIXER,name=<span class="hljs-string">&#x27;FMINR gain volume&#x27;</span><br>numid=2,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 ADC2 swap&#x27;</span><br>numid=24,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 Input FMINL Switch&#x27;</span><br>numid=25,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 Input LINEINL Switch&#x27;</span><br>numid=23,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 Input MIC1 Boost Switch&#x27;</span><br>numid=6,iface=MIXER,name=<span class="hljs-string">&#x27;ADC1 volume&#x27;</span><br>numid=27,iface=MIXER,name=<span class="hljs-string">&#x27;ADC2 Input FMINR Switch&#x27;</span><br>numid=28,iface=MIXER,name=<span class="hljs-string">&#x27;ADC2 Input LINEINR Switch&#x27;</span><br>numid=26,iface=MIXER,name=<span class="hljs-string">&#x27;ADC2 Input MIC2 Boost Switch&#x27;</span><br>numid=7,iface=MIXER,name=<span class="hljs-string">&#x27;ADC2 volume&#x27;</span><br>numid=3,iface=MIXER,name=<span class="hljs-string">&#x27;ADC3 ADC4 swap&#x27;</span><br>numid=29,iface=MIXER,name=<span class="hljs-string">&#x27;ADC3 Input MIC3 Boost Switch&#x27;</span><br>numid=8,iface=MIXER,name=<span class="hljs-string">&#x27;ADC3 volume&#x27;</span><br>numid=5,iface=MIXER,name=<span class="hljs-string">&#x27;DAC volume&#x27;</span><br>numid=31,iface=MIXER,name=<span class="hljs-string">&#x27;HpSpeaker Switch&#x27;</span><br>numid=14,iface=MIXER,name=<span class="hljs-string">&#x27;LINEINL gain volume&#x27;</span><br>numid=15,iface=MIXER,name=<span class="hljs-string">&#x27;LINEINR gain volume&#x27;</span><br>numid=32,iface=MIXER,name=<span class="hljs-string">&#x27;LINEOUT Switch&#x27;</span><br>numid=16,iface=MIXER,name=<span class="hljs-string">&#x27;LINEOUT volume&#x27;</span><br>numid=18,iface=MIXER,name=<span class="hljs-string">&#x27;LINEOUTL Output Select&#x27;</span><br>numid=19,iface=MIXER,name=<span class="hljs-string">&#x27;LINEOUTR Output Select&#x27;</span><br>numid=20,iface=MIXER,name=<span class="hljs-string">&#x27;MIC1 Input Select&#x27;</span><br>numid=9,iface=MIXER,name=<span class="hljs-string">&#x27;MIC1 gain volume&#x27;</span><br>numid=21,iface=MIXER,name=<span class="hljs-string">&#x27;MIC2 Input Select&#x27;</span><br>numid=10,iface=MIXER,name=<span class="hljs-string">&#x27;MIC2 gain volume&#x27;</span><br>numid=22,iface=MIXER,name=<span class="hljs-string">&#x27;MIC3 Input Select&#x27;</span><br>numid=11,iface=MIXER,name=<span class="hljs-string">&#x27;MIC3 gain volume&#x27;</span><br>numid=33,iface=MIXER,name=<span class="hljs-string">&#x27;Soft Volume Master&#x27;</span><br>numid=1,iface=MIXER,name=<span class="hljs-string">&#x27;codec hub mode&#x27;</span><br>numid=4,iface=MIXER,name=<span class="hljs-string">&#x27;digital volume&#x27;</span><br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用命令amixer cget：快速查看单个音频相关设备节点的当前状态</span><br>amixer cget numid=30,iface=MIXER,name=<span class="hljs-string">&#x27;Headphone Switch&#x27;</span>             <span class="hljs-comment"># 查看耳机输出</span><br></code></pre></td></tr></table></figure>
         </div>
       </div>
     </div>
 
 
     <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-5bf6db73" role="button" aria-expanded="false" aria-controls="collapse-5bf6db73">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-c21ca059" role="button" aria-expanded="false" aria-controls="collapse-c21ca059">
         <div class="fold-arrow">▶</div>修改音频设备的参数
       </div>
-      <div class="fold-collapse collapse" id="collapse-5bf6db73">
+      <div class="fold-collapse collapse" id="collapse-c21ca059">
         <div class="fold-content">
-          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 修改音频设备的参数</span><br>amixer -D hw:audiocodec cset name=<span class="hljs-string">&#x27;Headphone Switch&#x27;</span> 1                <span class="hljs-comment"># 开启耳机输出</span><br>amixer -D hw:audiocodec cset name=<span class="hljs-string">&#x27;Headphone Volume&#x27;</span> 3                <span class="hljs-comment"># 设定音量</span><br></code></pre></td></tr></table></figure>
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 修改音频设备的参数</span><br>amixer -D hw:audiocodec cset name=<span class="hljs-string">&#x27;Headphone Switch&#x27;</span> 1                <span class="hljs-comment"># 开启耳机输出</span><br>amixer -D hw:audiocodec cset name=<span class="hljs-string">&#x27;Headphone Volume&#x27;</span> 3                <span class="hljs-comment"># 设定音量</span><br><br><span class="hljs-comment"># 或者使用以下方法（效果一样</span><br>amixer cset numid=30,iface=MIXER,name=<span class="hljs-string">&#x27;Headphone Switch&#x27;</span> 1            <span class="hljs-comment"># 开启耳机输出</span><br>amixer cset numid=17,iface=MIXER,name=<span class="hljs-string">&#x27;Headphone volume&#x27;</span> 3            <span class="hljs-comment"># 设定音量</span><br></code></pre></td></tr></table></figure>
         </div>
       </div>
     </div>
@@ -486,7 +487,13 @@
 
 <p>展示一下我的实际效果，弹钢琴的帅老头大家应该都很熟悉了吧haha：</p>
 <p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-5.jpg" srcset="/img/loading.gif" lazyload></p>
-<h4 id="LVGL示例测试"><a href="#LVGL示例测试" class="headerlink" title="LVGL示例测试"></a>LVGL示例测试</h4><p>…</p>
+<h4 id="关于U盘的挂载"><a href="#关于U盘的挂载" class="headerlink" title="关于U盘的挂载"></a>关于U盘的挂载</h4><p>这里基于全志的开发指南<a href="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/Tina_Linux_%E5%AD%98%E5%82%A8_%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf">Tina_Linux_存储_开发指南</a>简单讲解一下U盘如何挂载。</p>
+<p>当我们往开发板的USB口插入U盘时，设备会自动识别到U盘，你可以在<code>dev</code>文件夹下看到新增了诸如<code>sda</code>的设备，此时说明咱们的的U盘已经连接到开发板，接下来执行<code>mount /dev/sda /mnt/exUDISK/</code>挂载U盘设备到<code>/mnt/exUDISK</code>文件夹中。顺利的话，接下来cd到该文件夹，你就能读取到U盘当中的内容啦！</p>
+<p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-5.png" srcset="/img/loading.gif" lazyload alt="默认挂载设备节点"></p>
+<h5 id="自动挂载"><a href="#自动挂载" class="headerlink" title="自动挂载"></a>自动挂载</h5><p>…</p>
+<p>更多的内容，看开发指南吧（笑！</p>
+<h4 id="LVGL示例测试"><a href="#LVGL示例测试" class="headerlink" title="LVGL示例测试"></a>LVGL示例测试</h4><p>交流群中提供的虚拟机中刚好提供了一份LVGL测试的程序，咱们拿来用一用！</p>
+<p>…</p>
 <hr>
 <h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p>
 <ul>
@@ -527,11 +534,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+      
         <a href="/tags/Allwinner/" class="print-no-link">#Allwinner</a>
       
         <a href="/tags/T113-s3/" class="print-no-link">#T113-s3</a>
-      
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
       
     </div>
   
