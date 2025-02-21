@@ -588,11 +588,11 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
-      
-      <tag>MCU</tag>
       
       <tag>GUI</tag>
       
@@ -702,13 +702,13 @@
     
     <tags>
       
+      <tag>MCU</tag>
+      
       <tag>Project</tag>
       
       <tag>STM32</tag>
       
       <tag>Camera</tag>
-      
-      <tag>MCU</tag>
       
     </tags>
     
@@ -1098,9 +1098,9 @@
     
     <tags>
       
-      <tag>MCU</tag>
-      
       <tag>FreeRTOS</tag>
+      
+      <tag>MCU</tag>
       
     </tags>
     
@@ -1150,9 +1150,9 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>MCU</tag>
+      
+      <tag>STM32</tag>
       
       <tag>Lua</tag>
       
