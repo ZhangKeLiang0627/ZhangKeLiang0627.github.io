@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-1.jpg">
 <meta property="article:published_time" content="2025-02-01T07:10:00.000Z">
-<meta property="article:modified_time" content="2025-02-21T18:09:24.669Z">
+<meta property="article:modified_time" content="2025-02-23T16:34:16.770Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Allwinner">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.9k words
+          4k words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          33 mins
+          34 mins
         
       </span>
     
@@ -328,7 +328,7 @@
 </ul>
 <hr>
 <h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="下载并安装VMware"><a href="#下载并安装VMware" class="headerlink" title="下载并安装VMware"></a>下载并安装VMware</h4><p>这个自行去官网下载就好，或者什么别的渠道下载都行，记得要下载最新的免费的版本就行。</p>
-<h4 id="基于T113-S3的86-Screen的PCB打样与器件采购"><a href="#基于T113-S3的86-Screen的PCB打样与器件采购" class="headerlink" title="基于T113-S3的86-Screen的PCB打样与器件采购"></a>基于T113-S3的86-Screen的PCB打样与器件采购</h4><p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image.jpg" srcset="/img/loading.gif" lazyload alt="PCB-3D"></p>
+<h4 id="PCB打样与器件采购"><a href="#PCB打样与器件采购" class="headerlink" title="PCB打样与器件采购"></a>PCB打样与器件采购</h4><p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image.jpg" srcset="/img/loading.gif" lazyload alt="PCB-3D"></p>
 <ul>
 <li>打样参数：1.6mm、无阻抗需求</li>
 </ul>
@@ -492,7 +492,18 @@
 <p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-5.png" srcset="/img/loading.gif" lazyload alt="默认挂载设备节点"></p>
 <h5 id="自动挂载"><a href="#自动挂载" class="headerlink" title="自动挂载"></a>自动挂载</h5><p>…</p>
 <p>更多的内容，看开发指南吧（笑！</p>
-<h4 id="LVGL示例测试"><a href="#LVGL示例测试" class="headerlink" title="LVGL示例测试"></a>LVGL示例测试</h4><p>交流群中提供的虚拟机中刚好提供了一份LVGL测试的程序，咱们拿来用一用！</p>
+<h4 id="命令行日志输出到LCD屏幕"><a href="#命令行日志输出到LCD屏幕" class="headerlink" title="命令行日志输出到LCD屏幕"></a>命令行日志输出到LCD屏幕</h4><blockquote>
+<p>文章参考：<a target="_blank" rel="noopener" href="https://bbs.aw-ol.com/topic/4223/t113-s3-log%E8%BE%93%E5%87%BA%E5%88%B0rgb%E5%B1%8F%E5%B9%95">https://bbs.aw-ol.com/topic/4223/t113-s3-log输出到rgb屏幕</a></p>
+</blockquote>
+<h5 id="修改env-cfg"><a href="#修改env-cfg" class="headerlink" title="修改env.cfg"></a>修改env.cfg</h5><p>env.cfg的路径参考<code>/home/hugokkl/tina-d1-h/device/config/chips/t113/configs/100ask/env.cfg</code></p>
+<p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-6.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="修改kernel-menuconfig"><a href="#修改kernel-menuconfig" class="headerlink" title="修改kernel_menuconfig"></a>修改kernel_menuconfig</h4><p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-7.png" srcset="/img/loading.gif" lazyload alt="勾选(1"><br><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-8.png" srcset="/img/loading.gif" lazyload alt="勾选(2"><br><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-9.png" srcset="/img/loading.gif" lazyload alt="搜索&quot;Framebuffer&quot;"><br><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-10.png" srcset="/img/loading.gif" lazyload alt="选择&quot;1&quot;"><br><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-11.png" srcset="/img/loading.gif" lazyload alt="勾选(3"></p>
+<p>然后就配置完成，重新编译打包啦！下面是显示效果展示：</p>
+<p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-6.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="LVGL示例测试"><a href="#LVGL示例测试" class="headerlink" title="LVGL示例测试"></a>LVGL示例测试</h4><p>交流群中提供的虚拟机中刚好提供了一份LVGL测试的程序<code>lvgl_taiji</code>，咱们拿来用一用！</p>
+<p>先cd到<code>lvgl_taiji</code>文件夹中，执行以下命令编译程序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> build/<br>./build_lv_taiji<br></code></pre></td></tr></table></figure>
+<p>然后将编译出来的执行文件<code>lv_taiji</code>通过adb丢到开发板当中运行就可以咯！</p>
 <p>…</p>
 <hr>
 <h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p>
@@ -519,7 +530,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
+  <a href="/categories/Project-Page/" class="category-chain-item">Project Page</a>
   
   
 
