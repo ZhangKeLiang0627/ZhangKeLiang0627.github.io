@@ -18,18 +18,18 @@
   
     <meta name="description" content="折磨人的东西，终于是编译出来啦！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="全志T113-s3的TinaLinux编译流程记录">
+<meta property="og:title" content="全志T113-S3的TinaLinux编译流程记录">
 <meta property="og:url" content="https://zhangkeliang0627.github.io/2024/11/24/%E5%85%A8%E5%BF%97T113-S3%E7%9A%84TinaLinux%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
 <meta property="og:description" content="折磨人的东西，终于是编译出来啦！">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
 <meta property="article:published_time" content="2024-11-24T05:41:00.000Z">
-<meta property="article:modified_time" content="2025-01-09T13:16:01.179Z">
+<meta property="article:modified_time" content="2025-03-03T15:10:25.662Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Allwinner">
-<meta property="article:tag" content="T113-s3">
+<meta property="article:tag" content="T113-S3">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/15.jpg">
   
@@ -37,7 +37,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>全志T113-s3的TinaLinux编译流程记录 - Hugo@kkl</title>
+  <title>全志T113-S3的TinaLinux编译流程记录 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -207,7 +207,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="全志T113-s3的TinaLinux编译流程记录"></span>
+            <span id="subtitle" data-typed-text="全志T113-S3的TinaLinux编译流程记录"></span>
           
         </div>
 
@@ -286,7 +286,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">全志T113-s3的TinaLinux编译流程记录</h1>
+            <h1 id="seo-header">全志T113-S3的TinaLinux编译流程记录</h1>
             
             
               <div class="markdown-body">
@@ -300,8 +300,8 @@
           </div>
 
 <hr>
-<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong>T113-s3</strong>是<strong>全志</strong>的一款非常不错的能够跑Linux系统的Soc，该芯片采用<strong>双核A7</strong>，<strong>主频高达1.2GHz</strong>，具备<strong>高效能</strong>和<strong>低功耗</strong>的特点，<strong>片上内存128MB</strong>，<strong>支持硬件解码</strong>，和D1s Pin to Pin，支持相互替换支持全志提供的Tina Linux SDK，文档齐全，对于DIY玩家来说用于制作一些带显示屏的小设备是非常完美了。</p>
-<p>前阵子在“海鲜市场”低价入了韦东山的T113-s3的开发板，经过一番摸索以后发现了TinaLinux这个新奇的东西，听说是全志基于<code>Openwrt</code>自研的系统（被戏谑为全志家的小女儿。</p>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong>T113-S3</strong>是<strong>全志</strong>的一款非常不错的能够跑Linux系统的Soc，该芯片采用<strong>双核A7</strong>，<strong>主频高达1.2GHz</strong>，具备<strong>高效能</strong>和<strong>低功耗</strong>的特点，<strong>片上内存128MB</strong>，<strong>支持硬件解码</strong>，和D1s Pin to Pin，支持相互替换支持全志提供的Tina Linux SDK，文档齐全，对于DIY玩家来说用于制作一些带显示屏的小设备是非常完美了。</p>
+<p>前阵子在“海鲜市场”低价入了韦东山的T113-S3的开发板，经过一番摸索以后发现了TinaLinux这个新奇的东西，听说是全志基于<code>Openwrt</code>自研的系统（被戏谑为全志家的小女儿。</p>
 <p><strong><em>本篇文章将简述如何迅速地对Tina Linux进行编译、打包，最终生成可烧录的镜像。</em></strong></p>
 <h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul>
 <li>虚拟机：VirtualBox Ubuntu 18.04</li>
@@ -336,7 +336,7 @@
 <p><strong>问题1.</strong> <code>~/tina-d1-h/out/t113-100ask/compile_dir/target/fontconfig-2.13.1/missing: line 81: gperf: command not found</code>：具体错误是缺少 <code>gperf</code> 工具。</p>
 <p><strong>解决方法</strong>：<code>sudo apt-get install gperf</code>，通过系统的软件包管理工具来安装<code>gperf</code>.</p>
 <p><strong>问题2.</strong> Tina-Linux尝试下载<code>qt-5.12.9.tar.xz</code>失败。</p>
-<p><strong>解决方法</strong>：因为我使用T113s3主要还是使用LVGL图形库的，跑Qt还是比较吃力，于是干脆就不编译Qt了，具体方法如下：</p>
+<p><strong>解决方法</strong>：因为我使用T113S3主要还是使用LVGL图形库的，跑Qt还是比较吃力，于是干脆就不编译Qt了，具体方法如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">book@ubuntu1804:~/tina-d1-h$ make menuconfig<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">找到 gui -&gt; Qt，进入其中并把所有的 [*] 都取消，保存并退出，然后重新编译make。</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="烧写更新系统"><a href="#烧写更新系统" class="headerlink" title="烧写更新系统"></a>烧写更新系统</h4><p>编译完成后，执行<code>pack</code>命令即可开始打包系统操作，打包完成后，最后会提示<code>pack finish</code>以及使用<strong>红色背景色</strong>告诉你最终输出的镜像文件。</p>
@@ -391,11 +391,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
-      
         <a href="/tags/Allwinner/" class="print-no-link">#Allwinner</a>
       
-        <a href="/tags/T113-s3/" class="print-no-link">#T113-s3</a>
+        <a href="/tags/T113-S3/" class="print-no-link">#T113-S3</a>
+      
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
       
     </div>
   
@@ -407,7 +407,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>全志T113-s3的TinaLinux编译流程记录</div>
+      <div>全志T113-S3的TinaLinux编译流程记录</div>
       <div>https://zhangkeliang0627.github.io/2024/11/24/全志T113-S3的TinaLinux编译流程记录/README/</div>
     </div>
     <div class="license-meta">
