@@ -304,9 +304,9 @@
     
     <tags>
       
-      <tag>STM32</tag>
-      
       <tag>Project</tag>
+      
+      <tag>STM32</tag>
       
       <tag>SimpleFOC</tag>
       
@@ -557,13 +557,13 @@
     
     <tags>
       
-      <tag>MQTT</tag>
-      
       <tag>Qt</tag>
       
       <tag>aliyun</tag>
       
       <tag>高德地图</tag>
+      
+      <tag>MQTT</tag>
       
     </tags>
     
@@ -617,9 +617,9 @@
       
       <tag>MCU</tag>
       
-      <tag>STM32</tag>
-      
       <tag>Project</tag>
+      
+      <tag>STM32</tag>
       
       <tag>GUI</tag>
       
@@ -731,9 +731,9 @@
       
       <tag>MCU</tag>
       
-      <tag>STM32</tag>
-      
       <tag>Project</tag>
+      
+      <tag>STM32</tag>
       
       <tag>Camera</tag>
       
@@ -1179,9 +1179,9 @@
       
       <tag>MCU</tag>
       
-      <tag>Lua</tag>
-      
       <tag>STM32</tag>
+      
+      <tag>Lua</tag>
       
     </tags>
     
