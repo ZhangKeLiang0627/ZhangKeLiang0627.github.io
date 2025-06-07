@@ -73,6 +73,9 @@ emmm，说来奇怪，我初使用PicGo的时候，我发现我不能用PicGo查
 关于这个问题的解答，我询问了我的从事后端的盆友。它说，你可以把OSS当作是每一个存储对象都对应着一个URL，这个URL是由文件夹的存储路径决定的。倘若你上传了图片A到文件夹1，返回的永久的URL是`https://hugokkl.com/file1/pictureA.jpg`，云端会根据这个URL到对应的路径当作找到对应的图片。此时你修改该图片A的路径到文件夹2，可是URL却不会改变，会导致文件路径和URL对应不上，云端也不知道去哪里找这个URL对应的图片A了。
 
 于是，最后我选择使用简单粗暴，**扫描文件夹 + 给原来的图片链接加上前缀的方式**完成了图片的迁移以及图床的搭建！这真的很方便！
+
+**然后，源的切换也非常简单，从本地图片存储切换到OSS存储只需要在原来的URL的前面加入前缀`https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/`即可，反之就删除。**
+
 <!-- ![](images/基于阿里云OSS与Hexo与PicGo搭建图床/image-1.png) -->
 ![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/基于阿里云OSS与Hexo与PicGo搭建图床/image-1.png)
 

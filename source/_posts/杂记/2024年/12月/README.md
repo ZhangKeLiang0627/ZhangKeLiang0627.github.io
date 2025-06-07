@@ -2,8 +2,8 @@
 title: 杂记丨12月：最终幻想...
 excerpt: 博客成立一周年啦！这里的冬天也要来到，安啦我们一定都可以平安顺遂！
 tags: [life, record]
-index_img: images/杂记/2024年/12月/image-0.jpg
-banner_img: images/杂记/2024年/12月/image-0.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/12月/image-0.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/12月/image-0.jpg
 categories: Life Page
 comment: 'twikoo'
 date: 2024-12-3 12:59:00
@@ -20,8 +20,13 @@ date: 2024-12-3 12:59:00
 博客成立一周年啦！这里的冬天也要来到，安啦我们一定都可以平安顺遂🎄🎅！！！
 {% endnote %}
 
-<figure>
+<!-- <figure>
 <img src="/images/杂记/2024年/12月/image-1.jpg" alt="摄于大师兄：小野人筷子筒" width = "400" height = "300" style="border-radius: 15px;">
+<figcaption>摄于大师兄：小野人筷子筒</figcaption>
+</figure> -->
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/12月/image-1.jpg" alt="摄于大师兄：小野人筷子筒" width = "400" height = "300" style="border-radius: 15px;">
 <figcaption>摄于大师兄：小野人筷子筒</figcaption>
 </figure>
 
@@ -109,7 +114,8 @@ To be honest，真的做不到，而且我考研的理由比较现实，不为�
 - {% label info @「对啊，好像就只是跑来跑去，什么事都没有做。」 %}
 - {% label success @「但总是会留下些什么吧，留下什么，我们就变成什么样的大人。」 %}
 
-![](images/杂记/2024年/12月/image-2.png)
+<!-- ![](images/杂记/2024年/12月/image-2.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/12月/image-2.png)
 
 
 

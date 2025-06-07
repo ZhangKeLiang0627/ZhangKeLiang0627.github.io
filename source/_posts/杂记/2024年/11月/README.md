@@ -2,8 +2,8 @@
 title: 杂记丨11月：你想活出怎样的人生？
 excerpt: 混沌、迷茫、怀疑、灯光、勇气、坚毅、追寻，你想活出怎样的人生？
 tags: [life, record]
-index_img: images/杂记/2024年/11月/image-1.jpg
-banner_img: images/杂记/2024年/11月/image-2.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/11月/image-1.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/11月/image-2.jpg
 categories: Life Page
 comment: 'twikoo'
 hide: false
@@ -19,7 +19,7 @@ date: 2024-11-19 11:34:00
 
 混沌、迷茫、怀疑、灯光、勇气、坚毅、追寻，你想活出怎样的人生？
 
-{% gi 2 2 %}
+<!-- {% gi 2 2 %}
 <figure>
 <img src="/images/杂记/2024年/11月/Warawara-1.gif" alt="Warawara" width = "300" height = "200" style="border-radius: 15px;">
 <figcaption>Warawara</figcaption>
@@ -30,9 +30,22 @@ date: 2024-11-19 11:34:00
 <figcaption>Warawara</figcaption>
 </figure>
 
-{% endgi %}
+{% endgi %} -->
 
 {% gi 2 2 %}
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/11月/Warawara-1.gif" alt="Warawara" width = "300" height = "200" style="border-radius: 15px;">
+<figcaption>Warawara</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/11月/Warawara-2.gif" alt="Warawara" width = "300" height = "200" style="border-radius: 15px;">
+<figcaption>Warawara</figcaption>
+</figure>
+
+{% endgi %}
+
+<!-- {% gi 2 2 %}
 <figure>
 <img src="/images/杂记/2024年/11月/image-0.jpg" alt="秋天摄于天桥" width = "300" height = "200" style="border-radius: 15px;">
 <figcaption>秋天摄于天桥</figcaption>
@@ -40,6 +53,19 @@ date: 2024-11-19 11:34:00
 
 <figure>
 <img src="/images/杂记/2024年/11月/image-3.jpg" alt="「苍鹭与少年」" width = "300" height = "200" style="border-radius: 15px;">
+<figcaption>「苍鹭与少年」</figcaption>
+</figure>
+
+{% endgi %} -->
+
+{% gi 2 2 %}
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/11月/image-0.jpg" alt="秋天摄于天桥" width = "300" height = "200" style="border-radius: 15px;">
+<figcaption>秋天摄于天桥</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/11月/image-3.jpg" alt="「苍鹭与少年」" width = "300" height = "200" style="border-radius: 15px;">
 <figcaption>「苍鹭与少年」</figcaption>
 </figure>
 

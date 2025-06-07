@@ -2,8 +2,8 @@
 title: 杂记丨5月：云南之旅 - 何为坦诚清醒的人生
 excerpt: 终于来到了我朝思暮想的地方，我想要亲眼看一看...
 tags: [life, record]
-index_img: images/杂记/2025年/5月/image-3.jpg
-banner_img: images/杂记/2025年/5月/image-2.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/5月/image-3.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/5月/image-2.jpg
 categories: Life Page
 comment: 'twikoo'
 date: 2025-5-3 15:26:00

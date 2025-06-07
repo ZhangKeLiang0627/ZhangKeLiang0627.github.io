@@ -4,8 +4,8 @@ excerpt: 咳咳，当然不只是用来科学上网的啦！以学习为主哦�
 tags: [iStoreOS, R2S, 软路由]
 # index_img: /img/post/11.jpg
 # banner_img: /img/post/12.jpg
-index_img: images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-3.png
-banner_img: images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-3.png
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-3.png
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-3.png
 categories: Study Page
 comment: 'twikoo'
 # hide: true
@@ -36,8 +36,13 @@ date: 2025-2-4 17:26:00
 
 `iStoreOS`是入门级的路由系统，也是入门级的`NAS`系统，基于原版`OpenWRT`，在`ARS2`上经过长期迭代，最终开放适配到多个硬件平台，更多信息戳这里参阅：https://github.com/istoreos
 
-<figure>
+<!-- <figure>
 <img src="/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-2.png" alt="iStoreOS" width = "650" height = "450" style="border-radius: 10px;">
+<figcaption>iStoreOS</figcaption>
+</figure> -->
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-2.png" alt="iStoreOS" width = "650" height = "450" style="border-radius: 10px;">
 <figcaption>iStoreOS</figcaption>
 </figure>
 
@@ -73,11 +78,13 @@ date: 2025-2-4 17:26:00
 不知道为啥我用电脑无法下载，最后我拿手机浏览器把固件下载了下来hahah，然后传到电脑就好。
 {% endnote %}
 
-![R2S iStoreOS固件](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-5.png)
+<!-- ![R2S iStoreOS固件](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-5.png) -->
+![R2S iStoreOS固件](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-5.png)
 
 然后使用[Balena](https://www.balena.io/)对tf卡进行烧录即可，烧录完将tf卡插到R2S上然后就可以上电啦。
 
-![Balena](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-4.png)
+<!-- ![Balena](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-4.png) -->
+![Balena](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-4.png)
 
 #### 设置为旁路由模式
 
@@ -105,15 +112,18 @@ date: 2025-2-4 17:26:00
 
 然后再在浏览器中输入 192.168.100.1，默认账号为 root，默认密码为 password，进入iStoreOS系统操作界面。
 
-![](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-8.png)
+<!-- ![](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-8.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-8.png)
 
 点击`网络向导`选项，然后选择`配置为旁路由`：
 
-![](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-9.png)
+<!-- ![](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-9.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-9.png)
 
 接着设置旁路由自身的IP地址为 192.168.0.2（只要和主路由同一个网段即可，以及主路由的IP地址等（此步可以选择自动设置：
 
-![](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-10.png)
+<!-- ![](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-10.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-10.png)
 
 设置完成后，`R2S`自己会重启，我们现在可以将电脑的IP地址修改回原样啦（或者 192.168.0.xxx 内选一个。
 
@@ -121,7 +131,8 @@ date: 2025-2-4 17:26:00
 
 此时设置一下防火墙：网络->防火墙->IP动态伪装☑️
 
-![](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-11.png)
+<!-- ![](images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-11.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/iStoreOS-基于R2S用最简单的姿势玩转软路由/image-11.png)
 
 此时，旁路由的系统设置就完成了，接下来我们来简单指路科学上网的功能（浅浅提一嘴，最后安装[代理科学上网插件](https://github.com/AUK9527/Are-u-ok)就好啦。
 

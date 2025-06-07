@@ -4,8 +4,8 @@ excerpt: 今天！一起来复刻🙆！
 tags: [Allwinner, T113-S3, Ubuntu]
 # index_img: /img/post/11.jpg
 # banner_img: /img/post/12.jpg
-index_img: images/关于基于全志T113-S3的86-Screen的一切/image-1.jpg
-banner_img: images/关于基于全志T113-S3的86-Screen的一切/image.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-1.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image.jpg
 categories: Project Page
 comment: 'twikoo'
 # hide: true
@@ -33,7 +33,7 @@ hahaha标题有点吹大了哈，虽然说是关于一切，但再细节的东�
 {% endnote %}
 
 
-{% gi 2 2 %}
+<!-- {% gi 2 2 %}
 
 <figure>
 <img src="/images/关于基于全志T113-S3的86-Screen的一切/image-1.jpg" alt="snapshot-1" width = "400" height = "200" style="border-radius: 10px;">
@@ -42,6 +42,20 @@ hahaha标题有点吹大了哈，虽然说是关于一切，但再细节的东�
 
 <figure>
 <img src="/images/关于基于全志T113-S3的86-Screen的一切/image-2.jpg" alt="snapshot-2" width = "400" height = "200" style="border-radius: 10px;">
+<figcaption>snapshot-2</figcaption>
+</figure>
+
+{% endgi %} -->
+
+{% gi 2 2 %}
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-1.jpg" alt="snapshot-1" width = "400" height = "200" style="border-radius: 10px;">
+<figcaption>snapshot-1</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-2.jpg" alt="snapshot-2" width = "400" height = "200" style="border-radius: 10px;">
 <figcaption>snapshot-2</figcaption>
 </figure>
 
@@ -91,7 +105,8 @@ hahaha标题有点吹大了哈，虽然说是关于一切，但再细节的东�
 
 #### PCB打样与器件采购
 
-![PCB-3D](images/关于基于全志T113-S3的86-Screen的一切/image.jpg)
+<!-- ![PCB-3D](images/关于基于全志T113-S3的86-Screen的一切/image.jpg) -->
+![PCB-3D](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image.jpg)
 
 - 打样参数：1.6mm、无阻抗需求
 
@@ -148,7 +163,8 @@ groups ubuntu20
 
 记得选择开发板要选`t113_pi-tina`
 
-![](images/关于基于全志T113-S3的86-Screen的一切/image-2.png)
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image-2.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-2.png)
 
 ...
 
@@ -158,7 +174,8 @@ groups ubuntu20
 
 **Q：TINA在编译打包PACK之后出现ERROR: unable to open file boot-resource.fex？**
 
-![](images/关于基于全志T113-S3的86-Screen的一切/image-3.jpg)
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image-3.jpg) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-3.jpg)
 
 A：解决方法：安装`i386 gcc`兼容包 `sudo apt-get install libc6:i386 libgcc1:i386 libstdc++6:i386 -y`
 
@@ -171,7 +188,8 @@ A：解决方法：安装`i386 gcc`兼容包 `sudo apt-get install libc6:i386 li
 
 **Q：TINA在编译时出现ERROR诸如此类: /bin/sh:1: cc: not found？**
 
-![](images/关于基于全志T113-S3的86-Screen的一切/image-3.png)
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image-3.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-3.png)
 
 A：解决方法：你编译环境没搞好，`gcc`的安装包没装上，估计还有许多安装包都没有装上，所以请执行以下命令，重新安装编译环境（根据你的ubuntu的版本）：
 
@@ -255,7 +273,8 @@ sudo apt-get install p7zip-full
 > 文章参考2：https://bbs.aw-ol.com/topic/3461/问题解决-使用sd卡启动系统时-文件系统为只读状态
 
 执行`make menuconfig`，找到对应目录，勾选`e2fsprogs`，如图：
-![](images/关于基于全志T113-S3的86-Screen的一切/image-4.png)
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image-4.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-4.png)
 
 然后分区表`sys_partition.fex`当中加入`rootfs_data`（若已有，就不用，操作如下：
 ```bash
@@ -281,7 +300,8 @@ gedit ~/tina-d1-h/device/config/chips/t113/configs/100ask/sys_partition.fex
 
 图片的分辨率要求在屏幕的分辨率范围内，如这里使用的86屏的分辨率是480x480像素，所以我们准备的图片的分辨率就要小于480x480，我在这准备了一张图片（我的头像，240x240像素：
 
-![bootlogo.bmp](images/关于基于全志T113-S3的86-Screen的一切/bootlogo.bmp)
+<!-- ![bootlogo.bmp](images/关于基于全志T113-S3的86-Screen的一切/bootlogo.bmp) -->
+![bootlogo.bmp](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/bootlogo.bmp)
 
 将这个图片拷贝到`~/tina-sdk/device/config/chips/t113/configs/pi/configs/`
 
@@ -293,9 +313,10 @@ gedit ~/tina-d1-h/device/config/chips/t113/configs/100ask/sys_partition.fex
 
 {% gi 2 2 %}
 
-![](images/关于基于全志T113-S3的86-Screen的一切/image.png)
-![](images/关于基于全志T113-S3的86-Screen的一切/image-1.png)
-
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image.png)
+![](images/关于基于全志T113-S3的86-Screen的一切/image-1.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image.png)
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-1.png)
 {% endgi %}
 
 修改`sun8iw20p1_uart3_defconfig`，路径为`/home/taiji/tina-sdk/lichee/brandy-2.0/u-boot-2018/configs/sun8iw20p1_uart3_defconfig`，在末尾加上下面两句：
@@ -308,7 +329,8 @@ CONFIG_LCD_SUPPORT_ST7701S_86=y
 ##### 编译、测试
 然后，编译打包，上电测试，看看效果吧！
 
-![](images/关于基于全志T113-S3的86-Screen的一切/image-4.jpg)
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image-4.jpg) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-4.jpg)
 
 ##### BTW
 
@@ -633,7 +655,8 @@ m # 当前播放的音视频的详细参数属性
 
 展示一下我的实际效果，弹钢琴的帅老头大家应该都很熟悉了吧haha：
 
-![](images/关于基于全志T113-S3的86-Screen的一切/image-5.jpg)
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image-5.jpg) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-5.jpg)
 
 #### 关于U盘的挂载
 
@@ -641,7 +664,8 @@ m # 当前播放的音视频的详细参数属性
 
 当我们往开发板的USB口插入U盘时，设备会自动识别到U盘，你可以在`dev`文件夹下看到新增了诸如`sda`的设备，此时说明咱们的U盘已经连接到开发板，接下来执行`mount /dev/sda /mnt/exUDISK/`挂载U盘设备到`/mnt/exUDISK`文件夹中。顺利的话，接下来cd到该文件夹，你就能读取到U盘当中的内容啦！
 
-![默认挂载设备节点](images/关于基于全志T113-S3的86-Screen的一切/image-5.png)
+<!-- ![默认挂载设备节点](images/关于基于全志T113-S3的86-Screen的一切/image-5.png) -->
+![默认挂载设备节点](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-5.png)
 
 ##### 自动挂载
 
@@ -657,19 +681,27 @@ m # 当前播放的音视频的详细参数属性
 
 env.cfg的路径参考`/home/hugokkl/tina-d1-h/device/config/chips/t113/configs/100ask/env.cfg`
 
-![](images/关于基于全志T113-S3的86-Screen的一切/image-6.png)
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image-6.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-6.png)
 
 #### 修改kernel_menuconfig
 
-![勾选(1](images/关于基于全志T113-S3的86-Screen的一切/image-7.png)
+<!-- ![勾选(1](images/关于基于全志T113-S3的86-Screen的一切/image-7.png)
 ![勾选(2](images/关于基于全志T113-S3的86-Screen的一切/image-8.png)
 ![搜索"Framebuffer"](images/关于基于全志T113-S3的86-Screen的一切/image-9.png)
 ![选择"1"](images/关于基于全志T113-S3的86-Screen的一切/image-10.png)
-![勾选(3](images/关于基于全志T113-S3的86-Screen的一切/image-11.png)
+![勾选(3](images/关于基于全志T113-S3的86-Screen的一切/image-11.png) -->
+
+![勾选(1](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-7.png)
+![勾选(2](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-8.png)
+![搜索"Framebuffer"](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-9.png)
+![选择"1"](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-10.png)
+![勾选(3](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-11.png)
 
 然后就配置完成，重新编译打包啦！下面是显示效果展示：
 
-![](images/关于基于全志T113-S3的86-Screen的一切/image-6.jpg)
+<!-- ![](images/关于基于全志T113-S3的86-Screen的一切/image-6.jpg) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-6.jpg)
 
 #### LVGL示例测试
 

@@ -2,8 +2,8 @@
 title: 杂记丨3月：我与寂寞健康生活
 excerpt: 分为三篇：跌下领奖台、三月下起了大雨、我与寂寞健康生活。
 tags: [life, record]
-index_img: images/杂记/2025年/3月/image-4.jpg
-banner_img: images/杂记/2025年/3月/image-2.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/3月/image-4.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/3月/image-2.jpg
 categories: Life Page
 comment: 'twikoo'
 date: 2025-3-1 16:00:00
@@ -39,7 +39,8 @@ date: 2025-3-1 16:00:00
 	id="417859121">
 </meting-js>
 
-![](images/杂记/2025年/3月/image-3.jpg)
+<!-- ![](images/杂记/2025年/3月/image-3.jpg) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/3月/image-3.jpg)
 
 <!-- 考研成绩出来的那一天，我记得时间是2025年2月24号，星期一的下午3点整。为了不被任何事情打扰的查分，我特地跟公司请了半天假，这是我第一次开口要请假，理由是要处理学校新学期注册的事宜。拜托，我自己心里清楚得很，大四除了论文答辩，能有什么事情值得这么着急要走？
 
@@ -75,8 +76,13 @@ Plus: 展图是实习公司年会抽奖时，我中奖啦（是一个破壁机�
 	id="2635125903">
 </meting-js>
 
-<figure>
+<!-- <figure>
 <img src="/images/杂记/2025年/3月/image-1.jpg" alt="Grandma's hand" width = "500" height = "500" style="border-radius: 10px;">
+<figcaption>Grandma's hand</figcaption>
+</figure> -->
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/3月/image-1.jpg" alt="Grandma's hand" width = "500" height = "500" style="border-radius: 10px;">
 <figcaption>Grandma's hand</figcaption>
 </figure>
 

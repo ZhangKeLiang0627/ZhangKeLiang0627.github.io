@@ -77,13 +77,15 @@ gpio-keys {
 // wakeup-source：是否作为唤醒源，配置了这个项的按键可以作为唤醒源唤醒系统
 ```
 
-![board.dts add gpio-keys](images/在全志T113-S3的TinaLinux上添加驱动支持/image-11.png)
+<!-- ![board.dts add gpio-keys](images/在全志T113-S3的TinaLinux上添加驱动支持/image-11.png) -->
+![board.dts add gpio-keys](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-11.png)
 
 {% note warning %}
 注意：添加节点之后请检查整个设备中是否存在其他设备使用`PB4`引脚的问题！
 {% endnote %}
 
-![make sure Pin-PB4 is available](images/在全志T113-S3的TinaLinux上添加驱动支持/image-12.png)
+<!-- ![make sure Pin-PB4 is available](images/在全志T113-S3的TinaLinux上添加驱动支持/image-12.png) -->
+![make sure Pin-PB4 is available](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-12.png)
 
 ##### 增加内核模块
 
@@ -97,7 +99,8 @@ gpio-keys {
 
 > Kernel modules > Input modules > kmod-input-gpio-keys
 
-![menuconfig](images/在全志T113-S3的TinaLinux上添加驱动支持/image-13.png)
+<!-- ![menuconfig](images/在全志T113-S3的TinaLinux上添加驱动支持/image-13.png) -->
+![menuconfig](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-13.png)
 
 选中后，保存并退出，执行`make`命令，等待编译完成，打包烧录一气呵成，我们已经非常熟练了，[还不会的戳这里w=w](https://zhangkeliang0627.github.io/2024/11/24/全志T113-S3的TinaLinux编译流程记录/README)。
 
@@ -105,17 +108,20 @@ gpio-keys {
 
 - 查看是否出现新的`input`设备节点：`cat /proc/bus/input/devices`，**注意你的节点可能会跟示例中不一样，可能是`event1`或者其他，照常操作对其就行。**
 
-![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-14.png)
+<!-- ![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-14.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-14.png)
 
 - 通过`cat`命令去捕获`event3`的操作：先输入命令行`cat /dev/input/event3`，然后按下`User-Key`按键，就能看见系统打印出来的信息（因为没有专门的用户程序去操作，所以看到的数据是乱码，正常现象，到这里咱们的按键驱动就打好啦！
 
-![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-15.png)
+<!-- ![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-15.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-15.png)
 
 #### 添加xr829驱动（WiFi & BLE
 
 > 这段的100ask原文档支持：[->戳这里:P](https://dshanpi.100ask.net/docs/D1s-CVBS/part6/TransplantingWiFiModuleXR829IntoD1s)
 
-![read-only system](images/在全志T113-S3的TinaLinux上添加驱动支持/image.png)
+<!-- ![read-only system](images/在全志T113-S3的TinaLinux上添加驱动支持/image.png) -->
+![read-only system](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image.png)
 
 其实100ask的T113s3这个tina-linux的镜像是适配了`xr829驱动`的，但是由于`rootfs`设置成了只可读系统，于是无法正常的初始化`wpa_supplicant`。现在我们就要解决这个只可读的问题，需要把原来的根文件系统 (squashfs) 改为 (ext4)，于是我们需要对内核进行以下步骤的修改：
 
@@ -131,7 +137,8 @@ gpio-keys {
 
 > \>File Systems
 
-![make kernel_menuconfig](images/在全志T113-S3的TinaLinux上添加驱动支持/image-1.png)
+<!-- ![make kernel_menuconfig](images/在全志T113-S3的TinaLinux上添加驱动支持/image-1.png) -->
+![make kernel_menuconfig](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-1.png)
 
 ##### 对`menuconfig`进行一些修改
 
@@ -139,9 +146,13 @@ gpio-keys {
 
 > \>Target Images
 
-{% gi 2 2 %}
+<!-- {% gi 2 2 %}
 ![make menuconfig](images/在全志T113-S3的TinaLinux上添加驱动支持/image-2.png)
 ![make menuconfig](images/在全志T113-S3的TinaLinux上添加驱动支持/image-3.png)
+{% endgi %} -->
+{% gi 2 2 %}
+![make menuconfig](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-2.png)
+![make menuconfig](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-3.png)
 {% endgi %}
 
 ##### 编译内核与打包镜像（make & pack
@@ -150,7 +161,7 @@ gpio-keys {
 
 如果`pack`过程中遇到下图问题，可以执行`gedit ~/tina-d1-h/device/config/chips/t113/configs/100ask/sys_partition.fex`，修改大一些对应的分区容量：
 
-{% gi 2 2 %}
+<!-- {% gi 2 2 %}
 <figure>
 <img src="/images/在全志T113-S3的TinaLinux上添加驱动支持/image-4.png" alt="dl包过大的报错" width = "300" height = "150" style="border-radius: 10px;">
 <figcaption>dl包过大的报错</figcaption>
@@ -158,6 +169,18 @@ gpio-keys {
 
 <figure>
 <img src="/images/在全志T113-S3的TinaLinux上添加驱动支持/image-5.png" alt="dl包过大的报错" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>dl包过大的报错</figcaption>
+</figure>
+{% endgi %} -->
+
+{% gi 2 2 %}
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-4.png" alt="dl包过大的报错" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>dl包过大的报错</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-5.png" alt="dl包过大的报错" width = "300" height = "150" style="border-radius: 10px;">
 <figcaption>dl包过大的报错</figcaption>
 </figure>
 {% endgi %}
@@ -174,23 +197,27 @@ gpio-keys {
 
 - 执行`ps`，查看 wpa_supplicant 是否启动成功（如下图，如果没有下图显示wpa_supplicant进程正在运行，说明启动失败：
 
-![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-6.png)
+<!-- ![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-6.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-6.png)
 
 - 可以尝试手动启动wpa_supplicant：`wpa_supplicant -i wlan0 -Dnl80211 -c/etc/wifi/wpa_supplicant.conf -O /etc/wifi/sockets -B`
 
 - 确认wpa_supplicant启动成功，可以进行WiFi扫描测试验证一下效果：`wifi_scan_results_test`
 
-![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-7.png)
+<!-- ![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-7.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-7.png)
 
 - WiFi联网测试，`wifi_connect_ap_test <ssid> <pwd>`：`wifi_connect_ap_test HUGO 12345678`
 
 - 查看 ip 地址：`ifconfig`
 
-![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-8.png)
+<!-- ![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-8.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-8.png)
 
 - ping 百度测试：`ping www.baidu.com`
 
-![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-9.png)
+<!-- ![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-9.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-9.png)
 
 
 ##### FAQ
@@ -198,7 +225,8 @@ gpio-keys {
 {% note primary %}
 **Q：rootfs 已经更换为 ext4，为什么开发板卡在“无法加载根文件系统”这儿了（如图？**
 
-![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-10.png)
+<!-- ![](images/在全志T113-S3的TinaLinux上添加驱动支持/image-10.png) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/在全志T113-S3的TinaLinux上添加驱动支持/image-10.png)
 
 A：没有进行`make kernel_menuconfig -> File Systems -> <*> The Extended 4 (ext4) filesystem`。
 {% endnote %}

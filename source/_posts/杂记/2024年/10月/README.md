@@ -2,8 +2,8 @@
 title: 杂记丨10月：思乡只是一个情绪
 excerpt: 提前刊登：无论在什么地方，人们总会在最寥寥的夜晚里被难以名状的乡愁紧紧地套牢桎梏，但是，明明思乡只是一个情绪而已...
 tags: [life, record]
-index_img: images/杂记/2024年/10月/image-0.jpg
-banner_img: images/杂记/2024年/10月/image-1.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/image-0.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/image-1.jpg
 categories: Life Page
 comment: 'twikoo'
 date: 2024-9-22 15:18:00
@@ -24,7 +24,7 @@ date: 2024-9-22 15:18:00
 
 该要逃向哪里呢？还能逃去哪里呢？无论在什么地方，人们总会在最寥寥的夜晚里被难以名状的乡愁紧紧地套牢桎梏，但是，明明思乡只是一个情绪而已...
 
-{% gi 2 2 %}
+<!-- {% gi 2 2 %}
 <figure>
 <img src="/images/杂记/2024年/10月/image-0.jpg" alt="FORM ALBUMS OF JVKE" width = "300" height = "300" style="border-radius: 15px;">
 <figcaption>FORM ALBUMS OF JVKE</figcaption>
@@ -34,7 +34,21 @@ date: 2024-9-22 15:18:00
 <img src="/images/杂记/2024年/10月/image-1.jpg" alt="摄于家附近的公园：木棉花树" width = "300" height = "300" style="border-radius: 15px;">
 <figcaption>摄于家附近的公园：木棉花树</figcaption>
 </figure>
+{% endgi %} -->
+
+{% gi 2 2 %}
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/image-0.jpg" alt="FORM ALBUMS OF JVKE" width = "300" height = "300" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/image-1.jpg" alt="摄于家附近的公园：木棉花树" width = "300" height = "300" style="border-radius: 15px;">
+<figcaption>摄于家附近的公园：木棉花树</figcaption>
+</figure>
 {% endgi %}
+
+
 
 ---
 
@@ -99,13 +113,16 @@ date: 2024-9-22 15:18:00
 
 这次杂记使用的封面来自于ALBUMS OF JVKE，歌手JVKE的` this is what ____ feels like `系列专辑封面，很美（歌也美，设计灵感来源于梵高的《盛开的杏花》。
 
-<figure>
+<!-- <figure>
 <img src="/images/杂记/2024年/10月/image-2.jpg" alt="梵高家族永不出售的画作——《盛开的杏花》" width = "300" height = "300" style="border-radius: 15px;">
+<figcaption>梵高家族永不出售的画作——《盛开的杏花》</figcaption>
+</figure> -->
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/image-2.jpg" alt="梵高家族永不出售的画作——《盛开的杏花》" width = "300" height = "300" style="border-radius: 15px;">
 <figcaption>梵高家族永不出售的画作——《盛开的杏花》</figcaption>
 </figure>
 
-
-{% gi 12 4-4-4-4 %}
+<!-- {% gi 12 4-4-4-4 %}
 <figure>
 <img src="/images/杂记/2024年/10月/album-1.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
 <figcaption>FORM ALBUMS OF JVKE</figcaption>
@@ -163,6 +180,69 @@ date: 2024-9-22 15:18:00
 
 <figure>
 <img src="/images/杂记/2024年/10月/album-12.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+{% endgi %} -->
+
+{% gi 12 4-4-4-4 %}
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-1.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-2.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-3.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-4.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-5.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-6.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-7.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-8.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-9.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-10.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-11.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
+<figcaption>FORM ALBUMS OF JVKE</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2024年/10月/album-12.jpg" alt="FORM ALBUMS OF JVKE" width = "200" height = "200" style="border-radius: 15px;">
 <figcaption>FORM ALBUMS OF JVKE</figcaption>
 </figure>
 

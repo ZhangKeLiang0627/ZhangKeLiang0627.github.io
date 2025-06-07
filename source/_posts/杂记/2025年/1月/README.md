@@ -2,8 +2,8 @@
 title: 杂记丨1月：小病缠新生
 excerpt: 小病缠新生，每天都在倒计时中度过...
 tags: [life, record]
-index_img: images/杂记/2025年/1月/image-1.jpg
-banner_img: images/杂记/2025年/1月/image-1.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-1.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-1.jpg
 categories: Life Page
 comment: 'twikoo'
 date: 2025-1-26 22:31:00
@@ -26,7 +26,7 @@ date: 2025-1-26 22:31:00
 
 第一回参加黑客松(hackathon)就是参加工作以后的第三天hahaha，周三（8号）开始上班，周六日就要被拉去做技术支持（还是一点都不了解自己公司产品的情况下，于是很尴尬的这边跟着menter点点头，那边听听叽里呱啦不明不白的英文。但回过头来，还是一个不错的周末吧...
 
-{% gi 12 4-4-4 %}
+<!-- {% gi 12 4-4-4 %}
 
 <figure>
 <img src="/images/杂记/2025年/1月/image-2.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
@@ -88,6 +88,70 @@ date: 2025-1-26 22:31:00
 <figcaption>---</figcaption>
 </figure>
 
+{% endgi %} -->
+
+{% gi 12 4-4-4 %}
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-2.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-3.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-4.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-5.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-6.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-7.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-8.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-9.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-10.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-11.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-12.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-13.jpg" alt="---" width = "300" height = "150" style="border-radius: 10px;">
+<figcaption>---</figcaption>
+</figure>
+
 {% endgi %}
 
 ### 2025/1/18 - 小病缠新生
@@ -129,6 +193,8 @@ date: 2025-1-26 22:31:00
 
 {% endnote %}
 
-![](images/杂记/2025年/1月/image-0.jpg)
+<!-- ![](images/杂记/2025年/1月/image-0.jpg) -->
+
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/1月/image-0.jpg)
 
 ---

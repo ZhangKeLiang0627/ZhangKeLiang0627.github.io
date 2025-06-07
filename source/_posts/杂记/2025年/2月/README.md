@@ -2,8 +2,8 @@
 title: 杂记丨2月：来，让我们以葡萄汁代酒！
 excerpt: 来，让我们以葡萄汁代酒！Salute!!!
 tags: [life, record]
-index_img: images/杂记/2025年/2月/image-0.jpg
-banner_img: images/杂记/2025年/2月/image-5.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/2月/image-0.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/2月/image-5.jpg
 categories: Life Page
 comment: 'twikoo'
 date: 2025-2-7 22:31:00
@@ -20,13 +20,19 @@ date: 2025-2-7 22:31:00
 活力猫猫头，猫猫头活力！赐予我活力！
 {% endnote %}
 
-{% gi 4 4 %}
+<!-- {% gi 4 4 %}
 ![little-cat](images/杂记/2025年/2月/cat-1.gif)
 ![little-cat](images/杂记/2025年/2月/cat-2.gif)
 ![little-cat](images/杂记/2025年/2月/cat-3.gif)
 ![little-cat](images/杂记/2025年/2月/cat-4.gif)
-{% endgi %}
+{% endgi %} -->
 
+{% gi 4 4 %}
+![little-cat](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/2月/cat-1.gif)
+![little-cat](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/2月/cat-2.gif)
+![little-cat](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/2月/cat-3.gif)
+![little-cat](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/2月/cat-4.gif)
+{% endgi %}
 ---
 
 ### 2025/2/7 - 来，让我们以葡萄汁代酒！
@@ -113,14 +119,16 @@ Btw，公司的洗手间竟然如此朝南，一片华丽的半身窗不染一�
 **Thanks your gift!!! Love that soooooo much!!! 
 to我亲爱的妹妹，祝你在英国的游学一切顺利!
 ——2024/1/29**
-![](images/杂记/2025年/2月/image-1.jpg)
+<!-- ![](images/杂记/2025年/2月/image-1.jpg) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/2月/image-1.jpg)
 
 {% endnote %}
 
 {% note info %}
 
 **最近在回顾老剧，发现终极三国好多好多聚餐和干杯喔，举杯还会齐呼`Salute`，也太超前!**
-![](images/杂记/2025年/2月/image-2.jpg)
+<!-- ![](images/杂记/2025年/2月/image-2.jpg) -->
+![](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/2月/image-2.jpg)
 
 {% endnote %}
 

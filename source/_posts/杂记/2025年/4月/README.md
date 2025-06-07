@@ -2,8 +2,8 @@
 title: 杂记丨4月：冷静的鼻血
 excerpt: 冷静的鼻血、愚人节快乐、火烧简历...
 tags: [life, record]
-index_img: images/杂记/2025年/4月/image-0.jpg
-banner_img: images/杂记/2025年/4月/image-4.jpg
+index_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-0.jpg
+banner_img: https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-4.jpg
 categories: Life Page
 comment: 'twikoo'
 date: 2025-4-3 00:47:00
@@ -37,8 +37,7 @@ date: 2025-4-3 00:47:00
 
 我伫立在沥青道上，掏出手机拍照，正要把这片景色毫无保留地收纳进一张张压缩编码文件中，不放过每一个角度，才发现相片像是被椒盐刷洗过，黑白与颗粒，噪声吞噬着回忆。一阵大风吹来，衣角和头发丝纷飞，我听见血液流淌的声音，哗哗哗...如此湍急，如此步履不停。日子是连续不断地到来，这座美丽的校园，又何尝不是这样呢？
 
-
-<figure>
+<!-- <figure>
 <img src="/images/杂记/2025年/4月/image-1.jpg" alt="campus-1" width = "500" height = "250" style="border-radius: 10px;">
 <figcaption>campus-1</figcaption>
 </figure>
@@ -50,6 +49,21 @@ date: 2025-4-3 00:47:00
 
 <figure>
 <img src="/images/杂记/2025年/4月/image-3.jpg" alt="campus-3" width = "500" height = "250" style="border-radius: 10px;">
+<figcaption>campus-3</figcaption>
+</figure> -->
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-1.jpg" alt="campus-1" width = "500" height = "250" style="border-radius: 10px;">
+<figcaption>campus-1</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-2.jpg" alt="campus-2" width = "500" height = "250" style="border-radius: 10px;">
+<figcaption>campus-2</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-3.jpg" alt="campus-3" width = "500" height = "250" style="border-radius: 10px;">
 <figcaption>campus-3</figcaption>
 </figure>
 ...
@@ -105,8 +119,13 @@ date: 2025-4-3 00:47:00
 
 在老东家工作快要三个多月了，今天是在这里的last day，来聊一下这段时间上班的感受。
 
-<figure>
+<!-- <figure>
 <img src="/images/杂记/2025年/4月/image-5.jpg" alt="工位预览：拼好屏" width = "500" height = "250" style="border-radius: 10px;">
+<figcaption>工位预览：拼好屏</figcaption>
+</figure> -->
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-5.jpg" alt="工位预览：拼好屏" width = "500" height = "250" style="border-radius: 10px;">
 <figcaption>工位预览：拼好屏</figcaption>
 </figure>
 
@@ -126,7 +145,7 @@ date: 2025-4-3 00:47:00
 
 然而，一手抓实习、一手抓论文、一手抓春招，这种成为八爪章鱼的感觉往往都是无奈的（章鱼哥face。时间紧任务重，我不得不利用中午下班午休的一个半小时和晚上早早下班的时间来准备春招，之后的中午都一个人在吃饭，火速解决午餐就在楼下的麦当劳里背八股，有时会绕着整个园区兜一圈，边散步边背，有时候坐在公司的露天阳台晒太阳；晚上刷算法题，一个个企业官网投递简历，就这么循环往复。
 
-<figure>
+<!-- <figure>
 <img src="/images/杂记/2025年/4月/image-6.jpg" alt="老东家阳台上的花" width = "400" height = "400" style="border-radius: 10px;">
 <figcaption>老东家阳台上的花</figcaption>
 </figure>
@@ -134,12 +153,27 @@ date: 2025-4-3 00:47:00
 <figure>
 <img src="/images/杂记/2025年/4月/image-7.jpg" alt="在老东家上班的最后一顿午餐" width = "400" height = "400" style="border-radius: 10px;">
 <figcaption>在老东家上班的最后一顿午餐</figcaption>
+</figure> -->
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-6.jpg" alt="老东家阳台上的花" width = "400" height = "400" style="border-radius: 10px;">
+<figcaption>老东家阳台上的花</figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-7.jpg" alt="在老东家上班的最后一顿午餐" width = "400" height = "400" style="border-radius: 10px;">
+<figcaption>在老东家上班的最后一顿午餐</figcaption>
 </figure>
 
 其实心里面还是有点对不起老东家的，但想到这份已经能够能预料到的无趣未来，可怖驱使着内心仅存的一点气力，我总是暗示自己一定可以的一定会好起来的，只要坚持一定就可以打赢这场持久的战役...
 
-<figure>
+<!-- <figure>
 <img src="/images/杂记/2025年/4月/image-8.jpg" alt="啤酒小镇的玩具店门口的公仔" width = "500" height = "250" style="border-radius: 10px;">
+<figcaption>啤酒小镇的玩具店门口的公仔</figcaption>
+</figure> -->
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-8.jpg" alt="啤酒小镇的玩具店门口的公仔" width = "500" height = "250" style="border-radius: 10px;">
 <figcaption>啤酒小镇的玩具店门口的公仔</figcaption>
 </figure>
 
@@ -202,7 +236,7 @@ _**你知道吗，但是我始终有一个感觉，就是...一切即将要好�
 
 回家恰逢家里人要去重新打一个黄金戒指（原来的戒指尺寸有点小了，融了直接做一个更大的，于是参观了一回古法炼戒！
 
-{% gi 5 5 %}
+<!-- {% gi 5 5 %}
 
 <figure>
 <img src="/images/杂记/2025年/4月/image-9.jpg" alt="" width = "400" height = "400" style="border-radius: 10px;">
@@ -229,6 +263,34 @@ _**你知道吗，但是我始终有一个感觉，就是...一切即将要好�
 <figcaption></figcaption>
 </figure>
 
+{% endgi %} -->
+
+{% gi 5 5 %}
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-9.jpg" alt="" width = "400" height = "400" style="border-radius: 10px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-10.jpg" alt="" width = "400" height = "400" style="border-radius: 10px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-11.jpg" alt="" width = "400" height = "400" style="border-radius: 10px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-12.jpg" alt="" width = "400" height = "400" style="border-radius: 10px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/杂记/2025年/4月/image-13.jpg" alt="" width = "400" height = "400" style="border-radius: 10px;">
+<figcaption></figcaption>
+</figure>
 
 {% endgi %}
 
