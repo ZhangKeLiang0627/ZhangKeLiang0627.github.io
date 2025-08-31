@@ -12,24 +12,28 @@ def get_existing_numbers(directory):
     return existing_numbers
 
 def find_next_available_number(existing_numbers):
-    """找到下一个可用的数字"""
+    """找到下一个可用的数字（从0开始寻找最小的空缺）"""
     x = 0
     while x in existing_numbers:
         x += 1
     return x
 
 def rename_jpg_files(directory):
-    """将目录下的所有 JPG 文件按顺序重命名为 image-x.jpg"""
+    """将目录下未命名的JPG文件重命名为image-x.jpg，已命名的保持不变"""
     # 获取目录中已存在的数字
     existing_numbers = get_existing_numbers(directory)
     
-    # 获取所有 JPG 文件并按修改时间排序
-    jpg_files = sorted(
-        [f for f in os.listdir(directory) if f.lower().endswith('.jpg')],
-        key=lambda f: os.path.getmtime(os.path.join(directory, f))
-    )
+    # 获取所有JPG文件，但排除已按image-x.jpg格式命名的文件
+    # 并按修改时间排序
+    jpg_files = []
+    for f in os.listdir(directory):
+        if f.lower().endswith('.jpg') and not re.match(r'image-\d+\.jpg', f, re.IGNORECASE):
+            jpg_files.append(f)
     
-    # 处理每个 JPG 文件
+    # 按修改时间排序
+    jpg_files.sort(key=lambda f: os.path.getmtime(os.path.join(directory, f)))
+    
+    # 处理每个需要重命名的JPG文件
     for filename in jpg_files:
         old_path = os.path.join(directory, filename)
         
@@ -51,4 +55,4 @@ if __name__ == "__main__":
     
     # 执行重命名操作
     rename_jpg_files(script_directory)
-    print("所有 JPG 文件重命名完成!")
+    print("所有未命名的JPG文件重命名完成!")
