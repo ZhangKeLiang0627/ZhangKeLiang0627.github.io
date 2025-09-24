@@ -336,6 +336,14 @@ CONFIG_LCD_SUPPORT_ST7701S_86=y
 
 如果你需要为其他的屏幕添加uboot启动logo，你需要在uboot`brandy2.0`当中手动配置一下屏幕驱动哦！原理和在内核`linux5.4`配置屏幕驱动差不多的。
 
+```bash
+# linux5.4 内核中屏幕驱动文件路径
+cd ~/tina-sdk/lichee/linux-5.4/drivers/video/fbdev/sunxi/disp2/disp/lcd
+
+# brandy2.0 uboot中屏幕驱动文件路径
+cd ~/tina-sdk/lichee/brandy-2.0/u-boot-2018/drivers/video/sunxi/disp2/disp/lcd
+```
+
 然后将`CONFIG_LCD_SUPPORT_ST7701S_86=y`，修改成你的屏幕支持就ok啦！
 
 #### tplayerdemo的使用方法

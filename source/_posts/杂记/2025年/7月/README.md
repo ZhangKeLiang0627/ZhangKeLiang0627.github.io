@@ -28,7 +28,7 @@ hey, hi, how are you doing? 很久很久没有回来了感觉一晃眼对自己�
 
 每回总想计划着，今晚写写月记吧，然而每一回头触碰到枕头的时候，都是敷衍着要不明天再写吧（笑，今天决定不拖延了，现在是七月十九日的早晨五点五十分，周六清晨，天空渐渐蓝，我决定写写最近发生的事情。
 
-我对加班展示还没有非常抵触的心理，想着加班就加班吧，反正回到家也是写代码，无非就是写公司的项目和写自己的项目的区别，讲真的我确实没有几个说的上来的爱好，做项目是一个，玩乐器是一个，我想买架钢琴来着，可是租来的房间逼仄，钢琴一放，行走也就不方便了...
+我对加班暂时还没有非常抵触的心理，想着加班就加班吧，反正回到家也是写代码，无非就是写公司的项目和写自己的项目的区别，讲真的我确实没有几个说的上来的爱好，做项目是一个，玩乐器是一个，我想买架钢琴来着，可是租来的房间逼仄，钢琴一放，行走也就不方便了...
 
 所以我开始在为自己物色一个新的爱好，要求是不费事不费力，新手友好，短时间看得到反馈的。于是，我后来找到了——养绿植！
 
@@ -141,9 +141,19 @@ COMPUTER 不理我
 
 这周买了盆薄荷，准备打算水培养殖。于是在购物平台上下单了一株水培薄荷，三天以后送来土培的植株，估计是在快递包装袋内闷太久也不见日光，叶片都微微泛黄。我花了半个小时清洗它根部的泥土，露出紧紧缠绕的根系，找了一个透明的玻璃瓶灌满水就放进去让它自生自灭了。
 
-第二天下班回来，薄荷叶都出现了黑斑点，昨天黄色的部分都完全枯萎掉了，整个桌子落满，都是腐烂的叶子...坏掉了。
+第二天下班回来，薄荷叶都出现了黑斑点，昨天黄色的部分都完全枯萎掉了，整个桌子落满，都是腐烂的叶子…坏掉了。
 
-腐烂的薄荷，今天早上奇迹般的抽出了新芽...
+腐烂的薄荷，今天早上奇迹般的抽出了新芽…
+
+总想要听到什么好事，喜出望外的，令人振奋的象征，又有什么事物能永久呢？永恒，在我看来是一件奢侈的事情，人间的常态，只会是这份光鲜亮丽的对立面。我们都会消亡的，到最后，我又避免不了把思绪洒在一些关于意义讨论的无聊小事上。
+现在是八点四十四分，我刚下加班，从立交桥下来，到几幢高楼林立间的马路穿梭，停在一个行人十字路口前。我耳边放着法老爷爷的歌，我喜欢下班以后听它们说唱，浑厚的鼓点不分轻重的敲打在耳膜，说不清楚的话，像纷乱的木叶，塞满耳朵，可以让我少想很多事情。就这么从工作中抽身而出，把灵魂交回到它应该在的位置上。
+雨夜行人寥寥，交通灯的光影映在地面坑洼的水渍上显得格外不真实。头顶一把黑伞，绿灯前行，人行道白条纹斑斑驳驳，淅淅沥沥的雨，沾湿我的眼镜。大厦格子间的窗口，总是留着一盏明亮，人在过马路的时候才意识到时间过得如此之快速，超越想象的想象，甚至让人怀疑绿灯确实被做了手脚，我加快了步伐，十、九、八、七、、、
+
+——嚓，一声尖锐的刮擦的鸣声，打破了这份宁静，变成红灯了，交通灯，今天格外刺眼。蓝衣服的人，蓝色的摩托车，就这么倒地不起，在我眼底，我不知道他身子下的是水坑还是…刺眼的红光，像是给他盖了一床被单，那么薄，那么沉重，把水都照成黑色，我驻足，黑色轿车上，有一男一女下来连忙凑前，挠头捂嘴：没事吧？小哥你没事吧？！
+
+我在犹豫要不要报警或者叫白车，面前急促的喇叭声赶着我，我和对面刚骑上共享单车的女人四目相对，似乎谁的视线先离开，谁就必须承担这份社会责任，我最终还是接着走，硬着头皮走，和女人擦肩而过，伞沿撞在一起，抖落水珠，我鞋子湿了，头发也湿了，掏出手机，抵在耳边，佯装。女人见状，又望了望现场，望了望对面十字路口的红灯，飞快地蹬着轮子离开了。
+
+小哥，再没有起来过…吗？我记不清楚了，回家我第一时间冲进浴室不断洗手，似乎想要彻彻底底地洗掉一些不干净的东西，又一次望向这盆腐烂的薄荷：我应该需要继续工作的。
 
 <figure>
 <img src="/images/杂记/2025年/7月/image-18.jpg" alt="" width = "500" height = "300" style="border-radius: 10px;">
@@ -239,6 +249,45 @@ COMPUTER 不理我
 <figcaption></figcaption>
 </figure>
 {% endgi %}
+
+
+**三首有音乐性的说唱歌曲，蛮不错听噢，法老爷爷。**
+
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<meting-js
+	server="netease"
+	type="song"
+	id="1969845255">
+</meting-js>
+
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<meting-js
+	server="netease"
+	type="song"
+	id="2151956989">
+</meting-js>
+
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<meting-js
+	server="netease"
+	type="song"
+	id="1988564487">
+</meting-js>
 
 _**七月到啦，亲爱的社畜朋友，今晚早点回家...**_
 
