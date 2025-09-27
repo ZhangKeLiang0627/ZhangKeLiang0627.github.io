@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E6%9E%81%E5%A5%BD%E7%94%A8%E7%9A%84C%E5%98%8E%E5%98%8E%E6%97%A5%E5%BF%97%E5%BA%93spdlog%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E6%8C%87%E5%8D%97/image-1.png">
 <meta property="article:published_time" content="2025-09-24T13:51:00.000Z">
-<meta property="article:modified_time" content="2025-09-26T17:16:33.861Z">
+<meta property="article:modified_time" content="2025-09-27T07:17:28.489Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="C++">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          817 words
+          1k words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          7 mins
+          9 mins
         
       </span>
     
@@ -296,8 +296,9 @@
 <hr>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>以前在接触一些比较基础的嵌入式MCU项目的时候，写的都是纯C，基本上大家都是直接使用printf来做日志打印与调试，也没有见到哪个项目有将打印输出到log的规范操作，于是也就默认学习大家这么做，任何时候都是printf。</p>
 <p>后面上玩起ESP32，发现乐鑫确实让MCU在封装抽象的路上大大地向前迈出重要的一步，借鉴了许多高级语言的思想，提供的SDK里面也带有分级log的接口，可以畅快地在程序里写C++，可是日志打印依然寒碜的可怜，尤其arduino下的ESP32部分SDK未兼容，日志打印还是printf用的最多。</p>
-<p>后面接触linux的时候，看见很多标准规范的项目里头都有完备的日志系统，spdlog的字眼时常浮现眼前，当时也不以为然，估计是因为自己做的项目的体量实在是小，所以没有这方面的需求。工作后，写代码时，我导总是提起日志的重要性，一旦程序出现了什么崩溃错误，几乎所有资深码农的第一反应就是：赶紧搂一眼日志。我与嵌入式作伴，如今也有三个年头啦，spdlog作为一个高性能的日志库在C++的地位还是无人能敌，基本上所能见的开源项目你都能在代码里发现它的身影…</p>
-<p><em><strong>所以，spdlog好啊，得学啊，因为真男人（女人）必会spdlog（笑！</strong></em></p>
+<p>后面接触linux的时候，看见很多标准规范的项目里头都有完备的日志系统，spdlog的字眼时常浮现眼前，当时也不以为然，估计是因为自己做的项目的体量实在是小，所以没有这方面的需求。</p>
+<p>工作后，写代码时，我导总是提起日志的重要性，一旦程序出现了什么崩溃错误，几乎所有资深码农的第一反应就是：赶紧搂一眼日志。我与嵌入式作伴，如今也有三个年头啦，spdlog作为一个高性能的日志库在C++的地位还是无人能敌，基本上所能见的开源项目你都能在代码里发现它的身影…</p>
+<p><em><strong>所以，spdlog好啊，得学啊，因为真程序猿必会spdlog（笑！</strong></em></p>
 <p>…</p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="spdlog有啥好"><a href="#spdlog有啥好" class="headerlink" title="spdlog有啥好"></a>spdlog有啥好</h3><ul>
 <li><strong>高效且迅速：</strong>就是快，怎么解释，在大量日志记录场景下也能保持较低延迟和较高吞吐量。</li>
@@ -308,8 +309,20 @@
 <h3 id="如何移植"><a href="#如何移植" class="headerlink" title="如何移植"></a>如何移植</h3><p>下载源代码，然后把整个源码目录拷贝到我们对应的项目工程下，然后在makefile或者cmake里面包含这个源码当中的include即可，然后一键编译，不可能会报错滴，这样就算是移植成功了，够不够友好！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 下载源码</span><br>git <span class="hljs-built_in">clone</span> https://github.com/gabime/spdlog<br><br><span class="hljs-comment"># 将源码移入项目当中</span><br><span class="hljs-built_in">mv</span> ./spdlog ./myProject/lib<br><br><span class="hljs-comment"># 最后在makefile或者CmakeList.txt里包含这个./lib/spdlog/include就ok啦</span><br></code></pre></td></tr></table></figure>
 
-
+<h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><p><img src="/images/%E6%9E%81%E5%A5%BD%E7%94%A8%E7%9A%84C%E5%98%8E%E5%98%8E%E6%97%A5%E5%BF%97%E5%BA%93spdlog%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E6%8C%87%E5%8D%97/image-2.png" srcset="/img/loading.gif" lazyload alt="spdlog - 核心概念图"></p>
+<ul>
+<li>logger：日志对象，每个logger内包含一个sink组成的vector容器，每个sink可以分别设置优先级，logger本身也可以设置优先级。</li>
+<li>sink：直译是水槽，实际上是引流的对象或者可以认为sink就是日志输出目标，可以在控制台输出、也可在文件中输出。</li>
+<li>formatter：格式化对象，spdlog有默认的格式，你也可以个性化自定义格式，如[日期时间]、[代码路径]、[函数名]、[行数]、[线程tid]、[logger名称]、[log级别]、[log内容]…</li>
+<li>level：日志级别，spdlog提供了几个日志级别，分别是<span class="label label-default">debug</span>, <span class="label label-info">info</span>, <span class="label label-warning ">warn</span>, <span class="label label-danger">error</span>, <span class="label label-primary">critical</span>.</li>
+</ul>
 <h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>先挖个坑，开个头，不然我怕啥时候又因为忙呀忙呀就忘记了，扯远了，先去干活去，等待填坑…</p>
+<h3 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jinyunshaobing/p/16797330.html">https://www.cnblogs.com/jinyunshaobing/p/16797330.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44339850/article/details/147065186">https://blog.csdn.net/weixin_44339850/article/details/147065186</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/a12jggfdd/article/details/138808399">https://blog.csdn.net/a12jggfdd/article/details/138808399</a></li>
+</ul>
+<p>感谢上述开源教程，学习了很多，抄了很多（笑。</p>
 
                 
               </div>
