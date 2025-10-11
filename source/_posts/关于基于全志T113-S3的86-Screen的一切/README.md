@@ -741,6 +741,63 @@ cd /mnt/UDISK && ./eMP_mainPage
 exit 0
 ```
 
+#### 关于串口设备
+在这块开发板中，原作者设计使用uart0作为console的输出口，同时也在开发板侧面留下了两个串口供大家自行DIY，分别是：uart3和uart5，但是提供的虚拟机当中的设备树里并没有使能这两个串口设备，于是如果你想要使用这两个额外的串口，就需要手动设置，下面我粗略地演示一下，如何在设备树中设置串口驱动（以uart3为例：
+
+首先去到`~/tina-sdk/device/config/chips/t113/configs/pi/linux-5.4/board.dts`.
+
+打开`board.dts`设备树文件，做以下修改：
+
+参照下列步骤图，把uart3对应的引脚进行修改、然后把status改为`okay`，结束！
+
+然后，你就可以重新编译内核，打包镜像啦。
+
+最后你可以在咱们的开发板上`cat /dev/ttyS*`，可以看到`ttyS3`串口设备已经被注册存在啦，然后你就可以愉快的使用它！
+
+{% note warning %}
+注意：要确定所选择的引脚没有被别的外设复用哟！
+{% endnote %}
+
+<figure>
+<img src="/images/关于基于全志T113-S3的86-Screen的一切/image-14.png" alt="开发板外接引脚图" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption>开发板外接引脚图</figcaption>
+</figure>
+
+![uart -> 步骤1](images/关于基于全志T113-S3的86-Screen的一切/image-13.png)
+![uart -> 步骤2](images/关于基于全志T113-S3的86-Screen的一切/image-12.png)
+
+![uart -> 成功](images/关于基于全志T113-S3的86-Screen的一切/image-15.png)
+
+```dts
+&pio {
+
+  uart3_pins_a: uart3_pins@0 {  /* For t113_evb */
+    //pins = "PG8", "PG9";
+    //pins = "PB6", "PB7";
+    pins = "PE8", "PE9";
+    function = "uart3";
+    drive-strength = <10>;
+    bias-pull-up;
+  };
+
+  uart3_pins_b: uart3_pins@1 {  /* For t113_evb */
+    //pins = "PB6", "PB7";
+    pins = "PE8", "PE9";
+    function = "gpio_in";
+  };
+
+}
+
+&uart3 {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&uart3_pins_a>;
+	pinctrl-1 = <&uart3_pins_b>;
+	status = "okay";
+};
+```
+
+_**TODO: 原作者还预留了两个RS485的方向引脚，所以这两个串口还可以作为485总线，后面有空做一下分享吧！**_
+
 ---
 
 ### 写在后面
