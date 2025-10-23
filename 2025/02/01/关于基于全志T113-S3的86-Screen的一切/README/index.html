@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-1.jpg">
 <meta property="article:published_time" content="2025-02-01T07:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-23T14:16:42.650Z">
+<meta property="article:modified_time" content="2025-10-23T17:06:10.047Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Allwinner">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.2k words
+          7.8k words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          60 mins
+          66 mins
         
       </span>
     
@@ -625,8 +625,25 @@
 <figcaption></figcaption>
 </figure>
 
+<h4 id="自定义根目录系统"><a href="#自定义根目录系统" class="headerlink" title="自定义根目录系统"></a>自定义根目录系统</h4><blockquote>
+<p>文章参考：<a target="_blank" rel="noopener" href="https://bbs.aw-ol.com/topic/3907/%E8%AF%B7%E9%97%AE%E4%B8%8B-t113-s3tinalinux-%E5%A6%82%E4%BD%95%E6%96%B0%E5%A2%9E%E6%96%87%E4%BB%B6%E5%88%B0%E6%A0%B9%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%AD">https://bbs.aw-ol.com/topic/3907/请问下-t113-s3tinalinux-如何新增文件到根文件系统中</a></p>
+</blockquote>
+<p>当我们已经对T113-S3和Tina-Linux足够了解，也写了不少程序了，每一次重新烧录镜像就要把程序再拷贝到开发板里，这样还是比较麻烦的。如何能够直接将我们所需要的文件、资源或者库依赖一起打包到镜像里面，生成一个自定义镜像呢，继续往下看吧！</p>
+<p>首先，在对应的地方贴上你需要自定义的文件或者文件夹，如下，根据你的系统做不同的选择：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># procd-init</span><br><span class="hljs-built_in">cd</span> ~/tina-sdk/package/base-files/files<br><br><span class="hljs-comment"># busybox-init</span><br><span class="hljs-built_in">cd</span> ~/tina-sdk/package/busybox-init-base-files/busybox-init-base-files<br></code></pre></td></tr></table></figure>
 
+<p>然后，<code>make</code>，你会发现，如果你在里面放入了可执行文件，就会报错，因为执行make编译的时候会有脚本检测你放入当前路径的内容里面是否包含可执行文件，然后会找到它需要什么库依赖。</p>
+<p>所以，此时编译报错，不要慌，翻翻编译记录，找到如下图所示的一些所需的库依赖：</p>
+<p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-32.png" srcset="/img/loading.gif" lazyload></p>
+<p>然后，在<code>~/tina-sdk/package/busybox-init-base-files/Makefile</code>或者<code>~/tina-sdk/package/base-files/Makefile</code>下添加如下内容（选择哪个Makefile一样是取决于你的系统）：</p>
+<p>引号中改成你缺少的库名字就行啦，你缺什么就echo什么，格式按照下面的来：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-keyword">define</span> Package/<span class="hljs-variable">$(PKG_NAME)</span>/extra_provides<br>	echo <span class="hljs-string">&quot;libasound.so.2&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libc.so.6&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libcdx_base.so&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libfreetype.so.6&quot;</span> \<br>	echo <span class="hljs-string">&quot;libjpeg.so.62&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libm.so.6&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libmad.so.0&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libncurses.so.5&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libpng12.so.0&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libpthread.so.0&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libstdc++.so.6&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libtplayer.so&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libudev.so.1&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libfreetype.so.6&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libjpeg.so.62&quot;</span>; \<br>	echo <span class="hljs-string">&quot;libz.so.1&quot;</span>;<br><span class="hljs-keyword">endef</span><br></code></pre></td></tr></table></figure>
 
+<p>然后，重新编译make，可能你会发现又有新的报错，没关系往上翻编译记录，可能它还是会再报一两次的库依赖缺少，你继续把它缺少的库依赖在Makefile里面echo一下，最后就能编译成功啦，祝你成功！</p>
+<p>接下来，pack，这个时候可能rootfs.fex的空间就不够大了，你需要修改一下<code>gedit ~/tina-sdk/device/config/chips/t113/configs/pi/sys_partition.fex</code></p>
+<p>把<code>rootfs</code>的size改大一些就行了，具体改多大呢，你可以把pack的报错和sys_partition.fex内容一起贴给ai，它会帮你算出一个合理的大小（我就是用豆包算的，der包~</p>
+<p>重新修改后保存，重新再pack，到这一步，基本上就能打包成功啦！</p>
+<p>…</p>
 <hr>
 <h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p>
 <ul>
