@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-1.jpg">
 <meta property="article:published_time" content="2025-02-01T07:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-23T14:14:02.118Z">
+<meta property="article:modified_time" content="2025-10-23T14:16:42.650Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Allwinner">
@@ -509,7 +509,8 @@
 
 <p>然后把最后两个选项的<code>enabled</code>改成<code>1</code>，即可实现开机自动挂载U盘设备啦，但是这种做法有一个缺点，就算无法热插拔，每一次拔出U盘再插回去，就没有办法自动挂载啦。</p>
 <p>所幸，好处是，这种方法没有什么依赖，适合简单的开发使用。</p>
-<h6 id="udev"><a href="#udev" class="headerlink" title="udev"></a>udev</h6><p>好，接下来来到了<code>udev</code>，这个需要你先<code>make menuconfig</code>打开配置项<code>libevdev</code>.</p>
+<h6 id="udev"><a href="#udev" class="headerlink" title="udev"></a>udev</h6><p>好，接下来来到了<code>udev</code>，这可是个好东西，后面有机会单独拿一篇文章出来讲。</p>
+<p>这个需要你先<code>make menuconfig</code>打开配置项<code>libevdev</code>.</p>
 <p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-31.png" srcset="/img/loading.gif" lazyload></p>
 <p>先前往该路径下<code>cd /lib/udev/rules.d</code>，然后新建文件<code>vim 91-mount-udisk.rules</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 91-mount-udisk.rules</span><br>ACTION==<span class="hljs-string">&quot;add&quot;</span>, SUBSYSTEM==<span class="hljs-string">&quot;block&quot;</span>, KERNEL==<span class="hljs-string">&quot;sd[a-z][0-9]&quot;</span>, ENV&#123;DEVTYPE&#125;==<span class="hljs-string">&quot;partition&quot;</span>, ENV&#123;ID_BUS&#125;==<span class="hljs-string">&quot;usb&quot;</span>, ENV&#123;ID_FS_TYPE&#125;!=<span class="hljs-string">&quot;&quot;</span>, RUN+=<span class="hljs-string">&quot;mount -o rw,nosuid,nodev,noexec,relatime,uid=0,gid=0,dmask=000,fmask=111 /dev/%k /mnt/exUDISK&quot;</span><br>ACTION==<span class="hljs-string">&quot;remove&quot;</span>, SUBSYSTEM==<span class="hljs-string">&quot;block&quot;</span>, KERNEL==<span class="hljs-string">&quot;sd[a-z][0-9]&quot;</span>, ENV&#123;DEVTYPE&#125;==<span class="hljs-string">&quot;partition&quot;</span>, ENV&#123;ID_BUS&#125;==<span class="hljs-string">&quot;usb&quot;</span>, ENV&#123;ID_FS_TYPE&#125;!=<span class="hljs-string">&quot;&quot;</span>, RUN+=<span class="hljs-string">&quot;umount -l /mnt/exUDISK&quot;</span><br></code></pre></td></tr></table></figure>
