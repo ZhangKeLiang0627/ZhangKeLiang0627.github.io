@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>关于「基于rk3566的泰山派」的一切</title>
+    <link href="/2025/11/03/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/README/"/>
+    <url>/2025/11/03/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/README/</url>
+    
+    <content type="html"><![CDATA[<h3 id="关于「基于rk3566的泰山派」的一切"><a href="#关于「基于rk3566的泰山派」的一切" class="headerlink" title="关于「基于rk3566的泰山派」的一切"></a>关于「基于rk3566的泰山派」的一切</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-warning">            <p>该笔记目前处于积极开发阶段。</p>          </div><div class="note note-success">            <p>嘿，没错，是我，我又来整活啦！自从一年前花重金188购置了一手嘉立创的泰山派（2 + 16GB），期间跟着教程做了个小手机，然后不出所料的，吃灰了。</p><p>显然这板子在我手上是不允许这样的事情发生的，于是便有了这次的企划，「拯救泰山派行动」！<strong>但是这几天，我花了些时间调查了一下泰山派的生态，做的是真的差劲，就连个像样的镜像都没有，对我这种刚入门的新手非常的不友好。</strong></p><p>所幸，隔壁的野火的鲁班猫系列的sdk挺全面的，又于是乎，咱也来整一个曲线救国，分享一下我是如何用鲁班猫的sdk玩转泰山派的，这里算是给自己开了一个新坑，慢慢填吧，拭目以待！</p>          </div><figure><img src="/images/关于基于rk3566的泰山派的一切/image.png" alt="snapshot-1" width = "800" height = "600" style="border-radius: 10px;"><figcaption>snapshot-1</figcaption></figure><figure><img src="/images/关于基于rk3566的泰山派的一切/image-2.png" alt="snapshot-2" width = "800" height = "600" style="border-radius: 10px;"><figcaption>snapshot-2</figcaption></figure><hr><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong><em>本篇文章将简述如何从零到一玩转「基于rk3566的泰山派」。</em></strong></p><h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><ul><li>虚拟机：VMware Ubuntu 20.04</li><li>开发板：泰山派（2 + 16GB）</li></ul><hr><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="搭建鲁班猫sdk"><a href="#搭建鲁班猫sdk" class="headerlink" title="搭建鲁班猫sdk"></a>搭建鲁班猫sdk</h4><p>…</p><hr><h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p><p>…</p><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>Project Page</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Ubuntu</tag>
+      
+      <tag>rockchip</tag>
+      
+      <tag>rk3566</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>杂记丨10月：偏执的工作狂</title>
     <link href="/2025/10/01/%E6%9D%82%E8%AE%B0/2025%E5%B9%B4/10%E6%9C%88/README/"/>
     <url>/2025/10/01/%E6%9D%82%E8%AE%B0/2025%E5%B9%B4/10%E6%9C%88/README/</url>
