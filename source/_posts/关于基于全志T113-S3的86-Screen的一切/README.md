@@ -670,12 +670,112 @@ m # 当前播放的音视频的详细参数属性
 
 这里基于全志的开发指南[Tina_Linux_存储_开发指南](https://zhangkeliang0627.github.io/images/关于基于全志T113-S3的86-Screen的一切/Tina_Linux_存储_开发指南.pdf)简单讲解一下U盘如何挂载。
 
+##### 手动挂载
+
 当我们往开发板的USB口插入U盘时，设备会自动识别到U盘，你可以在`dev`文件夹下看到新增了诸如`sda`的设备，此时说明咱们的U盘已经连接到开发板，接下来执行`mount /dev/sda /mnt/exUDISK/`挂载U盘设备到`/mnt/exUDISK`文件夹中。顺利的话，接下来cd到该文件夹，你就能读取到U盘当中的内容啦！
 
 <!-- ![默认挂载设备节点](images/关于基于全志T113-S3的86-Screen的一切/image-5.png) -->
 ![默认挂载设备节点](https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/关于基于全志T113-S3的86-Screen的一切/image-5.png)
 
 ##### 自动挂载
+
+千呼万唤使出来，终于，我成功的解决的U盘自动挂载的问题，当然，连同U盘的热插拔问题我也一并解决啦！
+
+这里，我提供两种做法：
+
+###### fstab
+
+使用`fstab`实现U盘的开机自动挂载，此法适合`procd-init`，刚好咱们的86屏就可以使用这个方法.
+
+```bash
+# 列出fstab
+root@TinaLinux:/etc/config# cd /etc/config && cat fstab
+config 'global'
+	option	anon_swap       '0'
+	option	anon_mount      '0'
+	option	auto_swap       '1'
+	option	auto_mount      '1'
+	option	delay_root      '5'
+	option  check_fs        '1'
+
+config 'mount'
+	option  target		'/boot'
+	option	device		'/dev/by-name/boot'
+	option	options		'ro,sync'
+	option	enabled		'1'
+
+config 'mount'
+	option  target		'/boot-res'
+	option	device		'/dev/by-name/boot-res'
+	option	options		'ro,sync'
+	option	enabled		'1'
+
+config 'mount'
+	option  target		'/mnt/UDISK'
+	option	device		'/dev/by-name/UDISK'
+	option	options		'rw,async'
+	option	enabled		'0'
+
+config 'mount'
+	option  target		'/overlay'
+	option	device		'/dev/by-name/UDISK'
+	option	options		'rw,async'
+	option	enabled		'1'
+
+config 'mount'
+	option  target		'/mnt/SDCARD'
+	option	device		'/dev/mmcblk0'
+	option	options		'rw,async'
+	option	enabled		'0'
+
+config 'mount'
+	option  target		'/mnt/SDCARD'
+	option	device		'/dev/mmcblk0p1'
+	option	options		'rw,async'
+	option	enabled		'0'
+
+config 'mount'
+	option  target		'/mnt/exUDISK'
+	option	device		'/dev/sda'
+	option	options		'rw,async'
+	option	enabled		'1'
+
+config 'mount'
+	option  target		'/mnt/exUDISK'
+	option	device		'/dev/sda1'
+	option	options		'rw,async'
+	option	enabled		'1'
+```
+
+然后把最后两个选项的`enabled`改成`1`，即可实现开机自动挂载U盘设备啦，但是这种做法有一个缺点，就算无法热插拔，每一次拔出U盘再插回去，就没有办法自动挂载啦。
+
+所幸，好处是，这种方法没有什么依赖，适合简单的开发使用。
+
+###### udev
+
+好，接下来来到了`udev`，这可是个好东西，后面有机会单独拿一篇文章出来讲。
+
+这个需要你先`make menuconfig`打开配置项`libevdev`.
+
+![](images/关于基于全志T113-S3的86-Screen的一切/image-31.png)
+
+先前往该路径下`cd /lib/udev/rules.d`，然后新建文件`vim 91-mount-udisk.rules`:
+
+```bash
+# 91-mount-udisk.rules
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ENV{DEVTYPE}=="partition", ENV{ID_BUS}=="usb", ENV{ID_FS_TYPE}!="", RUN+="mount -o rw,nosuid,nodev,noexec,relatime,uid=0,gid=0,dmask=000,fmask=111 /dev/%k /mnt/exUDISK"
+ACTION=="remove", SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ENV{DEVTYPE}=="partition", ENV{ID_BUS}=="usb", ENV{ID_FS_TYPE}!="", RUN+="umount -l /mnt/exUDISK"
+```
+
+然后保存退出，重新加载`udev`规则：
+```bash
+# 重新加载 udev 规则
+udevadm control --reload-rules
+# 触发一次 udev 事件扫描，让新规则立即对已连接的设备生效
+udevadm trigger
+```
+
+然后，不出意外的话，你就可以顺利的实现U盘的热插拔啦！
 
 ...
 
@@ -1263,6 +1363,63 @@ cd /mnt/UDISK && ./camera2framebuffer
 <img src="/images/关于基于全志T113-S3的86-Screen的一切/image-31.jpg" alt="" width = "400" height = "300" style="border-radius: 15px;">
 <figcaption></figcaption>
 </figure>
+
+#### 自定义根目录系统
+
+> 文章参考：https://bbs.aw-ol.com/topic/3907/请问下-t113-s3tinalinux-如何新增文件到根文件系统中
+
+当我们已经对T113-S3和Tina-Linux足够了解，也写了不少程序了，每一次重新烧录镜像就要把程序再拷贝到开发板里，这样还是比较麻烦的。如何能够直接将我们所需要的文件、资源或者库依赖一起打包到镜像里面，生成一个自定义镜像呢，继续往下看吧！
+
+首先，在对应的地方贴上你需要自定义的文件或者文件夹，如下，根据你的系统做不同的选择：
+```bash
+# procd-init
+cd ~/tina-sdk/package/base-files/files
+
+# busybox-init
+cd ~/tina-sdk/package/busybox-init-base-files/busybox-init-base-files
+```
+
+然后，`make`，你会发现，如果你在里面放入了可执行文件，就会报错，因为执行make编译的时候会有脚本检测你放入当前路径的内容里面是否包含可执行文件，然后会找到它需要什么库依赖。
+
+所以，此时编译报错，不要慌，翻翻编译记录，找到如下图所示的一些所需的库依赖：
+
+![](/images/关于基于全志T113-S3的86-Screen的一切/image-32.png)
+
+然后，在`~/tina-sdk/package/busybox-init-base-files/Makefile`或者`~/tina-sdk/package/base-files/Makefile`下添加如下内容（选择哪个Makefile一样是取决于你的系统）：
+
+引号中改成你缺少的库名字就行啦，你缺什么就echo什么，格式按照下面的来：
+
+```makefile
+define Package/$(PKG_NAME)/extra_provides
+	echo "libasound.so.2"; \
+	echo "libc.so.6"; \
+	echo "libcdx_base.so"; \
+	echo "libfreetype.so.6" \
+	echo "libjpeg.so.62"; \
+	echo "libm.so.6"; \
+	echo "libmad.so.0"; \
+	echo "libncurses.so.5"; \
+	echo "libpng12.so.0"; \
+	echo "libpthread.so.0"; \
+	echo "libstdc++.so.6"; \
+	echo "libtplayer.so"; \
+	echo "libudev.so.1"; \
+	echo "libfreetype.so.6"; \
+	echo "libjpeg.so.62"; \
+	echo "libz.so.1";
+endef
+```
+
+然后，重新编译make，可能你会发现又有新的报错，没关系往上翻编译记录，可能它还是会再报一两次的库依赖缺少，你继续把它缺少的库依赖在Makefile里面echo一下，最后就能编译成功啦，祝你成功！
+
+接下来，pack，这个时候可能rootfs.fex的空间就不够大了，你需要修改一下`gedit ~/tina-sdk/device/config/chips/t113/configs/pi/sys_partition.fex`
+
+把`rootfs`的size改大一些就行了，具体改多大呢，你可以把pack的报错和sys_partition.fex内容一起贴给ai，它会帮你算出一个合理的大小（我就是用豆包算的，der包~
+
+重新修改后保存，重新再pack，到这一步，基本上就能打包成功啦！
+
+...
+
 
 ---
 
