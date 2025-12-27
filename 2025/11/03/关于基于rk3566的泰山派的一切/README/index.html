@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-1.png">
 <meta property="article:published_time" content="2025-11-02T17:10:00.000Z">
-<meta property="article:modified_time" content="2025-12-27T18:33:51.056Z">
+<meta property="article:modified_time" content="2025-12-27T19:00:12.592Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="rockchip">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k words
+          2.3k words
         
       </span>
     
@@ -241,7 +241,7 @@
         
         
         
-          19 mins
+          20 mins
         
       </span>
     
@@ -366,7 +366,7 @@
 <ul>
 <li><code>RK_KERNEL_PREFERRED=&quot;5.10&quot;</code>，它默认是6.1内核版本。</li>
 </ul>
-<p>Ps：如何选择构建Ubuntu版本？RK_UBUNTU_FOCAL&#x3D;y，FOCAL是Ubuntu20.04版本，这里&#x3D;y的话，就是要构建Ubuntu20.04，所以注释它，这样就是构建Ubuntu22.04。</p>
+<p>Ps：如何选择构建Ubuntu版本？<code>RK_UBUNTU_FOCAL=y</code>，FOCAL是Ubuntu20.04版本，这里&#x3D;y的话，就是要构建Ubuntu20.04，所以注释它，这样就是构建Ubuntu22.04。</p>
 <p>修改 <code>~/LubanCat_SDK/device/rockchip/.chips/rk3566_rk3568/LubanCat_rk3566_ubuntu_xfce_defconfig</code>，完整内容如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cfg"># RK_BUILDROOT is not set<br># RK_YOCTO is not set<br>RK_UBUNTU_FOCAL=y<br>RK_ROOTFS_SYSTEM_UBUNTU=y<br>RK_ROOTFS_TARGET_XFCE=y<br>RK_ROOTFS_IMAGE=&quot;ubuntu-rk356x-$&#123;RK_ROOTFS_TARGET&#125;-rootfs.img&quot;<br>RK_KERNEL_PREFERRED=&quot;5.10&quot;<br>RK_KERNEL_CFG=&quot;lubancat_linux_rk356x_defconfig&quot;<br>RK_KERNEL_DTS_NAME=&quot;tspi-rk3566-user-v10-linux&quot;<br>RK_KERNEL_EXTBOOT=y<br># RK_RECOVERY is not set<br>RK_EXTRA_PARTITION_NUM=0<br>RK_PARAMETER=&quot;parameter-extboot.txt&quot;<br>RK_USE_FIT_IMG=y<br>RK_PACKAGE_FILE_CUSTOM=y<br>RK_PACKAGE_FILE=&quot;package-file-extboot&quot;<br></code></pre></td></tr></table></figure>
 
@@ -380,9 +380,10 @@
 <p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-8.png" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">BOARD_NAME=&#x27;LubanCat-RK356X&#x27;<br>BOARD_DTB=&#x27;tspi-rk3566-user-v10-linux.dtb&#x27;<br>BOARD_uEnv=&#x27;uEnvLubanCat.txt&#x27;<br></code></pre></td></tr></table></figure>
 
-<h5 id="镜像编译"><a href="#镜像编译" class="headerlink" title="镜像编译"></a>镜像编译</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 首先，前往SDK根目录下</span><br><span class="hljs-built_in">cd</span> ~/LubanCat_SDK<br><br><span class="hljs-comment"># 如果你的rootfs需要更新，你需要先把原来的删掉</span><br>sudo <span class="hljs-built_in">rm</span> ~/LubanCat_SDK/ubuntu20.04/ubuntu-rk356x-xfce-rootfs.img<br><br><span class="hljs-comment"># 选择芯片和对应配置文件 / 选择对应的数字按回车就行</span><br>./build.sh chip<br><br><span class="hljs-comment"># 最后，全编译</span><br>./build.sh<br></code></pre></td></tr></table></figure>
+<h5 id="镜像编译"><a href="#镜像编译" class="headerlink" title="镜像编译"></a>镜像编译</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 首先，前往SDK根目录下</span><br><span class="hljs-built_in">cd</span> ~/LubanCat_SDK<br><br><span class="hljs-comment"># 如果你的rootfs需要更新，你需要先把原来的删掉 / 只是修改设备树、内核、uboot等可以跳过此步骤</span><br>sudo <span class="hljs-built_in">rm</span> ~/LubanCat_SDK/ubuntu20.04/ubuntu-rk356x-xfce-rootfs.img<br><br><span class="hljs-comment"># 清理上一次的编译结果</span><br>./build.sh cleanall<br><br><span class="hljs-comment"># 选择芯片和对应配置文件 / 选择对应的数字按回车就行</span><br>./build.sh chip<br><br><span class="hljs-comment"># 最后，全编译</span><br>./build.sh<br></code></pre></td></tr></table></figure>
 
 <p>最后的编译出来的镜像为<code>~/LubanCat_SDK/output/update/Image/update.img</code>，然后用瑞芯微官方的烧录工具进行烧录就ok啦！</p>
+<p>这里有泰山派官方详细的<a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/system-usage/img-download.html">烧录教程</a>，我就不重复赘述啦，讲得很好的！</p>
 <h5 id="烧录验证"><a href="#烧录验证" class="headerlink" title="烧录验证"></a>烧录验证</h5><p>最后我们就可以拿泰山派来验证一下咱们编译的镜像，启动非常的流畅，可以看到LubanCat的Logo，然后测试wifi连接网络也没有什么问题！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 一些wifi测试指令</span><br><br>nmcli device status <span class="hljs-comment"># 列出所有网络设备</span><br><br>nmcli device wifi list <span class="hljs-comment"># 扫描可用 WiFi 网络</span><br><br>sudo nmcli device wifi connect <span class="hljs-string">&quot;SSID名称&quot;</span> password <span class="hljs-string">&quot;密码&quot;</span> <span class="hljs-comment"># 连接到 WiFi 网络</span><br><br>sudo nmcli connection up <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 连接已保存网络</span><br><br>sudo nmcli connection down <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 断开当前的网络连接</span><br><br>sudo nmcli connection delete <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 删除已保存的 WiFi 网络配置</span><br></code></pre></td></tr></table></figure>
 
