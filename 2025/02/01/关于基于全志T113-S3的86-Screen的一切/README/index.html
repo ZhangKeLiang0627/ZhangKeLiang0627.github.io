@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-1.jpg">
 <meta property="article:published_time" content="2025-02-01T07:10:00.000Z">
-<meta property="article:modified_time" content="2025-10-23T17:06:10.047Z">
+<meta property="article:modified_time" content="2026-01-01T13:44:04.121Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Allwinner">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.8k words
+          7.9k words
         
       </span>
     
@@ -512,7 +512,7 @@
 <h6 id="udev"><a href="#udev" class="headerlink" title="udev"></a>udev</h6><p>好，接下来来到了<code>udev</code>，这可是个好东西，后面有机会单独拿一篇文章出来讲。</p>
 <p>这个需要你先<code>make menuconfig</code>打开配置项<code>libevdev</code>.</p>
 <p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8E%E5%85%A8%E5%BF%97T113-S3%E7%9A%8486-Screen%E7%9A%84%E4%B8%80%E5%88%87/image-31.png" srcset="/img/loading.gif" lazyload></p>
-<p>先前往该路径下<code>cd /lib/udev/rules.d</code>，然后新建文件<code>vim 91-mount-udisk.rules</code>:</p>
+<p>以我们这个板子为例，它使用的是<code>procd-init</code>，所以需要先按照上面的步骤修改好<code>fstab</code>，然后再往该路径下<code>cd /lib/udev/rules.d</code>，然后新建文件<code>vim 91-mount-udisk.rules</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 91-mount-udisk.rules</span><br>ACTION==<span class="hljs-string">&quot;add&quot;</span>, SUBSYSTEM==<span class="hljs-string">&quot;block&quot;</span>, KERNEL==<span class="hljs-string">&quot;sd[a-z][0-9]&quot;</span>, ENV&#123;DEVTYPE&#125;==<span class="hljs-string">&quot;partition&quot;</span>, ENV&#123;ID_BUS&#125;==<span class="hljs-string">&quot;usb&quot;</span>, ENV&#123;ID_FS_TYPE&#125;!=<span class="hljs-string">&quot;&quot;</span>, RUN+=<span class="hljs-string">&quot;mount -o rw,nosuid,nodev,noexec,relatime,uid=0,gid=0,dmask=000,fmask=111 /dev/%k /mnt/exUDISK&quot;</span><br>ACTION==<span class="hljs-string">&quot;remove&quot;</span>, SUBSYSTEM==<span class="hljs-string">&quot;block&quot;</span>, KERNEL==<span class="hljs-string">&quot;sd[a-z][0-9]&quot;</span>, ENV&#123;DEVTYPE&#125;==<span class="hljs-string">&quot;partition&quot;</span>, ENV&#123;ID_BUS&#125;==<span class="hljs-string">&quot;usb&quot;</span>, ENV&#123;ID_FS_TYPE&#125;!=<span class="hljs-string">&quot;&quot;</span>, RUN+=<span class="hljs-string">&quot;umount -l /mnt/exUDISK&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>然后保存退出，重新加载<code>udev</code>规则：</p>
@@ -630,7 +630,7 @@
 </blockquote>
 <p>当我们已经对T113-S3和Tina-Linux足够了解，也写了不少程序了，每一次重新烧录镜像就要把程序再拷贝到开发板里，这样还是比较麻烦的。如何能够直接将我们所需要的文件、资源或者库依赖一起打包到镜像里面，生成一个自定义镜像呢，继续往下看吧！</p>
 <p>首先，在对应的地方贴上你需要自定义的文件或者文件夹，如下，根据你的系统做不同的选择：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># procd-init</span><br><span class="hljs-built_in">cd</span> ~/tina-sdk/package/base-files/files<br><br><span class="hljs-comment"># busybox-init</span><br><span class="hljs-built_in">cd</span> ~/tina-sdk/package/busybox-init-base-files/busybox-init-base-files<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># procd-init</span><br><span class="hljs-built_in">cd</span> ~/tina-sdk/package/base-files/files<br><span class="hljs-built_in">cd</span> ~/tina-sdk/target/allwinner/t113-pi/base-files <span class="hljs-comment"># 优先级更高</span><br><span class="hljs-comment"># busybox-init</span><br><span class="hljs-built_in">cd</span> ~/tina-sdk/package/busybox-init-base-files/busybox-init-base-files<br><span class="hljs-built_in">cd</span> ~/tina-sdk/target/allwinner/t113-pi/busybox-init-base-files <span class="hljs-comment"># 优先级更高</span><br></code></pre></td></tr></table></figure>
 
 <p>然后，<code>make</code>，你会发现，如果你在里面放入了可执行文件，就会报错，因为执行make编译的时候会有脚本检测你放入当前路径的内容里面是否包含可执行文件，然后会找到它需要什么库依赖。</p>
 <p>所以，此时编译报错，不要慌，翻翻编译记录，找到如下图所示的一些所需的库依赖：</p>
