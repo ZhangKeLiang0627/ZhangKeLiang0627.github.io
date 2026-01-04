@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-1.png">
 <meta property="article:published_time" content="2025-11-02T17:10:00.000Z">
-<meta property="article:modified_time" content="2025-12-27T18:09:25.905Z">
+<meta property="article:modified_time" content="2026-01-04T14:58:57.199Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="rockchip">
 <meta property="article:tag" content="rk3566">
@@ -234,7 +234,7 @@
           </div>
 
 <div class="note note-success">
-            <p>嘿，没错，是我，我又来整活啦！自从一年前花重金188购置了一手嘉立创的泰山派（2 + 16GB），期间跟着教程做了个小手机，然后不出所料的，吃灰了。</p><p>显然这板子在我手上是不允许这样的事情发生的，于是便有了这次的企划，「拯救泰山派行动」！<strong>但是这几天，我花了些时间调查了一下泰山派的生态，做的是真的差劲，就连个像样的镜像都没有，对我这种刚入门的新手非常的不友好。</strong></p><p>所幸，隔壁的野火的鲁班猫系列的sdk挺全面的，又于是乎，咱也来整一个曲线救国，分享一下我是如何用鲁班猫的sdk玩转泰山派的，这里算是给自己开了一个新坑，慢慢填吧，拭目以待！</p>
+            <p>嘿，没错，是我，我又来整活啦！自从一年前花重金188购置了一手嘉立创的泰山派（2 + 16GB），期间跟着教程做了个小手机，然后不出所料的，吃灰了。</p><p>显然这板子在我手上是不允许这样的事情发生的，于是便有了这次的企划，「拯救泰山派行动」！<strong>但是这几天，我花了些时间调查了一下泰山派的生态，做的是真的差劲，就连个像样的镜像都没有，对我这种刚入门的新手非常的不友好。</strong></p><p>所幸，隔壁的野火的鲁班猫系列的sdk挺全面的，又于是乎，咱也来整一个曲线救国，分享一下我是如何用鲁班猫的sdk玩转泰山派的，这里算是给自己开了一个新坑，慢慢填吧，拭目以待！<br><strong>——from 2025.11.3</strong></p>
           </div>
 
 <div class="note note-info">
@@ -271,7 +271,35 @@
 <li>鲁班猫通用SDK(必选)：<a target="_blank" rel="noopener" href="https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/quick_start/baidu_cloud/baidu_cloud.html">https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/quick_start/baidu_cloud/baidu_cloud.html</a></li>
 <li>泰山派的Device-tree和wifi-firmware(必选)：<a href="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/tspi_device-tree_and_wifi-firmware.zip">戳这里下载</a></li>
 </ul>
-<p>mk: <code>~/LubanCat_SDK/device/rockchip/.chips/rk3566_rk3568/</code><br>device-tree: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/</code><br>defconfig: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/configs</code></p>
+<h4 id="你需要知道"><a href="#你需要知道" class="headerlink" title="你需要知道"></a>你需要知道</h4><h4 id="tspi的资源标注"><a href="#tspi的资源标注" class="headerlink" title="tspi的资源标注"></a>tspi的资源标注</h4><figure>
+<img src="/images/关于基于rk3566的泰山派的一切/image-13.png" srcset="/img/loading.gif" lazyload alt="tspi的资源标注 - 1" width = "600" height = "600" style="border-radius: 15px;">
+<figcaption>tspi的资源标注 - 1</figcaption>
+</figure>
+
+<figure>
+<img src="/images/关于基于rk3566的泰山派的一切/image-14.png" srcset="/img/loading.gif" lazyload alt="tspi的资源标注 - 2" width = "600" height = "600" style="border-radius: 15px;">
+<figcaption>tspi的资源标注 - 2</figcaption>
+</figure>
+
+
+<h4 id="tspi的引脚定义表"><a href="#tspi的引脚定义表" class="headerlink" title="tspi的引脚定义表"></a>tspi的引脚定义表</h4><ul>
+<li>40Pin默认引脚定义表</li>
+</ul>
+<figure>
+<img src="/images/关于基于rk3566的泰山派的一切/image-12.png" srcset="/img/loading.gif" lazyload alt="40Pin默认引脚定义表" width = "600" height = "600" style="border-radius: 15px;">
+<figcaption>40Pin默认引脚定义表</figcaption>
+</figure>
+
+<ul>
+<li>40Pin引脚复用详细图</li>
+</ul>
+<figure>
+<img src="/images/关于基于rk3566的泰山派的一切/image-11.png" srcset="/img/loading.gif" lazyload alt="40Pin引脚复用详细图" width = "600" height = "600" style="border-radius: 15px;">
+<figcaption>40Pin引脚复用详细图</figcaption>
+</figure>
+
+
+<h5 id="sdk中的常用内容存放路径"><a href="#sdk中的常用内容存放路径" class="headerlink" title="sdk中的常用内容存放路径"></a>sdk中的常用内容存放路径</h5><p>mk: <code>~/LubanCat_SDK/device/rockchip/.chips/rk3566_rk3568/</code><br>device-tree: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/</code><br>defconfig: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/configs</code></p>
 <h4 id="新手指引"><a href="#新手指引" class="headerlink" title="新手指引"></a>新手指引</h4><p>因为是涉及内核编译，所以难度还是有点大的，需要较强的动手能力。因此，在正式开始搭建鲁班猫sdk之前，你如果是非常新手，可以先去跟着泰山派官方的Linux编译<a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/sdk-compilation/linux-compilation.html">教程</a>完整的走一遍，这样对整个流程会有一些认识，后续开展的时候会更顺利一些。下面我们真正开始！</p>
 <h4 id="搭建鲁班猫SDK：LubanCat-Gen-SDK"><a href="#搭建鲁班猫SDK：LubanCat-Gen-SDK" class="headerlink" title="搭建鲁班猫SDK：LubanCat_Gen_SDK"></a>搭建鲁班猫SDK：LubanCat_Gen_SDK</h4><div class="note note-info">
             <p>🎉非常感谢野火官方的SDK和开发教程，此处鼓掌n秒，接下来的教程会大量参考野火官方（人家写的很全面，该偷懒的咱得偷…</p>
@@ -302,24 +330,34 @@
 
 <h4 id="制作适配tspi的镜像"><a href="#制作适配tspi的镜像" class="headerlink" title="制作适配tspi的镜像"></a>制作适配tspi的镜像</h4><h5 id="修改mk"><a href="#修改mk" class="headerlink" title="修改mk"></a>修改mk</h5><p>我这次准备构建<code>5.10内核 + Ubuntu20.04</code>的<code>xfce</code>含有图形操作界面的环境，<span class="label label-success"><u>这里lite指无图形操作界面，xfce指有图形操作界面。</u></span>所以这里使用配置文件是<code>LubanCat_rk3566_ubuntu_xfce_defconfig</code>，但是鲁班猫默认是6.1内核+Ubuntu20.04的版本，这里需要进行修改：</p>
 <ul>
-<li>RK_KERNEL_PREFERRED&#x3D;“5.10”，它默认是6.1内核版本。</li>
+<li><code>RK_KERNEL_PREFERRED=&quot;5.10&quot;</code>，它默认是6.1内核版本。</li>
 </ul>
-<p>Ps：如何选择构建Ubuntu版本？RK_UBUNTU_FOCAL&#x3D;y，FOCAL是Ubuntu20.04版本，这里&#x3D;y的话，就是要构建Ubuntu20.04，所以注释它，这样就是构建Ubuntu22.04。</p>
+<p>Ps：如何选择构建Ubuntu版本？<code>RK_UBUNTU_FOCAL=y</code>，FOCAL是Ubuntu20.04版本，这里&#x3D;y的话，就是要构建Ubuntu20.04，所以注释它，这样就是构建Ubuntu22.04。</p>
 <p>修改 <code>~/LubanCat_SDK/device/rockchip/.chips/rk3566_rk3568/LubanCat_rk3566_ubuntu_xfce_defconfig</code>，完整内容如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cfg"># RK_BUILDROOT is not set<br># RK_YOCTO is not set<br>RK_UBUNTU_FOCAL=y<br>RK_ROOTFS_SYSTEM_UBUNTU=y<br>RK_ROOTFS_TARGET_XFCE=y<br>RK_ROOTFS_IMAGE=&quot;ubuntu-rk356x-$&#123;RK_ROOTFS_TARGET&#125;-rootfs.img&quot;<br>RK_KERNEL_PREFERRED=&quot;5.10&quot;<br>RK_KERNEL_CFG=&quot;lubancat_linux_rk356x_defconfig&quot;<br>RK_KERNEL_DTS_NAME=&quot;tspi-rk3566-user-v10-linux&quot;<br>RK_KERNEL_EXTBOOT=y<br># RK_RECOVERY is not set<br>RK_EXTRA_PARTITION_NUM=0<br>RK_PARAMETER=&quot;parameter-extboot.txt&quot;<br>RK_USE_FIT_IMG=y<br>RK_PACKAGE_FILE_CUSTOM=y<br>RK_PACKAGE_FILE=&quot;package-file-extboot&quot;<br></code></pre></td></tr></table></figure>
 
 <h5 id="添加网卡驱动和固件"><a href="#添加网卡驱动和固件" class="headerlink" title="添加网卡驱动和固件"></a>添加网卡驱动和固件</h5><p>这里是在<code>lubancat_linux_rk356x_defconfig</code>中添加博通网卡配置去编译内核时能生成bcmdhd.ko等内核模块（网卡驱动），修改<code>~/LubanCat_SDK/kernel-5.10/arch/arm64/configs/lubancat_linux_rk356x_defconfig</code><br><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-5.png" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cfg"># new config<br>CONFIG_BCMDHD=y<br>CONFIG_AP6XXX=m<br>CONFIG_BCMDHD_SDIO=y<br></code></pre></td></tr></table></figure>
 
-<p>在对应位置<code>~/LubanCat_SDK/ubuntu20.04/overlay-firmware/usr/lib/firmware</code>添加博通网卡的固件wifi-firmware：</p>
+<p>接着，在对应位置<code>~/LubanCat_SDK/ubuntu20.04/overlay-firmware/usr/lib/firmware</code>添加博通网卡的固件wifi-firmware：</p>
 <p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-6.png" srcset="/img/loading.gif" lazyload></p>
 <h5 id="添加设备树"><a href="#添加设备树" class="headerlink" title="添加设备树"></a>添加设备树</h5><p>在对应位置<code>~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip</code>添加泰山派的设备树：<br><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-7.png" srcset="/img/loading.gif" lazyload></p>
 <h5 id="修改boot-init-sh"><a href="#修改boot-init-sh" class="headerlink" title="修改boot_init.sh"></a>修改boot_init.sh</h5><p>修改<code>boot_init.sh</code>中这个逻辑，让内核默认使用泰山派的设备树：</p>
 <p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-8.png" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">BOARD_NAME=&#x27;LubanCat-RK356X&#x27;<br>BOARD_DTB=&#x27;tspi-rk3566-user-v10-linux.dtb&#x27;<br>BOARD_uEnv=&#x27;uEnvLubanCat.txt&#x27;<br></code></pre></td></tr></table></figure>
 
-<p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-9.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-10.png" srcset="/img/loading.gif" lazyload><br>…</p>
+<h5 id="镜像编译"><a href="#镜像编译" class="headerlink" title="镜像编译"></a>镜像编译</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 首先，前往SDK根目录下</span><br><span class="hljs-built_in">cd</span> ~/LubanCat_SDK<br><br><span class="hljs-comment"># 如果你的rootfs需要更新，你需要先把原来的删掉 / 只是修改设备树、内核、uboot等可以跳过此步骤</span><br>sudo <span class="hljs-built_in">rm</span> ~/LubanCat_SDK/ubuntu20.04/ubuntu-rk356x-xfce-rootfs.img<br><br><span class="hljs-comment"># 清理上一次的编译结果</span><br>./build.sh cleanall<br><br><span class="hljs-comment"># 选择芯片和对应配置文件 / 选择对应的数字按回车就行</span><br>./build.sh chip<br><br><span class="hljs-comment"># 最后，全编译</span><br>./build.sh<br></code></pre></td></tr></table></figure>
+
+<p>最后的编译出来的镜像为<code>~/LubanCat_SDK/output/update/Image/update.img</code>，然后用瑞芯微官方的烧录工具进行烧录就ok啦！</p>
+<p>这里有泰山派官方详细的<a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/system-usage/img-download.html">烧录教程</a>，我就不重复赘述啦，讲得很好的！</p>
+<h5 id="烧录验证"><a href="#烧录验证" class="headerlink" title="烧录验证"></a>烧录验证</h5><p>最后我们就可以拿泰山派来验证一下咱们编译的镜像，启动非常的流畅，可以看到LubanCat的Logo，然后测试wifi连接网络也没有什么问题！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 一些wifi测试指令</span><br><br>nmcli device status <span class="hljs-comment"># 列出所有网络设备</span><br><br>nmcli device wifi list <span class="hljs-comment"># 扫描可用 WiFi 网络</span><br><br>sudo nmcli device wifi connect <span class="hljs-string">&quot;SSID名称&quot;</span> password <span class="hljs-string">&quot;密码&quot;</span> <span class="hljs-comment"># 连接到 WiFi 网络</span><br><br>sudo nmcli connection up <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 连接已保存网络</span><br><br>sudo nmcli connection down <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 断开当前的网络连接</span><br><br>sudo nmcli connection delete <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 删除已保存的 WiFi 网络配置</span><br></code></pre></td></tr></table></figure>
+
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/关于基于rk3566的泰山派的一切/image-9.png" srcset="/img/loading.gif" lazyload alt="" width = "500" height = "500" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/关于基于rk3566的泰山派的一切/image-10.png" srcset="/img/loading.gif" lazyload alt="" width = "500" height = "500" style="border-radius: 15px;"></div></div></div>
+
+
+
+<p>…</p>
 <hr>
 <h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p>
 <ul>
@@ -328,6 +366,7 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37264095/article/details/152731497?spm=1001.2014.3001.5502">https://blog.csdn.net/qq_37264095/article/details/152731497?spm=1001.2014.3001.5502</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37264095/article/details/147023151?spm=1001.2014.3001.5502">https://blog.csdn.net/qq_37264095/article/details/147023151?spm=1001.2014.3001.5502</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37264095/article/details/152455773?spm=1001.2014.3001.5502">https://blog.csdn.net/qq_37264095/article/details/152455773?spm=1001.2014.3001.5502</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/luckkfliu/tspi_ubuntu">https://github.com/luckkfliu/tspi_ubuntu</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/opus/912396584371617809">https://www.bilibili.com/opus/912396584371617809</a></li>
 </ul>
 <p>…</p>
