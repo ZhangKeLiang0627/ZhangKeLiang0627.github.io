@@ -759,7 +759,7 @@ config 'mount'
 
 ![](images/关于基于全志T113-S3的86-Screen的一切/image-31.png)
 
-先前往该路径下`cd /lib/udev/rules.d`，然后新建文件`vim 91-mount-udisk.rules`:
+以我们这个板子为例，它使用的是`procd-init`，所以需要先按照上面的步骤修改好`fstab`，然后再往该路径下`cd /lib/udev/rules.d`，然后新建文件`vim 91-mount-udisk.rules`:
 
 ```bash
 # 91-mount-udisk.rules
@@ -1370,16 +1370,17 @@ cd /mnt/UDISK && ./camera2framebuffer
 
 当我们已经对T113-S3和Tina-Linux足够了解，也写了不少程序了，每一次重新烧录镜像就要把程序再拷贝到开发板里，这样还是比较麻烦的。如何能够直接将我们所需要的文件、资源或者库依赖一起打包到镜像里面，生成一个自定义镜像呢，继续往下看吧！
 
-首先，在对应的地方贴上你需要自定义的文件或者文件夹，如下，根据你的系统做不同的选择：
+首先，在对应的地方贴上你需要自定义的文件或者文件夹，比方说你要修改的`/etc`或者`/lib`的内容都可，如下，根据你的系统做不同的选择：
 ```bash
 # procd-init
 cd ~/tina-sdk/package/base-files/files
-
+cd ~/tina-sdk/target/allwinner/t113-pi/base-files # 优先级更高
 # busybox-init
 cd ~/tina-sdk/package/busybox-init-base-files/busybox-init-base-files
+cd ~/tina-sdk/target/allwinner/t113-pi/busybox-init-base-files # 优先级更高
 ```
 
-然后，`make`，你会发现，如果你在里面放入了可执行文件，就会报错，因为执行make编译的时候会有脚本检测你放入当前路径的内容里面是否包含可执行文件，然后会找到它需要什么库依赖。
+然后，`make`，你会发现，如果你在里面放入了可执行文件，就会报错，因为执行make编译的时候会有脚本检测你放入当前路径的内容里面是否包含**可执行文件**，然后会找到它需要什么库依赖。
 
 所以，此时编译报错，不要慌，翻翻编译记录，找到如下图所示的一些所需的库依赖：
 
