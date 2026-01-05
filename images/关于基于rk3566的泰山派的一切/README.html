@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-1.png">
 <meta property="article:published_time" content="2025-11-02T17:10:00.000Z">
-<meta property="article:modified_time" content="2026-01-04T14:58:57.199Z">
+<meta property="article:modified_time" content="2026-01-05T17:17:42.199Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="rockchip">
 <meta property="article:tag" content="rk3566">
@@ -241,6 +241,10 @@
             <p>哈哈哈喽，没想到一晃眼快两个月过去了，我真真正正等到一个合适的时间、一个慵懒的假期、美好的双休，来做这次更新，先填部分的坑，让泰山派用上鲁班猫的SDK，接上屏幕，连上网络，做成一个小电脑！我们开始吧！<br><strong>——from 2025.12.27</strong></p>
           </div>
 
+<div class="note note-info">
+            <p>哈哈哈喽，没想到一晃眼快两个月过去了，我真真正正等到一个合适的时间、一个慵懒的假期、美好的双休，来做这次更新，先填部分的坑，让泰山派用上鲁班猫的SDK，接上屏幕，连上网络，做成一个小电脑！我们开始吧！<br><strong>——from 2025.12.27</strong></p>
+          </div>
+
 <figure>
 <img src="/images/关于基于rk3566的泰山派的一切/image.png" srcset="/img/loading.gif" lazyload alt="snapshot-1" width = "800" height = "600" style="border-radius: 10px;">
 <figcaption>snapshot-1</figcaption>
@@ -266,27 +270,18 @@
 </li>
 </ul>
 <hr>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="你需要准备"><a href="#你需要准备" class="headerlink" title="你需要准备"></a>你需要准备</h4><ul>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><h4 id="💻-你需要准备"><a href="#💻-你需要准备" class="headerlink" title="💻. 你需要准备"></a>💻. 你需要准备</h4><ul>
 <li>泰山派官方SDK(可选)：<a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/sdk-compilation/linux-compilation.html">https://wiki.lckfb.com/zh-hans/tspi-rk3566/sdk-compilation/linux-compilation.html</a></li>
 <li>鲁班猫通用SDK(必选)：<a target="_blank" rel="noopener" href="https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/quick_start/baidu_cloud/baidu_cloud.html">https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/quick_start/baidu_cloud/baidu_cloud.html</a></li>
 <li>泰山派的Device-tree和wifi-firmware(必选)：<a href="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/tspi_device-tree_and_wifi-firmware.zip">戳这里下载</a></li>
 </ul>
-<h4 id="你需要知道"><a href="#你需要知道" class="headerlink" title="你需要知道"></a>你需要知道</h4><h4 id="tspi的资源标注"><a href="#tspi的资源标注" class="headerlink" title="tspi的资源标注"></a>tspi的资源标注</h4><figure>
-<img src="/images/关于基于rk3566的泰山派的一切/image-13.png" srcset="/img/loading.gif" lazyload alt="tspi的资源标注 - 1" width = "600" height = "600" style="border-radius: 15px;">
-<figcaption>tspi的资源标注 - 1</figcaption>
-</figure>
+<h4 id="📖-你需要知道"><a href="#📖-你需要知道" class="headerlink" title="📖. 你需要知道"></a>📖. 你需要知道</h4><h5 id="tspi的资源标注"><a href="#tspi的资源标注" class="headerlink" title="tspi的资源标注"></a>tspi的资源标注</h5><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/关于基于rk3566的泰山派的一切/image-13.png" srcset="/img/loading.gif" lazyload alt="tspi的资源标注 - 1" width = "500" height = "500" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/关于基于rk3566的泰山派的一切/image-14.png" srcset="/img/loading.gif" lazyload alt="tspi的资源标注 - 2" width = "500" height = "500" style="border-radius: 15px;"></div></div></div>
 
-<figure>
-<img src="/images/关于基于rk3566的泰山派的一切/image-14.png" srcset="/img/loading.gif" lazyload alt="tspi的资源标注 - 2" width = "600" height = "600" style="border-radius: 15px;">
-<figcaption>tspi的资源标注 - 2</figcaption>
-</figure>
-
-
-<h4 id="tspi的引脚定义表"><a href="#tspi的引脚定义表" class="headerlink" title="tspi的引脚定义表"></a>tspi的引脚定义表</h4><ul>
+<h5 id="tspi的引脚定义表"><a href="#tspi的引脚定义表" class="headerlink" title="tspi的引脚定义表"></a>tspi的引脚定义表</h5><ul>
 <li>40Pin默认引脚定义表</li>
 </ul>
 <figure>
-<img src="/images/关于基于rk3566的泰山派的一切/image-12.png" srcset="/img/loading.gif" lazyload alt="40Pin默认引脚定义表" width = "600" height = "600" style="border-radius: 15px;">
+<img src="/images/关于基于rk3566的泰山派的一切/image-12.png" srcset="/img/loading.gif" lazyload alt="40Pin默认引脚定义表" width = "1000" height = "600" style="border-radius: 15px;">
 <figcaption>40Pin默认引脚定义表</figcaption>
 </figure>
 
@@ -294,14 +289,16 @@
 <li>40Pin引脚复用详细图</li>
 </ul>
 <figure>
-<img src="/images/关于基于rk3566的泰山派的一切/image-11.png" srcset="/img/loading.gif" lazyload alt="40Pin引脚复用详细图" width = "600" height = "600" style="border-radius: 15px;">
+<img src="/images/关于基于rk3566的泰山派的一切/image-11.png" srcset="/img/loading.gif" lazyload alt="40Pin引脚复用详细图" width = "1000" height = "600" style="border-radius: 15px;">
 <figcaption>40Pin引脚复用详细图</figcaption>
 </figure>
 
 
-<h5 id="sdk中的常用内容存放路径"><a href="#sdk中的常用内容存放路径" class="headerlink" title="sdk中的常用内容存放路径"></a>sdk中的常用内容存放路径</h5><p>mk: <code>~/LubanCat_SDK/device/rockchip/.chips/rk3566_rk3568/</code><br>device-tree: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/</code><br>defconfig: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/configs</code></p>
-<h4 id="新手指引"><a href="#新手指引" class="headerlink" title="新手指引"></a>新手指引</h4><p>因为是涉及内核编译，所以难度还是有点大的，需要较强的动手能力。因此，在正式开始搭建鲁班猫sdk之前，你如果是非常新手，可以先去跟着泰山派官方的Linux编译<a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/sdk-compilation/linux-compilation.html">教程</a>完整的走一遍，这样对整个流程会有一些认识，后续开展的时候会更顺利一些。下面我们真正开始！</p>
-<h4 id="搭建鲁班猫SDK：LubanCat-Gen-SDK"><a href="#搭建鲁班猫SDK：LubanCat-Gen-SDK" class="headerlink" title="搭建鲁班猫SDK：LubanCat_Gen_SDK"></a>搭建鲁班猫SDK：LubanCat_Gen_SDK</h4><div class="note note-info">
+<h5 id="sdk中的常用内容存放路径"><a href="#sdk中的常用内容存放路径" class="headerlink" title="sdk中的常用内容存放路径"></a>sdk中的常用内容存放路径</h5><p>mk: <code>~/LubanCat_SDK/device/rockchip/.chips/rk3566_rk3568/</code></p>
+<p>drivers: <code>~/LubanCat_SDK/kernel-5.10/drivers</code><br>defconfig: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/configs</code></p>
+<p>device-tree: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/</code><br>device-tree overlay: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/overlay/</code><br>device-tree overlay uEnv: <code>~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/uEnv/</code></p>
+<h4 id="🆕-新手指引"><a href="#🆕-新手指引" class="headerlink" title="🆕. 新手指引"></a>🆕. 新手指引</h4><p>因为是涉及内核编译，所以难度还是有点大的，需要较强的动手能力。因此，在正式开始搭建鲁班猫sdk之前，你如果是非常新手，可以先去跟着泰山派官方的Linux编译<a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/sdk-compilation/linux-compilation.html">教程</a>完整的走一遍，这样对整个流程会有一些认识，后续开展的时候会更顺利一些。下面我们真正开始！</p>
+<h4 id="1-搭建鲁班猫SDK：LubanCat-Gen-SDK"><a href="#1-搭建鲁班猫SDK：LubanCat-Gen-SDK" class="headerlink" title="1. 搭建鲁班猫SDK：LubanCat_Gen_SDK"></a>1. 搭建鲁班猫SDK：LubanCat_Gen_SDK</h4><div class="note note-info">
             <p>🎉非常感谢野火官方的SDK和开发教程，此处鼓掌n秒，接下来的教程会大量参考野火官方（人家写的很全面，该偷懒的咱得偷…</p>
           </div>
 
@@ -328,7 +325,7 @@
 <h5 id="源码获取"><a href="#源码获取" class="headerlink" title="源码获取"></a>源码获取</h5><p>首先是解压下载好的sdk包，老样子，我习惯将sdk包解压到<code>~/</code>路径下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装tar压缩工具，一般来说系统是默认安装的</span><br>sudo apt install tar<br><br><span class="hljs-comment"># 在用户家目录创建LubanCat_SDK目录</span><br><span class="hljs-built_in">mkdir</span> ~/LubanCat_SDK<br><br><span class="hljs-comment"># 将下载的SDK源码移动到LubanCat_SDK目录下，xxx为日期</span><br><span class="hljs-built_in">mv</span> LubanCat_Linux_Generic_SDK_xxx.tgz ~/LubanCat_SDK<br><br><span class="hljs-comment"># 进入LubanCat_SDK目录</span><br><span class="hljs-built_in">cd</span> ~/LubanCat_SDK<br><br><span class="hljs-comment"># 解压SDK压缩包</span><br>tar -xzvf LubanCat_Linux_Generic_SDK_xxx.tgz<br><br><span class="hljs-comment"># 查看解压后的文件，可以看到解压出.repo文件夹</span><br><span class="hljs-built_in">ls</span> -al<br><br><span class="hljs-comment"># 检出各个git子仓库</span><br><span class="hljs-comment"># 注意：下面的命令一点要在SDK顶层文件夹中执行，且repo路径一定为.repo/repo/repo</span><br>.repo/repo/repo <span class="hljs-built_in">sync</span> -l<br><br><span class="hljs-comment"># 将所有的源码仓库同步到最新版本</span><br><span class="hljs-comment"># 如果使用LubanCat_Linux_Gen_Full_SDK，则无需使用下面的命令更新SDK</span><br>.repo/repo/repo <span class="hljs-built_in">sync</span> -c<br></code></pre></td></tr></table></figure>
 
-<h4 id="制作适配tspi的镜像"><a href="#制作适配tspi的镜像" class="headerlink" title="制作适配tspi的镜像"></a>制作适配tspi的镜像</h4><h5 id="修改mk"><a href="#修改mk" class="headerlink" title="修改mk"></a>修改mk</h5><p>我这次准备构建<code>5.10内核 + Ubuntu20.04</code>的<code>xfce</code>含有图形操作界面的环境，<span class="label label-success"><u>这里lite指无图形操作界面，xfce指有图形操作界面。</u></span>所以这里使用配置文件是<code>LubanCat_rk3566_ubuntu_xfce_defconfig</code>，但是鲁班猫默认是6.1内核+Ubuntu20.04的版本，这里需要进行修改：</p>
+<h4 id="2-制作适配tspi的镜像"><a href="#2-制作适配tspi的镜像" class="headerlink" title="2. 制作适配tspi的镜像"></a>2. 制作适配tspi的镜像</h4><h5 id="修改mk"><a href="#修改mk" class="headerlink" title="修改mk"></a>修改mk</h5><p>我这次准备构建<code>5.10内核 + Ubuntu20.04</code>的<code>xfce</code>含有图形操作界面的环境，<span class="label label-success"><u>这里lite指无图形操作界面，xfce指有图形操作界面。</u></span>所以这里使用配置文件是<code>LubanCat_rk3566_ubuntu_xfce_defconfig</code>，但是鲁班猫默认是6.1内核+Ubuntu20.04的版本，这里需要进行修改：</p>
 <ul>
 <li><code>RK_KERNEL_PREFERRED=&quot;5.10&quot;</code>，它默认是6.1内核版本。</li>
 </ul>
@@ -355,9 +352,36 @@
 
 <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/images/关于基于rk3566的泰山派的一切/image-9.png" srcset="/img/loading.gif" lazyload alt="" width = "500" height = "500" style="border-radius: 15px;"></div><div class="group-image-wrap"><img src="/images/关于基于rk3566的泰山派的一切/image-10.png" srcset="/img/loading.gif" lazyload alt="" width = "500" height = "500" style="border-radius: 15px;"></div></div></div>
 
+<p>这个时候，你把屏幕也接上的话，会显示出linux的操作界面，插上鼠标键盘就可以愉快的当成一个小电脑来玩耍啦，只是很卡就对了（苦笑。</p>
+<h4 id="3-tspi添加新的驱动"><a href="#3-tspi添加新的驱动" class="headerlink" title="3. tspi添加新的驱动"></a>3. tspi添加新的驱动</h4><p>好的，当我们制作好了泰山派的ubuntu镜像以后，下一步肯定要接着搞事情嘛，做项目必然少不了传感器等外设的加入。为此，我们需要给tspi添加新的驱动。</p>
+<p>如何添加驱动是一门大学问，知识点太多太多了，很多工程师上班天天写驱动才练的如此熟练，我们这些小卡拉米想要一下子全部记住还是非常难的，好在驱动不是在考我们数学，所以，熟能生巧！下面我们开始吧！</p>
+<h5 id="为10-1寸mipi屏幕添加触摸驱动gt9xx"><a href="#为10-1寸mipi屏幕添加触摸驱动gt9xx" class="headerlink" title="为10.1寸mipi屏幕添加触摸驱动gt9xx"></a>为10.1寸mipi屏幕添加触摸驱动gt9xx</h5><p><a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/project-case/fat-little-cell-phone/touch-drive.html">tspi触摸驱动官方教程&lt;-</a>，讲得非常的仔细，赞哦！</p>
+<h5 id="为tspi添加六轴传感器mpu6050驱动"><a href="#为tspi添加六轴传感器mpu6050驱动" class="headerlink" title="为tspi添加六轴传感器mpu6050驱动"></a>为tspi添加六轴传感器mpu6050驱动</h5><p>刚好手头上还有之前打电赛剩下的mpu6050模块，而且这芯片也是老江湖了，想必大家都非常熟悉，或多或少听过用过，非常适合做一手驱动演示。同时，刚好linux内核当中内置了<a target="_blank" rel="noopener" href="https://github.com/torvalds/linux/tree/master/drivers/iio/imu/inv_mpu6050">mpu6050这个芯片的驱动</a>，那是相当的哇塞了！</p>
+<blockquote>
+<p>Plus：大家拿到一个芯片、模块以后要为它编写驱动之前，不妨先去linux内核里面查看一下有没有前人已经写好的轮子，找到赚到，省时省力，官方驱动网站在这里：<a target="_blank" rel="noopener" href="https://www.kernelconfig.io/index.html">www.kernelconfig.io</a></p>
+</blockquote>
+<p>既然实物有了，驱动也有了，那么我们这次只是简单的演示一手操作流程：</p>
+<ul>
+<li><strong>想要添加一个传感器，设备树要怎么写？</strong></li>
+<li><strong>设备树怎么和相应驱动对接？</strong></li>
+<li><strong>配置文件怎么改？</strong></li>
+<li><strong>驱动是如何生效的？</strong></li>
+<li><strong>驱动如何打包到镜像当中？</strong></li>
+</ul>
+<h6 id="编写设备树"><a href="#编写设备树" class="headerlink" title="编写设备树"></a>编写设备树</h6><p>用vscode打开设备树：<code>code ~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/tspi-rk3566-user-v10-linux.dts</code></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-comment">//用户I2C2</span><br><span class="hljs-variable">&amp;i2c2</span> <span class="hljs-punctuation">&#123;</span><br>	<span class="hljs-attr">status</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;okay&quot;</span><span class="hljs-punctuation">;</span><br><br>	<span class="hljs-comment">/*添加你的I2C设备参考</span><br><span class="hljs-comment">	gt1x: gt1x@14 &#123;</span><br><span class="hljs-comment">		compatible = &quot;goodix,gt1x&quot;;</span><br><span class="hljs-comment">		reg = &lt;0x14&gt;;</span><br><span class="hljs-comment">		pinctrl-names = &quot;default&quot;;</span><br><span class="hljs-comment">		pinctrl-0 = &lt;&amp;touch_gpio&gt;;</span><br><span class="hljs-comment">		goodix,rst-gpio = &lt;&amp;gpio0 RK_PB6 GPIO_ACTIVE_HIGH&gt;;</span><br><span class="hljs-comment">		goodix,irq-gpio = &lt;&amp;gpio0 RK_PB5 IRQ_TYPE_LEVEL_LOW&gt;;</span><br><span class="hljs-comment">	&#125;;*/</span><br><span class="hljs-symbol"></span><br><span class="hljs-symbol">    mpu6050:</span> <span class="hljs-title class_">mpu6050@68</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">compatible</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;invensense,mpu6050&quot;</span><span class="hljs-punctuation">;</span> <br>        <span class="hljs-attr">reg</span> <span class="hljs-operator">=</span> <span class="hljs-params">&lt;<span class="hljs-number">0x68</span>&gt;</span><span class="hljs-punctuation">;</span> <br>		<span class="hljs-attr">interrupt-parent</span> <span class="hljs-operator">=</span> <span class="hljs-params">&lt;<span class="hljs-variable">&amp;gpio0</span>&gt;</span><span class="hljs-punctuation">;</span>      <br>		<span class="hljs-attr">interrupts</span> <span class="hljs-operator">=</span> <span class="hljs-params">&lt;<span class="hljs-number">0</span> IRQ_TYPE_NONE&gt;</span><span class="hljs-punctuation">;</span>  <br>		<span class="hljs-attr">status</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;okay&quot;</span><span class="hljs-punctuation">;</span><br>    <span class="hljs-punctuation">&#125;;</span><br><span class="hljs-punctuation">&#125;;</span><br></code></pre></td></tr></table></figure>
 
+<h6 id="配置kconfig"><a href="#配置kconfig" class="headerlink" title="配置kconfig"></a>配置kconfig</h6><p>mpu6050的驱动源码：<code>~/LubanCat_SDK/kernel-5.10/drivers/iio/imu/inv_mpu6050</code></p>
+<p>去到这个目录，我们可以看到目录下的kconfig，找到我们需要配置的项：<code>INV_MPU6050_I2C</code>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs kconfig"># SPDX-License-Identifier: GPL-2.0-only<br>#<br># inv-mpu6050 drivers for Invensense MPU devices and combos<br>#<br><br>config INV_MPU6050_IIO<br>	tristate<br>	select IIO_BUFFER<br>	select IIO_TRIGGERED_BUFFER<br><br>config INV_MPU6050_I2C<br>	tristate &quot;Invensense MPU6050 devices (I2C)&quot;<br>	depends on I2C<br>	select I2C_MUX<br>	select INV_MPU6050_IIO<br>	select REGMAP_I2C<br>	help<br>	  This driver supports the Invensense MPU6050/9150,<br>	  MPU6500/6515/9250/9255, ICM20608/20609/20689, ICM20602/ICM20690 and<br>	  IAM20680 motion tracking devices over I2C.<br>	  This driver can be built as a module. The module will be called<br>	  inv-mpu6050-i2c.<br><br>config INV_MPU6050_SPI<br>	tristate &quot;Invensense MPU6050 devices (SPI)&quot;<br>	depends on SPI_MASTER<br>	select INV_MPU6050_IIO<br>	select REGMAP_SPI<br>	help<br>	  This driver supports the Invensense MPU6000,<br>	  MPU6500/6515/9250/9255, ICM20608/20609/20689, ICM20602/ICM20690 and<br>	  IAM20680 motion tracking devices over SPI.<br>	  This driver can be built as a module. The module will be called<br>	  inv-mpu6050-spi.<br></code></pre></td></tr></table></figure>
 
-<p>…</p>
+<p>接下来，我们开始配置驱动。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">回到sdk根目录，我们开始来配置驱动</span><br>cd ~/LubanCat_SDK &amp;&amp; ./build.sh kconfig<br></code></pre></td></tr></table></figure>
+
+<p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-15.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-16.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>=m</code>、<code>=y</code>、<code>=n</code>三者区分</p>
+<h6 id="将ko模块打包到根目录系统"><a href="#将ko模块打包到根目录系统" class="headerlink" title="将ko模块打包到根目录系统"></a>将ko模块打包到根目录系统</h6><h6 id="烧录验证-1"><a href="#烧录验证-1" class="headerlink" title="烧录验证"></a>烧录验证</h6><p>…</p>
 <hr>
 <h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p>
 <ul>
