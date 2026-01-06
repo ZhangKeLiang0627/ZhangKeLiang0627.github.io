@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-1.png">
 <meta property="article:published_time" content="2025-11-02T17:10:00.000Z">
-<meta property="article:modified_time" content="2026-01-06T11:38:11.263Z">
+<meta property="article:modified_time" content="2026-01-06T13:55:31.946Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="rockchip">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.7k words
+          3.8k words
         
       </span>
     
@@ -469,8 +469,9 @@
 <p>所以这时咱们要把<code>~/LubanCat_SDK/ubuntu20.04</code>路径下的<code>*rootfs.img</code>给删掉，然后<code>./build.sh</code>重新编译打包镜像。</p>
 <p>…</p>
 <h6 id="烧录验证-1"><a href="#烧录验证-1" class="headerlink" title="烧录验证"></a>烧录验证</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 从内核启动日志中查询是否有mpu6050相关驱动的启动信息</span><br>dmesg | grep -i mpu6050<br><br><span class="hljs-comment"># 列出当前已加载的模块ko</span><br>lsmod<br><br><span class="hljs-comment"># 查看IIO设备所有可操作属性</span><br><span class="hljs-built_in">ls</span> /sys/bus/iio/devices/iio:deviceX<br></code></pre></td></tr></table></figure>
+<p>能像如图这样加载驱动，说明驱动是成功打好了，报错信息问题不大（只是电源没有配置，没关系的.<br><img src="/images/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/image-17.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span>@lubancat:/userdata$ <span class="hljs-built_in">ls</span> /sys/bus/iio/devices/iio:device1<br>buffer                      in_anglvel_y_calibbias<br>current_timestamp_clock     in_anglvel_y_raw<br>dev                         in_anglvel_z_calibbias<br>in_accel_matrix             in_anglvel_z_raw<br>in_accel_mount_matrix       in_gyro_matrix<br>in_accel_scale              in_temp_offset<br>in_accel_scale_available    in_temp_raw<br>in_accel_x_calibbias        in_temp_scale<br>in_accel_x_raw              name<br>in_accel_y_calibbias        of_node<br>in_accel_y_raw              power<br>in_accel_z_calibbias        sampling_frequency<br>in_accel_z_raw              sampling_frequency_available<br>in_anglvel_mount_matrix     scan_elements<br>in_anglvel_scale            subsystem<br>in_anglvel_scale_available  trigger<br>in_anglvel_x_calibbias      uevent<br>in_anglvel_x_raw<br><br></code></pre></td></tr></table></figure>
 
-<p>…</p>
 <hr>
 <h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p>
 <ul>
