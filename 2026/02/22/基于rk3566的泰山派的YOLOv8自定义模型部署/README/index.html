@@ -16,26 +16,29 @@
   <meta name="author" content="Zhang-keliang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="嘘...勉强能用balabala...">
+    <meta name="description" content="今天！一起来拯救你吃灰的泰山派2.0🙆！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对任意文件进行签名加密验证的小utils">
-<meta property="og:url" content="https://zhangkeliang0627.github.io/2026/02/19/%E5%AF%B9%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D%E5%8A%A0%E5%AF%86%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B0%8Futils/README/index.html">
+<meta property="og:title" content="「基于rk3566的泰山派」的YOLOv8自定义模型部署">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2026/02/22/%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84YOLOv8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/README/index.html">
 <meta property="og:site_name" content="Hugo@kkl">
-<meta property="og:description" content="嘘...勉强能用balabala...">
+<meta property="og:description" content="今天！一起来拯救你吃灰的泰山派2.0🙆！">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%AF%B9%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D%E5%8A%A0%E5%AF%86%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B0%8Futils/image-0.jpg">
-<meta property="article:published_time" content="2026-02-19T08:59:00.000Z">
-<meta property="article:modified_time" content="2026-02-19T09:37:32.223Z">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84YOLOv8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/image-0.jpg">
+<meta property="article:published_time" content="2026-02-21T18:16:00.000Z">
+<meta property="article:modified_time" content="2026-02-21T19:23:01.683Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="rockchip">
+<meta property="article:tag" content="rk3566">
+<meta property="article:tag" content="YOLO">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E5%AF%B9%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D%E5%8A%A0%E5%AF%86%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B0%8Futils/image-0.jpg">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84YOLOv8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/image-0.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>对任意文件进行签名加密验证的小utils - Hugo@kkl</title>
+  <title>「基于rk3566的泰山派」的YOLOv8自定义模型部署 - Hugo@kkl</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,13 +202,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/images/%E5%AF%B9%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D%E5%8A%A0%E5%AF%86%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B0%8Futils/image-1.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/images/%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84YOLOv8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/image-1.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="对任意文件进行签名加密验证的小utils"></span>
+            <span id="subtitle" data-typed-text="「基于rk3566的泰山派」的YOLOv8自定义模型部署"></span>
           
         </div>
 
@@ -216,8 +219,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-02-19 16:59" pubdate>
-          February 19, 2026 pm
+        <time datetime="2026-02-22 02:16" pubdate>
+          February 22, 2026 am
         </time>
       </span>
     
@@ -228,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          131 words
+          301 words
         
       </span>
     
@@ -239,7 +242,7 @@
         
         
         
-          2 mins
+          3 mins
         
       </span>
     
@@ -284,24 +287,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">对任意文件进行签名加密验证的小utils</h1>
+            <h1 id="seo-header">「基于rk3566的泰山派」的YOLOv8自定义模型部署</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="对任意文件进行签名加密验证的小utils"><a href="#对任意文件进行签名加密验证的小utils" class="headerlink" title="对任意文件进行签名加密验证的小utils"></a>对任意文件进行签名加密验证的小utils</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><p class="note note-success">本文等待施工啊🧑‍🌾🧑‍🌾!</p>
-<p class="note note-info">最近在补番鬼灭啊，一口气看完了所有的剧场，才发现动画居然还没有出完，失策啊！意犹未尽，遂贴上各种梗图，自我安慰...!</p>
+                <h3 id="关于「基于rk3566的泰山派」的YOLOv8自定义模型部署"><a href="#关于「基于rk3566的泰山派」的YOLOv8自定义模型部署" class="headerlink" title="关于「基于rk3566的泰山派」的YOLOv8自定义模型部署"></a>关于「基于rk3566的泰山派」的YOLOv8自定义模型部署</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-warning">
+            <p>该笔记目前处于积极开发阶段。</p>
+          </div>
 
-<figure>
-<img src="/images/对任意文件进行签名加密验证的小utils/image-1.jpg" srcset="/img/loading.gif" lazyload alt="" width = "600" height = "400" style="border-radius: 15px;">
-<figcaption></figcaption>
-</figure>
+<div class="note note-success">
+            <p>Damnnn!!! 我又来了哈，各位新年平安！</p><p>趁着这个新年假期，来捣鼓一下RK系列芯片上面的模型推理部署，然后刚好想要了解一下视觉类的模型YOLO，这个时候不得不搬出之前做过的<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv8-loopy">YOLOv8-loopy</a>的内容（笑，这么看来，简直是手到擒来呀这期。</p><p>然后这里有一个故事：就是也是和工作挂钩，最近工作性质偏向视觉端，刚好也是瑞芯微的芯片，于是接触了很多 模型端侧推理 的内容。我和视觉组的同事开玩笑说，你们莫非只是用个YOLO而已？钱也太好赚了吧（其实除了YOLO还有很多算法在里头，然后同事摇摇头，给你一个月你也学不来哒…</p><p>我对此嗤之以鼻，哼，幽默（￣へ￣</p><p><strong>——from 2026.2.22</strong></p>
+          </div>
+
+<div class="note note-info">
+            <!-- **——from 2025.12.27** -->
+          </div>
 
 <hr>
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p><em><strong>…</strong></em></p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>虽然，今天是假期，所以因为是假期需要休息，合情合理，今日只想要大睡特睡，有空会更新（这坑大，睡下怕一趴不起啦ahh</p>
-<!-- ### 鸣谢 -->
-
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p><strong><em>本篇文章将简述如何「基于rk3566的泰山派」快速部署YOLOv8。</em></strong></p>
+<h4 id="我的环境"><a href="#我的环境" class="headerlink" title="我的环境"></a>我的环境</h4><p><a target="_blank" rel="noopener" href="https://github.com/airockchip/ultralytics_yolov8/blob/main/RKOPT_README.zh-CN.md">https://github.com/airockchip/ultralytics_yolov8/blob/main/RKOPT_README.zh-CN.md</a></p>
+<hr>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><hr>
+<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p>
+<p>…</p>
+<hr>
 
                 
               </div>
@@ -320,7 +330,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
+  <a href="/categories/Project-Page/" class="category-chain-item">Project Page</a>
   
   
 
@@ -335,7 +345,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+      
+        <a href="/tags/rockchip/" class="print-no-link">#rockchip</a>
+      
+        <a href="/tags/rk3566/" class="print-no-link">#rk3566</a>
+      
+        <a href="/tags/YOLO/" class="print-no-link">#YOLO</a>
       
     </div>
   
@@ -347,8 +363,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>对任意文件进行签名加密验证的小utils</div>
-      <div>https://zhangkeliang0627.github.io/2026/02/19/对任意文件进行签名加密验证的小utils/README/</div>
+      <div>「基于rk3566的泰山派」的YOLOv8自定义模型部署</div>
+      <div>https://zhangkeliang0627.github.io/2026/02/22/基于rk3566的泰山派的YOLOv8自定义模型部署/README/</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +376,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>February 19, 2026</div>
+          <div>February 22, 2026</div>
         </div>
       
       
@@ -392,18 +408,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/02/22/%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84YOLOv8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/README/" title="「基于rk3566的泰山派」的YOLOv8自定义模型部署">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">「基于rk3566的泰山派」的YOLOv8自定义模型部署</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/02/01/%E6%9D%82%E8%AE%B0/2026%E5%B9%B4/2%E6%9C%88/README/" title="杂记丨2月：食困">
-                        <span class="hidden-mobile">杂记丨2月：食困</span>
+                      <a href="/2026/02/19/%E5%AF%B9%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D%E5%8A%A0%E5%AF%86%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B0%8Futils/README/" title="对任意文件进行签名加密验证的小utils">
+                        <span class="hidden-mobile">对任意文件进行签名加密验证的小utils</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
