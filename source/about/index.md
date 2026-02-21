@@ -12,7 +12,7 @@ date: 2024-01-02 14:54:21
 > **Also, if you don't mind, call me Hugokkl!**
 
 # SZU🏫
-> **Hi, I'm a undergraduate IE student. Nice to meet you here in the sea of internet.**
+> **Hi! Nice to meet you here in the sea of internet.**
 
 # E-mail: hugokkl@foxmail.com📮
 > **You can contact me by email!**
