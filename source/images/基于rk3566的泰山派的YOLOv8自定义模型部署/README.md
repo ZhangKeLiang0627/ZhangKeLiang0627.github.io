@@ -22,49 +22,56 @@ date: 2026-2-22 2:16:00
 {% endnote %}
 
 {% note success %}
-嘿，没错，是我，我又来整活啦！自从一年前花重金188购置了一手嘉立创的泰山派（2 + 16GB），期间跟着教程做了个小手机，然后不出所料的，吃灰了。
+Damnnn!!! 我又来了哈，各位新年平安！
 
-显然这板子在我手上是不允许这样的事情发生的，于是便有了这次的企划，「拯救泰山派行动」！**但是这几天，我花了些时间调查了一下泰山派的生态，做的是真的差劲，就连个像样的镜像都没有，对我这种刚入门的新手非常的不友好。**
+趁着这个新年假期，来捣鼓一下RK系列芯片上面的模型推理部署，然后刚好想要了解一下视觉类的模型YOLO，这个时候不得不搬出之前做过的[YOLOv8-loopy](https://github.com/ZhangKeLiang0627/YOLOv8-loopy)的内容（笑，这么看来，简直是手到擒来呀这期。
 
-所幸，隔壁的野火的鲁班猫系列的sdk挺全面的，又于是乎，咱也来整一个曲线救国，分享一下我是如何用鲁班猫的sdk玩转泰山派的，这里算是给自己开了一个新坑，慢慢填吧，拭目以待！
-**——from 2025.11.3**
+其实这里有一个故事：就是也算工作上的小插曲，最近工作性质偏向视觉端，刚好也是瑞芯微的芯片，于是接触了很多“模型端侧推理”的内容。我和视觉组的同事开玩笑说，你们莫非只是用个YOLO而已？钱也太好赚了吧，w我也要干视觉（其实除了YOLO还有很多算法在里头。然后同事打趣摇摇头，给你一个月你也学不来哒...
+
+我对此嗤之以鼻，哼，幽默（￣へ￣
+
+**——from 2026.2.22**
 {% endnote %}
 
 {% note info %}
-哈哈哈喽，没想到一晃眼快两个月过去了，我真真正正等到一个合适的时间、一个慵懒的假期、美好的双休，来做这次更新，先填部分的坑，让泰山派用上鲁班猫的SDK，接上屏幕，连上网络，做成一个小电脑！我们开始吧！
-**——from 2025.12.27**
+写完开头结尾，倒头就睡（经典开局。今日起床，充满活力，经过几天的假期休养，身体终于从苦不堪言的出差中恢复过来了。但是又想到今天就是初七，明天就是开工大吉，心情瞬间低落，damn啊！不过今天天气多云，确实适合宅家写写文档...
+
+**——from 2026.2.23**
 {% endnote %}
-
-{% note info %}
-嗨，我又来更新啦，每一次更新都挑了个夜深人静的时候（苦涩，这次来分享一下linux的驱动添加方法，不一定只是针对tspi，思想是通用的，也算是记录记录我这几天折腾的成果吧。我越发感觉这个坑是深不见底呀，啥时候能填完呢？内容分几天来零零碎碎更新，写的太困了就去睡了（嘿。
-**——from 2026.1.6**
-{% endnote %}
-
-<figure>
-<img src="/images/关于基于rk3566的泰山派的一切/image.png" alt="snapshot-1" width = "800" height = "600" style="border-radius: 10px;">
-<figcaption>snapshot-1</figcaption>
-</figure>
-
-<figure>
-<img src="/images/关于基于rk3566的泰山派的一切/image-2.png" alt="snapshot-2" width = "800" height = "600" style="border-radius: 10px;">
-<figcaption>snapshot-2</figcaption>
-</figure>
 
 ---
 
 ### 写在前面
 
+tspi的玩家们可以去回顾一下我之前的文章，这里贴上跳转链接[关于「基于rk3566的泰山派」的一切](https://zhangkeliang0627.github.io/2025/11/03/关于基于rk3566的泰山派的一切/README/).
 
+这篇文章受用并不仅限于tspi，其他瑞芯微带NPU的Soc都可以作为参考借鉴，比如：RK3588、RK3576、RK3568、RV1126/RV1126P...
 
-**_本篇文章将简述如何从零到一玩转「基于rk3566的泰山派」。_**
+- 先来聊聊我对**YOLOv8**粗浅理解，目前业界上最万金油视觉检测模型非YOLOv8莫属，大家都在用，也嘎嘎好用，多任务统一，做检测、分割、关键点检测都很不错，性价比高啊。
 
-#### 我的环境
+- 当然现在很多老旧项目里面还在跑**YOLOv5**，这模型也很棒很经典新手入门资料齐全踩坑少，但对比上后面的模型性价比有点低了，稍微有些吃力（没想到2020年才出，感觉很近啊。
 
-https://github.com/airockchip/ultralytics_yolov8/blob/main/RKOPT_README.zh-CN.md
+- **YOLOv11**也不错，小目标检测效果最好，这几个模型可以根据实际检测场景穿插来使用ahh...
+
+更深的就不说啦，再底层的咱们也不太懂大家自行了解，本此我们主要围绕YOLOv8展开学习，知道怎么使用怎么部署就已经非常棒了，下面我们开始吧。
+
+<figure>
+<img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-2.png" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+**_本篇文章将简述如何「基于rk3566的泰山派」快速部署YOLOv8。_**
 
 ---
 
 ### 开始
+
+
+
+
+
+
+
 
 
 ---
@@ -72,7 +79,8 @@ https://github.com/airockchip/ultralytics_yolov8/blob/main/RKOPT_README.zh-CN.md
 ### 写在后面
 
 **鸣谢：**
-
+- https://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/example/yolov8.html
+- https://wiki.lckfb.com/zh-hans/tspi-3-rk3576/ai/yolov8/detection-model.html
 
 ...
 

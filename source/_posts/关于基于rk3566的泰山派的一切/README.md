@@ -539,6 +539,11 @@ in_anglvel_x_raw
 
 ```
 
+#### 4. 在tspi部署YOLOv8
+
+由于篇幅较长，请戳文章->[关于「基于rk3566的泰山派」的YOLOv8自定义模型部署](https://zhangkeliang0627.github.io/2026/02/22/基于rk3566的泰山派的YOLOv8自定义模型部署/README/)跳转进行阅读！
+
+
 ---
 
 ### 写在后面
