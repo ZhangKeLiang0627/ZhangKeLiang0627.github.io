@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84YOLOv8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/image-0.jpg">
 <meta property="article:published_time" content="2026-02-21T18:16:00.000Z">
-<meta property="article:modified_time" content="2026-02-22T06:38:16.404Z">
+<meta property="article:modified_time" content="2026-02-22T17:14:20.723Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="rockchip">
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k words
+          2.4k words
         
       </span>
     
@@ -242,7 +242,7 @@
         
         
         
-          18 mins
+          21 mins
         
       </span>
     
@@ -293,11 +293,11 @@
               <div class="markdown-body">
                 
                 <h3 id="关于「基于rk3566的泰山派」的YOLOv8自定义模型部署"><a href="#关于「基于rk3566的泰山派」的YOLOv8自定义模型部署" class="headerlink" title="关于「基于rk3566的泰山派」的YOLOv8自定义模型部署"></a>关于「基于rk3566的泰山派」的YOLOv8自定义模型部署</h3><h3 id="Author-kkl"><a href="#Author-kkl" class="headerlink" title="Author: kkl"></a>Author: kkl</h3><div class="note note-warning">
-            <p>该笔记目前处于积极开发阶段。</p>
+            <p>该笔记已经完成施工！</p>
           </div>
 
 <div class="note note-success">
-            <p>Damnnn!!! 我又来了哈，各位新年平安！</p><p>趁着这个新年假期，来捣鼓一下RK系列芯片上面的模型推理部署，然后刚好想要了解一下视觉类的模型YOLO，这个时候不得不搬出之前做过的<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv8-loopy">YOLOv8-loopy</a>的内容（笑，这么看来，简直是手到擒来呀这期。</p><p>其实这里有一个故事：就是也算工作上的小插曲，最近工作性质偏向视觉端，刚好也是瑞芯微的芯片，于是接触了很多“模型端侧推理”的内容。我和视觉组的同事开玩笑说，你们莫非只是用个YOLO而已？钱也太好赚了吧，w我也要干视觉（其实除了YOLO还有很多算法在里头。然后同事打趣摇摇头，给你一个月你也学不来哒…</p><p>我对此嗤之以鼻，哼，幽默（￣へ￣</p><p><strong>——from 2026.2.22</strong></p>
+            <p>Damnnn!!! 我又来了哈，各位新年平安！</p><p>趁着这个新年假期，来捣鼓一下RK系列芯片上面的模型推理部署，然后刚好想要了解一下视觉类的模型YOLO，这个时候不得不搬出之前做过的<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv8-loopy">YOLOv8-loopy</a>的内容（笑，这么看来，简直是手到擒来呀这期。</p><p>其实这里有一个故事：就是也算工作上的小插曲，最近工作性质偏向视觉端，刚好也是瑞芯微的芯片，于是顺其自然接触了很多“模型端侧推理”的内容。我和视觉组的同事开玩笑说，你们莫非只是用个YOLO而已？钱也太好赚了吧，w我也要干视觉（其实除了YOLO还有很多算法在里头。然后同事打趣摇摇头，给你一个月你也学不来哒…</p><p>我对此嗤之以鼻，哼，幽默（￣へ￣</p><p><strong>——from 2026.2.22</strong></p>
           </div>
 
 <div class="note note-info">
@@ -376,7 +376,7 @@
 
 <h4 id="模型导出"><a href="#模型导出" class="headerlink" title="模型导出"></a>模型导出</h4><p>瑞芯微<code>airockchip</code>官方权威README：<a target="_blank" rel="noopener" href="https://github.com/airockchip/ultralytics_yolov8/blob/main/RKOPT_README.zh-CN.md">导出 RKNPU 适配模型说明</a>.</p>
 <p>这里需要做的事情非常简单，首先你需要准备一个模型（自己练好的或者是官方的权重文件yolov8n.pt；接着我们需要使用rockchip优化过的yolov8项目导出onnx模型。</p>
-<p>考虑到已经有很多第三方做过官方的yolov8n.pt的模型转换教程了，<a href="ttps://wiki.lckfb.com/zh-hans/tspi-3-rk3576/ai/yolov8/detection-model.html#模型转换">JLC教程&lt;-</a>、<a href="ttps://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/example/yolov8.html#airockchip-ultralytics-yolov8">野火教程&lt;-</a>。不过野火教程比较老旧了，转换自定义模型的时候，我弄的老是效果不好。所以推荐JLC教程，比较新，转换的onnx模型，也对应最新的rknn-toolkit2库，赞哦！<strong>它们写的够好够详细了，我就不多赘述，推荐大家可以先去跟着完整跑一遍，再回来继续哟！</strong></p>
+<p>考虑到已经有很多第三方做过官方的yolov8n.pt的模型转换教程了，<a href="ttps://wiki.lckfb.com/zh-hans/tspi-3-rk3576/ai/yolov8/detection-model.html#模型转换">JLC教程&lt;-</a>、<a href="ttps://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/example/yolov8.html#airockchip-ultralytics-yolov8">野火教程&lt;-</a>。不过野火教程比较老旧了，转换自定义模型的时候，我弄的老是效果不好。所以推荐JLC教程，比较新，转换的是onnx模型，也对应最新的rknn-toolkit2库，赞哦！<strong>它们写的够好够详细了，我就不多赘述，推荐大家可以先去跟着完整跑一遍，再回来继续哟！</strong></p>
 <p>好的，下面继续，所以，我们这里直接拿自定义模型来做演示，那就是<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv8-loopy">YOLOv8-loopy</a>!!!</p>
 <p>切换虚拟环境为：<code>yolov8-rknn</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate yolov8-rknn<br></code></pre></td></tr></table></figure>
@@ -422,19 +422,62 @@
 </figure>
 
 <p>执行成功之后，会在<code>rknn_model_zoo/examples/yolov8/model</code>目录下生成一个<code>.rknn</code>模型文件</p>
-<h4 id="Demo编译"><a href="#Demo编译" class="headerlink" title="Demo编译"></a>Demo编译</h4><p>…累了，晚点填坑、、、</p>
-<h4 id="板卡上部署推理"><a href="#板卡上部署推理" class="headerlink" title="板卡上部署推理"></a>板卡上部署推理</h4><figure>
+<h4 id="Demo编译"><a href="#Demo编译" class="headerlink" title="Demo编译"></a>Demo编译</h4><p>安装交叉编译器<code>aarch64</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update &amp;&amp; sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu<br></code></pre></td></tr></table></figure>
+
+<p>进入<code>rknn_model_zoo</code>项目目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/project-Toolkit2/rknn_model_zoo<br></code></pre></td></tr></table></figure>
+
+<p>给予<code>build-linux.sh</code>运行权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chmod</span> +x ./build-linux.sh<br></code></pre></td></tr></table></figure>
+
+<p>需要修改一下<code>~/project-Toolkit2/rknn_model_zoo/examples/yolov8/model/coco_80_labels_list.txt</code>的内容 和 <code>~/project-Toolkit2/rknn_model_zoo/examples/yolov8/cpp /postprocess.h</code>中的 OBJ_CLASS_NUM 宏，按照你数据集的yaml来改，顺序保持不动，数量保持一致；</p>
+<p>如，我的<a target="_blank" rel="noopener" href="https://github.com/ZhangKeLiang0627/YOLOv8-loopy/blob/main/dataset/loopy.yaml">loopy.yaml</a>就一个class，那么数量宏 OBJ_CLASS_NUM 就为1，然后<code>coco_80_labels_list.txt</code>就填loopy.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]</span><br><span class="hljs-attr">path:</span> <span class="hljs-string">&quot;C:\\Users\\hb2cpc\\Desktop\\loopy\\dataset\\images&quot;</span> <span class="hljs-comment"># dataset root dir</span><br><span class="hljs-attr">train:</span> <span class="hljs-string">&quot;train&quot;</span> <span class="hljs-comment"># train images (relative to &#x27;path&#x27;)</span><br><span class="hljs-attr">val:</span> <span class="hljs-string">&quot;val&quot;</span> <span class="hljs-comment"># val images (relative to &#x27;path&#x27;)</span><br><br><span class="hljs-comment"># Classes</span><br><span class="hljs-attr">nc:</span> <span class="hljs-number">1</span> <span class="hljs-comment"># number of classes</span><br><span class="hljs-attr">names:</span> [<span class="hljs-string">&quot;loopy&quot;</span>] <span class="hljs-comment"># class names</span><br></code></pre></td></tr></table></figure>
+
+<figure>
+<img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-11.png" srcset="/img/loading.gif" lazyload alt="" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-12.png" srcset="/img/loading.gif" lazyload alt="" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+
+<p>运行编译脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">./build-linux.sh -t &lt;target&gt; -a &lt;<span class="hljs-built_in">arch</span>&gt; -d &lt;build_demo_name&gt; [-b &lt;build_type&gt;] [-m] [-r] [-j]<br>    -t : target (rk356x/rk3576/rk3588/rv1106/rv1126b/rv1126/rk1808)<br>    -a : <span class="hljs-built_in">arch</span> (aarch64/armhf)<br>    -d : demo name<br>    -b : build_type(Debug/Release)<br>    -m : <span class="hljs-built_in">enable</span> address sanitizer, build_type need <span class="hljs-built_in">set</span> to Debug<br>	-r : <span class="hljs-built_in">disable</span> rga, use cpu resize image<br>	-j : <span class="hljs-built_in">disable</span> libjpeg to avoid conflicts between libjpeg and opencv<br><br><span class="hljs-comment"># 我们运行RK3566相关的YOLOv8命令即可。:</span><br>./build-linux.sh -t rk3566 -a aarch64 -d yolov8<br></code></pre></td></tr></table></figure>
+
+<p>最终生成<code>install/</code>文件目录.</p>
+<figure>
+<img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-13.png" srcset="/img/loading.gif" lazyload alt="" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<h4 id="板卡上部署推理"><a href="#板卡上部署推理" class="headerlink" title="板卡上部署推理"></a>板卡上部署推理</h4><p>把<code>rknn_model_zoo/install</code>传到板卡上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">scp -r ~/project-Toolkit2/rknn_model_zoo/install <span class="hljs-built_in">cat</span>@192.168.124.43:/<br></code></pre></td></tr></table></figure>
+
+<p>然后在板卡上操作，进入该install文件夹，接着指定一下库的位置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> LD_LIBRARY_PATH=./lib<br></code></pre></td></tr></table></figure>
+
+<p>最后，使用命令运行一下可执行文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./rknn_yolov8_demo ./model/yolov8.rknn ./model/loopy.jpg<br></code></pre></td></tr></table></figure>
+
+<figure>
 <img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-10.png" srcset="/img/loading.gif" lazyload alt="" style="border-radius: 15px;">
 <figcaption></figcaption>
 </figure>
----
 
-<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p><strong>鸣谢：</strong></p>
+<hr>
+<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>至此，你就又学会了一项新技能！快去创造无限可能吧（笑！</p>
+<p><strong>鸣谢：</strong></p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/example/yolov8.html">https://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/example/yolov8.html</a></li>
 <li><a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-3-rk3576/ai/yolov8/detection-model.html">https://wiki.lckfb.com/zh-hans/tspi-3-rk3576/ai/yolov8/detection-model.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/hb2cpc/YOLOv8-loopy">https://github.com/hb2cpc/YOLOv8-loopy</a><br>…</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/hb2cpc/YOLOv8-loopy">https://github.com/hb2cpc/YOLOv8-loopy</a></li>
 </ul>
+<p>…</p>
 <hr>
 
                 
@@ -454,7 +497,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Project-Page/" class="category-chain-item">Project Page</a>
+  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
   
   
 
