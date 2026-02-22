@@ -17,7 +17,7 @@ date: 2026-2-22 2:16:00
 
 {% note warning %}
 
-该笔记目前处于积极开发阶段。
+该笔记已经完成施工！
 
 {% endnote %}
 
@@ -295,22 +295,102 @@ python convert.py ~/project-Toolkit2/ultralytics_yolov8/best.onnx rk3566
 
 #### Demo编译
 
-...累了，晚点填坑、、、
+安装交叉编译器`aarch64`
+```bash
+sudo apt update && sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+```
+
+进入`rknn_model_zoo`项目目录：
+```bash
+cd ~/project-Toolkit2/rknn_model_zoo
+```
+
+给予`build-linux.sh`运行权限：
+```bash
+sudo chmod +x ./build-linux.sh
+```
+
+需要修改一下`~/project-Toolkit2/rknn_model_zoo/examples/yolov8/model/coco_80_labels_list.txt`的内容 和 `~/project-Toolkit2/rknn_model_zoo/examples/yolov8/cpp
+/postprocess.h`中的 OBJ_CLASS_NUM 宏，按照你数据集的yaml来改，顺序保持不动，数量保持一致；
+
+如，我的[loopy.yaml](https://github.com/ZhangKeLiang0627/YOLOv8-loopy/blob/main/dataset/loopy.yaml)就一个class，那么数量宏 OBJ_CLASS_NUM 就为1，然后`coco_80_labels_list.txt`就填loopy.
+```yaml
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: "C:\\Users\\hb2cpc\\Desktop\\loopy\\dataset\\images" # dataset root dir
+train: "train" # train images (relative to 'path')
+val: "val" # val images (relative to 'path')
+
+# Classes
+nc: 1 # number of classes
+names: ["loopy"] # class names
+```
+
+<figure>
+<img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-11.png" alt="" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-12.png" alt="" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+
+运行编译脚本：
+```bash
+./build-linux.sh -t <target> -a <arch> -d <build_demo_name> [-b <build_type>] [-m] [-r] [-j]
+    -t : target (rk356x/rk3576/rk3588/rv1106/rv1126b/rv1126/rk1808)
+    -a : arch (aarch64/armhf)
+    -d : demo name
+    -b : build_type(Debug/Release)
+    -m : enable address sanitizer, build_type need set to Debug
+	-r : disable rga, use cpu resize image
+	-j : disable libjpeg to avoid conflicts between libjpeg and opencv
+
+# 我们运行RK3566相关的YOLOv8命令即可。:
+./build-linux.sh -t rk3566 -a aarch64 -d yolov8
+```
+
+最终生成`install/`文件目录.
+
+<figure>
+<img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-13.png" alt="" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
 
 #### 板卡上部署推理
+
+把`rknn_model_zoo/install`传到板卡上：
+```bash
+scp -r ~/project-Toolkit2/rknn_model_zoo/install cat@192.168.124.43:/
+```
+
+然后在板卡上操作，进入该install文件夹，接着指定一下库的位置：
+```bash
+export LD_LIBRARY_PATH=./lib
+```
+
+最后，使用命令运行一下可执行文件：
+```bash
+./rknn_yolov8_demo ./model/yolov8.rknn ./model/loopy.jpg
+```
 
 <figure>
 <img src="/images/基于rk3566的泰山派的YOLOv8自定义模型部署/image-10.png" alt="" style="border-radius: 15px;">
 <figcaption></figcaption>
 </figure>
+
 ---
 
 ### 写在后面
+
+至此，你就又学会了一项新技能！快去创造无限可能吧（笑！
 
 **鸣谢：**
 - https://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/example/yolov8.html
 - https://wiki.lckfb.com/zh-hans/tspi-3-rk3576/ai/yolov8/detection-model.html
 - https://github.com/hb2cpc/YOLOv8-loopy
+
 ...
 
 ---
