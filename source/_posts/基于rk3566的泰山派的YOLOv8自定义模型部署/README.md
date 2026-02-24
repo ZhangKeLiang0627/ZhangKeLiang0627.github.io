@@ -193,7 +193,7 @@ pip install ultralytics -i https://mirrors.aliyun.com/pypi/simple
 ```
 
 {% note info %}
-模型训练我是在windows上进行，虚拟机Ubuntu上其实也能练，但是就是要配置GPU驱动相关的东东，有点儿麻烦了，如果不配置单纯拿CPU来跑，又比乌龟爬还要慢（捂额...索性我在windows上有YOLOv8训练环境，我就直接就地取材了哈。
+模型训练我是在windows上进行，虚拟机Ubuntu上其实也能练，但是就是要配置GPU驱动相关的东东，有点儿麻烦了，如果不配置单纯拿CPU来跑，又比乌龟爬还要慢（捂额...索性我在windows上有YOLOv8训练环境，我就直接就地取材了哈，就不演示训练过程啦！
 {% endnote %}
 
 #### 模型导出
@@ -387,9 +387,14 @@ export LD_LIBRARY_PATH=./lib
 至此，你就又学会了一项新技能！快去创造无限可能吧（笑！
 
 **鸣谢：**
-- https://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/example/yolov8.html
-- https://wiki.lckfb.com/zh-hans/tspi-3-rk3576/ai/yolov8/detection-model.html
-- https://github.com/hb2cpc/YOLOv8-loopy
+- JLC：https://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/example/yolov8.html
+- 野火：https://wiki.lckfb.com/zh-hans/tspi-3-rk3576/ai/yolov8/detection-model.html
+- 很好很详细的教程：https://blog.csdn.net/c858845275/article/details/146274652
+- loopy数据集：https://github.com/ZhangKeLiang0627/YOLOv8-loopy
+- onnx模型导出：https://github.com/airockchip/ultralytics_yolov8
+- rknn模型转换 & 推理Demo：https://github.com/airockchip/rknn_model_zoo
+- https://github.com/airockchip/rknn-toolkit2
+- https://github.com/LubanCat/lubancat_ai_manual_code
 
 ...
 
