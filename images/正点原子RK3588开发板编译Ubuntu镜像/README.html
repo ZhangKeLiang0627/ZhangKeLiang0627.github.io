@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><link href="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sys/myicon.png">
+  <link rel="icon" href="/img/sys/myicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2b2b2b">
+  <meta name="author" content="Zhang-keliang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="嘘...勉强能用balabala...">
+<meta property="og:type" content="website">
+<meta property="og:title" content="「正点原子RK3588开发板」编译Ubuntu镜像">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/README.html">
+<meta property="og:site_name" content="Hugo@kkl">
+<meta property="og:description" content="嘘...勉强能用balabala...">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/image-2.jpg">
+<meta property="article:published_time" content="2026-03-09T16:05:00.000Z">
+<meta property="article:modified_time" content="2026-03-09T16:33:32.491Z">
+<meta property="article:author" content="Zhang-keliang">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/image-2.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>「正点原子RK3588开发板」编译Ubuntu镜像 - Hugo@kkl</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/indeximg-hover.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zhangkeliang0627.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hugo@kkl&#39;s</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/image-1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="「正点原子RK3588开发板」编译Ubuntu镜像"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <h3 id="「正点原子RK3588开发板」编译Ubuntu镜像"><a href="#「正点原子RK3588开发板」编译Ubuntu镜像" class="headerlink" title="「正点原子RK3588开发板」编译Ubuntu镜像"></a>「正点原子RK3588开发板」编译Ubuntu镜像</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><div class="note note-warning">
+            <p>本文等待施工啊🧑‍🌾🧑‍🌾!</p>
+          </div>
+
+
+<div class="note note-success">
+            <p>好！你们好！好久不见！</p><p>关于这期文章，确实是充满着魔幻的故事的。首先我要强烈地抨击一波正点原子啊，我以前都是它们家的忠实粉丝，买了挺多开发板和开发工具的，但是这次我忍不住了，我真的太失望了，我跳！太失望了，退票！Ddddamn!!!</p><p>我二四年六月的时候从它们家买了一块RK3588的板子（8+64），但是由于那个时候学业繁忙，就没有玩起来，对原子家的生态、教程都是非常自信的，于是就把板子收藏好，直到今年才想到可以把板子掏出来玩玩，也刚好踏上了<code>OpenClaw</code>的浪潮啊，想着在RK3588上面部署一手。</p><p>然后发现，板子的四个角的其中一个铜柱虚焊了，脱落下来，只能靠螺丝拧在亚克力板上，这是硬件上的品控质量问题呀…</p><p>然后是，我想要在RK3588上装一个Ubuntu系统想着这样比较熟悉、比较好操作。然后给我一通好找，最好发现二五年十二月的时候，原子家下架了所有RK3588相关的Ubuntu资源、、、我跳！资料下载了好几个钟，你告诉我Ubuntu镜像没了，成绝版资源了？我能理解有bug下架，但你好歹给补一个版本吧，就这么不了了之了？！这不是一个很好的处理方式，我认为。</p><p>接着，找盆友找同事找网友，三番五次地找寻，终于找到了传说中的被官方下架的Ubuntu镜像，一顿烧录，结果发现，wifi驱动没有移植，只能插以太网，我跳！这年头谁家里常备网线呀，开发都是连wifi的好不啦！</p><p>此时已经对原子家失望透了，所幸天无绝人之路，几个月前，我还因为吐槽泰山派的生态差而用<code>Lubancat-SDK</code>给它做过镜像，那为啥不能给原子家的RK3588板子也做一个咧，说干就干，顺便把USB WiFi的驱动也一起打上，哼，你不提供技术支持，我自己来！真是太失望了，跳！</p><p>谢谢你们看完这段废话，发泄完毕，下面分享一波，用Lubuncat-SDK给正点原子RK3588板子编译Ubuntu镜像的全过程…</p><blockquote><p>Btw，之前我吐槽过泰山派的生态存在非常大的问题，然后今天我重新上人家的wiki去看的时候，人家连OpenClaw的部署、Docker的部署…都做出教程来了，说明人家什么，知错能改！还是值得支持一波的，很圈粉的操作。</p></blockquote><p><strong>——from 2026.3.10</strong></p>
+          </div>
+
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image-0.jpg" srcset="/img/loading.gif" lazyload alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image-1.jpg" srcset="/img/loading.gif" lazyload alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+
+<hr>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>当前已开发实现文件加密签名工具<strong>Signer</strong>(<em>Ed25519 + AES-256-GCM + SHA-256</em>).</p>
+<blockquote>
+<p>先来简单讲一下制作工具用上的这几个模块（专注用法，不讲原理：</p>
+</blockquote>
+<h3 id="Ed25519"><a href="#Ed25519" class="headerlink" title="Ed25519"></a>Ed25519</h3><p>一种签名验证算法… </p>
+<h3 id="AES-256-GCM"><a href="#AES-256-GCM" class="headerlink" title="AES-256-GCM"></a>AES-256-GCM</h3><p>一种加密算法…</p>
+<h3 id="SHA-256"><a href="#SHA-256" class="headerlink" title="SHA-256"></a>SHA-256</h3><p>一种不可逆的哈希…</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2>
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-65ad56e5" role="button" aria-expanded="false" aria-controls="collapse-65ad56e5">
+        <div class="fold-arrow">▶</div>Signer
+      </div>
+      <div class="fold-collapse collapse" id="collapse-65ad56e5">
+        <div class="fold-content">
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/env python3</span><br><span class="hljs-string">&quot;&quot;&quot;固件签名与加密工具（Ed25519 + AES-256-GCM + SHA-256哈希）</span><br><span class="hljs-string"></span><br><span class="hljs-string">功能：</span><br><span class="hljs-string">1. 生成Ed25519密钥对 + AES加密密钥（Base64格式打印）</span><br><span class="hljs-string">2. 对原始文件加密+哈希+签名，生成xxx.xxx.sig加密签名包</span><br><span class="hljs-string">3. 验证sig包的签名+哈希+解密，还原原始文件</span><br><span class="hljs-string">4. 打印已配置密钥的16进制格式（Ed25519私钥/公钥 + AES密钥）</span><br><span class="hljs-string"></span><br><span class="hljs-string">使用方法：</span><br><span class="hljs-string"># 1. 生成密钥（Base64格式打印，复制到代码变量中）</span><br><span class="hljs-string">python3 signer.py --generate-keys</span><br><span class="hljs-string"></span><br><span class="hljs-string"># 2. 填写密钥（将步骤1的Base64值填入代码中对应变量）</span><br><span class="hljs-string"># ED25519_PRIVATE_KEY_BASE64 = &quot;生成的Ed25519私钥Base64&quot;</span><br><span class="hljs-string"># ED25519_PUBLIC_KEY_BASE64 = &quot;生成的Ed25519公钥Base64&quot;</span><br><span class="hljs-string"># AES_KEY_BASE64 = &quot;生成的AES密钥Base64&quot;</span><br><span class="hljs-string"></span><br><span class="hljs-string"># 3. 加密+签名</span><br><span class="hljs-string">python3 signer.py --sign [原始文件路径]</span><br><span class="hljs-string">示例：python3 signer.py --sign firmware.img</span><br><span class="hljs-string"></span><br><span class="hljs-string"># 4. 验证+解密</span><br><span class="hljs-string">python3 signer.py --verify [.sig路径] [解密后文件输出路径]</span><br><span class="hljs-string">示例：python3 signer.py --verify firmware.img.sig restored.img</span><br><span class="hljs-string"></span><br><span class="hljs-string"># 5. 打印密钥16进制格式（需先填写Base64变量）</span><br><span class="hljs-string">python3 signer.py --print-hex</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> base64<br><span class="hljs-keyword">import</span> logging<br><span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> <span class="hljs-type">Tuple</span><br><span class="hljs-keyword">from</span> argparse <span class="hljs-keyword">import</span> ArgumentParser<br><span class="hljs-keyword">from</span> cryptography.hazmat.primitives.asymmetric <span class="hljs-keyword">import</span> ed25519<br><span class="hljs-keyword">from</span> cryptography.hazmat.primitives <span class="hljs-keyword">import</span> serialization, hashes<br><span class="hljs-keyword">from</span> cryptography.hazmat.primitives.ciphers <span class="hljs-keyword">import</span> Cipher, algorithms, modes<br><span class="hljs-keyword">from</span> cryptography.exceptions <span class="hljs-keyword">import</span> InvalidSignature<br><span class="hljs-keyword">from</span> cryptography.hazmat.backends <span class="hljs-keyword">import</span> default_backend<br><span class="hljs-keyword">import</span> secrets<br><br><span class="hljs-comment"># -------------------------- 用户需填写的密钥（Base64格式）--------------------------</span><br><span class="hljs-comment"># 请将--generate-keys生成的对应Base64值填入下方引号中</span><br>ED25519_PRIVATE_KEY_BASE64 = <span class="hljs-string">&quot;&quot;</span><br>ED25519_PUBLIC_KEY_BASE64 = <span class="hljs-string">&quot;&quot;</span><br>AES_KEY_BASE64 = <span class="hljs-string">&quot;&quot;</span><br><span class="hljs-comment"># ----------------------------------------------------------------------------------</span><br><br><span class="hljs-comment"># 配置日志</span><br>logging.basicConfig(<br>    level=logging.INFO,<br>    <span class="hljs-built_in">format</span>=<span class="hljs-string">&quot;%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s&quot;</span>,<br>    datefmt=<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span><br>)<br>logger = logging.getLogger(__name__)<br><br><span class="hljs-comment"># 常量定义（固定长度，用于拆分sig包）</span><br>ED25519_SIGNATURE_LEN = <span class="hljs-number">64</span>  <span class="hljs-comment"># Ed25519签名长度</span><br>AES_IV_LEN = <span class="hljs-number">12</span>             <span class="hljs-comment"># AES-GCM推荐IV长度（12字节，安全性最高）</span><br>AES_TAG_LEN = <span class="hljs-number">16</span>            <span class="hljs-comment"># AES-GCM认证标签长度（16字节）</span><br>AES_KEY_LEN = <span class="hljs-number">32</span>            <span class="hljs-comment"># AES-256密钥长度（32字节）</span><br>SHA256_HASH_LEN = <span class="hljs-number">32</span>        <span class="hljs-comment"># SHA-256哈希值长度（32字节）</span><br><br><span class="hljs-comment"># xxx.xxx.sig包结构</span><br><span class="hljs-comment"># [签名(64字节)] + [SHA256哈希值(32字节)] + [AES-IV(12字节)] + [AES-Tag(16字节)] + [明文加密后的密文数据(任意长度)]</span><br>SIG_PACKAGE_HEADER_LEN = ED25519_SIGNATURE_LEN + SHA256_HASH_LEN + AES_IV_LEN + AES_TAG_LEN<br><br><span class="hljs-comment"># ---------- 通用工具函数 ----------</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">base64_to_bytes</span>(<span class="hljs-params">base64_str: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">bytes</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;Base64字符串转字节流（含异常处理）&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-keyword">return</span> base64.b64decode(base64_str.strip())<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        logger.error(<span class="hljs-string">f&quot;Base64解码失败：<span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">bytes_to_hex</span>(<span class="hljs-params">bytes_data: <span class="hljs-built_in">bytes</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;字节流转16进制字符串（大写，无空格，便于复制）&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">return</span> bytes_data.<span class="hljs-built_in">hex</span>().upper()<br><br><span class="hljs-comment"># ---------- 密钥16进制转换函数 ----------</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">ed25519_priv_to_hex</span>(<span class="hljs-params">base64_str: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;Ed25519私钥（Base64格式）转16进制格式&quot;&quot;&quot;</span><br>    priv_bytes = base64_to_bytes(base64_str)<br>    <span class="hljs-comment"># 验证私钥格式合法性</span><br>    <span class="hljs-keyword">try</span>:<br>        ed25519.Ed25519PrivateKey.from_private_bytes(priv_bytes)<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        logger.error(<span class="hljs-string">f&quot;Ed25519私钥格式错误：<span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> bytes_to_hex(priv_bytes)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">ed25519_pub_to_hex</span>(<span class="hljs-params">base64_str: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;Ed25519公钥（Base64格式）转16进制格式&quot;&quot;&quot;</span><br>    pub_bytes = base64_to_bytes(base64_str)<br>    <span class="hljs-comment"># 验证公钥格式合法性</span><br>    <span class="hljs-keyword">try</span>:<br>        ed25519.Ed25519PublicKey.from_public_bytes(pub_bytes)<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        logger.error(<span class="hljs-string">f&quot;Ed25519公钥格式错误：<span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> bytes_to_hex(pub_bytes)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">aes_key_to_hex</span>(<span class="hljs-params">base64_str: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">str</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;AES密钥（Base64格式）转16进制格式&quot;&quot;&quot;</span><br>    aes_bytes = base64_to_bytes(base64_str)<br>    <span class="hljs-comment"># 验证AES密钥长度</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(aes_bytes) != AES_KEY_LEN:<br>        logger.error(<span class="hljs-string">f&quot;AES密钥长度错误（需<span class="hljs-subst">&#123;AES_KEY_LEN&#125;</span>字节，实际<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(aes_bytes)&#125;</span>字节）&quot;</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> bytes_to_hex(aes_bytes)<br><br><span class="hljs-comment"># ---------- 密钥生成函数 ----------</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">generate_all_keys</span>() -&gt; <span class="hljs-literal">None</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;生成全套密钥：Ed25519密钥对 + AES-256密钥（Base64格式打印）&quot;&quot;&quot;</span><br>    <span class="hljs-comment"># 1. 生成Ed25519密钥对</span><br>    logger.info(<span class="hljs-string">&quot;生成Ed25519签名密钥对...&quot;</span>)<br>    ed25519_private_key = ed25519.Ed25519PrivateKey.generate()<br>    ed25519_public_key = ed25519_private_key.public_key()<br>    <br>    <span class="hljs-comment"># 转Base64格式</span><br>    ed25519_priv_base64 = base64.b64encode(ed25519_private_key.private_bytes_raw()).decode(<span class="hljs-string">&quot;utf-8&quot;</span>)<br>    ed25519_pub_base64 = base64.b64encode(ed25519_public_key.public_bytes_raw()).decode(<span class="hljs-string">&quot;utf-8&quot;</span>)<br>    <br>    <span class="hljs-comment"># 2. 生成AES-256密钥</span><br>    logger.info(<span class="hljs-string">&quot;生成AES-256加密密钥...&quot;</span>)<br>    aes_key = secrets.token_bytes(AES_KEY_LEN)<br>    aes_key_base64 = base64.b64encode(aes_key).decode(<span class="hljs-string">&quot;utf-8&quot;</span>)<br>    <br>    <span class="hljs-comment"># 格式化打印（便于复制）</span><br>    logger.info(<span class="hljs-string">&quot;=&quot;</span>*<span class="hljs-number">80</span>)<br>    logger.info(<span class="hljs-string">&quot;✅ 密钥生成完成！请复制以下值填入代码中的对应变量：&quot;</span>)<br>    logger.info(<span class="hljs-string">&quot;-&quot;</span>*<span class="hljs-number">80</span>)<br>    logger.info(<span class="hljs-string">f&#x27;ED25519_PRIVATE_KEY_BASE64 = &quot;<span class="hljs-subst">&#123;ed25519_priv_base64&#125;</span>&quot;&#x27;</span>)<br>    logger.info(<span class="hljs-string">f&#x27;ED25519_PUBLIC_KEY_BASE64 = &quot;<span class="hljs-subst">&#123;ed25519_pub_base64&#125;</span>&quot;&#x27;</span>)<br>    logger.info(<span class="hljs-string">f&#x27;AES_KEY_BASE64 = &quot;<span class="hljs-subst">&#123;aes_key_base64&#125;</span>&quot;&#x27;</span>)<br>    logger.info(<span class="hljs-string">&quot;-&quot;</span>*<span class="hljs-number">80</span>)<br>    logger.info(<span class="hljs-string">&quot;📌 密钥预览（16进制格式）：&quot;</span>)<br>    logger.info(<span class="hljs-string">f&quot;Ed25519私钥：<span class="hljs-subst">&#123;ed25519_priv_to_hex(ed25519_priv_base64)&#125;</span>&quot;</span>)<br>    logger.info(<span class="hljs-string">f&quot;Ed25519公钥：<span class="hljs-subst">&#123;ed25519_pub_to_hex(ed25519_pub_base64)&#125;</span>&quot;</span>)<br>    logger.info(<span class="hljs-string">f&quot;AES密钥：<span class="hljs-subst">&#123;aes_key_to_hex(aes_key_base64)&#125;</span>&quot;</span>)<br>    logger.info(<span class="hljs-string">&quot;=&quot;</span>*<span class="hljs-number">80</span>)<br><br><span class="hljs-comment"># ---------- AES-256-GCM 加密与解密 ----------</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">aes_encrypt</span>(<span class="hljs-params">data: <span class="hljs-built_in">bytes</span>, aes_key: <span class="hljs-built_in">bytes</span></span>) -&gt; <span class="hljs-type">Tuple</span>[<span class="hljs-built_in">bytes</span>, <span class="hljs-built_in">bytes</span>, <span class="hljs-built_in">bytes</span>]:<br>    <span class="hljs-string">&quot;&quot;&quot;AES-256-GCM加密：返回（加密后数据, IV, 认证标签）&quot;&quot;&quot;</span><br>    iv = secrets.token_bytes(AES_IV_LEN)<br>    cipher = Cipher(algorithms.AES(aes_key), modes.GCM(iv), backend=default_backend())<br>    encryptor = cipher.encryptor()<br>    ciphertext = encryptor.update(data) + encryptor.finalize()<br>    <span class="hljs-keyword">return</span> ciphertext, iv, encryptor.tag<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">aes_decrypt</span>(<span class="hljs-params">ciphertext: <span class="hljs-built_in">bytes</span>, iv: <span class="hljs-built_in">bytes</span>, tag: <span class="hljs-built_in">bytes</span>, aes_key: <span class="hljs-built_in">bytes</span></span>) -&gt; <span class="hljs-built_in">bytes</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;AES-256-GCM解密：输入（加密数据, IV, 认证标签），返回原始数据&quot;&quot;&quot;</span><br>    cipher = Cipher(algorithms.AES(aes_key), modes.GCM(iv, tag), backend=default_backend())<br>    decryptor = cipher.decryptor()<br>    <span class="hljs-keyword">return</span> decryptor.update(ciphertext) + decryptor.finalize()<br><br><span class="hljs-comment"># ---------- Ed25519 签名与验证 ----------</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">calculate_sha256</span>(<span class="hljs-params">data: <span class="hljs-built_in">bytes</span></span>) -&gt; <span class="hljs-built_in">bytes</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;计算数据的SHA-256哈希值（固定32字节）&quot;&quot;&quot;</span><br>    hash_ctx = hashes.Hash(hashes.SHA256(), backend=default_backend())<br>    hash_ctx.update(data)<br>    <span class="hljs-keyword">return</span> hash_ctx.finalize()<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">sign_and_encrypt_firmware</span>(<span class="hljs-params">img_path: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-literal">None</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;对原始文件执行：AES加密 → 哈希 → 签名 → 生成sig包&quot;&quot;&quot;</span><br>    <span class="hljs-comment"># 校验密钥是否填写</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> ED25519_PRIVATE_KEY_BASE64 <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> AES_KEY_BASE64:<br>        logger.error(<span class="hljs-string">&quot;❌ 请先在代码中填写ED25519_PRIVATE_KEY_BASE64和AES_KEY_BASE64&quot;</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br>    <br>    <span class="hljs-comment"># 校验原始文件</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(img_path):<br>        logger.error(<span class="hljs-string">f&quot;❌ 原始文件不存在：<span class="hljs-subst">&#123;img_path&#125;</span>&quot;</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br>    <br>    <span class="hljs-comment"># 读取原始数据</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(img_path, <span class="hljs-string">&quot;rb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        img_data = f.read()<br>    logger.info(<span class="hljs-string">f&quot;读取原始文件：<span class="hljs-subst">&#123;img_path&#125;</span>（大小：<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(img_data)&#125;</span>字节）&quot;</span>)<br>    <br>    <span class="hljs-comment"># 加载AES密钥</span><br>    aes_key = base64_to_bytes(AES_KEY_BASE64)<br>    logger.info(<span class="hljs-string">&quot;AES-256密钥加载成功&quot;</span>)<br>    <br>    <span class="hljs-comment"># AES加密</span><br>    ciphertext, iv, tag = aes_encrypt(img_data, aes_key)<br>    logger.info(<span class="hljs-string">f&quot;AES加密完成（密文大小：<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(ciphertext)&#125;</span>字节）&quot;</span>)<br>    <br>    <span class="hljs-comment"># 计算密文哈希</span><br>    ciphertext_hash = calculate_sha256(ciphertext)<br>    logger.info(<span class="hljs-string">&quot;SHA-256哈希计算完成&quot;</span>)<br>    <br>    <span class="hljs-comment"># 加载Ed25519私钥并签名</span><br>    <span class="hljs-keyword">try</span>:<br>        ed25519_priv_bytes = base64_to_bytes(ED25519_PRIVATE_KEY_BASE64)<br>        ed25519_private_key = ed25519.Ed25519PrivateKey.from_private_bytes(ed25519_priv_bytes)<br>        signature = ed25519_private_key.sign(ciphertext_hash)<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        logger.error(<span class="hljs-string">f&quot;❌ Ed25519签名失败：<span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br>    logger.info(<span class="hljs-string">&quot;Ed25519签名完成&quot;</span>)<br>    <br>    <span class="hljs-comment"># 生成sig包</span><br>    sig_path = <span class="hljs-string">f&quot;<span class="hljs-subst">&#123;img_path&#125;</span>.sig&quot;</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(sig_path, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(signature)<br>        f.write(ciphertext_hash)<br>        f.write(iv)<br>        f.write(tag)<br>        f.write(ciphertext)<br>    logger.info(<span class="hljs-string">f&quot;✅ 加密签名包生成完成：<span class="hljs-subst">&#123;sig_path&#125;</span>（大小：<span class="hljs-subst">&#123;os.path.getsize(sig_path)&#125;</span>字节）&quot;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">verify_and_decrypt_firmware</span>(<span class="hljs-params">sig_path: <span class="hljs-built_in">str</span>, output_img_path: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">bool</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;对sig包执行：拆分 → 签名验证 → 哈希校验 → 解密 → 输出原始文件&quot;&quot;&quot;</span><br>    <span class="hljs-comment"># 校验密钥是否填写</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> ED25519_PUBLIC_KEY_BASE64 <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> AES_KEY_BASE64:<br>        logger.error(<span class="hljs-string">&quot;❌ 请先在代码中填写ED25519_PUBLIC_KEY_BASE64和AES_KEY_BASE64&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>    <br>    <span class="hljs-comment"># 校验sig包</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(sig_path):<br>        logger.error(<span class="hljs-string">f&quot;❌ sig包不存在：<span class="hljs-subst">&#123;sig_path&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>    <br>    <span class="hljs-comment"># 读取并拆分sig包</span><br>    sig_file_size = os.path.getsize(sig_path)<br>    <span class="hljs-keyword">if</span> sig_file_size &lt; SIG_PACKAGE_HEADER_LEN:<br>        logger.error(<span class="hljs-string">f&quot;❌ sig包格式无效（过小，需至少<span class="hljs-subst">&#123;SIG_PACKAGE_HEADER_LEN&#125;</span>字节）&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>    <br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(sig_path, <span class="hljs-string">&quot;rb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        signature = f.read(ED25519_SIGNATURE_LEN)<br>        saved_hash = f.read(SHA256_HASH_LEN)<br>        iv = f.read(AES_IV_LEN)<br>        tag = f.read(AES_TAG_LEN)<br>        ciphertext = f.read()<br>    logger.info(<span class="hljs-string">&quot;sig包拆分完成&quot;</span>)<br>    <br>    <span class="hljs-comment"># 计算密文哈希</span><br>    calculated_hash = calculate_sha256(ciphertext)<br>    logger.info(<span class="hljs-string">&quot;密文哈希值计算完成&quot;</span>)<br>    <br>    <span class="hljs-comment"># 验证签名</span><br>    <span class="hljs-keyword">try</span>:<br>        ed25519_pub_bytes = base64_to_bytes(ED25519_PUBLIC_KEY_BASE64)<br>        ed25519_public_key = ed25519.Ed25519PublicKey.from_public_bytes(ed25519_pub_bytes)<br>        ed25519_public_key.verify(signature, saved_hash)<br>        logger.info(<span class="hljs-string">&quot;✅ 签名验证通过&quot;</span>)<br>    <span class="hljs-keyword">except</span> InvalidSignature:<br>        logger.error(<span class="hljs-string">&quot;❌ 签名验证失败（数据可能被篡改）&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        logger.error(<span class="hljs-string">f&quot;❌ 签名验证异常：<span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>    <br>    <span class="hljs-comment"># 校验哈希值</span><br>    <span class="hljs-keyword">if</span> calculated_hash != saved_hash:<br>        logger.error(<span class="hljs-string">&quot;❌ 哈希值校验失败（密文已篡改）&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>    logger.info(<span class="hljs-string">&quot;✅ 哈希值校验通过&quot;</span>)<br>    <br>    <span class="hljs-comment"># AES解密</span><br>    <span class="hljs-keyword">try</span>:<br>        aes_key = base64_to_bytes(AES_KEY_BASE64)<br>        img_data = aes_decrypt(ciphertext, iv, tag, aes_key)<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        logger.error(<span class="hljs-string">f&quot;❌ AES解密失败：<span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br>    logger.info(<span class="hljs-string">f&quot;AES解密完成（原始数据大小：<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(img_data)&#125;</span>字节）&quot;</span>)<br>    <br>    <span class="hljs-comment"># 保存原始文件</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(output_img_path, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(img_data)<br>    logger.info(<span class="hljs-string">f&quot;✅ 原始文件已保存：<span class="hljs-subst">&#123;output_img_path&#125;</span>&quot;</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br><br><span class="hljs-comment"># ---------- 打印密钥16进制格式函数 ----------</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_all_keys_hex</span>() -&gt; <span class="hljs-literal">None</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;打印所有已配置密钥的16进制格式（需先填写Base64变量）&quot;&quot;&quot;</span><br>    <span class="hljs-comment"># 校验密钥是否填写</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-built_in">all</span>([ED25519_PRIVATE_KEY_BASE64, ED25519_PUBLIC_KEY_BASE64, AES_KEY_BASE64]):<br>        logger.error(<span class="hljs-string">&quot;❌ 请先在代码中填写所有3个Base64密钥变量&quot;</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br>    <br>    <span class="hljs-comment"># 转换并打印</span><br>    logger.info(<span class="hljs-string">&quot;=&quot;</span>*<span class="hljs-number">80</span>)<br>    logger.info(<span class="hljs-string">&quot;📋 已配置密钥的16进制格式：&quot;</span>)<br>    logger.info(<span class="hljs-string">&quot;-&quot;</span>*<span class="hljs-number">80</span>)<br>    <span class="hljs-comment"># logger.info(f&quot;Ed25519私钥：&#123;ed25519_priv_to_hex(ED25519_PRIVATE_KEY_BASE64)&#125;&quot;)</span><br>    logger.info(<span class="hljs-string">f&quot;Ed25519公钥：<span class="hljs-subst">&#123;ed25519_pub_to_hex(ED25519_PUBLIC_KEY_BASE64)&#125;</span>&quot;</span>)<br>    logger.info(<span class="hljs-string">f&quot;AES-256密钥：<span class="hljs-subst">&#123;aes_key_to_hex(AES_KEY_BASE64)&#125;</span>&quot;</span>)<br>    logger.info(<span class="hljs-string">&quot;=&quot;</span>*<span class="hljs-number">80</span>)<br><br><span class="hljs-comment"># ---------- 参数解析函数 ----------</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">parse_arguments</span>() -&gt; ArgumentParser:<br>    <span class="hljs-string">&quot;&quot;&quot;解析命令行参数&quot;&quot;&quot;</span><br>    parser = ArgumentParser(description=<span class="hljs-string">&quot;Firmware Signer &amp; Encryptor (Ed25519 + AES-256-GCM + SHA-256)&quot;</span>)<br>    <br>    <span class="hljs-comment"># 互斥参数组：必须选择一个操作</span><br>    group = parser.add_mutually_exclusive_group(required=<span class="hljs-literal">True</span>)<br>    group.add_argument(<br>        <span class="hljs-string">&quot;--generate-keys&quot;</span>,<br>        action=<span class="hljs-string">&quot;store_true&quot;</span>,<br>        <span class="hljs-built_in">help</span>=<span class="hljs-string">&quot;Generate full keys (Ed25519 + AES-256) → print Base64 format&quot;</span><br>    )<br>    group.add_argument(<br>        <span class="hljs-string">&quot;--sign&quot;</span>,<br>        nargs=<span class="hljs-number">1</span>,<br>        metavar=(<span class="hljs-string">&quot;IMG_PATH&quot;</span>),<br>        <span class="hljs-built_in">help</span>=<span class="hljs-string">&quot;Sign + Encrypt firmware (use configured Base64 keys) → e.g., --sign firmware.img&quot;</span><br>    )<br>    group.add_argument(<br>        <span class="hljs-string">&quot;--verify&quot;</span>,<br>        nargs=<span class="hljs-number">2</span>,<br>        metavar=(<span class="hljs-string">&quot;SIG_PATH&quot;</span>, <span class="hljs-string">&quot;OUTPUT_IMG_PATH&quot;</span>),<br>        <span class="hljs-built_in">help</span>=<span class="hljs-string">&quot;Verify + Decrypt firmware (use configured Base64 keys) → e.g., --verify firmware.img.sig restored.img&quot;</span><br>    )<br>    group.add_argument(<br>        <span class="hljs-string">&quot;--print-hex&quot;</span>,<br>        action=<span class="hljs-string">&quot;store_true&quot;</span>,<br>        <span class="hljs-built_in">help</span>=<span class="hljs-string">&quot;Print configured keys in HEX format (require Base64 keys filled first)&quot;</span><br>    )<br>    <br>    <span class="hljs-keyword">return</span> parser.parse_args()<br><br><span class="hljs-comment"># ---------- 主函数 ----------</span><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    args = parse_arguments()<br>    <br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-keyword">if</span> args.generate_keys:<br>            generate_all_keys()<br>        <span class="hljs-keyword">elif</span> args.sign:<br>            img_path = args.sign[<span class="hljs-number">0</span>]<br>            sign_and_encrypt_firmware(img_path)<br>        <span class="hljs-keyword">elif</span> args.verify:<br>            sig_path, output_img_path = args.verify<br>            verify_result = verify_and_decrypt_firmware(sig_path, output_img_path)<br>            sys.exit(<span class="hljs-number">0</span> <span class="hljs-keyword">if</span> verify_result <span class="hljs-keyword">else</span> <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">elif</span> args.print_hex:<br>            print_all_keys_hex()<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        logger.error(<span class="hljs-string">f&quot;❌ 工具执行失败：<span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&quot;</span>, exc_info=<span class="hljs-literal">True</span>)<br>        sys.exit(<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p><del>虽然，今天是假期，所以因为是假期需要休息，合情合理，今日只想要大睡特睡，有空会更新（这坑大，睡下怕一趴不起啦ahh</del></p>
+<p>优化方向，密钥在嵌入式设备端将以硬编码的方式编译成二进制文件，可能存在被反编译的风险，所以可对密钥采取<strong>凯撒密码</strong>进一步加密…</p>
+<!-- ### 鸣谢 -->
+
+
+
+  
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-api-sooty.vercel.app/","region":null,"path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div class="text-center py-1"> <div class="img-circle rotate"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/avatar.png" srcset="/img/loading.gif" lazyload></div> <br> <span># Carpe diem </span> <p> </div>
+<span> Framwork </span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-switch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>
+<div> <span>Copyright © 2023-2026</span> <a href="https://zhangkeliang0627.github.io/" target="_blank" rel="nofollow noopener"> <span>Hugo@kkl</span> </a> </div>
+<style> .img-circle { display: block; margin: 0 auto; border-radius: 50%; overflow: hidden; width: 150px; height: 150px; } .img-circle img { display: block; max-width: 100%; height: auto; } .text-center { text-align: center; } .py-1 { padding-top: 1rem; padding-bottom: 1rem; } .rotate { transition: transform 0.8s; } .rotate:hover { transform: rotate(360deg); } div { line-height: 1.5; } </style> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/js/index.js"></script><!-- hexo injector body_end end --></body>
+</html>
