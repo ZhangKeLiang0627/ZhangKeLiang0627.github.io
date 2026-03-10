@@ -1,6 +1,6 @@
 ---
 title: 杂记丨1月：在没有答案的日子里
-excerpt: 二六开年，在没有答案的日子里，请你去干一盘肥美热乎的寿司吧🍣
+excerpt: 二六开年，在没有答案的日子里，请你去干一盘肥美热乎的寿司吧！
 tags: [life, record]
 index_img: /images/杂记/2026年/1月/image-10.jpg
 banner_img: /images/杂记/2026年/1月/image-10.jpg
