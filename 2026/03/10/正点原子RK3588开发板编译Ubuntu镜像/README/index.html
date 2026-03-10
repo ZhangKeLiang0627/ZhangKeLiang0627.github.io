@@ -25,9 +25,11 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/image-2.jpg">
 <meta property="article:published_time" content="2026-03-09T16:05:00.000Z">
-<meta property="article:modified_time" content="2026-03-09T18:08:35.977Z">
+<meta property="article:modified_time" content="2026-03-10T16:13:26.429Z">
 <meta property="article:author" content="Zhang-keliang">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="rockchip">
+<meta property="article:tag" content="rk3588">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://zhangkeliang0627.github.io/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/image-2.jpg">
   
@@ -228,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k words
+          2.1k words
         
       </span>
     
@@ -239,7 +241,7 @@
         
         
         
-          9 mins
+          18 mins
         
       </span>
     
@@ -290,7 +292,7 @@
               <div class="markdown-body">
                 
                 <h3 id="「正点原子RK3588开发板」编译Ubuntu镜像"><a href="#「正点原子RK3588开发板」编译Ubuntu镜像" class="headerlink" title="「正点原子RK3588开发板」编译Ubuntu镜像"></a>「正点原子RK3588开发板」编译Ubuntu镜像</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><div class="note note-warning">
-            <p>本文等待施工啊🧑‍🌾🧑‍🌾!</p>
+            <p>本文已经完成施工🎉!</p>
           </div>
 
 
@@ -328,11 +330,77 @@
 <li>鲁班猫通用SDK(必选)：<a target="_blank" rel="noopener" href="https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/quick_start/baidu_cloud/baidu_cloud.html">https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/quick_start/baidu_cloud/baidu_cloud.html</a></li>
 <li>原子家RK3588的Device-tree和wifi-driver(必选)：<a href="/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/atk-rk3588_device-tree_and_wifi-driver.7z">戳这里下载</a></li>
 </ul>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>…</p>
-<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>编译好的Ubuntu镜像（baidu网盘：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1VmlDE7szSX_R9GTtuXEx8w?pwd=rn46">https://pan.baidu.com/s/1VmlDE7szSX_R9GTtuXEx8w?pwd=rn46</a><br>…</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="1-搭建鲁班猫SDK：LubanCat-Gen-SDK"><a href="#1-搭建鲁班猫SDK：LubanCat-Gen-SDK" class="headerlink" title="1. 搭建鲁班猫SDK：LubanCat_Gen_SDK"></a>1. 搭建鲁班猫SDK：LubanCat_Gen_SDK</h3><p>请移步文章<a href="https://zhangkeliang0627.github.io/2025/11/03/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8Erk3566%E7%9A%84%E6%B3%B0%E5%B1%B1%E6%B4%BE%E7%9A%84%E4%B8%80%E5%88%87/README/#1-%E6%90%AD%E5%BB%BA%E9%B2%81%E7%8F%AD%E7%8C%ABSDK%EF%BC%9ALubanCat-Gen-SDK">关于「基于rk3566的泰山派」的一切</a>进行SDK的搭建，讲解非常的细致！我这里就不反复赘述了。</p>
+<h3 id="2-制作适配RK3588的镜像"><a href="#2-制作适配RK3588的镜像" class="headerlink" title="2. 制作适配RK3588的镜像"></a>2. 制作适配RK3588的镜像</h3><h4 id="添加mk"><a href="#添加mk" class="headerlink" title="添加mk"></a>添加mk</h4><p>我这次准备构建<code>5.10内核 + Ubuntu20.04</code>的<code>xfce</code>含有图形操作界面的环境，<span class="label label-success"><u>这里lite指无图形操作界面，xfce指有图形操作界面。</u><br></span>所以，先前往目录<code>~/LubanCat_SDK/device/rockchip/.chips/rk3588</code>，在这里新建了自己的配置文件是<code>Hugokkl_rk3588_ubuntu_linux5.10_xfce_defconfig</code><u>（这里我是复制了一份<code>LubanCat_rk3588_ubuntu_linux5.10_xfce_defconfig</code>然后把里面的<code>RK_KERNEL_DTS_NAME</code>改为原子家提供的设备树，其他的都没有变化.</u></p>
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cfg"># RK_BUILDROOT is not set<br># RK_YOCTO is not set<br>RK_UBUNTU_FOCAL=y<br>RK_ROOTFS_SYSTEM_UBUNTU=y<br>RK_ROOTFS_TARGET_XFCE=y<br>RK_KERNEL_PREFERRED=&quot;5.10&quot;<br>RK_KERNEL_CFG=&quot;lubancat_linux_rk3588_defconfig&quot;<br>RK_KERNEL_DTS_NAME=&quot;rk3588-atk-devkit&quot;<br>RK_KERNEL_EXTBOOT=y<br># RK_RECOVERY is not set<br>RK_EXTRA_PARTITION_NUM=0<br>RK_PARAMETER=&quot;parameter-extboot.txt&quot;<br>RK_USE_FIT_IMG=y<br>RK_PACKAGE_FILE_CUSTOM=y<br>RK_PACKAGE_FILE=&quot;package-file-extboot&quot;<br></code></pre></td></tr></table></figure>
+
+<h4 id="添加设备树"><a href="#添加设备树" class="headerlink" title="添加设备树"></a>添加设备树</h4><p>首先，先<a href="/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/atk-rk3588_device-tree_and_wifi-driver.7z">戳这里下载 -&gt; atk-rk3588_device-tree_and_wifi-driver</a></p>
+<p>获取到原子家RK3588开发板提供的设备树文件，或者你可以从它们家的资料盘的SDK当中拿到，几个设备树文件如下：</p>
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image-1.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<p>然后，把下载好的<code>device-tree</code>文件夹内的<strong>这几个文件</strong>放到设备树存放目录<code>~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip</code>下，即可！</p>
+<h4 id="添加网卡驱动"><a href="#添加网卡驱动" class="headerlink" title="添加网卡驱动"></a>添加网卡驱动</h4><p>首先，先<a href="/images/%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90RK3588%E5%BC%80%E5%8F%91%E6%9D%BF%E7%BC%96%E8%AF%91Ubuntu%E9%95%9C%E5%83%8F/atk-rk3588_device-tree_and_wifi-driver.7z">戳这里下载 -&gt; atk-rk3588_device-tree_and_wifi-driver</a></p>
+<p>同样的，网卡驱动你也可以在原子家RK3588开发板提供的buildroot-SDK中找到，这块板子使用的USB WiFi网卡是<code>RTL8733BU</code>。</p>
+<p>由于原Lubancat-SDK中没有这个驱动，所以我们只要把下载好的<code>wifi-driver</code>里面的<code>rtl8733bu</code>文件夹放到目录<code>~/LubanCat_SDK/kernel-5.10/drivers/net/wireless/rockchip_wlan</code>下。</p>
+<p>好了，这样网卡的驱动源码就有了，接下来，我们开始配置驱动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 回到sdk根目录，我们开始来配置驱动</span><br>(base) hugokkl@ubuntu:~$ <span class="hljs-built_in">cd</span> ~/LubanCat_SDK <br><span class="hljs-comment"># 选择的你的芯片型号和mk</span><br>(base) hugokkl@ubuntu:~/LubanCat_SDK$ ./build.sh chip<br><br><span class="hljs-comment">############### LubanCat Linux SDK ###############</span><br><br>Manifest: lubancat_linux_generic_20250826.xml<br><br>Log colors: message notice warning error fatal<br><br>Log saved at /home/hugokkl/LubanCat_SDK/output/sessions/2026-03-10_23-22-01<br>Pick a chip:<br><br>1. rk312x<br>2. rk3528<br>3. rk3562<br>4. rk3566_rk3568<br>5. rk3576<br>6. rk3588<br>Which would you like? [1]: 6<br>Switching to chip: rk3588<br>Pick a defconfig:<br><br>1. rockchip_defconfig<br>2. Hugokkl_rk3588_ubuntu_linux5.10_xfce_defconfig<br>3. LubanCat_rk3588_buildroot_extboot_defconfig<br>4. LubanCat_rk3588_buildroot_rkboot_defconfig<br>5. LubanCat_rk3588_debian_gnome_linux5.10_defconfig<br>6. LubanCat_rk3588_debian_gnome_linux6.1_defconfig<br>7. LubanCat_rk3588_debian_lite_linux5.10_defconfig<br>8. LubanCat_rk3588_debian_lite_linux6.1_defconfig<br>9. LubanCat_rk3588_ubuntu_linux5.10_gnome_defconfig<br>10. LubanCat_rk3588_ubuntu_linux5.10_lite_defconfig<br>11. LubanCat_rk3588_ubuntu_linux5.10_xfce_defconfig<br>12. rockchip_rk3588_evb1_lp4_v10_amp_defconfig<br>13. rockchip_rk3588_evb1_lp4_v10_defconfig<br>14. rockchip_rk3588_evb1_lp4_v10_mcu_defconfig<br>15. rockchip_rk3588_evb7_v11_defconfig<br>16. rockchip_rk3588_ipc_evb1_v10_defconfig<br>17. rockchip_rk3588_ipc_evb7_lp4_v11_defconfig<br>18. rockchip_rk3588_multi_ipc_evb1_v10_defconfig<br>19. rockchip_rk3588s_evb1_lp4x_v10_defconfig<br>Which would you like? [1]: 2<br>Switching to defconfig: /home/hugokkl/LubanCat_SDK/device/rockchip/.chip/Hugokkl_rk3588_ubuntu_linux5.10_xfce_defconfig<br><span class="hljs-comment">#</span><br><span class="hljs-comment"># configuration written to /home/hugokkl/LubanCat_SDK/output/.config</span><br><span class="hljs-comment">#</span><br>Using preferred kernel version(5.10)<br>(base) hugokkl@ubuntu:~/LubanCat_SDK$ <br></code></pre></td></tr></table></figure>
+
+<p>然后，执行以下命令，进入图形化内核驱动配置界面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 进入图形化配置界面</span><br>./build.sh kconfig<br></code></pre></td></tr></table></figure>
+
+<p>搜索<code>rtl8733bu</code>，勾选<code>Realtek 8733B USB WiFi</code>为模块，然后保存，即可！</p>
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image-3.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<h4 id="修改boot-init-sh"><a href="#修改boot-init-sh" class="headerlink" title="修改boot_init.sh"></a>修改boot_init.sh</h4><p>打开<code>~/LubanCat_SDK/ubuntu20.04/overlay/etc/init.d/boot_init.sh</code>，如下图，修改一下<code>BOARD_DTB</code>字段：</p>
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image-4.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo &quot;Device ID Error !!!&quot;<br>BOARD_NAME=&#x27;LubanCat-RK3588&#x27;<br>BOARD_DTB=&#x27;rk3588-atk-devkit.dtb&#x27;<br>BOARD_uEnv=&#x27;uEnvLubanCat.txt&#x27;<br></code></pre></td></tr></table></figure>
+
+<h4 id="镜像编译"><a href="#镜像编译" class="headerlink" title="镜像编译"></a>镜像编译</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 首先，前往SDK根目录下</span><br><span class="hljs-built_in">cd</span> ~/LubanCat_SDK<br><br><span class="hljs-comment"># 如果你的rootfs需要更新，你需要先把原来的删掉 / 只是修改设备树、内核、uboot等可以跳过此步骤</span><br>sudo <span class="hljs-built_in">rm</span> ~/LubanCat_SDK/ubuntu20.04/ubuntu-rk3588-xfce-rootfs.img<br><br><span class="hljs-comment"># 清理上一次的编译结果</span><br>./build.sh cleanall<br><br><span class="hljs-comment"># 选择芯片和对应配置文件 / 选择对应的数字按回车就行</span><br>./build.sh chip<br><br><span class="hljs-comment"># 最后，全编译</span><br>./build.sh<br></code></pre></td></tr></table></figure>
+
+<p>最后的编译出来的镜像为<code>~/LubanCat_SDK/output/update/Image/update.img</code>，然后用瑞芯微官方的烧录工具进行烧录就ok啦！</p>
+<p>这里有泰山派官方详细的<a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/system-usage/img-download.html">烧录教程</a>，我就不重复赘述啦，讲得很好的！</p>
+<p>原子家的板子是按下<code>Update</code>键再上电，是<code>Mushroom</code>模式、按下<code>+V</code>键再上电，是<code>Loader</code>模式，数据线插<code>Type-C0</code>连接电脑。</p>
+<h4 id="烧录验证"><a href="#烧录验证" class="headerlink" title="烧录验证"></a>烧录验证</h4><p>最后我们就可以拿板子来验证一下咱们编译的镜像，数据线插<code>UART</code>口，波特率<code>1500000</code>，启动非常的流畅，可以看到LubanCat的Logo，然后测试wifi连接网络也没有什么问题！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 一些wifi测试指令</span><br><br>nmcli device status <span class="hljs-comment"># 列出所有网络设备</span><br><br>nmcli device wifi list <span class="hljs-comment"># 扫描可用 WiFi 网络</span><br><br>sudo nmcli device wifi connect <span class="hljs-string">&quot;SSID名称&quot;</span> password <span class="hljs-string">&quot;密码&quot;</span> <span class="hljs-comment"># 连接到 WiFi 网络</span><br><br>sudo nmcli connection up <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 连接已保存网络</span><br><br>sudo nmcli connection down <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 断开当前的网络连接</span><br><br>sudo nmcli connection delete <span class="hljs-string">&quot;SSID名称&quot;</span> <span class="hljs-comment"># 删除已保存的 WiFi 网络配置</span><br></code></pre></td></tr></table></figure>
+
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image-5.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image-6.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<p>最后，再放一张我在这块板子上养的小龙虾！</p>
+<figure>
+<img src="/images/正点原子RK3588开发板编译Ubuntu镜像/image-7.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>我编译好的原子家RK3588的Ubuntu镜像（baidu网盘自取：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1VmlDE7szSX_R9GTtuXEx8w?pwd=rn46">https://pan.baidu.com/s/1VmlDE7szSX_R9GTtuXEx8w?pwd=rn46</a></p>
 <h3 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h3><ul>
 <li>Lubancat-SDK：<a target="_blank" rel="noopener" href="https://doc.embedfire.com/linux/rk356x/build_and_deploy/zh/latest/building_image/lubancat_sdk/lubancat_gen_sdk.html">https://doc.embedfire.com/linux/rk356x/build_and_deploy/zh/latest/building_image/lubancat_sdk/lubancat_gen_sdk.html</a></li>
 <li>RK3588的wifi模组移植：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37603131/article/details/146775806">https://blog.csdn.net/qq_37603131/article/details/146775806</a></li>
+<li>正点原子RK3588安装和编译SDK：<a target="_blank" rel="noopener" href="https://blog.csdn.net/mmmm123CC/article/details/154131785">https://blog.csdn.net/mmmm123CC/article/details/154131785</a><br>…</li>
 </ul>
 
                 
@@ -367,7 +435,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+      
+        <a href="/tags/rockchip/" class="print-no-link">#rockchip</a>
+      
+        <a href="/tags/rk3588/" class="print-no-link">#rk3588</a>
       
     </div>
   
