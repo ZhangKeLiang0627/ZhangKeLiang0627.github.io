@@ -50,8 +50,8 @@ _**枯木逢几春？**_
 <figcaption></figcaption>
 </figure>
 
-
 ...
+
 ---
 
 ### 2026/3/7 - 枯木逢几春
@@ -82,9 +82,16 @@ hey! hi! how're you doing!
 
 然后，我想说说新年的事情。
 
-二六年的新年，我一个人过。
+是的，二六年的新年，我一个人过。
 
-...
+> 找到了一片可以暂时驻足喘息的栖息地，今年一个人过年，安逸宁静。
+>
+> 春节在我心中渐渐要淡出去成为一个平常的日子，平常的假期就应当平常地度过。这份很临时决定的如常，仿佛让我重新找到，那颗丢失很久的心灵地图...
+
+<figure>
+<img src="/images/杂记/2026年/3月/image-3.jpg" alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
 
 ### 2026/3/11 - 大浪
 <!-- require APlayer -->
@@ -99,6 +106,8 @@ hey! hi! how're you doing!
 	id="2638948288">
 </meting-js>
 
+新年，祝好，祝平安！大浪就要来了...
+
 ...
 
 <!-- 热力图的挂件 -->
@@ -109,8 +118,12 @@ hey! hi! how're you doing!
 
 ### 写在后面
 
-...
+上班啦！开工小吉（开工消极，一些粗糙的谐音梗技术，笑。
 
+<figure>
+<img src="/images/杂记/2026年/3月/image-2.jpg" alt="" width = "600" height = "500" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
 
 _**枯木逢几春...**_
 
