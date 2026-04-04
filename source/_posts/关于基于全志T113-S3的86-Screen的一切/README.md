@@ -1419,6 +1419,24 @@ endef
 
 重新修改后保存，重新再pack，到这一步，基本上就能打包成功啦！
 
+#### ssh远程连接（测试）
+
+```bash
+# adb连接一下板子，然后输入下面的命令
+uci set dropbear.@dropbear[0].PasswordAuth=on
+uci set dropbear.@dropbear[0].RootPasswordAuth=on
+uci commit dropbear
+
+# 然后重启一下服务
+/etc/init.d/dropbear restart
+
+# 设置一下密码，默认账号是root
+passwd
+# 然后两次输入设置你自己的密码
+
+# 接着你就可以用ssh远程连接啦~
+```
+
 ...
 
 
