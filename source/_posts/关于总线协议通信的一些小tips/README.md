@@ -103,6 +103,7 @@ password: password
   "jsonrpc": "2.0",
   "src": "device_B",        // 发送方
   "des": "device_A",        // 接收方
+  "method": "your_method",  // 方法
   "result": {               // 参数
     "sta": true,
     // ...
