@@ -17,7 +17,7 @@ password: password
 
 {% note warning %}
 
-本文等待施工啊🧑‍🌾🧑‍🌾!
+~本文等待施工啊🧑‍🌾🧑‍🌾!~
 
 {% endnote %}
 
