@@ -157,6 +157,8 @@ password: password
 - MCU to MCU：485总线、串口等
 - 进程 to 进程：UDS等
 
+### 黏包问题
+
 ...
 
 ## 写在后面
