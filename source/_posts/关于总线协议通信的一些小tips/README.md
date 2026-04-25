@@ -159,6 +159,8 @@ password: password
 
 ### 黏包问题
 
+ring buffer.
+
 ...
 
 ## 写在后面
