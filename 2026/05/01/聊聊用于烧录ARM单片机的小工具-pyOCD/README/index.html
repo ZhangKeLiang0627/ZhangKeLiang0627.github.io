@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E8%81%8A%E8%81%8A%E7%94%A8%E4%BA%8E%E7%83%A7%E5%BD%95ARM%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7-pyOCD/pyOCD.png">
 <meta property="article:published_time" content="2026-05-01T06:01:00.000Z">
-<meta property="article:modified_time" content="2026-05-01T09:03:28.163Z">
+<meta property="article:modified_time" content="2026-05-01T15:30:19.773Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="pyOCD">
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          440 words
+          489 words
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          4 mins
+          5 mins
         
       </span>
     
@@ -290,7 +290,7 @@
             
               <div class="markdown-body">
                 
-                <h3 id="聊聊用于烧录ARM单片机的小工具-pyOCD"><a href="#聊聊用于烧录ARM单片机的小工具-pyOCD" class="headerlink" title="聊聊用于烧录ARM单片机的小工具-pyOCD"></a>聊聊用于烧录ARM单片机的小工具-pyOCD</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><p class="note note-warning">本文等待施工🧑‍🌾🧑‍🌾!</p>
+                <h3 id="聊聊用于烧录ARM单片机的小工具-pyOCD"><a href="#聊聊用于烧录ARM单片机的小工具-pyOCD" class="headerlink" title="聊聊用于烧录ARM单片机的小工具-pyOCD"></a>聊聊用于烧录ARM单片机的小工具-pyOCD</h3><h3 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h3><p class="note note-warning">本文等待施工，或长期维护中🧑‍🌾🧑‍🌾!</p>
 
 <hr>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p><code>pyOCD</code>官方wiki：<a target="_blank" rel="noopener" href="https://pyocd.io/">https://pyocd.io/</a></p>
@@ -298,7 +298,7 @@
 <p>这两天回家了，实验性的把Win本留在了出租屋，带着Mac轻装上阵，其实我已经妥协十分多了。考虑到跨平台兼容性，现在的分工是，Mac做上位机开发，Win做下位机开发。于是带了单片机做下位机调试，发现还是逃不过需要给单片机做临时的烧录，虽然很简单，但是在Mac上依旧是一个比较折磨的事情啊。</p>
 <p>花了十几分钟和豆老师深度探索了一番，得出了下面的结论：<br><strong><code>pyOCD</code> + <code>DAPLink</code> 可以轻量的满足当前的调试需求。</strong></p>
 <p>用起来还不赖，后续考虑把这一套方式集成到自开发的上位机当中，目前就简单记录一下常用到的指令集（晚期健忘症老人特别需要，LikeMe，笑。</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># install pyocd</span><br>pip install pyocd<br></code></pre></td></tr></table></figure>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># install pyocd, python &gt;= 3.7</span><br>pip install pyocd<br></code></pre></td></tr></table></figure>
 
 <h3 id="指令操作"><a href="#指令操作" class="headerlink" title="指令操作"></a>指令操作</h3><p>下面收录一些我常用的对ARM Cortex-M单片机的操作指令：</p>
 <h4 id="查看当前DAPLink设备"><a href="#查看当前DAPLink设备" class="headerlink" title="查看当前DAPLink设备"></a>查看当前DAPLink设备</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看系统是否识别出DAPLink连接</span><br>pyocd list<br></code></pre></td></tr></table></figure>
@@ -322,7 +322,8 @@
 <h4 id="擦除全片闪存"><a href="#擦除全片闪存" class="headerlink" title="擦除全片闪存"></a>擦除全片闪存</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">pyocd erase --mass --target stm32f401retx<br><br>pyocd erase -t stm32f401retx --chip<br></code></pre></td></tr></table></figure>
 
 
-<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><h3 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h3><ul>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>目前就用上这么点功能，后面再接触吧，感觉可玩性还是蛮高的，激起了我做上位机的欲望（嘻！</p>
+<h3 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h3><ul>
 <li>pyOCD官方：<a target="_blank" rel="noopener" href="https://github.com/pyocd/pyocd">https://github.com/pyocd/pyocd</a></li>
 </ul>
 
