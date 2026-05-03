@@ -26,7 +26,10 @@ date: 2025-3-1 16:00:00
 ---
 
 ### 2025/2/24 - 2025/3/1 - 自信大方地跌下领奖台
-
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -63,7 +66,10 @@ Plus: 展图是实习公司年会抽奖时，我中奖啦（是一个破壁机�
 {% endnote %}
 
 ### 2025/3/2 - 三月下起了大雨
-
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -138,7 +144,10 @@ Plus: 展图是实习公司年会抽奖时，我中奖啦（是一个破壁机�
 
 
 ### 2025/3/30 - 我与寂寞健康生活
-
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>

@@ -52,6 +52,10 @@ date: 2025-10-1 19:09:00
 ---
 
 ### 2025/10/3 - 其实应该是亲爱的偏执狂会更合适，但谁让我是工作狂？
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -73,6 +77,10 @@ date: 2025-10-1 19:09:00
 
 
 ### 2025/10/20 - 有锚点的自由
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -110,6 +118,10 @@ date: 2025-10-1 19:09:00
 ...
 
 ### 2025/10/27 - 要么先猝死、要么先完成任务
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>

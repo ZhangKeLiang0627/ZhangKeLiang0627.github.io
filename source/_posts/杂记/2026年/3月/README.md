@@ -55,6 +55,10 @@ _**枯木逢几春？**_
 ---
 
 ### 2026/3/7 - 枯木逢几春
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -94,6 +98,10 @@ hey! hi! how're you doing!
 </figure>
 
 ### 2026/3/11 - 大浪
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>

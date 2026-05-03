@@ -39,6 +39,10 @@ date: 2025-8-19 23:38:00
 ---
 
 ### 2025/8/19 - 小奔走
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -71,6 +75,10 @@ date: 2025-8-19 23:38:00
 ...
 
 ### 2025/8/26 - 直白与坦率
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>

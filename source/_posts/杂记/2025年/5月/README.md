@@ -56,7 +56,10 @@ kl兄，我就是云南来的，我家在云南大理，有时间我可以带你
 ---
 
 ### 2025/4/28 - 2024/5/3 - 云南之旅
-
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -452,7 +455,10 @@ kl兄，我就是云南来的，我家在云南大理，有时间我可以带你
 旅行的意义是什么呢？我心中慢慢有了一个更加清晰的形状：记录只是旅行的一部分，最重要的还是回到家和身边最重要的人一起分享这一路上的故事，这是我的，旅行的意义。
 
 ### 2025/5/28 - 何为坦诚清醒的人生
-
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>

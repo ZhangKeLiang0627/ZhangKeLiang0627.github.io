@@ -85,6 +85,10 @@ date: 2025-6-5 16:35:00
 ---
 
 ### 2025/6/1 - 陀飞轮
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -170,6 +174,10 @@ date: 2025-6-5 16:35:00
 今天回来的时候，脑子里就涌现出陀飞轮的旋律，仿佛又回到了那份慵懒的黄昏，在行驶中摇摇晃晃的校车上，听着一点也不明白，但是好听的歌曲。在一些简单的年纪里，是不需要听懂歌曲需要被赋予什么意义，电影也不需要，书籍也是，它们只管快乐就好，这样就好，儿童节快乐！顽童们（指任何人。
 
 ### 2025/6/17 - 人群臃肿，叹气但是行走
+<!-- use Custom Address -->
+<script>
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
