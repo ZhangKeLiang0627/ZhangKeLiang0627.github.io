@@ -117,7 +117,6 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 <!-- require MetingJS -->
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
 <meting-js
 	server="netease"
 	type="song"

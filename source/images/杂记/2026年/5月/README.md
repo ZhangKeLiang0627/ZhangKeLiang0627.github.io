@@ -1,25 +1,26 @@
 ---
-title: 杂记丨4月：涉水的大象
-excerpt: 嘿，路西法！
+title: 杂记丨5月：Sign Of The Times
+excerpt: Mister, mister...
 tags: [life, record]
-index_img: /images/杂记/2026年/4月/image-0.gif
-banner_img: /images/杂记/2026年/4月/image-0.jpg
+index_img: /images/杂记/2026年/5月/image-0.jpg
+banner_img: /images/杂记/2026年/5月/image-0.jpg
 categories: Life Page
 comment: 'twikoo'
-date: 2026-4-4 13:29:00
+date: 2026-5-13 16:43:00
 ---
 
-### 杂记丨4月：涉水的大象
+### 杂记丨5月：Sign Of The Times
 ### Author：@kkl
 
 ---
 
 ### 写在前面
 
-_**涉水的大象。**_
+
+_**Sign Of The Times...**_
 
 <figure>
-<img src="/images/杂记/2026年/4月/image-2.jpg" alt="" width = "600" height = "500" style="border-radius: 15px;">
+<img src="/images/杂记/2026年/5月/image-0.jpg" alt="" width = "600" height = "500" style="border-radius: 15px;">
 <figcaption></figcaption>
 </figure>
 
@@ -105,6 +106,7 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 <!-- require MetingJS -->
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
 <meting-js
 	server="netease"
 	type="song"
