@@ -111,7 +111,29 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 
 所以很多事情，并不是说办不到，或者自己觉得很麻烦不想办，明明这么简单，明明还来得及，非得要人、要外力推一把才能去行动...
 
-...
+夏天要做的第一件事，大概就像是一个噱头一般的存在，就好像秋天的第一杯奶茶。其实没有什么事情是非要夏天去做，没有什么人非要夏天去见...这段也许有些虚无主义了，我想我似乎的确要找一段时间，仔细的，去重拾自己的情绪，一点一点的捡起来，认真缝补，认真缝补.
+
+{% gi 4 2-2 %}
+<figure>
+<img src="/images/杂记/2026年/5月/image-2.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-3.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-4.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-5.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+{% endgi %}
 
 
 <!-- 热力图的挂件 -->
@@ -122,11 +144,53 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 
 ### 写在后面
 
-...
+{% gi 8 4-4 %}
+<figure>
+<img src="/images/杂记/2026年/5月/image-6.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-7.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-8.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-9.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-10.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-11.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-12.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+<figure>
+<img src="/images/杂记/2026年/5月/image-13.jpg" alt="" width = "600" height = "400" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+{% endgi %}
 
 > Sign Of The Times，每日惶恐地等待闹钟的叨扰，睁开眼便不能停下，上下翻找着什么，找寻着什么呢？
 
-w我回头去看了去年这个时候的几篇笔记，总觉得语气中还流露出不少稚嫩的气息，真是一个天真的小孩哟。不过，天真也好呆傻也罢，这终归是我，也只能是我。从那篇文字里透出的憧憬到今天还剩下多少呢。对于新鲜事物，相处的时间越久越能看到它们更多隐藏起来的负面的东西...我想到一个词叫做“喜新厌旧”，又是能有多旧才会让一个人抛弃曾经爱不释手的“新”、即当下嗤之以鼻的“旧”，不懂、不明白、不想要去理解。
+我回头去看了去年这个时候的几篇笔记，总觉得语气中还流露出不少稚嫩的气息，真是一个天真的小孩哟。不过，天真也好呆傻也罢，这终归是我，也只能是我。从那篇文字里透出的憧憬到今天还剩下多少呢。
+
+对于新鲜事物，相处的时间越久越能看到它们更多隐藏起来的负面的东西...我想到一个词叫做“喜新厌旧”，又是能有多旧才会让一个人抛弃曾经爱不释手的“新”、即当下嗤之以鼻的“旧”，不懂、不明白、不想要去理解。
 
 我曾经在追寻的，到现在也时刻不停，我该要得到一个答案了吧？五年、十年、二十年，我想我等不了这么久的日子，等待我的身体和精神被深深烙入时间的印记...
 
