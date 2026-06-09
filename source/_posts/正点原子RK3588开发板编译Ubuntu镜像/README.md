@@ -288,7 +288,7 @@ sudo nmcli connection delete "SSID名称" # 删除已保存的 WiFi 网络配置
 ## 写在后面
 
 我编译好的原子家RK3588的Ubuntu镜像（baidu网盘自取：https://pan.baidu.com/s/1VmlDE7szSX_R9GTtuXEx8w?pwd=rn46
-
+> Plus: 用户名：cat，无密码。enjoy!!!
 
 ### 鸣谢
 - Lubancat-SDK：https://doc.embedfire.com/linux/rk356x/build_and_deploy/zh/latest/building_image/lubancat_sdk/lubancat_gen_sdk.html
