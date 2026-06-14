@@ -62,7 +62,7 @@ Sign Of The Times，每日惶恐地等待闹钟的叨扰，睁开眼便不能停
 ### 2026/5/13 - 着迷
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -86,7 +86,7 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 ### 2026/5/22 - 夏天要做的第一件事
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">

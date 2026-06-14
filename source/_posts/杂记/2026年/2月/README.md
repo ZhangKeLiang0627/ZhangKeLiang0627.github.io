@@ -35,7 +35,7 @@ _**大战！大战！大战！**_
 ### 2026/2/7 - 食困
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -159,7 +159,7 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 ### 2026/2/11 - 新年大礼包
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">

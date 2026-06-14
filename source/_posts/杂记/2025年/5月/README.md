@@ -58,7 +58,7 @@ kl兄，我就是云南来的，我家在云南大理，有时间我可以带你
 ### 2025/4/28 - 2024/5/3 - 云南之旅
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -457,7 +457,7 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 ### 2025/5/28 - 何为坦诚清醒的人生
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">

@@ -87,7 +87,7 @@ date: 2025-6-5 16:35:00
 ### 2025/6/1 - 陀飞轮
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -176,7 +176,7 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 ### 2025/6/17 - 人群臃肿，叹气但是行走
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">

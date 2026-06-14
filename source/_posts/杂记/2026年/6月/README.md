@@ -1,6 +1,6 @@
 ---
 title: 杂记丨6月：亲爱的奥德赛
-excerpt: Mister, mister...
+excerpt: Fighters keep fighting, I'll fight till I'll blue...
 tags: [life, record]
 index_img: /images/杂记/2026年/6月/image-0.jpg
 banner_img: /images/杂记/2026年/6月/image-0.jpg
@@ -30,7 +30,7 @@ _**亲爱的奥德赛...**_
 ### 2026/6/1 - 亲爱的奥德赛
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -48,7 +48,7 @@ window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id
 ### 2026/6/27 - 复古的诞辰
 <!-- use Custom Address -->
 <script>
-window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
