@@ -1,6 +1,6 @@
 ---
 title: 「毕业」前你需要知道的一些事
-excerpt: 嘘...勉强能用balabala...
+excerpt: 去你的吧！管它什么景气什么前途啊，我不在乎...
 tags: [Work]
 index_img: /images/毕业前你需要知道的一些事/image-2.jpg
 banner_img: /images/毕业前你需要知道的一些事/image-3.jpg

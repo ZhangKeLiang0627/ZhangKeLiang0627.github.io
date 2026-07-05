@@ -1,6 +1,6 @@
 ---
 title: 杂记丨7月：坏掉的苹果
-excerpt: Fighters keep fighting, I'll fight till I'll blue...
+excerpt: How can a person be so bad?
 tags: [life, record]
 index_img: /images/杂记/2026年/7月/image-0.jpg
 banner_img: /images/杂记/2026年/7月/image-0.jpg
