@@ -29,7 +29,7 @@ password: password1234.
 
 {% gi 3 3 %}
 <figure>
-<img src="/images/毕业前你需要知道的一些事/image.jpg" alt="" width = "" height = "" style="border-radius: 15px;">
+<img src="/images/毕业前你需要知道的一些事/image-0.jpg" alt="" width = "" height = "" style="border-radius: 15px;">
 <figcaption></figcaption>
 </figure>
 
@@ -53,6 +53,11 @@ password: password1234.
 > **适用场景**：公司因经营困难、缩编、架构调整等原因裁员，或通过协商解除、变相逼退等方式让你走人。
 >
 > **核心原则**：不主动辞职、不随便签字、全程留痕、依法谈判。
+
+<figure>
+<img src="/images/毕业前你需要知道的一些事/image-7.jpg" alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
 
 #### 1.1 第一步：HR / 领导口头通知裁员当天 — 先稳住，不冲动
 
@@ -180,6 +185,11 @@ password: password1234.
 > **适用场景**：自己有了更好的 offer、想换个环境、个人原因离职。
 >
 > **核心原则**：好聚好散，程序合规，别给公司留下扣钱、拒批的把柄。
+
+<figure>
+<img src="/images/毕业前你需要知道的一些事/image-6.jpg" alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
 
 #### 2.1 法律底线：提前通知期
 
