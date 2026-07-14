@@ -8,7 +8,7 @@ banner_img: /images/八股文/image-3.jpg
 categories: Study Page
 comment: 'twikoo'
 date: 2023-1-1 10:00:00
-
+archive: true
 # password: password1234.
 ---
 
