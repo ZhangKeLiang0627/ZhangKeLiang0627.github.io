@@ -1435,7 +1435,15 @@ passwd
 # 然后两次输入设置你自己的密码
 
 # 接着你就可以用ssh远程连接啦~
+
+# 用户名：root
+# 密码：你设置的密码
 ```
+
+<figure>
+<img src="/images/关于基于全志T113-S3的86-Screen的一切/image-33.png" alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
 
 ...
 
