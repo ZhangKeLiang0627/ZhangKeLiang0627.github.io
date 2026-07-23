@@ -54,8 +54,6 @@ date: 2025-11-3 1:10:00
 
 ### 写在前面
 
-
-
 **_本篇文章将简述如何从零到一玩转「基于rk3566的泰山派」。_**
 
 #### 我的环境
@@ -121,10 +119,10 @@ drivers: `~/LubanCat_SDK/kernel-5.10/drivers`
 defconfig: `~/LubanCat_SDK/kernel-5.10/arch/arm64/configs`
 
 device-tree: `~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/`
-device-tree overlay: `~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/overlay/`
-device-tree overlay uEnv: `~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/uEnv/`
+device-tree overlay: `~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/overlay/`（设备树插件
+device-tree overlay uEnv: `~/LubanCat_SDK/kernel-5.10/arch/arm64/boot/dts/rockchip/uEnv/`（设备树插件配置文件
 
-
+> Ps: 想要了解更多的设备树插件，可以来瞧：[野火设备树相关文档戳这里:)](https://doc.embedfire.com/linux/rk356x/build_and_deploy/zh/latest/building_image/lubancat_sdk/lubancat_gen_sdk.html#overlay)
 
 #### 👾. 新手指引
 

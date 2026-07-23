@@ -906,7 +906,7 @@ _**TODO: 原作者还预留了两个RS485的方向引脚，所以这两个串口
 86屏开发板本身的固件并没有打开摄像头相关的配置，因此在最开始，我们要对Tina-sdk进行一波配置。
 
 Tina文件系统配置：`make menuconfig`
-{% gi 7 3 %}
+{% gi 7 3-4 %}
 
 <figure>
 <img src="/images/关于基于全志T113-S3的86-Screen的一切/image-17.png" alt="" width = "300" height = "200" style="border-radius: 15px;">
@@ -1363,6 +1363,15 @@ cd /mnt/UDISK && ./camera2framebuffer
 <img src="/images/关于基于全志T113-S3的86-Screen的一切/image-31.jpg" alt="" width = "400" height = "300" style="border-radius: 15px;">
 <figcaption></figcaption>
 </figure>
+
+> Ps：我使用的就是普通的USB摄像头哈，淘宝随便买的九块九包邮，下面贴个图～
+> <figure>
+<img src="/images/关于基于全志T113-S3的86-Screen的一切/image-34.jpg" alt="" width = "400" height = "450" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+
+
 
 #### 自定义根目录系统
 
