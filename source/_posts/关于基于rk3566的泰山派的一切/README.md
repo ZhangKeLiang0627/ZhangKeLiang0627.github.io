@@ -544,6 +544,19 @@ in_anglvel_x_raw
 由于篇幅较长，请戳文章->[关于「基于rk3566的泰山派」的YOLOv8自定义模型部署](https://zhangkeliang0627.github.io/2026/02/22/基于rk3566的泰山派的YOLOv8自定义模型部署/README/)跳转进行阅读！
 
 
+#### 5. 更改命令行启动后的欢迎信息
+
+> ascii欢迎图案生成网址：https://patorjk.com/software/taag
+
+<figure>
+<img src="/images/关于基于rk3566的泰山派的一切/image-18.jpg" alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+我们可以在`~/LubanCat_SDK/ubuntu20.04/overlay/etc/update-motd.d`目录下添加/更改自定义的欢迎信息。
+
+比方说鲁班猫镜像原版是猫猫头，放在了`~/LubanCat_SDK/ubuntu20.04/overlay/etc/update-motd.d/00-header`文件中，我们可以更改成自己的欢迎信息。
+
 ---
 
 ### 写在后面
