@@ -559,6 +559,9 @@ in_anglvel_x_raw
 
 ### 写在后面
 
+我自用的LubanCat-SDK包，里面包含移植完整的tspi的defconfig，拿来即用，本体较大（baidu网盘自取：
+链接: https://pan.baidu.com/s/1WUGd43W9DdndlWK5JO15vw?pwd=87s7 提取码: 87s7 
+
 **鸣谢：**
 - https://doc.embedfire.com/linux/rk356x/build_and_deploy/zh/latest/README.html
 - https://wiki.lckfb.com/zh-hans/tspi-rk3566/
