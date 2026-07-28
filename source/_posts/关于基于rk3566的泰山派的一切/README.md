@@ -555,6 +555,15 @@ in_anglvel_x_raw
 
 比方说鲁班猫镜像原版是猫猫头，放在了`~/LubanCat_SDK/ubuntu20.04/overlay/etc/update-motd.d/00-header`文件中，我们可以更改成自己的欢迎信息。
 
+#### 6. 开机自启动adb服务
+
+ubuntu20.04的根文件系统应该是原生支持adb，要修改一下`~/LubanCat_SDK/ubuntu20.04/overlay/etc/profile.d/usbdevice.sh`里面的`USB_FUNCS`为`adb`即可，其他类似的debian也是这样的改法：
+
+<figure>
+<img src="/images/关于基于rk3566的泰山派的一切/image-19.jpg" alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
 ---
 
 ### 写在后面
@@ -569,6 +578,7 @@ in_anglvel_x_raw
 - https://blog.csdn.net/qq_37264095/article/details/152455773?spm=1001.2014.3001.5502
 - https://github.com/luckkfliu/tspi_ubuntu
 - https://www.bilibili.com/opus/912396584371617809
+- Uboot快捷键：https://doc.embedfire.com/linux/rk356x/build_and_deploy/zh/latest/building_image/use_uboot/use_uboot.html#id3
 
 ...
 
