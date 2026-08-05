@@ -1,6 +1,6 @@
 ---
 title: 杂记丨8月：生活的锚点
-excerpt: How can a person be so bad?
+excerpt: Galánday galánday!!!
 tags: [life, record]
 index_img: /images/杂记/2026年/8月/image-0.jpg
 banner_img: /images/杂记/2026年/8月/image-1.jpg
