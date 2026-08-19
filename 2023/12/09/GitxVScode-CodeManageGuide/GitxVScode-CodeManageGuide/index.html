@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/18.jpg">
 <meta property="article:published_time" content="2023-12-08T16:11:00.000Z">
-<meta property="article:modified_time" content="2026-04-02T16:33:11.810Z">
+<meta property="article:modified_time" content="2026-08-19T04:21:58.208Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary_large_image">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k words
+          2.2k words
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          18 mins
+          19 mins
         
       </span>
     
@@ -310,6 +310,10 @@
 <h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><h3 id="提交-Commit"><a href="#提交-Commit" class="headerlink" title="提交 (Commit)"></a>提交 (Commit)</h3><p>这个操作我们使用VScode自带的源代码管理来完成。<br>暂存我们所需的修改之后点击提交，接着会跳转到<code>COMMIT_EDITMSG</code>文件页面，顾名思义就是提交编辑信息。<br>你可以在这个文件最顶部写一些你这次提交的一些消息备注。写完保存，关掉这个文件页面，即可完成一次提交！</p>
 <blockquote>
 <p> <code>git add .</code>添加所有被修改文件到暂存更改区<br><code>git commit -m &quot;massage&quot;</code> 提交暂存更改区的内容作为一个新版本，<code>massage</code>为该版本的关键字<br><code>-m</code>的作用就是可以不弹窗直接写关键字，如果你只输入<code>git commit</code>就会弹出一个窗口让你填写该版本的关键字。</p>
+</blockquote>
+<h4 id="修改最近一次未推送远程的提交信息"><a href="#修改最近一次未推送远程的提交信息" class="headerlink" title="修改最近一次未推送远程的提交信息"></a>修改最近一次未推送远程的提交信息</h4><p>如果你在提交之后，发现提交信息有误，你可以使用以下指令修改最近一次的提交信息：</p>
+<blockquote>
+<p><code>git commit --amend -m &quot;massage&quot;</code> 修改最近一次未推送远程的提交信息，<code>massage</code>为该版本的关键字。</p>
 </blockquote>
 <h3 id="推送-Push"><a href="#推送-Push" class="headerlink" title="推送 (Push)"></a>推送 (Push)</h3><blockquote>
 <p>这个操作需要我们的VScode关联自己的Github仓库后才可以使用。</p>
