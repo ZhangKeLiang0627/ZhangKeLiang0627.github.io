@@ -18,6 +18,16 @@ date: 2023-12-9 1:10:00
 > 会讲一些我学习RTOS的时候卡关的地方，或者是觉得莫名其妙的、理解困难的点
 > 主张一个，看着就能用，或者是看着看着就会用，而且用的还一溜一溜的FreeRTOS指南
 
+FreeRTOS官方wiki：https://www.freertos.org/zh-cn-cmn-s/Documentation/00-Overview
+
+{% note danger %}
+写的可能有些过时了，pls直接去瞅官方文档！thx！
+
+<u>_**此篇封档！！！**_</u>
+
+——来自未来的kkl
+{% endnote %}
+
 ---
 
 ## 环境
