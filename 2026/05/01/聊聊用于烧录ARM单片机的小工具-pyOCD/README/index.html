@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E8%81%8A%E8%81%8A%E7%94%A8%E4%BA%8E%E7%83%A7%E5%BD%95ARM%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7-pyOCD/pyOCD.png">
 <meta property="article:published_time" content="2026-05-01T06:01:00.000Z">
-<meta property="article:modified_time" content="2026-10-01T14:17:38.332Z">
+<meta property="article:modified_time" content="2026-10-01T14:33:29.209Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="pyOCD">
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k words
+          1.2k words
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          9 mins
+          10 mins
         
       </span>
     
@@ -327,7 +327,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 软件复位，复位之后内核继续运行</span><br>pyocd reset<br><br><span class="hljs-comment"># 复位并且立刻halt停机，芯片复位后不跑代码，停在复位入口</span><br>pyocd reset -h<br></code></pre></td></tr></table></figure>
 
 
-<h4 id="固件烧录"><a href="#固件烧录" class="headerlink" title="固件烧录"></a>固件烧录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 烧录.hex文件</span><br>pyocd flash --target stm32f401retx yourFirmware.hex<br>pyocd flash -t stm32f401retx yourFirmware.hex<br><br><span class="hljs-comment"># 烧录.bin文件（需要指定烧录地址，默认为0x08000000</span><br>pyocd flash --target stm32f401retx --address 0x08000000 yourFirmware.bin<br><br><span class="hljs-comment"># 校验，将烧录到mcu的内容重新读出来和固件进行字节比对</span><br>pyocd flash --target stm32f401retx yourFirmware.hex --verify<br><br><span class="hljs-comment"># 补充烧录策略：全片擦除后再烧录 + 校验</span><br>pyocd flash -t stm32f401retx yourFirmware.hex --erase chip --verify<br></code></pre></td></tr></table></figure>
+<h4 id="固件烧录"><a href="#固件烧录" class="headerlink" title="固件烧录"></a>固件烧录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 烧录.hex文件</span><br>pyocd flash --target stm32f401retx yourFirmware.hex<br>pyocd flash -t stm32f401retx yourFirmware.hex<br><br><span class="hljs-comment"># 烧录.bin文件（需要指定烧录地址，默认为0x08000000</span><br>pyocd flash --target stm32f401retx --address 0x08000000 yourFirmware.bin<br><br><span class="hljs-comment"># 校验，将烧录到mcu的内容重新读出来和固件进行字节比对</span><br>pyocd flash --target stm32f401retx yourFirmware.hex --verify<br><br><span class="hljs-comment"># 补充烧录策略：全片擦除后再烧录 + 校验</span><br>pyocd flash -t stm32f401retx yourFirmware.hex --erase chip --verify<br><br><span class="hljs-comment"># 指定pack算法进行烧录</span><br>pyocd flash -t gd32f103c8 --pack ./packs/GigaDevice.GD32F10x_DFP.2.3.0.pack app.elf --verify<br></code></pre></td></tr></table></figure>
 
 <figure>
 <img src="/images/聊聊用于烧录ARM单片机的小工具-pyOCD/image-1.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
@@ -339,6 +339,9 @@
 <p>如果烧录的程序禁用了SWD，芯片变砖，此时有两种拯救办法：</p>
 <p>第一种，硬件上有引出boot0 &amp; boot1，让boot0 &#x3D; 1 &amp; boot1 &#x3D; 0，然后上电或者复位，让mcu进入出厂bootloader，此时就可以重新正常的刷写程序；</p>
 <p>第二种，硬件上有NRST硬复位引脚引出，连接到DAP-Link的NRST，所以此时要连接4根线，NRST、DIO、SCK、GND，然后敲命令<code>pyocd erase -t stm32f401retx --chip --connect under-reset</code>，在原来的常规擦除基础上加入<code>--connect under-reset</code>，即可对mcu进行全片擦除啦。</p>
+<h3 id="pyocd-yaml的编写"><a href="#pyocd-yaml的编写" class="headerlink" title="pyocd.yaml的编写"></a>pyocd.yaml的编写</h3><p>如果你觉得每次烧录又要指定芯片、又要指定擦除模式、是否校验、地址等，非常的麻烦的话，你可以尝试写一份pyocd.yaml，把它放到工程的根目录下，然后你就可以去到工程根目录下，直接<code>pyocd flash xxx.bin</code>即可：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># pyocd.yaml</span><br><span class="hljs-comment"># 按需擦扇区(sector)、开启校验、bin文件默认烧录地址0x08000000</span><br><br><span class="hljs-attr">target_override:</span> <span class="hljs-string">stm32f401retx</span><br><br><span class="hljs-attr">flash:</span><br>  <span class="hljs-attr">verify:</span> <span class="hljs-literal">true</span> <br>  <span class="hljs-attr">base_address:</span> <span class="hljs-number">0x08000000</span><br><span class="hljs-comment">#   erase: chip # 如果需要全局擦除就打开该项</span><br><br><span class="hljs-comment"># 指定外部DFP pack，多个pack用数组</span><br><span class="hljs-comment"># pack:</span><br><span class="hljs-comment">#   - ./packs/GigaDevice.GD32F10x_DFP.2.3.0.pack</span><br><br></code></pre></td></tr></table></figure>
+
 <h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>目前就用上这么点功能，后面再接触吧，感觉可玩性还是蛮高的，激起了我做上位机的欲望（嘻！</p>
 <h3 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h3><ul>
 <li>pyOCD官方：<a target="_blank" rel="noopener" href="https://github.com/pyocd/pyocd">https://github.com/pyocd/pyocd</a></li>
