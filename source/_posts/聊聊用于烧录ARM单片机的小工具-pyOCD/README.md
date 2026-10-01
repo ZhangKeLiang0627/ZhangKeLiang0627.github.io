@@ -41,7 +41,7 @@ date: 2026-5-1 14:01:00
 ### 安装依赖
 
 ```bash
-# install pyocd, python >= 3.7
+# install pyocd, python >= 3.9
 pip install pyocd
 ```
 
