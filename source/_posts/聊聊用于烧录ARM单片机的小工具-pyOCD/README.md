@@ -20,7 +20,11 @@ date: 2026-5-1 14:01:00
 
 ## 写在前面
 
-`pyOCD`官方wiki：https://pyocd.io/
+更早之前写过一篇plog记录的一下「用OpenOCD解除MCU写保护的用法」：[Click me！](https://zhangkeliang0627.github.io/2024/10/14/使用DAPLink+OpenOCD解除MCU的Flash读保护/README/)（写的比较简单昂。
+
+但感觉呢，OpenOCD虽然功能强大但是使用起来还是比较麻烦的，又要写cfg又要敲一长串命令的，不太适合日常使用，于是说，找到了更加简易更加面向CMSIS-DAP和ARM的`pyOCD`，应付常见的stm32、gd32等Cortex-M主流mcu足够了.
+
+**`pyOCD`官方wiki：**https://pyocd.io/
 
 一切的起因是因为我入手了Mac，还是一心想要把手头上部分的嵌入式工作迁移到Mac上进行开发，但是长路漫漫且艰险啊。
 
@@ -60,12 +64,33 @@ pyocd list
 #### 安装包依赖
 
 ```bash
-# 查看支持的包
+# 更新pack资源索引
+pyocd pack update
+
+# 查看pyOCD支持的芯片pack，里面去找到你要烧录/调试的mcu
+# bliutin -> 自带的 / pack -> 需要下载
 pyocd list --targets
 
 # 安装指定包依赖
 pyocd pack install stm32f4
-pyocd pack install stm32f103rc
+pyocd pack install stm32f1
+```
+
+Ps：没有找到pack的，可以去对应的mcu的官网上下载.pack文件，然后使用`--pack`来进行引用对应算法，问题不大。
+
+<figure>
+<img src="/images/聊聊用于烧录ARM单片机的小工具-pyOCD/image-2.png" alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
+
+#### 查看DAPLink在线状态
+
+```bash
+# 列出当前所有插上的调试器
+pyocd list
+
+# 输出会看到调试器的序列号；多个调试器时，可以用 `--probe` 指定序列号，防止刷错板子
+pyocd flash -t stm32f401retx app.hex --probe 0483:5740:xxxxxxxx
 ```
 
 #### 查看当前DAPLink和MCU的连接
@@ -76,14 +101,35 @@ pyocd cmd -t stm32f401retx
 # q + Enter 退出
 ```
 
+```bash
+# 探测芯片信息，读芯片 ID、内核版本
+pyocd info
+```
+
+```bash
+# 软件复位，复位之后内核继续运行
+pyocd reset
+
+# 复位并且立刻halt停机，芯片复位后不跑代码，停在复位入口
+pyocd reset -h
+```
+
+
 #### 固件烧录
 
 ```bash
 # 烧录.hex文件
 pyocd flash --target stm32f401retx yourFirmware.hex
+pyocd flash -t stm32f401retx yourFirmware.hex
 
 # 烧录.bin文件（需要指定烧录地址，默认为0x08000000
 pyocd flash --target stm32f401retx --address 0x08000000 yourFirmware.bin
+
+# 校验，将烧录到mcu的内容重新读出来和固件进行字节比对
+pyocd flash --target stm32f401retx yourFirmware.hex --verify
+
+# 补充烧录策略：全片擦除后再烧录 + 校验
+pyocd flash -t stm32f401retx yourFirmware.hex --erase chip --verify
 ```
 
 <figure>
@@ -94,11 +140,21 @@ pyocd flash --target stm32f401retx --address 0x08000000 yourFirmware.bin
 #### 擦除全片闪存
 
 ```bash
-pyocd erase --mass --target stm32f401retx
+# 可以用来解芯片写保护
+pyocd erase -t stm32f401retx --mass
 
-pyocd erase -t stm32f401retx --chip
+# 常规Flash全局擦除
+pyocd erase -t stm32f401retx --chip 
+
+# 擦除指定某一个扇区（适合只想擦部分flash，保留其他区域
+pyocd erase -t stm32f401retx --sector 0
 ```
 
+如果烧录的程序禁用了SWD，芯片变砖，此时有两种拯救办法：
+
+第一种，硬件上有引出boot0 & boot1，让boot0 = 1 & boot1 = 0，然后上电或者复位，让mcu进入出厂bootloader，此时就可以重新正常的刷写程序；
+
+第二种，硬件上有NRST硬复位引脚引出，连接到DAP-Link的NRST，所以此时要连接4根线，NRST、DIO、SCK、GND，然后敲命令`pyocd erase -t stm32f401retx --chip --connect under-reset`，在原来的常规擦除基础上加入`--connect under-reset`，即可对mcu进行全片擦除啦。
 
 ## 写在后面
 目前就用上这么点功能，后面再接触吧，感觉可玩性还是蛮高的，激起了我做上位机的欲望（嘻！
