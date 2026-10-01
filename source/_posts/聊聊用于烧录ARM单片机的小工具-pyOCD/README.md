@@ -130,6 +130,9 @@ pyocd flash --target stm32f401retx yourFirmware.hex --verify
 
 # 补充烧录策略：全片擦除后再烧录 + 校验
 pyocd flash -t stm32f401retx yourFirmware.hex --erase chip --verify
+
+# 指定pack算法进行烧录
+pyocd flash -t gd32f103c8 --pack ./packs/GigaDevice.GD32F10x_DFP.2.3.0.pack app.elf --verify
 ```
 
 <figure>
@@ -155,6 +158,26 @@ pyocd erase -t stm32f401retx --sector 0
 第一种，硬件上有引出boot0 & boot1，让boot0 = 1 & boot1 = 0，然后上电或者复位，让mcu进入出厂bootloader，此时就可以重新正常的刷写程序；
 
 第二种，硬件上有NRST硬复位引脚引出，连接到DAP-Link的NRST，所以此时要连接4根线，NRST、DIO、SCK、GND，然后敲命令`pyocd erase -t stm32f401retx --chip --connect under-reset`，在原来的常规擦除基础上加入`--connect under-reset`，即可对mcu进行全片擦除啦。
+
+### pyocd.yaml的编写
+如果你觉得每次烧录又要指定芯片、又要指定擦除模式、是否校验、地址等，非常的麻烦的话，你可以尝试写一份pyocd.yaml，把它放到工程的根目录下，然后你就可以去到工程根目录下，直接`pyocd flash xxx.bin`即可：
+
+```yaml
+# pyocd.yaml
+# 按需擦扇区(sector)、开启校验、bin文件默认烧录地址0x08000000
+
+target_override: stm32f401retx
+
+flash:
+  verify: true 
+  base_address: 0x08000000
+#   erase: chip # 如果需要全局擦除就打开该项
+
+# 指定外部DFP pack，多个pack用数组
+# pack:
+#   - ./packs/GigaDevice.GD32F10x_DFP.2.3.0.pack
+
+```
 
 ## 写在后面
 目前就用上这么点功能，后面再接触吧，感觉可玩性还是蛮高的，激起了我做上位机的欲望（嘻！
