@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://zhangkeliang0627.github.io/images/%E8%81%8A%E8%81%8A%E7%94%A8%E4%BA%8E%E7%83%A7%E5%BD%95ARM%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7-pyOCD/pyOCD.png">
 <meta property="article:published_time" content="2026-05-01T06:01:00.000Z">
-<meta property="article:modified_time" content="2026-10-01T14:38:39.619Z">
+<meta property="article:modified_time" content="2026-10-01T14:49:14.364Z">
 <meta property="article:author" content="Zhang-keliang">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="pyOCD">
@@ -240,7 +240,7 @@
         
         
         
-          10 mins
+          11 mins
         
       </span>
     
@@ -312,7 +312,9 @@
 
 <h4 id="安装包依赖"><a href="#安装包依赖" class="headerlink" title="安装包依赖"></a>安装包依赖</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 更新pack资源索引</span><br>pyocd pack update<br><br><span class="hljs-comment"># 查看pyOCD支持的芯片pack，里面去找到你要烧录/调试的mcu</span><br><span class="hljs-comment"># bliutin -&gt; 自带的 / pack -&gt; 需要下载</span><br>pyocd list --targets<br><br><span class="hljs-comment"># 安装指定包依赖</span><br>pyocd pack install stm32f4<br>pyocd pack install stm32f1<br></code></pre></td></tr></table></figure>
 
-<p>Ps：没有找到pack的，可以去对应的mcu的官网上下载.pack文件，然后使用<code>--pack</code>来进行引用对应算法，问题不大。</p>
+<p>Ps：没有找到pack的，可以去对应的mcu的官网上下载.pack文件(CMSIS-Packs)，或者你也可以来这里找：<a target="_blank" rel="noopener" href="https://www.keil.arm.com/devices/%EF%BC%8C">https://www.keil.arm.com/devices/，</a></p>
+<p>比方说我想要<code>gd32f303rct6</code>，我就可以去下载这个GD32F30x_DFP：<a target="_blank" rel="noopener" href="https://www.keil.arm.com/packs/gd32f30x_dfp-gigadevice/devices/">https://www.keil.arm.com/packs/gd32f30x_dfp-gigadevice/devices/</a></p>
+<p>然后使用<code>--pack</code>来进行引用对应算法，问题不大。</p>
 <figure>
 <img src="/images/聊聊用于烧录ARM单片机的小工具-pyOCD/image-2.png" srcset="/img/loading.gif" lazyload alt="" width = "" height = "" style="border-radius: 15px;">
 <figcaption></figcaption>
@@ -340,7 +342,7 @@
 <p>第一种，硬件上有引出boot0 &amp; boot1，让boot0 &#x3D; 1 &amp; boot1 &#x3D; 0，然后上电或者复位，让mcu进入出厂bootloader，此时就可以重新正常的刷写程序；</p>
 <p>第二种，硬件上有NRST硬复位引脚引出，连接到DAP-Link的NRST，所以此时要连接4根线，NRST、DIO、SCK、GND，然后敲命令<code>pyocd erase -t stm32f401retx --chip --connect under-reset</code>，在原来的常规擦除基础上加入<code>--connect under-reset</code>，即可对mcu进行全片擦除啦。</p>
 <h3 id="pyocd-yaml的编写"><a href="#pyocd-yaml的编写" class="headerlink" title="pyocd.yaml的编写"></a>pyocd.yaml的编写</h3><p>如果你觉得每次烧录又要指定芯片、又要指定擦除模式、是否校验、地址等，非常的麻烦的话，你可以尝试写一份pyocd.yaml，把它放到工程的根目录下，然后你就可以去到工程根目录下，直接<code>pyocd flash xxx.bin</code>即可：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># pyocd.yaml</span><br><span class="hljs-comment"># 按需擦扇区(sector)、开启校验、bin文件默认烧录地址0x08000000</span><br><br><span class="hljs-attr">target_override:</span> <span class="hljs-string">stm32f401retx</span><br><br><span class="hljs-attr">flash:</span><br>  <span class="hljs-attr">verify:</span> <span class="hljs-literal">true</span> <br>  <span class="hljs-attr">base_address:</span> <span class="hljs-number">0x08000000</span><br><span class="hljs-comment">#   erase: chip # 如果需要全局擦除就打开该项</span><br><br><span class="hljs-comment"># 指定外部DFP pack，多个pack用数组</span><br><span class="hljs-comment"># pack:</span><br><span class="hljs-comment">#   - ./packs/GigaDevice.GD32F10x_DFP.2.3.0.pack</span><br><br></code></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># pyocd.yaml</span><br><span class="hljs-comment"># 按需擦扇区(sector)、开启校验、bin文件默认烧录地址0x08000000</span><br><br><span class="hljs-attr">target_override:</span> <span class="hljs-string">stm32f401retx</span><br><br><span class="hljs-attr">frequency:</span> <span class="hljs-number">1000000</span> <span class="hljs-comment"># Hz</span><br><br><span class="hljs-attr">flash:</span><br>  <span class="hljs-attr">verify:</span> <span class="hljs-literal">true</span> <br>  <span class="hljs-attr">base_address:</span> <span class="hljs-number">0x08000000</span><br><span class="hljs-comment">#   erase: chip # 如果需要全局擦除就打开该项</span><br><br><span class="hljs-comment"># 指定外部DFP pack，多个pack用数组</span><br><span class="hljs-comment"># pack:</span><br><span class="hljs-comment">#   - ./packs/GigaDevice.GD32F10x_DFP.2.3.0.pack</span><br><br></code></pre></td></tr></table></figure>
 
 <h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>目前就用上这么点功能，后面再接触吧，感觉可玩性还是蛮高的，激起了我做上位机的欲望（嘻！</p>
 <h3 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h3><ul>
