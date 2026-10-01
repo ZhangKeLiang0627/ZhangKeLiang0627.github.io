@@ -76,7 +76,11 @@ pyocd pack install stm32f4
 pyocd pack install stm32f1
 ```
 
-Ps：没有找到pack的，可以去对应的mcu的官网上下载.pack文件，然后使用`--pack`来进行引用对应算法，问题不大。
+Ps：没有找到pack的，可以去对应的mcu的官网上下载.pack文件(CMSIS-Packs)，或者你也可以来这里找：https://www.keil.arm.com/devices/，
+
+比方说我想要`gd32f303rct6`，我就可以去下载这个GD32F30x_DFP：https://www.keil.arm.com/packs/gd32f30x_dfp-gigadevice/devices/
+
+然后使用`--pack`来进行引用对应算法，问题不大。
 
 <figure>
 <img src="/images/聊聊用于烧录ARM单片机的小工具-pyOCD/image-2.png" alt="" width = "" height = "" style="border-radius: 15px;">
@@ -167,6 +171,8 @@ pyocd erase -t stm32f401retx --sector 0
 # 按需擦扇区(sector)、开启校验、bin文件默认烧录地址0x08000000
 
 target_override: stm32f401retx
+
+frequency: 1000000 # Hz
 
 flash:
   verify: true 
