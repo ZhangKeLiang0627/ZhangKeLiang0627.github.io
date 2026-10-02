@@ -76,7 +76,7 @@ pyocd pack install stm32f4
 pyocd pack install stm32f1
 ```
 
-Ps：没有找到pack的，可以去对应的mcu的官网上下载.pack文件(CMSIS-Packs)，或者你也可以来这里找：https://www.keil.arm.com/devices/，
+Ps：没有找到pack的，可以去对应的mcu的官网上下载.pack文件(CMSIS-Packs)，或者你也可以来这里找：https://www.keil.arm.com/devices/
 
 比方说我想要`gd32f303rct6`，我就可以去下载这个GD32F30x_DFP：https://www.keil.arm.com/packs/gd32f30x_dfp-gigadevice/devices/
 
