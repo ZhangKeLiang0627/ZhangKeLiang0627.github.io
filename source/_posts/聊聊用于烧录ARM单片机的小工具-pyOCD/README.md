@@ -127,6 +127,7 @@ pyocd flash --target stm32f401retx yourFirmware.hex
 pyocd flash -t stm32f401retx yourFirmware.hex
 # 烧录.bin文件（需要指定烧录地址address，默认为0x08000000
 pyocd flash -t stm32f401retx -a 0x08000000 yourFirmware.bin
+pyocd flash -t stm32f401retx yourFirmware.bin@0x08000000
 
 # 校验，将烧录到mcu的内容重新读出来和固件进行字节比对
 pyocd load -t stm32f401retx yourFirmware.hex
@@ -174,7 +175,9 @@ frequency: 1000000 # Hz
 flash:
   verify: true 
   base_address: 0x08000000
-#   erase: chip # 如果需要全局擦除就打开该项
+# 'sector'：按需擦除（默认）；'chip'：全片擦除；'auto'：自动
+# 若需全片擦除，取消下一行注释
+# chip_erase: 'chip'
 
 # 指定外部DFP pack，多个pack用数组
 # pack:
