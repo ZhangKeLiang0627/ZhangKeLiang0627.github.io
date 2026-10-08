@@ -125,18 +125,15 @@ pyocd reset -h
 # 烧录.hex文件
 pyocd flash --target stm32f401retx yourFirmware.hex
 pyocd flash -t stm32f401retx yourFirmware.hex
-
-# 烧录.bin文件（需要指定烧录地址，默认为0x08000000
-pyocd flash --target stm32f401retx --address 0x08000000 yourFirmware.bin
+# 烧录.bin文件（需要指定烧录地址address，默认为0x08000000
+pyocd flash -t stm32f401retx -a 0x08000000 yourFirmware.bin
 
 # 校验，将烧录到mcu的内容重新读出来和固件进行字节比对
-pyocd flash --target stm32f401retx yourFirmware.hex --verify
-
+pyocd load -t stm32f401retx yourFirmware.hex
 # 补充烧录策略：全片擦除后再烧录 + 校验
-pyocd flash -t stm32f401retx yourFirmware.hex --erase chip --verify
-
+pyocd load -t stm32f401retx yourFirmware.hex --erase chip 
 # 指定pack算法进行烧录
-pyocd flash -t gd32f103c8 --pack ./packs/GigaDevice.GD32F10x_DFP.2.3.0.pack app.elf --verify
+pyocd load -t gd32f103c8 --pack ./packs/GigaDevice.GD32F10x_DFP.2.3.0.pack app.elf 
 ```
 
 <figure>
