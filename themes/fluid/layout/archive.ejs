@@ -1,0 +1,13 @@
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<div id="posts-chart"style="border-radius: 8px; height: 190px; padding: 10px;"></div>
+
+<%
+page.layout = "archive"
+page.title = theme.archive.title || __('archive.title')
+page.subtitle = theme.archive.subtitle || __('archive.subtitle')
+page.banner_img = theme.archive.banner_img
+page.banner_img_height = theme.archive.banner_img_height
+page.banner_mask_alpha = theme.archive.banner_mask_alpha
+%>
+
+<%- partial('_partials/archive-list.ejs', { params: { key: page.layout, postTotal: site.posts.length } }) %>
