@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head><!-- hexo injector head_begin start --><link href="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/sys/myicon.png">
+  <link rel="icon" href="/img/sys/myicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2b2b2b">
+  <meta name="author" content="Zhang-keliang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="阿里云是真的香啊！快是真的快，贵还真的没这么贵（划掉！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️">
+<meta property="og:url" content="https://zhangkeliang0627.github.io/2024/08/24/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS+Hexo+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/README/index.html">
+<meta property="og:site_name" content="Hugo@kkl">
+<meta property="og:description" content="阿里云是真的香啊！快是真的快，贵还真的没这么贵（划掉！">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/20.jpg">
+<meta property="article:published_time" content="2024-08-24T08:21:00.000Z">
+<meta property="article:modified_time" content="2026-04-02T16:33:12.217Z">
+<meta property="article:author" content="Zhang-keliang">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="aliyun">
+<meta property="article:tag" content="PicGo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/20.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️ - Hugo@kkl</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/indeximg-hover.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zhangkeliang0627.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Hugo@kkl&#39;s</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/post/20.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-08-24 16:21" pubdate>
+          August 24, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="基于阿里云OSS-Hexo-PicGo搭建图床🖼️🛏️"><a href="#基于阿里云OSS-Hexo-PicGo搭建图床🖼️🛏️" class="headerlink" title="基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️"></a>基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</h3><h4 id="阿里云是真的香啊！快是真的快，贵还真的没这么贵，其实还是蛮贵的🥹💰💸"><a href="#阿里云是真的香啊！快是真的快，贵还真的没这么贵，其实还是蛮贵的🥹💰💸" class="headerlink" title="阿里云是真的香啊！快是真的快，贵还真的没这么贵，其实还是蛮贵的🥹💰💸"></a>阿里云是真的香啊！快是真的快，<del>贵还真的没这么贵</del>，其实还是蛮贵的🥹💰💸</h4><h4 id="LUV-form-aliyun…"><a href="#LUV-form-aliyun…" class="headerlink" title="LUV form aliyun…"></a>LUV form aliyun…</h4><h4 id="Author：-kkl"><a href="#Author：-kkl" class="headerlink" title="Author：@kkl"></a>Author：@kkl</h4><hr>
+<h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p>随着博客文章的数量越来越多，难免地，图片存储的数量也渐渐增多。之前是使用文件夹本地存储图片，部署的时候是全数上传到Github的，慢慢会使得这个仓库变得极其臃肿，而且不便于更换网站的托管。于是还是决定使用图床！！！</p>
+<p>没错，阿里云的对象存储OSS！买了三年的空间才27元，40GB，又可以霍霍一阵啦！</p>
+<blockquote>
+<p><strong>Q：关于为什么要搭建图床？</strong></p>
+</blockquote>
+<blockquote>
+<p>A：我首先能给出的答复就是，<strong>快！访问快，上传快，迁移快。</strong>然后我选择aliyun就是<strong>求稳，不丢数据。</strong>最后，搭建图床，其实也可以<strong>用来实现一些其他的功能如：网页Download。</strong>比方说我可以往OSS当中存放一些PDF、PPT、txt等文件文档，我可以随时在我的博客当中下载获取，<strong>非常的便利！</strong></p>
+</blockquote>
+<hr>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="PicGo图床工具"><a href="#PicGo图床工具" class="headerlink" title="PicGo图床工具"></a>PicGo图床工具</h3><p>PicGo是一款非常优秀的图床工具，支持微博、腾讯云COS、阿里云OSS、七牛云、又拍云、GitHub、SM.MS、imgur等。功能强大，简单易用，可惜我不爱它…</p>
+<p>我还是喜欢简单粗暴，因为我是直接用Vscode敲原生Markdown，用不惯Typora、Obsidian之类的编辑器，所以敲文章编辑图片的时候还要在中间插入一层PicGo，过程繁琐。最后还是没有使用PicGo，后面我会分享我敲Markdown对图片管理的技巧，这里讲讲PicGo的安装和使用，优秀的软件工具说不定适合您！</p>
+<h4 id="PicGo的下载与安装"><a href="#PicGo的下载与安装" class="headerlink" title="PicGo的下载与安装"></a>PicGo的下载与安装</h4><ul>
+<li>下载</li>
+</ul>
+<p>您可以在PicGo的Github仓库的Releases当中获取对应的版本：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">戳这里:)</a></p>
+<p>选择最新的版本就行啦（截止2024&#x2F;8&#x2F;25）：</p>
+<!-- ![PicGo版本选择](images/基于阿里云OSS与Hexo与PicGo搭建图床/image-0.png) -->
+
+<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B8%8EHexo%E4%B8%8EPicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/image-0.png" srcset="/img/loading.gif" lazyload alt="PicGo版本选择"></p>
+<ul>
+<li>安装</li>
+</ul>
+<p>进行安装，一路打 √ 即可！</p>
+<h3 id="阿里云对象存储OSS"><a href="#阿里云对象存储OSS" class="headerlink" title="阿里云对象存储OSS"></a>阿里云对象存储OSS</h3><p>关于阿里云对象存储OSS的创建和配置，我找到了一篇优秀的教程<a target="_blank" rel="noopener" href="https://blog.csdn.net/Unamattina_/article/details/136463281">戳这里:P</a></p>
+<p>当然，其中还包括了对PicGo图床工具的配置，教的很赞！</p>
+<p>谢谢该教程作者的分享！非常的手把手教学！</p>
+<h3 id="阿里云对象存储OSS-Vscode替换本地图片链接"><a href="#阿里云对象存储OSS-Vscode替换本地图片链接" class="headerlink" title="阿里云对象存储OSS+Vscode替换本地图片链接"></a>阿里云对象存储OSS+Vscode替换本地图片链接</h3><p>emmm，说来奇怪，我初使用PicGo的时候，我发现我不能用PicGo查看已经存在于OSS当中的图片，只能查看通过PicGo上传到OSS的图片。同时，在PicGo端对图片进行删除后，并不会连同OSS端的图片一起删除。这就导致了操作的不流畅性。</p>
+<p>而且，PicGo不能批量扫描文件夹，上传图片过多过大的时候，会出现<strong>在OSS端已经成功上传但在PicGo端查看不到该图片的情况。</strong></p>
+<p>最后，PicGo不能随我心意地自如的将图片上传到OSS对应的文件夹当中，一张一张地传真的很要命。</p>
+<p>我还遇到一个问题是，<strong>OSS当中的图片是上传后不能也不允许改动在文件夹当中的位置的</strong>，比方说：原来图片A在文件夹1中，现在我想要将图片A从文件夹1移动到文件夹2当中去，这是做不到的。你只能删除文件夹1中的图片A，并在文件夹2中重新上传图片A。</p>
+<p>关于这个问题的解答，我询问了我的从事后端的盆友。它说，你可以把OSS当作是每一个存储对象都对应着一个URL，这个URL是由文件夹的存储路径决定的。倘若你上传了图片A到文件夹1，返回的永久的URL是<code>https://hugokkl.com/file1/pictureA.jpg</code>，云端会根据这个URL到对应的路径当作找到对应的图片。此时你修改该图片A的路径到文件夹2，可是URL却不会改变，会导致文件路径和URL对应不上，云端也不知道去哪里找这个URL对应的图片A了。</p>
+<p>于是，最后我选择使用简单粗暴，<strong>扫描文件夹 + 给原来的图片链接加上前缀的方式</strong>完成了图片的迁移以及图床的搭建！这真的很方便！</p>
+<p><strong>然后，源的切换也非常简单，从本地图片存储切换到OSS存储只需要在原来的URL的前面加入前缀<code>https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/</code>即可，反之就删除。</strong></p>
+<!-- ![](images/基于阿里云OSS与Hexo与PicGo搭建图床/image-1.png) -->
+<p><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/images/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B8%8EHexo%E4%B8%8EPicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/image-1.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
+<li><p>OSS当中的文件夹以及文件名不要带有标点符号一类的，否则可能会导致生成的URL不可用。</p>
+</li>
+<li><p>OSS的流量费用还是比较高昂的，这一点要注意！每小时内外网流出流量超过20MB便会开始计费！</p>
+</li>
+<li><p>目前，截至到2024&#x2F;8&#x2F;25，本博客绝大部分的图片已经转移到阿里云OSS进行存储！于是，即便不使用魔法，也可以快速地访问本博客！解决了一个挺令人头疼的难题😁</p>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Study-Page/" class="category-chain-item">Study Page</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/aliyun/" class="print-no-link">#aliyun</a>
+      
+        <a href="/tags/PicGo/" class="print-no-link">#PicGo</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>基于阿里云OSS+Hexo+PicGo搭建图床🖼️🛏️</div>
+      <div>https://zhangkeliang0627.github.io/2024/08/24/基于阿里云OSS+Hexo+PicGo搭建图床/README/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Zhang-keliang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 24, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/08/31/%E8%B0%88%E8%B0%88HOPE%E5%BD%93%E4%B8%AD%E7%9A%84GUI%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0/README/" title="谈谈HOPE当中的GUI底层逻辑实现✨">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">谈谈HOPE当中的GUI底层逻辑实现✨</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/08/20/%E8%80%90%E8%83%8C%E7%8E%8B%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/README/" title="【耐背王】计算机网络🤓📖">
+                        <span class="hidden-mobile">【耐背王】计算机网络🤓📖</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo-api-sooty.vercel.app/","region":null,"path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div class="text-center py-1"> <div class="img-circle rotate"><img src="https://hugokkl.oss-cn-shenzhen.aliyuncs.com/blog/sys/avatar.png" srcset="/img/loading.gif" lazyload></div> <br> <span># Carpe diem </span> <p> </div>
+<span> Framwork </span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-switch-fill"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>fluid</span></a>
+<div> <span>Copyright © 2023-2026</span> <a href="https://zhangkeliang0627.github.io/" target="_blank" rel="nofollow noopener"> <span>Hugo@kkl</span> </a> </div>
+<style> .img-circle { display: block; margin: 0 auto; border-radius: 50%; overflow: hidden; width: 150px; height: 150px; } .img-circle img { display: block; max-width: 100%; height: auto; } .text-center { text-align: center; } .py-1 { padding-top: 1rem; padding-bottom: 1rem; } .rotate { transition: transform 0.8s; } .rotate:hover { transform: rotate(360deg); } div { line-height: 1.5; } </style> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="https://fastly.jsdelivr.net/npm/hexo-tag-common@0.2.0/js/index.js"></script><!-- hexo injector body_end end --></body>
+</html>
