@@ -51,7 +51,7 @@ _**生活的锚点...**_
 ### 2026/8/14 - 冒烟的灯泡
 <!-- use Custom Address -->
 <script>
-// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -103,7 +103,7 @@ and，好像再没有什么值得提起或者记下的事情了，或是当下�
 ### 2026/8/29 - 替它紧张
 <!-- use Custom Address -->
 <script>
-// window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+window.meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
 </script>
 <!-- require APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">

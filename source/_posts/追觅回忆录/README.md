@@ -1,6 +1,6 @@
 ---
-title: 追觅回忆录...
-excerpt: ...
+title: 回忆录：dream me as a dream
+excerpt: just like a huge huge huge damn dream.
 tags: [work, life, dreame]
 index_img: /images/追觅回忆录/image-0.jpg
 banner_img: /images/追觅回忆录/image-0.jpg
