@@ -17,6 +17,9 @@ date: 2026-11-4 14:28:00
 
 ### 写在前面
 
+<!-- 看看极光 -->
+<script type="module" src="https://ascii.rest/ascii.js"></script>
+<ascii-art piece="aurora-fjord"></ascii-art>
 
 _**期待再相逢...**_
 

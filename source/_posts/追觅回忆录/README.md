@@ -14,6 +14,11 @@ date: 2026-11-5 02:32:00
 ### 追觅回忆录
 ### Author：@kkl 
  
+
+<!-- 养鱼啊 -->
+<script type="module" src="https://cdn.jsdelivr.net/gh/stqfdyr/ascii-pond@main/src/pond.js"></script>
+<ascii-pond fixed></ascii-pond>
+
 {% note warning %}
 
 本文等待施工啊🧑‍🌾🧑‍🌾!
