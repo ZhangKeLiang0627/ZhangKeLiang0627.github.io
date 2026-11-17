@@ -72,9 +72,48 @@ That‘s enough！我大致是从国庆节那段时间开始做起的，本来�
 
 **_本篇文章将简述如何从零到一玩转「Dummy-Robot」。_**
 
+
+- 机器人学导论教程视频（林沛群：https://www.bilibili.com/video/BV1v4411H7ez/
+
 ---
 
-### 开始
+### Dummy-V2的DH参数
+
+<figure>
+<img src="/images/关于Dummy-Robot机械臂的一切/image-3.jpg" alt="机械臂结构描述" width = "" height = "" style="border-radius: 15px;">
+<figcaption>机械臂DH参数含义描述</figcaption>
+</figure>
+
+<figure>
+<img src="/images/关于Dummy-Robot机械臂的一切/image-2.jpg" alt="Dummy-V2的DH参数" width = "" height = "" style="border-radius: 15px;">
+<figcaption>Dummy-V2的DH参数</figcaption>
+</figure>
+
+### 运动学
+
+#### 正解SovleFK
+
+
+
+#### 逆解SovleIK
+
+
+
+
+### tips
+
+#### 右手定则
+
+机械臂的关节呈直角垂直分布时，可以使用右手定则去判断α的正负：
+
+**大拇指指向重合轴的方向，顺着四指方向移动角度为正。**
+
+Ps：当然，如果对机械臂的方向有误，其实可以通过设置参数正负值来纠正，不必太过于纠结是顺逆时针。一开始在方向上纠结只会玩死自己哈。
+
+<figure>
+<img src="/images/关于Dummy-Robot机械臂的一切/image-6.jpg" alt="" width = "" height = "" style="border-radius: 15px;">
+<figcaption></figcaption>
+</figure>
 
 ...
 
@@ -89,9 +128,6 @@ That‘s enough！我大致是从国庆节那段时间开始做起的，本来�
 链接：https://pan.quark.cn/s/48411f1e7d93
 提取码：UvkP
 
-**3D打印元器件盒子文件分享：**
-链接：https://pan.baidu.com/s/1F3lQocbQdISGxdsj9VTw_w?pwd=7531 
-提取码：7531
 
 #### 鸣谢
 
